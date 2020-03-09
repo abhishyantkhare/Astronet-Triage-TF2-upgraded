@@ -51,9 +51,9 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
-import astronet.tf_slim as slim
 
 from astronet.astro_model import astro_model
+import astronet.astro_fc_model.layers as layers
 
 
 class AstroFCModel(astro_model.AstroModel):
@@ -133,7 +133,7 @@ class AstroFCModel(astro_model.AstroModel):
 
             # Remaining fully connected layers.
             for i in range(remaining_layers):
-                net = slim.layers.fully_connected(
+                net = layers.fully_connected(
                     inputs=net,
                     num_outputs=hparams.local_layer_size,
                     activation_fn=tf.nn.relu,

@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
-import astronet.tf_slim as slim
+import astronet.ops.slim_training as slim_training
 
 
 def create_learning_rate(hparams, global_step):
@@ -96,11 +96,11 @@ def create_train_op(model, optimizer):
     # Maybe clip gradient norms.
     transform_grads_fn = None
     if model.hparams.get("clip_grad_norm"):
-        transform_grads_fn = slim.training.clip_gradient_norms_fn(
+        transform_grads_fn = slim_training.clip_gradient_norms_fn(
             model.hparams.clip_gradient_norm)
 
     # Create train op.
-    return slim.training.create_train_op(
+    return slim_training.create_train_op(
         total_loss=model.total_loss,
         optimizer=optimizer,
         global_step=model.global_step,
