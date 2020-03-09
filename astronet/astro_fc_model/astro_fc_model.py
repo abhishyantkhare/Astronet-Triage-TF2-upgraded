@@ -51,7 +51,7 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
-import layers
+import astronet.astro_fc_model.layers
 
 from astronet.astro_model import astro_model
 

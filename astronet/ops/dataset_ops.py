@@ -21,7 +21,7 @@ from __future__ import print_function
 import collections
 import six
 import tensorflow as tf
-import lookup_ops
+import astronet.ops.lookup_ops
 
 
 def pad_tensor_to_batch_size(tensor, batch_size):
