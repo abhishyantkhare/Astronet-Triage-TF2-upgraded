@@ -13,6 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+from tensorflow.python.util.lazy_loader import LazyLoader
+from astronet.contrib.summary import summary
+from astronet.contrib.specs import python as specs
+from astronet.contrib.remote_fused_graph import pylib as remote_fused_graph
+from astronet.contrib.receptive_field import receptive_field_api as receptive_field
+from astronet.contrib.optimizer_v2 import optimizer_v2_symbols as optimizer_v2
 """contrib module containing volatile or experimental code."""
 
 from __future__ import absolute_import
@@ -24,7 +30,6 @@ import os
 # Add projects here, they will show up under tf.contrib.
 from astronet.contrib import batching
 from astronet.contrib import bayesflow
-from astronet.contrib import cloud
 from astronet.contrib import cluster_resolver
 from astronet.contrib import coder
 from astronet.contrib import compiler
@@ -91,14 +96,8 @@ from astronet.contrib import training
 from astronet.contrib import util
 from astronet.contrib.eager.python import tfe as eager
 if os.name != "nt":
-  from astronet.contrib.lite.python import lite
-from astronet.contrib.optimizer_v2 import optimizer_v2_symbols as optimizer_v2
-from astronet.contrib.receptive_field import receptive_field_api as receptive_field
-from astronet.contrib.remote_fused_graph import pylib as remote_fused_graph
-from astronet.contrib.specs import python as specs
-from astronet.contrib.summary import summary
+    from astronet.contrib.lite.python import lite
 
-from tensorflow.python.util.lazy_loader import LazyLoader
 ffmpeg = LazyLoader("ffmpeg", globals(),
                     "astronet.contrib.ffmpeg")
 del os
