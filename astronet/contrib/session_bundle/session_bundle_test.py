@@ -23,9 +23,9 @@ import shutil
 
 import numpy as np
 
-from astronet.contrib.session_bundle import constants
-from astronet.contrib.session_bundle import manifest_pb2
-from astronet.contrib.session_bundle import session_bundle
+from tensorflow.contrib.session_bundle import constants
+from tensorflow.contrib.session_bundle import manifest_pb2
+from tensorflow.contrib.session_bundle import session_bundle
 from tensorflow.core.example.example_pb2 import Example
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.framework import dtypes
@@ -167,7 +167,7 @@ class SessionBundleLoadNoVarsTest(test.TestCase):
       y = math_ops.subtract(w * x, 7.0, name="y")  # pylint: disable=unused-variable
       ops.add_to_collection("meta", "this is meta")
 
-      with self.test_session(graph=g) as session:
+      with self.session(graph=g) as session:
         variables.global_variables_initializer().run()
         new_graph_def = graph_util.convert_variables_to_constants(
             session, g.as_graph_def(), ["y"])

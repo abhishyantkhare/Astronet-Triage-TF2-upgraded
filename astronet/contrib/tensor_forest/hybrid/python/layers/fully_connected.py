@@ -17,8 +17,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib import layers
-from astronet.contrib.tensor_forest.hybrid.python import hybrid_layer
+from tensorflow.contrib import layers
+from tensorflow.contrib.tensor_forest.hybrid.python import hybrid_layer
 
 from tensorflow.python.framework import ops
 
@@ -55,7 +55,7 @@ class ManyToOneLayer(hybrid_layer.HybridLayer):
 
       # There is always one activation per instance by definition, so squeeze
       # away the extra dimension.
-      return array_ops.squeeze(nn_activations, squeeze_dims=[1])
+      return array_ops.squeeze(nn_activations, axis=[1])
 
 
 class FlattenedFullyConnectedLayer(hybrid_layer.HybridLayer):

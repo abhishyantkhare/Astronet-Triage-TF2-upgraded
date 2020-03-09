@@ -13,7 +13,7 @@
 # limitations under the License.
 # =============================================================================
 
-"""Tests for astronet.contrib.mpi_collectives.mpi_ops."""
+"""Tests for tensorflow.contrib.mpi_collectives.mpi_ops."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -24,7 +24,7 @@ import itertools
 
 import tensorflow as tf
 
-import astronet.contrib.mpi_collectives as mpi
+import tensorflow.contrib.mpi_collectives as mpi
 
 
 def mpi_env_rank_and_size():
@@ -64,7 +64,7 @@ def mpi_env_rank_and_size():
 
 class MPITests(tf.test.TestCase):
   """
-  Tests for MPI ops in astronet.contrib.mpi_collectives.
+  Tests for MPI ops in tensorflow.contrib.mpi_collectives.
   """
 
   def test_mpi_rank(self):

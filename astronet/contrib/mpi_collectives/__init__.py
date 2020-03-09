@@ -37,7 +37,7 @@ for detecting the running MPI configuration.
 Example:
 
 ```python
-import astronet.contrib.mpi_collectives as mpi
+import tensorflow.contrib.mpi_collectives as mpi
 
 # Use `mpi.Session` instead of `tf.Session`
 with mpi.Session() as session:
@@ -84,7 +84,7 @@ Example:
 
 ```python
 import tensorflow as tf
-from astronet.contrib import mpi_collectives as mpi
+from tensorflow.contrib import mpi_collectives as mpi
 
 # Construct a simple linear regression model to optimize
 W = tf.get_variable("W", shape=[20, 1], dtype=tf.float32)
@@ -125,12 +125,12 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from astronet.contrib.mpi_collectives.python.ops.mpi_ops import init
-from astronet.contrib.mpi_collectives.python.ops.mpi_ops import size
-from astronet.contrib.mpi_collectives.python.ops.mpi_ops import rank
-from astronet.contrib.mpi_collectives.python.ops.mpi_ops import local_rank
-from astronet.contrib.mpi_collectives.python.ops.mpi_ops import allgather
-from astronet.contrib.mpi_collectives.python.ops.mpi_ops import _allreduce
+from tensorflow.contrib.mpi_collectives.python.ops.mpi_ops import init
+from tensorflow.contrib.mpi_collectives.python.ops.mpi_ops import size
+from tensorflow.contrib.mpi_collectives.python.ops.mpi_ops import rank
+from tensorflow.contrib.mpi_collectives.python.ops.mpi_ops import local_rank
+from tensorflow.contrib.mpi_collectives.python.ops.mpi_ops import allgather
+from tensorflow.contrib.mpi_collectives.python.ops.mpi_ops import _allreduce
 
 
 def allreduce(tensor, average=True):

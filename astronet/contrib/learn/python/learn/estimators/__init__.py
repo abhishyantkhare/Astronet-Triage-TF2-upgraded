@@ -101,7 +101,7 @@ my_features = [embedding_feature_a, embedding_feature_b]
 estimator = DNNClassifier(
     feature_columns=my_features,
     hidden_units=[1024, 512, 256],
-    optimizer=tf.train.ProximalAdagradOptimizer(
+    optimizer=tf.compat.v1.train.ProximalAdagradOptimizer(
         learning_rate=0.1,
         l1_regularization_strength=0.001
     ))
@@ -123,7 +123,7 @@ hidden_units=[1024, 512, 256])
 estimator = DNNRegressor(
     feature_columns=my_features,
     hidden_units=[1024, 512, 256],
-    optimizer=tf.train.ProximalAdagradOptimizer(
+    optimizer=tf.compat.v1.train.ProximalAdagradOptimizer(
         learning_rate=0.1,
         l1_regularization_strength=0.001
     ))
@@ -145,11 +145,11 @@ estimator = DNNLinearCombinedClassifier(
       weight_column_name=weight_column_name,
       # Wide settings
       linear_feature_columns=my_linear_features,
-      linear_optimizer=tf.train.FtrlOptimizer(...),
+      linear_optimizer=tf.compat.v1.train.FtrlOptimizer(...),
       # Deep settings
       dnn_feature_columns=my_deep_features,
       dnn_hidden_units=[1000, 500, 100],
-      dnn_optimizer=tf.train.AdagradOptimizer(...))
+      dnn_optimizer=tf.compat.v1.train.AdagradOptimizer(...))
 ```
 
 #### LinearClassifier
@@ -161,7 +161,7 @@ classes. When number of possible classes is 2, this is binary classification.
 my_features = [sparse_feature_b, crossed_feature_a_x_b]
 estimator = LinearClassifier(
     feature_columns=my_features,
-    optimizer=tf.train.FtrlOptimizer(
+    optimizer=tf.compat.v1.train.FtrlOptimizer(
         learning_rate=0.1,
         l1_regularization_strength=0.001
     ))
@@ -278,7 +278,7 @@ tutorial for building a custom estimator.
 ## Additional Estimators
 
 There is an additional estimators under
-`astronet.contrib.factorization.python.ops`:
+`tensorflow.contrib.factorization.python.ops`:
 
 *   Gaussian mixture model (GMM) clustering
 
@@ -297,42 +297,42 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.learn.python.learn.estimators._sklearn import NotFittedError
-from astronet.contrib.learn.python.learn.estimators.constants import ProblemType
-from astronet.contrib.learn.python.learn.estimators.dnn import DNNClassifier
-from astronet.contrib.learn.python.learn.estimators.dnn import DNNEstimator
-from astronet.contrib.learn.python.learn.estimators.dnn import DNNRegressor
-from astronet.contrib.learn.python.learn.estimators.dnn_linear_combined import DNNLinearCombinedClassifier
-from astronet.contrib.learn.python.learn.estimators.dnn_linear_combined import DNNLinearCombinedEstimator
-from astronet.contrib.learn.python.learn.estimators.dnn_linear_combined import DNNLinearCombinedRegressor
-from astronet.contrib.learn.python.learn.estimators.dynamic_rnn_estimator import DynamicRnnEstimator
-from astronet.contrib.learn.python.learn.estimators.estimator import BaseEstimator
-from astronet.contrib.learn.python.learn.estimators.estimator import Estimator
-from astronet.contrib.learn.python.learn.estimators.estimator import GraphRewriteSpec
-from astronet.contrib.learn.python.learn.estimators.estimator import infer_real_valued_columns_from_input
-from astronet.contrib.learn.python.learn.estimators.estimator import infer_real_valued_columns_from_input_fn
-from astronet.contrib.learn.python.learn.estimators.estimator import SKCompat
-from astronet.contrib.learn.python.learn.estimators.head import binary_svm_head
-from astronet.contrib.learn.python.learn.estimators.head import Head
-from astronet.contrib.learn.python.learn.estimators.head import loss_only_head
-from astronet.contrib.learn.python.learn.estimators.head import multi_class_head
-from astronet.contrib.learn.python.learn.estimators.head import multi_head
-from astronet.contrib.learn.python.learn.estimators.head import multi_label_head
-from astronet.contrib.learn.python.learn.estimators.head import no_op_train_fn
-from astronet.contrib.learn.python.learn.estimators.head import poisson_regression_head
-from astronet.contrib.learn.python.learn.estimators.head import regression_head
-from astronet.contrib.learn.python.learn.estimators.kmeans import KMeansClustering
-from astronet.contrib.learn.python.learn.estimators.linear import LinearClassifier
-from astronet.contrib.learn.python.learn.estimators.linear import LinearEstimator
-from astronet.contrib.learn.python.learn.estimators.linear import LinearRegressor
-from astronet.contrib.learn.python.learn.estimators.logistic_regressor import LogisticRegressor
-from astronet.contrib.learn.python.learn.estimators.metric_key import MetricKey
-from astronet.contrib.learn.python.learn.estimators.model_fn import ModeKeys
-from astronet.contrib.learn.python.learn.estimators.model_fn import ModelFnOps
-from astronet.contrib.learn.python.learn.estimators.prediction_key import PredictionKey
-from astronet.contrib.learn.python.learn.estimators.rnn_common import PredictionType
-from astronet.contrib.learn.python.learn.estimators.run_config import ClusterConfig
-from astronet.contrib.learn.python.learn.estimators.run_config import Environment
-from astronet.contrib.learn.python.learn.estimators.run_config import RunConfig
-from astronet.contrib.learn.python.learn.estimators.run_config import TaskType
-from astronet.contrib.learn.python.learn.estimators.svm import SVM
+from tensorflow.contrib.learn.python.learn.estimators._sklearn import NotFittedError
+from tensorflow.contrib.learn.python.learn.estimators.constants import ProblemType
+from tensorflow.contrib.learn.python.learn.estimators.dnn import DNNClassifier
+from tensorflow.contrib.learn.python.learn.estimators.dnn import DNNEstimator
+from tensorflow.contrib.learn.python.learn.estimators.dnn import DNNRegressor
+from tensorflow.contrib.learn.python.learn.estimators.dnn_linear_combined import DNNLinearCombinedClassifier
+from tensorflow.contrib.learn.python.learn.estimators.dnn_linear_combined import DNNLinearCombinedEstimator
+from tensorflow.contrib.learn.python.learn.estimators.dnn_linear_combined import DNNLinearCombinedRegressor
+from tensorflow.contrib.learn.python.learn.estimators.dynamic_rnn_estimator import DynamicRnnEstimator
+from tensorflow.contrib.learn.python.learn.estimators.estimator import BaseEstimator
+from tensorflow.contrib.learn.python.learn.estimators.estimator import Estimator
+from tensorflow.contrib.learn.python.learn.estimators.estimator import GraphRewriteSpec
+from tensorflow.contrib.learn.python.learn.estimators.estimator import infer_real_valued_columns_from_input
+from tensorflow.contrib.learn.python.learn.estimators.estimator import infer_real_valued_columns_from_input_fn
+from tensorflow.contrib.learn.python.learn.estimators.estimator import SKCompat
+from tensorflow.contrib.learn.python.learn.estimators.head import binary_svm_head
+from tensorflow.contrib.learn.python.learn.estimators.head import Head
+from tensorflow.contrib.learn.python.learn.estimators.head import loss_only_head
+from tensorflow.contrib.learn.python.learn.estimators.head import multi_class_head
+from tensorflow.contrib.learn.python.learn.estimators.head import multi_head
+from tensorflow.contrib.learn.python.learn.estimators.head import multi_label_head
+from tensorflow.contrib.learn.python.learn.estimators.head import no_op_train_fn
+from tensorflow.contrib.learn.python.learn.estimators.head import poisson_regression_head
+from tensorflow.contrib.learn.python.learn.estimators.head import regression_head
+from tensorflow.contrib.learn.python.learn.estimators.kmeans import KMeansClustering
+from tensorflow.contrib.learn.python.learn.estimators.linear import LinearClassifier
+from tensorflow.contrib.learn.python.learn.estimators.linear import LinearEstimator
+from tensorflow.contrib.learn.python.learn.estimators.linear import LinearRegressor
+from tensorflow.contrib.learn.python.learn.estimators.logistic_regressor import LogisticRegressor
+from tensorflow.contrib.learn.python.learn.estimators.metric_key import MetricKey
+from tensorflow.contrib.learn.python.learn.estimators.model_fn import ModeKeys
+from tensorflow.contrib.learn.python.learn.estimators.model_fn import ModelFnOps
+from tensorflow.contrib.learn.python.learn.estimators.prediction_key import PredictionKey
+from tensorflow.contrib.learn.python.learn.estimators.rnn_common import PredictionType
+from tensorflow.contrib.learn.python.learn.estimators.run_config import ClusterConfig
+from tensorflow.contrib.learn.python.learn.estimators.run_config import Environment
+from tensorflow.contrib.learn.python.learn.estimators.run_config import RunConfig
+from tensorflow.contrib.learn.python.learn.estimators.run_config import TaskType
+from tensorflow.contrib.learn.python.learn.estimators.svm import SVM

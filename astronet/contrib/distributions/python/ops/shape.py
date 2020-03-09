@@ -27,6 +27,7 @@ from tensorflow.python.ops import check_ops
 from tensorflow.python.ops import control_flow_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops.distributions import util as distribution_util
+from tensorflow.python.util import deprecation
 
 
 class _DistributionShape(object):
@@ -113,7 +114,7 @@ class _DistributionShape(object):
       E.g., Jacobian of the transform `Y = g(X) = exp(X)`:
 
       ```python
-      tf.div(1., tf.reduce_prod(x, event_dims))
+      tf.compat.v1.div(1., tf.reduce_prod(x, event_dims))
       ```
 
   We show examples using this class.
@@ -166,6 +167,14 @@ class _DistributionShape(object):
   "free," i.e., during graph construction.
   """
 
+  @deprecation.deprecated(
+      "2018-10-01",
+      "The TensorFlow Distributions library has moved to "
+      "TensorFlow Probability "
+      "(https://github.com/tensorflow/probability). You "
+      "should update all references to use `tfp.distributions` "
+      "instead of `tf.contrib.distributions`.",
+      warn_once=True)
   def __init__(self,
                batch_ndims=None,
                event_ndims=None,
@@ -439,7 +448,7 @@ class _DistributionShape(object):
           if self._batch_ndims_is_0 and expand_batch_dim:
             squeeze_dims += [1]
           if squeeze_dims:
-            x = array_ops.squeeze(x, squeeze_dims=squeeze_dims)
+            x = array_ops.squeeze(x, axis=squeeze_dims)
             # x.shape: [prod(S)]+B+E
         _, batch_shape, event_shape = self.get_shape(x)
       else:
@@ -448,9 +457,9 @@ class _DistributionShape(object):
         batch_shape = s[1:1+self.batch_ndims]
         # Since sample_dims=1 and is left-most, we add 1 to the number of
         # batch_ndims to get the event start dim.
-        event_start = array_ops.where(
-            math_ops.logical_and(expand_batch_dim, self._batch_ndims_is_0),
-            2, 1 + self.batch_ndims)
+        event_start = array_ops.where_v2(
+            math_ops.logical_and(expand_batch_dim, self._batch_ndims_is_0), 2,
+            1 + self.batch_ndims)
         event_shape = s[event_start:event_start+self.event_ndims]
       new_shape = array_ops.concat([sample_shape, batch_shape, event_shape], 0)
       x = array_ops.reshape(x, shape=new_shape)

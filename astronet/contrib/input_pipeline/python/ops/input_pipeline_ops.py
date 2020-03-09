@@ -19,8 +19,8 @@ from __future__ import print_function
 
 import random
 
-from astronet.contrib.input_pipeline.ops import gen_input_pipeline_ops
-from astronet.contrib.util import loader
+from tensorflow.contrib.input_pipeline.ops import gen_input_pipeline_ops
+from tensorflow.contrib.util import loader
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

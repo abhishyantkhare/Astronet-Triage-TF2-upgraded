@@ -26,8 +26,8 @@ import time
 
 import tensorflow as tf
 
-import astronet.contrib.eager as tfe
-from astronet.contrib.eager.python.examples.linear_regression import linear_regression
+import tensorflow.contrib.eager as tfe
+from tensorflow.contrib.eager.python.examples.linear_regression import linear_regression
 
 
 def device():
@@ -117,5 +117,5 @@ class EagerLinearRegressionBenchmark(tf.test.Benchmark):
 
 
 if __name__ == "__main__":
-  tfe.enable_eager_execution()
+  tf.enable_eager_execution()
   tf.test.main()

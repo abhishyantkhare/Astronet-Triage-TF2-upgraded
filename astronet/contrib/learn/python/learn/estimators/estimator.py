@@ -33,27 +33,27 @@ import numpy as np
 import six
 
 from google.protobuf import message
-from astronet.contrib import layers
-from astronet.contrib.framework import deprecated
-from astronet.contrib.framework import deprecated_args
-from astronet.contrib.framework import list_variables
-from astronet.contrib.framework import load_variable
-from astronet.contrib.learn.python.learn import evaluable
-from astronet.contrib.learn.python.learn import metric_spec
-from astronet.contrib.learn.python.learn import monitors as monitor_lib
-from astronet.contrib.learn.python.learn import trainable
-from astronet.contrib.learn.python.learn.estimators import _sklearn as sklearn
-from astronet.contrib.learn.python.learn.estimators import constants
-from astronet.contrib.learn.python.learn.estimators import metric_key
-from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
-from astronet.contrib.learn.python.learn.estimators import run_config
-from astronet.contrib.learn.python.learn.estimators import tensor_signature
-from astronet.contrib.learn.python.learn.estimators._sklearn import NotFittedError
-from astronet.contrib.learn.python.learn.learn_io import data_feeder
-from astronet.contrib.learn.python.learn.utils import export
-from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
-from astronet.contrib.meta_graph_transform import meta_graph_transform
-from astronet.contrib.training.python.training import evaluation
+from tensorflow.contrib import layers
+from tensorflow.contrib.framework import deprecated
+from tensorflow.contrib.framework import deprecated_args
+from tensorflow.contrib.framework import list_variables
+from tensorflow.contrib.framework import load_variable
+from tensorflow.contrib.learn.python.learn import evaluable
+from tensorflow.contrib.learn.python.learn import metric_spec
+from tensorflow.contrib.learn.python.learn import monitors as monitor_lib
+from tensorflow.contrib.learn.python.learn import trainable
+from tensorflow.contrib.learn.python.learn.estimators import _sklearn as sklearn
+from tensorflow.contrib.learn.python.learn.estimators import constants
+from tensorflow.contrib.learn.python.learn.estimators import metric_key
+from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from tensorflow.contrib.learn.python.learn.estimators import run_config
+from tensorflow.contrib.learn.python.learn.estimators import tensor_signature
+from tensorflow.contrib.learn.python.learn.estimators._sklearn import NotFittedError
+from tensorflow.contrib.learn.python.learn.learn_io import data_feeder
+from tensorflow.contrib.learn.python.learn.utils import export
+from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
+from tensorflow.contrib.meta_graph_transform import meta_graph_transform
+from tensorflow.contrib.training.python.training import evaluation
 from tensorflow.core.framework import summary_pb2
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session as tf_session
@@ -72,6 +72,7 @@ from tensorflow.python.saved_model import builder as saved_model_builder
 from tensorflow.python.saved_model import tag_constants
 from tensorflow.python.summary import summary as core_summary
 from tensorflow.python.training import basic_session_run_hooks
+from tensorflow.python.training import checkpoint_management
 from tensorflow.python.training import device_setter
 from tensorflow.python.training import monitored_session
 from tensorflow.python.training import saver
@@ -403,7 +404,6 @@ class BaseEstimator(sklearn.BaseEstimator, evaluable.Evaluable,
   Users should not instantiate or subclass this class. Instead, use an
   `Estimator`.
   """
-  __metaclass__ = abc.ABCMeta
 
   # Note that for Google users, this is overridden with
   # learn_runner.EstimatorConfig.
@@ -891,7 +891,7 @@ class BaseEstimator(sklearn.BaseEstimator, evaluable.Evaluable,
 
     # Check that model has been trained (if nothing has been set explicitly).
     if not checkpoint_path:
-      latest_path = saver.latest_checkpoint(self._model_dir)
+      latest_path = checkpoint_management.latest_checkpoint(self._model_dir)
       if not latest_path:
         raise NotFittedError(
             "Couldn't find trained model at %s." % self._model_dir)
@@ -956,7 +956,7 @@ class BaseEstimator(sklearn.BaseEstimator, evaluable.Evaluable,
                    as_iterable=True,
                    iterate_batches=False):
     # Check that model has been trained.
-    checkpoint_path = saver.latest_checkpoint(self._model_dir)
+    checkpoint_path = checkpoint_management.latest_checkpoint(self._model_dir)
     if not checkpoint_path:
       raise NotFittedError(
           "Couldn't find trained model at %s." % self._model_dir)
@@ -1066,11 +1066,11 @@ class BaseEstimator(sklearn.BaseEstimator, evaluable.Evaluable,
       chief_hooks = []
       if (self._config.save_checkpoints_secs or
           self._config.save_checkpoints_steps):
-        saver_hook_exists = any([
+        saver_hook_exists = any(
             isinstance(h, basic_session_run_hooks.CheckpointSaverHook)
             for h in (all_hooks + model_fn_ops.training_hooks + chief_hooks +
                       model_fn_ops.training_chief_hooks)
-        ])
+        )
         if not saver_hook_exists:
           chief_hooks = [
               basic_session_run_hooks.CheckpointSaverHook(
@@ -1364,7 +1364,7 @@ class Estimator(BaseEstimator):
 
     if not checkpoint_path:
       # Locate the latest checkpoint
-      checkpoint_path = saver.latest_checkpoint(self._model_dir)
+      checkpoint_path = checkpoint_management.latest_checkpoint(self._model_dir)
     if not checkpoint_path:
       raise NotFittedError(
           "Couldn't find trained model at %s." % self._model_dir)
@@ -1432,13 +1432,12 @@ class Estimator(BaseEstimator):
                            'must specify no transforms.')
         untransformed_tags = graph_rewrite_specs[0].tags
 
-        # TODO(soergel): switch to main_op or otherwise update when dust settles
         builder.add_meta_graph_and_variables(
             session,
             untransformed_tags,
             signature_def_map=signature_def_map,
             assets_collection=ops.get_collection(ops.GraphKeys.ASSET_FILEPATHS),
-            legacy_init_op=init_op,
+            main_op=init_op,
             strip_default_attrs=strip_default_attrs)
 
     # pylint: disable=protected-access
@@ -1494,7 +1493,7 @@ class Estimator(BaseEstimator):
 # pylint: disable=protected-access
 class SKCompat(sklearn.BaseEstimator):
   """Scikit learn wrapper for TensorFlow Learn Estimator.
-  
+
   THIS CLASS IS DEPRECATED. See
   [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
   for general migration instructions.

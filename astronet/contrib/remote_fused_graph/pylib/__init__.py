@@ -23,7 +23,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import, line-too-long
-from astronet.contrib.remote_fused_graph.pylib.python.ops.remote_fused_graph_ops import *
+from tensorflow.contrib.remote_fused_graph.pylib.python.ops.remote_fused_graph_ops import *
 # pylint: enable=unused-import,wildcard-import,line-too-long
 
 from tensorflow.python.util.all_util import remove_undocumented

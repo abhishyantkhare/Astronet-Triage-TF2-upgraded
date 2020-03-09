@@ -15,16 +15,16 @@
 
 """Ops for building neural network losses.
 
-See @{$python/contrib.losses}.
+See [Contrib Losses](https://tensorflow.org/api_guides/python/contrib.losses).
 """
 
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.losses.python import metric_learning
+from tensorflow.contrib.losses.python import metric_learning
 # pylint: disable=wildcard-import
-from astronet.contrib.losses.python.losses import *
+from tensorflow.contrib.losses.python.losses import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util.all_util import remove_undocumented
 

@@ -29,6 +29,7 @@ limitations under the License.
 #include "tensorflow/core/common_runtime/gpu/gpu_util.h"
 #include "tensorflow/core/distributed_runtime/session_mgr.h"
 #include "tensorflow/core/distributed_runtime/tensor_coding.h"
+#include "tensorflow/core/framework/allocator.h"
 
 namespace tensorflow {
 
@@ -122,7 +123,7 @@ void MPIRemoteRendezvous::RecvFromRemoteAsync(
         } else {
           TensorResponse tr;
           tr.InitAlloc(dst_device, recv_args.alloc_attrs);
-          tr.InitPartial(mpi_response.response());
+          tr.InitPartial(mpi_response.response(), AllocationAttributes());
           const size_t nBytes = tr.tensor().TotalBytes();
           void* data = const_cast<void*>(DMAHelper::base(&tr.tensor()));
           MPI_Status status;
@@ -136,8 +137,8 @@ void MPIRemoteRendezvous::RecvFromRemoteAsync(
 
   MPIRendezvousMgr* mgr =
       reinterpret_cast<MPIRendezvousMgr*>(this->rendezvous_mgr_);
-  mgr->QueueRequest(parsed.FullKey().ToString(), step_id_,
-                    std::move(request_call), rendezvous_call);
+  mgr->QueueRequest(string(parsed.FullKey()), step_id_, std::move(request_call),
+                    rendezvous_call);
 }
 
 MPIRemoteRendezvous::~MPIRemoteRendezvous() {}
@@ -258,7 +259,7 @@ void MPIRendezvousMgr::AddRequest(RecvTensorRequest request,
         std::function<MPISendTensorCall*()> res = std::bind(
             send_cb, status, send_args, recv_args, val, is_dead, mpi_send_call);
 
-        SendQueueEntry req(parsed.FullKey().ToString().c_str(), std::move(res));
+        SendQueueEntry req(string(parsed.FullKey()), std::move(res));
 
         this->QueueSendRequest(req);
 

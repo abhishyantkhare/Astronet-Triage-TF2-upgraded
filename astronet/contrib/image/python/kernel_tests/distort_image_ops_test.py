@@ -23,7 +23,7 @@ import time
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from astronet.contrib.image.python.ops import distort_image_ops
+from tensorflow.contrib.image.python.ops import distort_image_ops
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
@@ -217,7 +217,7 @@ class AdjustSaturationInYiqTest(test_util.TensorFlowTestCase):
         'gb_same',
         'rgb_same',
     ]
-    with self.test_session():
+    with self.cached_session():
       for x_shape in x_shapes:
         for test_style in test_styles:
           x_np = np.random.rand(*x_shape) * 255.

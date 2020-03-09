@@ -1,15 +1,13 @@
 # Prototype of OptimizerV2.
 
+load("//tensorflow:tensorflow.bzl", "cuda_py_test")
+
 package(
     default_visibility = ["//tensorflow:internal"],
+    licenses = ["notice"],  # Apache 2.0
 )
 
-licenses(["notice"])  # Apache 2.0
-
 exports_files(["LICENSE"])
-
-load("//tensorflow:tensorflow.bzl", "py_test")
-load("//tensorflow:tensorflow.bzl", "cuda_py_test")
 
 filegroup(
     name = "all_files",
@@ -55,6 +53,8 @@ py_library(
         "//tensorflow/python:training",
         "//tensorflow/python:variable_scope",
         "//tensorflow/python:variables",
+        "//tensorflow/python/distribute:distribute_lib",
+        "//tensorflow/python/distribute:reduce_util",
     ],
 )
 
@@ -114,7 +114,6 @@ cuda_py_test(
     additional_deps = [
         ":training",
         "@six_archive//:six",
-        "//tensorflow/contrib/eager/python:checkpointable_utils",
         "//tensorflow/python:constant_op",
         "//tensorflow/python:dtypes",
         "//tensorflow/python:framework_ops",
@@ -193,6 +192,7 @@ cuda_py_test(
     srcs = ["rmsprop_test.py"],
     additional_deps = [
         ":training",
+        "@absl_py//absl/testing:parameterized",
         "//tensorflow/python:array_ops",
         "//tensorflow/python:embedding_ops",
         "//tensorflow/python:framework",
@@ -202,4 +202,5 @@ cuda_py_test(
         "//tensorflow/python:client_testlib",
         "//third_party/py/numpy",
     ],
+    tags = ["optonly"],
 )

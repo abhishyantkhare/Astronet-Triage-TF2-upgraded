@@ -20,11 +20,11 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.distributions.python.ops import test_util
-from astronet.contrib.distributions.python.ops.bijectors.invert import Invert
-from astronet.contrib.distributions.python.ops.bijectors.masked_autoregressive import _gen_mask
-from astronet.contrib.distributions.python.ops.bijectors.masked_autoregressive import masked_autoregressive_default_template
-from astronet.contrib.distributions.python.ops.bijectors.masked_autoregressive import MaskedAutoregressiveFlow
+from tensorflow.contrib.distributions.python.ops import test_util
+from tensorflow.contrib.distributions.python.ops.bijectors.invert import Invert
+from tensorflow.contrib.distributions.python.ops.bijectors.masked_autoregressive import _gen_mask
+from tensorflow.contrib.distributions.python.ops.bijectors.masked_autoregressive import masked_autoregressive_default_template
+from tensorflow.contrib.distributions.python.ops.bijectors.masked_autoregressive import MaskedAutoregressiveFlow
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import variables
@@ -71,7 +71,7 @@ class MaskedAutoregressiveFlowTest(test_util.VectorDistributionTestHelpers,
 
   def testBijector(self):
     x_ = np.arange(3 * 4 * 2).astype(np.float32).reshape(3, 4, 2)
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       ma = MaskedAutoregressiveFlow(
           validate_args=True,
           **self._autoregressive_flow_kwargs)
@@ -79,9 +79,10 @@ class MaskedAutoregressiveFlowTest(test_util.VectorDistributionTestHelpers,
       forward_x = ma.forward(x)
       # Use identity to invalidate cache.
       inverse_y = ma.inverse(array_ops.identity(forward_x))
-      fldj = ma.forward_log_det_jacobian(x)
+      fldj = ma.forward_log_det_jacobian(x, event_ndims=1)
       # Use identity to invalidate cache.
-      ildj = ma.inverse_log_det_jacobian(array_ops.identity(forward_x))
+      ildj = ma.inverse_log_det_jacobian(
+          array_ops.identity(forward_x), event_ndims=1)
       variables.global_variables_initializer().run()
       [
           forward_x_,
@@ -101,7 +102,7 @@ class MaskedAutoregressiveFlowTest(test_util.VectorDistributionTestHelpers,
 
   def testMutuallyConsistent(self):
     dims = 4
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       ma = MaskedAutoregressiveFlow(
           validate_args=True,
           **self._autoregressive_flow_kwargs)
@@ -120,7 +121,7 @@ class MaskedAutoregressiveFlowTest(test_util.VectorDistributionTestHelpers,
 
   def testInvertMutuallyConsistent(self):
     dims = 4
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       ma = Invert(MaskedAutoregressiveFlow(
           validate_args=True,
           **self._autoregressive_flow_kwargs))

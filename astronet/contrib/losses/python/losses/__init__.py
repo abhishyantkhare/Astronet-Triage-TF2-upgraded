@@ -14,7 +14,7 @@
 # ==============================================================================
 """Ops for building neural network losses.
 
-See @{$python/contrib.losses}.
+See [Contrib Losses](https://tensorflow.org/api_guides/python/contrib.losses).
 """
 
 from __future__ import absolute_import
@@ -22,5 +22,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from astronet.contrib.losses.python.losses.loss_ops import *
+from tensorflow.contrib.losses.python.losses.loss_ops import *
 # pylint: enable=wildcard-import

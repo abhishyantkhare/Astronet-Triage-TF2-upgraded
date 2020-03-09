@@ -15,7 +15,7 @@
 # ==============================================================================
 """Implementation of the Keras API meant to be a high-level API for TensorFlow.
 
-This module an alias for @{tf.keras}, for backwards compatibility.
+This module an alias for `tf.keras`, for backwards compatibility.
 
 Detailed documentation and user guides are also available at
 [keras.io](https://keras.io).
@@ -25,10 +25,10 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from astronet.contrib.keras.api.keras import *
+from tensorflow.contrib.keras.api.keras import *
 
 try:
-  from astronet.contrib.keras import python  # pylint: disable=g-import-not-at-top
+  from tensorflow.contrib.keras import python  # pylint: disable=g-import-not-at-top
   del python
 except ImportError:
   pass

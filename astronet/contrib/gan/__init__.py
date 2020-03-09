@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""TFGAN is a lightweight library for training and evaluating GANs.
+"""TF-GAN is a lightweight library for training and evaluating GANs.
 
 In addition to providing the infrastructure for easily training and evaluating
 GANS, this library contains modules for a TFGAN-backed Estimator,
@@ -24,17 +24,17 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-# Collapse TFGAN into a tiered namespace.
-from astronet.contrib.gan.python import estimator
-from astronet.contrib.gan.python import eval  # pylint:disable=redefined-builtin
-from astronet.contrib.gan.python import features
-from astronet.contrib.gan.python import losses
-from astronet.contrib.gan.python import namedtuples
-from astronet.contrib.gan.python import train
+# Collapse TF-GAN into a tiered namespace.
+from tensorflow.contrib.gan.python import estimator
+from tensorflow.contrib.gan.python import eval  # pylint:disable=redefined-builtin
+from tensorflow.contrib.gan.python import features
+from tensorflow.contrib.gan.python import losses
+from tensorflow.contrib.gan.python import namedtuples
+from tensorflow.contrib.gan.python import train
 
 # pylint: disable=unused-import,wildcard-import
-from astronet.contrib.gan.python.namedtuples import *
-from astronet.contrib.gan.python.train import *
+from tensorflow.contrib.gan.python.namedtuples import *
+from tensorflow.contrib.gan.python.train import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

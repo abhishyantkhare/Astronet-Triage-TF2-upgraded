@@ -19,5 +19,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from astronet.contrib.timeseries.python.timeseries import *
+from tensorflow.contrib.timeseries.python.timeseries import *
 # pylint: enable=wildcard-import

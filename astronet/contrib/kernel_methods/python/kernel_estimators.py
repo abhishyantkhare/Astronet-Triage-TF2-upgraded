@@ -20,12 +20,12 @@ from __future__ import print_function
 
 import six
 
-from astronet.contrib import layers
-from astronet.contrib.kernel_methods.python.mappers import dense_kernel_mapper as dkm
-from astronet.contrib.learn.python.learn.estimators import estimator
-from astronet.contrib.learn.python.learn.estimators import head as head_lib
-from astronet.contrib.learn.python.learn.estimators import linear
-from astronet.contrib.learn.python.learn.estimators import prediction_key
+from tensorflow.contrib import layers
+from tensorflow.contrib.kernel_methods.python.mappers import dense_kernel_mapper as dkm
+from tensorflow.contrib.learn.python.learn.estimators import estimator
+from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
+from tensorflow.contrib.learn.python.learn.estimators import linear
+from tensorflow.contrib.learn.python.learn.estimators import prediction_key
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import tf_logging as logging
 
@@ -77,7 +77,7 @@ def _update_features_and_columns(features, feature_columns,
     return features, feature_columns
 
   # First construct new columns and features affected by kernel_mappers_dict.
-  mapped_features = dict()
+  mapped_features = {}
   mapped_columns = set()
   for feature_column in kernel_mappers_dict:
     column_name = feature_column.name
@@ -90,7 +90,7 @@ def _update_features_and_columns(features, feature_columns,
     mapped_column_name = column_name + "_MAPPED"
     # Construct new feature columns based on provided kernel_mappers.
     column_kernel_mappers = kernel_mappers_dict[feature_column]
-    new_dim = sum([mapper.output_dim for mapper in column_kernel_mappers])
+    new_dim = sum(mapper.output_dim for mapper in column_kernel_mappers)
     mapped_columns.add(
         layers.feature_column.real_valued_column(mapped_column_name, new_dim))
 

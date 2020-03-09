@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.model_pruning.python import pruning
-from astronet.contrib.model_pruning.python.layers import rnn_cells
+from tensorflow.contrib.model_pruning.python import pruning
+from tensorflow.contrib.model_pruning.python.layers import rnn_cells
 from tensorflow.python.ops import random_ops
 from tensorflow.python.ops import rnn_cell as tf_rnn_cells
 from tensorflow.python.ops import variables
@@ -37,7 +37,7 @@ class RnnCellsTest(test.TestCase):
     expected_num_masks = 1
     expected_num_rows = 2 * self.dim
     expected_num_cols = 4 * self.dim
-    with self.test_session():
+    with self.cached_session():
       inputs = variables.Variable(
           random_ops.random_normal([self.batch_size, self.dim]))
       c = variables.Variable(
@@ -61,7 +61,7 @@ class RnnCellsTest(test.TestCase):
     expected_num_masks = 1
     expected_num_rows = 2 * self.dim
     expected_num_cols = 4 * self.dim
-    with self.test_session():
+    with self.cached_session():
       inputs = variables.Variable(
           random_ops.random_normal([self.batch_size, self.dim]))
       c = variables.Variable(

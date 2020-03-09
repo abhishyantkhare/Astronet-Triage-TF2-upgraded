@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import abc
 
-from astronet.contrib.timeseries.python.timeseries import feature_keys
-from astronet.contrib.timeseries.python.timeseries import math_utils
-from astronet.contrib.timeseries.python.timeseries.model import ModelOutputs
+from tensorflow.contrib.timeseries.python.timeseries import feature_keys
+from tensorflow.contrib.timeseries.python.timeseries import math_utils
+from tensorflow.contrib.timeseries.python.timeseries.model import ModelOutputs
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.framework import dtypes
@@ -149,6 +149,7 @@ class ChainingStateManager(_OverridableStateManager):
         key_dtype=dtypes.int64,
         default_values=self._start_state,
         empty_key=-1,
+        deleted_key=-2,
         name="cached_states",
         checkpoint=self._checkpoint_state)
 

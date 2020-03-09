@@ -23,7 +23,7 @@ import re
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from astronet.contrib.session_bundle import gc
+from tensorflow.contrib.session_bundle import gc
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import gfile
 from tensorflow.python.platform import test
@@ -104,7 +104,7 @@ class GcTest(test_util.TensorFlowTestCase):
 
     # create a simple parser that pulls the export_version from the directory.
     def parser(path):
-      match = re.match("^" + base_dir + "/(\\d+)$", path.path)
+      match = re.match(r"^" + base_dir + r"/(\d+)$", path.path)
       if not match:
         return None
       return path._replace(export_version=int(match.group(1)))

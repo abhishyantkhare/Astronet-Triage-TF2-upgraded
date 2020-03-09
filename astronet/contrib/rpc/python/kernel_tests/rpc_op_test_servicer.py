@@ -23,15 +23,15 @@ import time
 
 import grpc
 
-from astronet.contrib.rpc.python.kernel_tests import rpc_op_test_base
-from astronet.contrib.rpc.python.kernel_tests import test_example_pb2_grpc
+from tensorflow.contrib.rpc.python.kernel_tests import rpc_op_test_base
+from tensorflow.contrib.rpc.python.kernel_tests import test_example_pb2_grpc
 
 
 class RpcOpTestServicer(test_example_pb2_grpc.TestCaseServiceServicer):
   """Test servicer for RpcOp tests."""
 
-  def IncrementTestShapes(self, request, context):
-    """Increment the entries in the shape attribute of request.
+  def Increment(self, request, context):
+    """Increment the entries in the `values` attribute of request.
 
     Args:
       request: input TestCase.
@@ -40,8 +40,8 @@ class RpcOpTestServicer(test_example_pb2_grpc.TestCaseServiceServicer):
     Returns:
       output TestCase.
     """
-    for i in range(len(request.shape)):
-      request.shape[i] += 1
+    for i in range(len(request.values)):
+      request.values[i] += 1
     return request
 
   def AlwaysFailWithInvalidArgument(self, request, context):

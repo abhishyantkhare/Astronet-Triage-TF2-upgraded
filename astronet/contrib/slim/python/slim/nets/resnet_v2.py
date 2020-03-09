@@ -28,7 +28,7 @@ The key difference of the full preactivation 'v2' variant compared to the
 
 Typical use:
 
-   from astronet.contrib.slim.python.slim.nets import
+   from tensorflow.contrib.slim.python.slim.nets import
    resnet_v2
 
 ResNet-101 for image classification into 1000 classes:
@@ -52,12 +52,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib import layers as layers_lib
-from astronet.contrib.framework.python.ops import add_arg_scope
-from astronet.contrib.framework.python.ops import arg_scope
-from astronet.contrib.layers.python.layers import layers
-from astronet.contrib.layers.python.layers import utils
-from astronet.contrib.slim.python.slim.nets import resnet_utils
+from tensorflow.contrib import layers as layers_lib
+from tensorflow.contrib.framework.python.ops import add_arg_scope
+from tensorflow.contrib.framework.python.ops import arg_scope
+from tensorflow.contrib.layers.python.layers import layers
+from tensorflow.contrib.layers.python.layers import utils
+from tensorflow.contrib.slim.python.slim.nets import resnet_utils
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import nn_ops
 from tensorflow.python.ops import variable_scope
@@ -221,7 +221,7 @@ def resnet_v2(inputs,
             net, activation_fn=nn_ops.relu, scope='postnorm')
         if global_pool:
           # Global average pooling.
-          net = math_ops.reduce_mean(net, [1, 2], name='pool5', keep_dims=True)
+          net = math_ops.reduce_mean(net, [1, 2], name='pool5', keepdims=True)
         if num_classes is not None:
           net = layers_lib.conv2d(
               net,

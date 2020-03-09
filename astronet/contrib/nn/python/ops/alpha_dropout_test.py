@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.nn.python.ops.alpha_dropout import alpha_dropout
+from tensorflow.contrib.nn.python.ops.alpha_dropout import alpha_dropout
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
@@ -32,7 +32,7 @@ class AlphaDropoutTest(test.TestCase):
   def testAlphaDropout(self):
     x_dim, y_dim = 40, 30
     for keep_prob in [0.1, 0.5, 0.8]:
-      with self.test_session():
+      with self.cached_session():
         t = random_ops.random_normal([x_dim, y_dim])
         output = alpha_dropout(t, keep_prob)
         self.assertEqual([x_dim, y_dim], output.get_shape())

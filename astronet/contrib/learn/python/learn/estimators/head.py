@@ -27,12 +27,12 @@ import abc
 
 import six
 
-from astronet.contrib import framework as framework_lib
-from astronet.contrib import layers as layers_lib
-from astronet.contrib.learn.python.learn.estimators import constants
-from astronet.contrib.learn.python.learn.estimators import model_fn
-from astronet.contrib.learn.python.learn.estimators import prediction_key
-from astronet.contrib.learn.python.learn.estimators.metric_key import MetricKey as mkey
+from tensorflow.contrib import framework as framework_lib
+from tensorflow.contrib import layers as layers_lib
+from tensorflow.contrib.learn.python.learn.estimators import constants
+from tensorflow.contrib.learn.python.learn.estimators import model_fn
+from tensorflow.contrib.learn.python.learn.estimators import prediction_key
+from tensorflow.contrib.learn.python.learn.estimators.metric_key import MetricKey as mkey
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import sparse_tensor
@@ -55,6 +55,7 @@ from tensorflow.python.util import tf_inspect
 from tensorflow.python.util.deprecation import deprecated
 
 
+@six.add_metaclass(abc.ABCMeta)
 class Head(object):
   """Interface for the head/top of a model.
 
@@ -125,14 +126,13 @@ class Head(object):
         scope=...)
     if mode == tf.contrib.learn.ModeKeys.TRAIN:
       optimizer = ...
-      sync = tf.train.SyncReplicasOptimizer(opt=optimizer, ...)
+      sync = tf.compat.v1.train.SyncReplicasOptimizer(opt=optimizer, ...)
       update_op = tf.contrib.layers.optimize_loss(optimizer=sync,
                                                   loss=model_fn_ops.loss, ...)
       hooks = [sync.make_session_run_hook(is_chief)]
       ... update train_op and hooks in ModelFnOps and return
     ```
   """
-  __metaclass__ = abc.ABCMeta
 
   @abc.abstractproperty
   def logits_dimension(self):
@@ -504,7 +504,6 @@ def no_op_train_fn(loss):
 
 class _SingleHead(Head):
   """Interface for a single head/top of a model."""
-  __metaclass__ = abc.ABCMeta
 
   def __init__(
       self, problem_type, logits_dimension, label_name=None,
@@ -563,12 +562,13 @@ def _mean_squared_loss(labels, logits, weights=None):
     labels = ops.convert_to_tensor(labels)
     # To prevent broadcasting inside "-".
     if len(labels.get_shape()) == 1:
-      labels = array_ops.expand_dims(labels, dim=(1,))
+      labels = array_ops.expand_dims(labels, axis=1)
     # TODO(zakaria): make sure it does not recreate the broadcast bug.
     if len(logits.get_shape()) == 1:
-      logits = array_ops.expand_dims(logits, dim=(1,))
+      logits = array_ops.expand_dims(logits, axis=1)
     logits.get_shape().assert_is_compatible_with(labels.get_shape())
-    loss = math_ops.square(logits - math_ops.to_float(labels), name=name)
+    loss = math_ops.squared_difference(
+        logits, math_ops.cast(labels, dtypes.float32), name=name)
     return _compute_weighted_loss(loss, weights)
 
 
@@ -579,10 +579,10 @@ def _poisson_loss(labels, logits, weights=None):
     labels = ops.convert_to_tensor(labels)
     # To prevent broadcasting inside "-".
     if len(labels.get_shape()) == 1:
-      labels = array_ops.expand_dims(labels, dim=(1,))
+      labels = array_ops.expand_dims(labels, axis=1)
     # TODO(zakaria): make sure it does not recreate the broadcast bug.
     if len(logits.get_shape()) == 1:
-      logits = array_ops.expand_dims(logits, dim=(1,))
+      logits = array_ops.expand_dims(logits, axis=1)
     logits.get_shape().assert_is_compatible_with(labels.get_shape())
     loss = nn.log_poisson_loss(labels, logits, compute_full_loss=True,
                                name=name)
@@ -777,7 +777,7 @@ class _RegressionHead(_SingleHead):
     key = prediction_key.PredictionKey.SCORES
     with ops.name_scope(None, "predictions", (logits,)):
       if self.logits_dimension == 1:
-        logits = array_ops.squeeze(logits, squeeze_dims=(1,), name=key)
+        logits = array_ops.squeeze(logits, axis=(1,), name=key)
       return {key: self._link_fn(logits)}
 
   def _metrics(self, eval_loss, predictions, labels, weights):
@@ -793,11 +793,11 @@ def _log_loss_with_two_classes(labels, logits, weights=None):
   with ops.name_scope(None, "log_loss_with_two_classes",
                       (logits, labels)) as name:
     logits = ops.convert_to_tensor(logits)
-    labels = math_ops.to_float(labels)
+    labels = math_ops.cast(labels, dtypes.float32)
     # TODO(ptucker): This will break for dynamic shapes.
     # sigmoid_cross_entropy_with_logits requires [batch_size, 1] labels.
     if len(labels.get_shape()) == 1:
-      labels = array_ops.expand_dims(labels, dim=(1,))
+      labels = array_ops.expand_dims(labels, axis=1)
     loss = nn.sigmoid_cross_entropy_with_logits(labels=labels, logits=logits,
                                                 name=name)
     return _compute_weighted_loss(loss, weights)
@@ -974,7 +974,7 @@ def _softmax_cross_entropy_loss(labels, logits, weights=None):
     is_squeezed_labels = False
     # TODO(ptucker): This will break for dynamic shapes.
     if len(labels.get_shape()) == 2:
-      labels = array_ops.squeeze(labels, squeeze_dims=(1,))
+      labels = array_ops.squeeze(labels, axis=(1,))
       is_squeezed_labels = True
 
     loss = nn.sparse_softmax_cross_entropy_with_logits(
@@ -1214,8 +1214,8 @@ def _sparse_labels_to_indicator(labels, num_classes):
     if num_classes < 2:
       raise ValueError("Must set num_classes >= 2 when passing labels as a "
                        "SparseTensor.")
-    return math_ops.to_int64(
-        sparse_ops.sparse_to_indicator(labels, num_classes))
+    return math_ops.cast(
+        sparse_ops.sparse_to_indicator(labels, num_classes), dtypes.int64)
   return labels
 
 
@@ -1400,8 +1400,9 @@ class _MultiLabelHead(_SingleHead):
               math_ops.sigmoid(
                   logits, name=prediction_key.PredictionKey.PROBABILITIES),
           prediction_key.PredictionKey.CLASSES:
-              math_ops.to_int64(
+              math_ops.cast(
                   math_ops.greater(logits, 0),
+                  dtypes.int64,
                   name=prediction_key.PredictionKey.CLASSES)
       }
 
@@ -1783,7 +1784,7 @@ def _weight_tensor(features, weight_column_name):
     raise ValueError("Weights {} missing from features.".format(
         weight_column_name))
   with ops.name_scope(None, "weight_tensor", tuple(six.itervalues(features))):
-    weight_tensor = math_ops.to_float(features[weight_column_name])
+    weight_tensor = math_ops.cast(features[weight_column_name], dtypes.float32)
     shape = weight_tensor.get_shape()
     rank = shape.ndims
     # We don't bother with expanding dims of non-staticly shaped tensors or
@@ -1833,7 +1834,7 @@ def _compute_weighted_loss(loss_unweighted, weight, name="loss"):
     weighted_loss_mean = math_ops.reduce_mean(weighted_loss, name=name_scope)
     weighted_loss_normalized = math_ops.div(
         math_ops.reduce_sum(weighted_loss),
-        math_ops.to_float(math_ops.reduce_sum(weight)),
+        math_ops.cast(math_ops.reduce_sum(weight), dtypes.float32),
         name="weighted_average_loss")
 
     return weighted_loss_mean, weighted_loss_normalized
@@ -1862,12 +1863,12 @@ def _get_arguments(func):
   if hasattr(func, "__code__"):
     # Regular function.
     return tf_inspect.getargspec(func)
-  elif hasattr(func, "__call__"):
-    # Callable object.
-    return _get_arguments(func.__call__)
   elif hasattr(func, "func"):
     # Partial function.
     return _get_arguments(func.func)
+  elif hasattr(func, "__call__"):
+    # Callable object.
+    return _get_arguments(func.__call__)
 
 
 def _verify_loss_fn_args(loss_fn):
@@ -1952,7 +1953,7 @@ def _sigmoid_cross_entropy_loss(labels, logits, weights=None):
                       (logits, labels)) as name:
     # sigmoid_cross_entropy_with_logits requires [batch_size, n_classes] labels.
     loss = nn.sigmoid_cross_entropy_with_logits(
-        labels=math_ops.to_float(labels), logits=logits, name=name)
+        labels=math_ops.cast(labels, dtypes.float32), logits=logits, name=name)
     return _compute_weighted_loss(loss, weights)
 
 
@@ -1960,11 +1961,11 @@ def _float_weights_or_none(weights):
   if weights is None:
     return None
   with ops.name_scope(None, "float_weights", (weights,)) as name:
-    return math_ops.to_float(weights, name=name)
+    return math_ops.cast(weights, dtypes.float32, name=name)
 
 
 def _indicator_labels_streaming_mean(labels, weights=None, class_id=None):
-  labels = math_ops.to_float(labels)
+  labels = math_ops.cast(labels, dtypes.float32)
   weights = _float_weights_or_none(weights)
   if weights is not None:
     weights = weights_broadcast_ops.broadcast_weights(weights, labels)
@@ -1978,7 +1979,7 @@ def _indicator_labels_streaming_mean(labels, weights=None, class_id=None):
 def _predictions_streaming_mean(predictions,
                                 weights=None,
                                 class_id=None):
-  predictions = math_ops.to_float(predictions)
+  predictions = math_ops.cast(predictions, dtypes.float32)
   weights = _float_weights_or_none(weights)
   if weights is not None:
     weights = weights_broadcast_ops.broadcast_weights(weights, predictions)
@@ -2002,9 +2003,9 @@ def _class_predictions_streaming_mean(predictions, weights, class_id):
   return metrics_lib.mean(
       array_ops.where(
           math_ops.equal(
-              math_ops.to_int32(class_id), math_ops.to_int32(predictions)),
-          array_ops.ones_like(predictions),
-          array_ops.zeros_like(predictions)),
+              math_ops.cast(class_id, dtypes.int32),
+              math_ops.cast(predictions, dtypes.int32)),
+          array_ops.ones_like(predictions), array_ops.zeros_like(predictions)),
       weights=weights)
 
 
@@ -2012,15 +2013,16 @@ def _class_labels_streaming_mean(labels, weights, class_id):
   return metrics_lib.mean(
       array_ops.where(
           math_ops.equal(
-              math_ops.to_int32(class_id), math_ops.to_int32(labels)),
-          array_ops.ones_like(labels), array_ops.zeros_like(labels)),
+              math_ops.cast(class_id, dtypes.int32),
+              math_ops.cast(labels, dtypes.int32)), array_ops.ones_like(labels),
+          array_ops.zeros_like(labels)),
       weights=weights)
 
 
 def _streaming_auc(predictions, labels, weights=None, class_id=None,
                    curve="ROC"):
   # pylint: disable=missing-docstring
-  predictions = math_ops.to_float(predictions)
+  predictions = math_ops.cast(predictions, dtypes.float32)
   if labels.dtype.base_dtype != dtypes.bool:
     logging.warning("Casting %s labels to bool.", labels.dtype)
     labels = math_ops.cast(labels, dtypes.bool)
@@ -2047,8 +2049,8 @@ def _assert_class_id(class_id, num_classes=None):
 
 
 def _streaming_accuracy_at_threshold(predictions, labels, weights, threshold):
-  threshold_predictions = math_ops.to_float(
-      math_ops.greater_equal(predictions, threshold))
+  threshold_predictions = math_ops.cast(
+      math_ops.greater_equal(predictions, threshold), dtypes.float32)
   return metrics_lib.accuracy(labels, threshold_predictions, weights)
 
 

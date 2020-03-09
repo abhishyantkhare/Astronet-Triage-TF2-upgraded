@@ -20,7 +20,7 @@ from __future__ import print_function
 
 
 # pylint: disable=wildcard-import
-from astronet.contrib.resampler.python.ops.resampler_ops import *
+from tensorflow.contrib.resampler.python.ops.resampler_ops import *
 from tensorflow.python.util.all_util import remove_undocumented
 
 remove_undocumented(__name__, ["resampler"])

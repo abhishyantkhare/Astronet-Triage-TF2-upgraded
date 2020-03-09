@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.timeseries.python.timeseries.state_space_models import filtering_postprocessor
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import filtering_postprocessor
 
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
@@ -61,7 +61,7 @@ class FilteringStepPostprocessorTest(test.TestCase):
       expected_state = [[[80.], [20.]],
                         [1., 6.],
                         [-1, -2]]
-      with self.test_session():
+      with self.cached_session():
         for interpolated, expected in zip(interpolated_state, expected_state):
           self.assertAllClose(expected, interpolated.eval())
         self.assertGreater(0., updated_outputs["anomaly_score"][0].eval())

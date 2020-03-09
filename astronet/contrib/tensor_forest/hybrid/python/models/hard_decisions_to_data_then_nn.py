@@ -17,10 +17,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib import layers
-from astronet.contrib.tensor_forest.hybrid.python import hybrid_model
-from astronet.contrib.tensor_forest.hybrid.python.layers import decisions_to_data
-from astronet.contrib.tensor_forest.hybrid.python.layers import fully_connected
+from tensorflow.contrib import layers
+from tensorflow.contrib.tensor_forest.hybrid.python import hybrid_model
+from tensorflow.contrib.tensor_forest.hybrid.python.layers import decisions_to_data
+from tensorflow.contrib.tensor_forest.hybrid.python.layers import fully_connected
 from tensorflow.python.ops import nn_ops
 from tensorflow.python.training import adagrad
 

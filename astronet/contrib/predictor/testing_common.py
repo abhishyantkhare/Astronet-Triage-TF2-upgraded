@@ -19,10 +19,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.learn.python.learn.estimators import constants
-from astronet.contrib.learn.python.learn.estimators import estimator as contrib_estimator
-from astronet.contrib.learn.python.learn.estimators import model_fn as contrib_model_fn
-from astronet.contrib.learn.python.learn.utils import input_fn_utils
+from tensorflow.contrib.learn.python.learn.estimators import constants
+from tensorflow.contrib.learn.python.learn.estimators import estimator as contrib_estimator
+from tensorflow.contrib.learn.python.learn.estimators import model_fn as contrib_model_fn
+from tensorflow.contrib.learn.python.learn.utils import input_fn_utils
 from tensorflow.python.estimator import estimator as core_estimator
 from tensorflow.python.estimator import model_fn
 from tensorflow.python.estimator.export import export_lib
@@ -40,7 +40,7 @@ def get_arithmetic_estimator(core=True, model_dir=None):
 
   Args:
     core: if `True`, returns a `tensorflow.python.estimator.Estimator`.
-      Otherwise, returns a `astronet.contrib.learn.Estimator`.
+      Otherwise, returns a `tensorflow.contrib.learn.Estimator`.
     model_dir: directory in which to export checkpoints and saved models.
   Returns:
     An `Estimator` that performs arithmetic operations on its inputs.

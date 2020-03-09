@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from astronet.contrib.fused_conv.python.ops.fused_conv2d_bias_activation_op import *
+from tensorflow.contrib.fused_conv.python.ops.fused_conv2d_bias_activation_op import *
 from tensorflow.python.util.all_util import remove_undocumented
 
 remove_undocumented(__name__, ['fused_conv2d_bias_activation'])

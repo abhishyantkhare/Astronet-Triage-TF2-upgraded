@@ -22,8 +22,8 @@ from __future__ import print_function
 import tempfile
 import numpy as np
 
-from astronet.contrib.predictor import core_estimator_predictor
-from astronet.contrib.predictor import testing_common
+from tensorflow.contrib.predictor import core_estimator_predictor
+from tensorflow.contrib.predictor import testing_common
 from tensorflow.python.platform import test
 
 

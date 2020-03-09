@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib import layers
-from astronet.contrib.layers.python.layers import initializers
-from astronet.contrib.layers.python.layers import regularizers
+from tensorflow.contrib import layers
+from tensorflow.contrib.layers.python.layers import initializers
+from tensorflow.contrib.layers.python.layers import regularizers
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
@@ -85,7 +85,7 @@ class VarianceScalingInitializerTest(test.TestCase):
 
   def _test_variance(self, initializer, shape, variance, factor, mode, uniform):
     with ops.Graph().as_default() as g:
-      with self.test_session(graph=g) as sess:
+      with self.session(graph=g) as sess:
         var = variable_scope.get_variable(
             name='test',
             shape=shape,

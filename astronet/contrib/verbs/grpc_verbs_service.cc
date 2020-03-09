@@ -15,11 +15,8 @@ limitations under the License.
 
 #ifdef TENSORFLOW_USE_VERBS
 
-#include "grpc++/alarm.h"
-#include "grpc++/grpc++.h"
-#include "grpc++/server_builder.h"
-
 #include "tensorflow/contrib/verbs/grpc_verbs_service.h"
+
 #include "tensorflow/core/distributed_runtime/rpc/grpc_util.h"
 #include "tensorflow/core/distributed_runtime/session_mgr.h"
 

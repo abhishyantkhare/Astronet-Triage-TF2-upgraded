@@ -22,16 +22,16 @@ import os
 import tempfile
 import time
 
-from astronet.contrib.layers.python.layers import feature_column
-from astronet.contrib.learn.python.learn import estimator as estimator_lib
-from astronet.contrib.learn.python.learn import evaluable
-from astronet.contrib.learn.python.learn import experiment
-from astronet.contrib.learn.python.learn import run_config
-from astronet.contrib.learn.python.learn import trainable
-from astronet.contrib.learn.python.learn.estimators import dnn
-from astronet.contrib.learn.python.learn.estimators import run_config as run_config_lib
-from astronet.contrib.learn.python.learn.estimators import test_data
-from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
+from tensorflow.contrib.layers.python.layers import feature_column
+from tensorflow.contrib.learn.python.learn import estimator as estimator_lib
+from tensorflow.contrib.learn.python.learn import evaluable
+from tensorflow.contrib.learn.python.learn import experiment
+from tensorflow.contrib.learn.python.learn import run_config
+from tensorflow.contrib.learn.python.learn import trainable
+from tensorflow.contrib.learn.python.learn.estimators import dnn
+from tensorflow.contrib.learn.python.learn.estimators import run_config as run_config_lib
+from tensorflow.contrib.learn.python.learn.estimators import test_data
+from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session
 from tensorflow.python.estimator import estimator as core_estimator
@@ -500,7 +500,7 @@ class ExperimentTest(test.TestCase):
       noop_hook = _NoopHook()
 
       def _predicate_fn(eval_result, checkpoint_path):
-        self.assertEqual(not eval_result,
+        self.assertEqual(eval_result is None,
                          checkpoint_path is None)
         return est.eval_count < 3  # pylint: disable=cell-var-from-loop
 

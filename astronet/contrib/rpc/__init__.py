@@ -21,8 +21,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.rpc.python.ops.rpc_op import rpc
-from astronet.contrib.rpc.python.ops.rpc_op import try_rpc
+from tensorflow.contrib.rpc.python.ops.rpc_op import rpc
+from tensorflow.contrib.rpc.python.ops.rpc_op import try_rpc
 
 from tensorflow.python.util.all_util import remove_undocumented
 remove_undocumented(__name__)

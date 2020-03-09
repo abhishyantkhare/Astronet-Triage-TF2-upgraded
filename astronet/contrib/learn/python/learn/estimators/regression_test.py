@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.learn.python import learn
+from tensorflow.contrib.learn.python import learn
 from tensorflow.python.platform import test
 
 

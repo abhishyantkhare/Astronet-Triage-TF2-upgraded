@@ -19,12 +19,12 @@ from __future__ import division
 from __future__ import print_function
 
 from tensorflow.python.training import training_util
-from astronet.contrib.layers.python.layers import feature_column
-from astronet.contrib.learn.python.learn.datasets import base
-from astronet.contrib.learn.python.learn.estimators import composable_model
-from astronet.contrib.learn.python.learn.estimators import estimator
-from astronet.contrib.learn.python.learn.estimators import head as head_lib
-from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from tensorflow.contrib.layers.python.layers import feature_column
+from tensorflow.contrib.learn.python.learn.datasets import base
+from tensorflow.contrib.learn.python.learn.estimators import composable_model
+from tensorflow.contrib.learn.python.learn.estimators import estimator
+from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
+from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

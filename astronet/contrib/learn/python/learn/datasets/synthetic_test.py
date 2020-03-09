@@ -21,8 +21,8 @@ import six
 
 import numpy as np
 from tensorflow.python.platform import test
-from astronet.contrib.learn.python.learn import datasets
-from astronet.contrib.learn.python.learn.datasets import synthetic
+from tensorflow.contrib.learn.python.learn import datasets
+from tensorflow.contrib.learn.python.learn.datasets import synthetic
 
 
 class SyntheticTest(test.TestCase):

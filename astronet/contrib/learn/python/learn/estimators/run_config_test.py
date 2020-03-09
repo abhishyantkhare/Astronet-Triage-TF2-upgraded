@@ -21,7 +21,7 @@ from __future__ import print_function
 import copy
 import json
 
-from astronet.contrib.learn.python.learn.estimators import run_config as run_config_lib
+from tensorflow.contrib.learn.python.learn.estimators import run_config as run_config_lib
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.estimator import run_config as core_run_config
 from tensorflow.python.platform import test

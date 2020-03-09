@@ -20,7 +20,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.input_pipeline.python.ops.input_pipeline_ops import obtain_next
+from tensorflow.contrib.input_pipeline.python.ops.input_pipeline_ops import obtain_next
 
 from tensorflow.python.util.all_util import remove_undocumented
 remove_undocumented(__name__)

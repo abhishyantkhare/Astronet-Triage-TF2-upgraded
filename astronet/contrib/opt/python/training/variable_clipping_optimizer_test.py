@@ -19,7 +19,7 @@ from __future__ import print_function
 import contextlib
 import socket
 import numpy as np
-from astronet.contrib.opt.python.training import variable_clipping_optimizer
+from tensorflow.contrib.opt.python.training import variable_clipping_optimizer
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
@@ -158,7 +158,7 @@ class VariableClippingOptimizerTest(test.TestCase):
 
   def testDenseLocal(self):
     for dtype in [dtypes.float32, dtypes.float64, dtypes.half]:
-      with self.test_session():
+      with self.cached_session():
         var0, var1, update_op = self._setupDense(False, dtype)
         self._assertDenseCorrect(var0, var1, update_op)
 
@@ -171,7 +171,7 @@ class VariableClippingOptimizerTest(test.TestCase):
 
   def testSparseLocal(self):
     for dtype in [dtypes.float64, dtypes.float32, dtypes.half]:
-      with self.test_session():
+      with self.cached_session():
         var0, var1, update_op = self._setupSparse(False, dtype)
         self._assertSparseCorrect(var0, var1, update_op)
 

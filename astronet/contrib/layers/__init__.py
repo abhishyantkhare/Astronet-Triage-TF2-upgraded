@@ -14,11 +14,11 @@
 # ==============================================================================
 """Ops for building neural network layers, regularizers, summaries, etc.
 
-See the @{$python/contrib.layers} guide.
-
 @@avg_pool2d
 @@avg_pool3d
 @@batch_norm
+@@convolution
+@@convolution1d
 @@convolution2d
 @@convolution3d
 @@conv2d_in_plane
@@ -113,12 +113,13 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from astronet.contrib.layers.python.layers import *
+from tensorflow.contrib.layers.python.layers import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented
 
 _allowed_symbols = ['bias_add',
+                    'conv1d',
                     'conv2d',
                     'conv3d',
                     'elu',

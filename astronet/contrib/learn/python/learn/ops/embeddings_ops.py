@@ -27,7 +27,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.framework import deprecated
+from tensorflow.contrib.framework import deprecated
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops as array_ops_
 from tensorflow.python.ops import math_ops

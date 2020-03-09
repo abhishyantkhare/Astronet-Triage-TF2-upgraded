@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import random
 
-from astronet.contrib.layers.python.layers import feature_column
-from astronet.contrib.learn.python.learn.datasets import base
-from astronet.contrib.learn.python.learn.estimators import dnn
-from astronet.contrib.learn.python.learn.estimators import run_config
+from tensorflow.contrib.layers.python.layers import feature_column
+from tensorflow.contrib.learn.python.learn.datasets import base
+from tensorflow.contrib.learn.python.learn.estimators import dnn
+from tensorflow.contrib.learn.python.learn.estimators import run_config
 from tensorflow.python.framework import random_seed
 from tensorflow.python.platform import test
 

@@ -1,13 +1,20 @@
 # Description:
 #   Verbs RDMA communication interfaces and implementations for TensorFlow.
 
-package(default_visibility = [
-    "//tensorflow:__subpackages__",
-])
-
-licenses(["notice"])  # Apache 2.0
-
 load("//tensorflow:tensorflow.bzl", "tf_cuda_library")
+
+# For platform specific build config
+load(
+    "//tensorflow/core/platform:default/build_config.bzl",
+    "tf_proto_library_cc",
+)
+
+package(
+    default_visibility = [
+        "//tensorflow:__subpackages__",
+    ],
+    licenses = ["notice"],  # Apache 2.0
+)
 
 exports_files(["LICENSE"])
 
@@ -17,12 +24,6 @@ filegroup(
         "**/*.cc",
         "**/*.h",
     ]),
-)
-
-# For platform specific build config
-load(
-    "//tensorflow/core:platform/default/build_config.bzl",
-    "tf_proto_library_cc",
 )
 
 tf_proto_library_cc(
@@ -53,12 +54,12 @@ cc_library(
         ":grpc_verbs_service_impl",
         ":rdma_mgr",
         ":verbs_service_proto_cc",
+        "//tensorflow:grpc++",
         "//tensorflow/core:lib_internal",
         "//tensorflow/core/distributed_runtime:session_mgr",
         "//tensorflow/core/distributed_runtime/rpc:async_service_interface",
         "//tensorflow/core/distributed_runtime/rpc:grpc_call",
         "//tensorflow/core/distributed_runtime/rpc:grpc_util",
-        "@grpc//:grpc++_unsecure",
     ],
     alwayslink = 1,
 )
@@ -69,7 +70,7 @@ cc_library(
     hdrs = ["grpc_verbs_service_impl.h"],
     deps = [
         ":verbs_service_proto_cc",
-        "@grpc//:grpc++_unsecure",
+        "//tensorflow:grpc++",
     ],
 )
 

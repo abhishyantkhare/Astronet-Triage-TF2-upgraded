@@ -23,7 +23,7 @@ import re
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from astronet.contrib.learn.python.learn.utils import gc
+from tensorflow.contrib.learn.python.learn.utils import gc
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import gfile
 from tensorflow.python.platform import test
@@ -36,10 +36,10 @@ def _create_parser(base_dir):
     # Modify the path object for RegEx match for Windows Paths
     if os.name == "nt":
       match = re.match(
-          "^" + compat.as_str_any(base_dir).replace("\\", "/") + "/(\\d+)$",
+          r"^" + compat.as_str_any(base_dir).replace("\\", "/") + r"/(\d+)$",
           compat.as_str_any(path.path).replace("\\", "/"))
     else:
-      match = re.match("^" + compat.as_str_any(base_dir) + "/(\\d+)$",
+      match = re.match(r"^" + compat.as_str_any(base_dir) + r"/(\d+)$",
                        compat.as_str_any(path.path))
     if not match:
       return None

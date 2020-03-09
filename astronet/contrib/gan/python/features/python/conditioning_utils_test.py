@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.gan.python.features.python import conditioning_utils_impl as conditioning_utils
+from tensorflow.contrib.gan.python.features.python import conditioning_utils_impl as conditioning_utils
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
@@ -45,7 +45,7 @@ class ConditioningUtilsTest(test.TestCase):
           array_ops.placeholder(dtypes.float32, (5, None)),
           array_ops.placeholder(dtypes.float32, (5, 1)))
 
-    with self.assertRaisesRegexp(ValueError, 'expected min_ndim=2'):
+    with self.assertRaisesRegexp(ValueError, 'at least 2D'):
       conditioning_utils.condition_tensor(
           array_ops.placeholder(dtypes.float32, (5, 2)),
           array_ops.placeholder(dtypes.float32, (5)))

@@ -21,11 +21,11 @@ from __future__ import print_function
 import os
 import tempfile
 
-from astronet.contrib.slim.python.slim import queues
-from astronet.contrib.slim.python.slim.data import dataset
-from astronet.contrib.slim.python.slim.data import dataset_data_provider
-from astronet.contrib.slim.python.slim.data import test_utils
-from astronet.contrib.slim.python.slim.data import tfexample_decoder
+from tensorflow.contrib.slim.python.slim import queues
+from tensorflow.contrib.slim.python.slim.data import dataset
+from tensorflow.contrib.slim.python.slim.data import dataset_data_provider
+from tensorflow.contrib.slim.python.slim.data import test_utils
+from tensorflow.contrib.slim.python.slim.data import tfexample_decoder
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
@@ -88,7 +88,7 @@ class DatasetDataProviderTest(test.TestCase):
     height = 300
     width = 280
 
-    with self.test_session():
+    with self.cached_session():
       test_dataset = _create_tfrecord_dataset(dataset_dir)
       provider = dataset_data_provider.DatasetDataProvider(test_dataset)
       key, image, label = provider.get(['record_key', 'image', 'label'])
@@ -111,7 +111,7 @@ class DatasetDataProviderTest(test.TestCase):
     height = 300
     width = 280
 
-    with self.test_session():
+    with self.cached_session():
       provider = dataset_data_provider.DatasetDataProvider(
           _create_tfrecord_dataset(dataset_dir))
     [image] = provider.get(['image'])
@@ -128,7 +128,7 @@ class DatasetDataProviderTest(test.TestCase):
     dataset_dir = tempfile.mkdtemp(prefix=os.path.join(self.get_temp_dir(),
                                                        'tfrecord_dataset'))
 
-    with self.test_session():
+    with self.cached_session():
       with self.assertRaises(ValueError):
         dataset_data_provider.DatasetDataProvider(
             _create_tfrecord_dataset(dataset_dir), record_key='image')

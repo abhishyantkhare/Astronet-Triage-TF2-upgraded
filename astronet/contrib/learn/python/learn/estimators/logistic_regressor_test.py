@@ -20,12 +20,12 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib import layers
+from tensorflow.contrib import layers
 from tensorflow.python.training import training_util
-from astronet.contrib.layers.python.layers import optimizers
-from astronet.contrib.learn.python.learn.datasets import base
-from astronet.contrib.learn.python.learn.estimators import logistic_regressor
-from astronet.contrib.learn.python.learn.estimators import metric_key
+from tensorflow.contrib.layers.python.layers import optimizers
+from tensorflow.contrib.learn.python.learn.datasets import base
+from tensorflow.contrib.learn.python.learn.estimators import logistic_regressor
+from tensorflow.contrib.learn.python.learn.estimators import metric_key
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

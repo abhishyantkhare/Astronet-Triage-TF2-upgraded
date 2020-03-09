@@ -25,18 +25,21 @@ from __future__ import print_function
 
 import abc
 
-from astronet.contrib.slim.python.slim.data import data_decoder
+import six
+
+from tensorflow.contrib.slim.python.slim.data import data_decoder
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import control_flow_ops
-from tensorflow.python.ops import functional_ops
+from tensorflow.python.ops import map_fn
 from tensorflow.python.ops import image_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import parsing_ops
 from tensorflow.python.ops import sparse_ops
 
 
+@six.add_metaclass(abc.ABCMeta)
 class ItemHandler(object):
   """Specifies the item-to-Features mapping for tf.parse_example.
 
@@ -44,8 +47,6 @@ class ItemHandler(object):
   proto as well as a function that post-processes the results of Example
   parsing.
   """
-
-  __metaclass__ = abc.ABCMeta
 
   def __init__(self, keys):
     """Constructs the handler with the name of the tf.Feature keys to use.
@@ -102,7 +103,7 @@ class BoundingBox(ItemHandler):
   """An ItemHandler that concatenates a set of parsed Tensors to Bounding Boxes.
   """
 
-  def __init__(self, keys=None, prefix=None):
+  def __init__(self, keys=None, prefix=''):
     """Initialize the bounding box handler.
 
     Args:
@@ -328,7 +329,7 @@ class SparseTensor(ItemHandler):
       shape = indices.dense_shape
     indices_shape = array_ops.shape(indices.indices)
     rank = indices_shape[1]
-    ids = math_ops.to_int64(indices.values)
+    ids = math_ops.cast(indices.values, dtypes.int64)
     indices_columns_to_preserve = array_ops.slice(
         indices.indices, [0, 0], array_ops.stack([-1, rank - 1]))
     new_indices = array_ops.concat(
@@ -366,7 +367,7 @@ class Image(ItemHandler):
       dtype: images will be decoded at this bit depth. Different formats
         support different bit depths.
           See tf.image.decode_image,
-              tf.decode_raw,
+              tf.io.decode_raw,
       repeated: if False, decodes a single image. If True, decodes a
         variable number of image strings from a 1D tensor of strings.
       dct_method: An optional string. Defaults to empty string. It only takes
@@ -395,8 +396,8 @@ class Image(ItemHandler):
     image_format = keys_to_tensors[self._format_key]
 
     if self._repeated:
-      return functional_ops.map_fn(lambda x: self._decode(x, image_format),
-                                   image_buffer, dtype=self._dtype)
+      return map_fn.map_fn(lambda x: self._decode(x, image_format),
+                           image_buffer, dtype=self._dtype)
     else:
       return self._decode(image_buffer, image_format)
 
@@ -416,12 +417,17 @@ class Image(ItemHandler):
 
     def decode_image():
       """Decodes a image based on the headers."""
-      return image_ops.decode_image(image_buffer, channels=self._channels)
+      return math_ops.cast(
+          image_ops.decode_image(image_buffer, channels=self._channels),
+          self._dtype)
 
     def decode_jpeg():
       """Decodes a jpeg image with specified '_dct_method'."""
-      return image_ops.decode_jpeg(
-          image_buffer, channels=self._channels, dct_method=self._dct_method)
+      return math_ops.cast(
+          image_ops.decode_jpeg(
+              image_buffer,
+              channels=self._channels,
+              dct_method=self._dct_method), self._dtype)
 
     def check_jpeg():
       """Checks if an image is jpeg."""
@@ -437,11 +443,9 @@ class Image(ItemHandler):
       """Decodes a raw image."""
       return parsing_ops.decode_raw(image_buffer, out_type=self._dtype)
 
-    pred_fn_pairs = {
-        math_ops.logical_or(
-            math_ops.equal(image_format, 'raw'),
-            math_ops.equal(image_format, 'RAW')): decode_raw,
-    }
+    pred_fn_pairs = [(math_ops.logical_or(
+        math_ops.equal(image_format, 'raw'),
+        math_ops.equal(image_format, 'RAW')), decode_raw)]
     image = control_flow_ops.case(
         pred_fn_pairs, default=check_jpeg, exclusive=True)
 
@@ -458,7 +462,7 @@ class TFExampleDecoder(data_decoder.DataDecoder):
   Decoding Example proto buffers is comprised of two stages: (1) Example parsing
   and (2) tensor manipulation.
 
-  In the first stage, the tf.parse_example function is called with a list of
+  In the first stage, the tf.io.parse_example function is called with a list of
   FixedLenFeatures and SparseLenFeatures. These instances tell TF how to parse
   the example. The output of this stage is a set of tensors.
 
@@ -475,7 +479,7 @@ class TFExampleDecoder(data_decoder.DataDecoder):
 
     Args:
       keys_to_features: a dictionary from TF-Example keys to either
-        tf.VarLenFeature or tf.FixedLenFeature instances. See tensorflow's
+        tf.io.VarLenFeature or tf.io.FixedLenFeature instances. See tensorflow's
         parsing_ops.py.
       items_to_handlers: a dictionary from items (strings) to ItemHandler
         instances. Note that the ItemHandler's are provided the keys that they

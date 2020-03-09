@@ -22,8 +22,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.layers.python.layers import layers
-from astronet.contrib.specs.python import specs_lib
+from tensorflow.contrib.layers.python.layers import layers
+from tensorflow.contrib.specs.python import specs_lib
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import logging_ops
 from tensorflow.python.ops import math_ops

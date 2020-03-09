@@ -24,9 +24,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.predictor.predictor_factories import from_contrib_estimator
-from astronet.contrib.predictor.predictor_factories import from_estimator
-from astronet.contrib.predictor.predictor_factories import from_saved_model
+from tensorflow.contrib.predictor.predictor_factories import from_contrib_estimator
+from tensorflow.contrib.predictor.predictor_factories import from_estimator
+from tensorflow.contrib.predictor.predictor_factories import from_saved_model
 
 from tensorflow.python.util.all_util import remove_undocumented
 remove_undocumented(__name__)

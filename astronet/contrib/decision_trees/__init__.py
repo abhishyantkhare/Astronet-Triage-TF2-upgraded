@@ -18,7 +18,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from astronet.contrib.decision_trees.proto import *
+from tensorflow.contrib.decision_trees.proto import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

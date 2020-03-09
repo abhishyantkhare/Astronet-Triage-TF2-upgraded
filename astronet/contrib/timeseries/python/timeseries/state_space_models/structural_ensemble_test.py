@@ -20,14 +20,14 @@ from __future__ import print_function
 
 import numpy
 
-from astronet.contrib import layers
-from astronet.contrib.layers.python.layers import feature_column
+from tensorflow.contrib import layers
+from tensorflow.contrib.layers.python.layers import feature_column
 
-from astronet.contrib.timeseries.python.timeseries import estimators
-from astronet.contrib.timeseries.python.timeseries import input_pipeline
-from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
-from astronet.contrib.timeseries.python.timeseries.state_space_models import state_space_model
-from astronet.contrib.timeseries.python.timeseries.state_space_models import structural_ensemble
+from tensorflow.contrib.timeseries.python.timeseries import estimators
+from tensorflow.contrib.timeseries.python.timeseries import input_pipeline
+from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import state_space_model
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import structural_ensemble
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.framework import dtypes

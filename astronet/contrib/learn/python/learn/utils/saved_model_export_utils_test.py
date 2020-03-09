@@ -21,13 +21,13 @@ import os
 import tempfile
 import time
 
-from astronet.contrib.layers.python.layers import feature_column as fc
-from astronet.contrib.learn.python.learn import export_strategy as export_strategy_lib
-from astronet.contrib.learn.python.learn.estimators import constants
-from astronet.contrib.learn.python.learn.estimators import estimator
-from astronet.contrib.learn.python.learn.estimators import model_fn
-from astronet.contrib.learn.python.learn.utils import input_fn_utils
-from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
+from tensorflow.contrib.layers.python.layers import feature_column as fc
+from tensorflow.contrib.learn.python.learn import export_strategy as export_strategy_lib
+from tensorflow.contrib.learn.python.learn.estimators import constants
+from tensorflow.contrib.learn.python.learn.estimators import estimator
+from tensorflow.contrib.learn.python.learn.estimators import model_fn
+from tensorflow.contrib.learn.python.learn.utils import input_fn_utils
+from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
 from tensorflow.core.framework import tensor_shape_pb2
 from tensorflow.core.framework import types_pb2
 from tensorflow.core.protobuf import meta_graph_pb2

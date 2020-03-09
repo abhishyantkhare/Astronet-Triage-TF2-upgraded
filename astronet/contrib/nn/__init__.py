@@ -30,10 +30,10 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from astronet.contrib.nn.python.ops.alpha_dropout import *
-from astronet.contrib.nn.python.ops.cross_entropy import *
-from astronet.contrib.nn.python.ops.sampling_ops import *
-from astronet.contrib.nn.python.ops.scaled_softplus import *
+from tensorflow.contrib.nn.python.ops.alpha_dropout import *
+from tensorflow.contrib.nn.python.ops.cross_entropy import *
+from tensorflow.contrib.nn.python.ops.sampling_ops import *
+from tensorflow.contrib.nn.python.ops.scaled_softplus import *
 from tensorflow.python.ops.nn_ops import conv1d_transpose
 from tensorflow.python.ops.nn_ops import nth_element
 # pylint: enable=unused-import,wildcard-import

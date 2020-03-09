@@ -18,5 +18,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from astronet.contrib.boosted_trees.python.ops import *
+from tensorflow.contrib.boosted_trees.python.ops import *
 # pylint: enable=unused-import,wildcard-import

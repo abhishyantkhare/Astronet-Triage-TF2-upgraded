@@ -18,7 +18,6 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-
 import numpy as np
 
 from tensorflow.python.framework import ops
@@ -27,13 +26,20 @@ from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import nn
 from tensorflow.python.ops.distributions import bijector
-
+from tensorflow.python.util import deprecation
 
 __all__ = [
     "BatchNormalization",
 ]
 
 
+@deprecation.deprecated(
+    "2018-10-01", "The TensorFlow Distributions library has moved to "
+    "TensorFlow Probability "
+    "(https://github.com/tensorflow/probability). You "
+    "should update all references to use `tfp.distributions` "
+    "instead of `tf.contrib.distributions`.",
+    warn_once=True)
 def _undo_batch_normalization(x,
                               mean,
                               variance,
@@ -47,10 +53,10 @@ def _undo_batch_normalization(x,
     x: Input `Tensor` of arbitrary dimensionality.
     mean: A mean `Tensor`.
     variance: A variance `Tensor`.
-    offset: An offset `Tensor`, often denoted `beta` in equations, or
-      None. If present, will be added to the normalized tensor.
-    scale: A scale `Tensor`, often denoted `gamma` in equations, or
-      `None`. If present, the scale is applied to the normalized tensor.
+    offset: An offset `Tensor`, often denoted `beta` in equations, or None. If
+      present, will be added to the normalized tensor.
+    scale: A scale `Tensor`, often denoted `gamma` in equations, or `None`. If
+      present, the scale is applied to the normalized tensor.
     variance_epsilon: A small `float` added to the minibatch `variance` to
       prevent dividing by zero.
     name: A name for this operation (optional).
@@ -58,8 +64,8 @@ def _undo_batch_normalization(x,
   Returns:
     batch_unnormalized: The de-normalized, de-scaled, de-offset `Tensor`.
   """
-  with ops.name_scope(
-      name, "undo_batchnorm", [x, mean, variance, scale, offset]):
+  with ops.name_scope(name, "undo_batchnorm",
+                      [x, mean, variance, scale, offset]):
     # inv = math_ops.rsqrt(variance + variance_epsilon)
     # if scale is not None:
     #   inv *= scale
@@ -74,7 +80,9 @@ def _undo_batch_normalization(x,
 
 
 class BatchNormalization(bijector.Bijector):
-  """Compute `Y = g(X) s.t. X = g^-1(Y) = (Y - mean(Y)) / std(Y)`.
+  """Compute `Y = g(X) s.t.
+
+  X = g^-1(Y) = (Y - mean(Y)) / std(Y)`.
 
   Applies Batch Normalization [(Ioffe and Szegedy, 2015)][1] to samples from a
   data distribution. This can be used to stabilize training of normalizing
@@ -128,6 +136,13 @@ class BatchNormalization(bijector.Bijector):
        Processing Systems_, 2017. https://arxiv.org/abs/1705.07057
   """
 
+  @deprecation.deprecated(
+      "2018-10-01", "The TensorFlow Distributions library has moved to "
+      "TensorFlow Probability "
+      "(https://github.com/tensorflow/probability). You "
+      "should update all references to use `tfp.distributions` "
+      "instead of `tf.contrib.distributions`.",
+      warn_once=True)
   def __init__(self,
                batchnorm_layer=None,
                training=True,
@@ -136,19 +151,20 @@ class BatchNormalization(bijector.Bijector):
     """Instantiates the `BatchNorm` bijector.
 
     Args:
-      batchnorm_layer: `tf.layers.BatchNormalization` layer object. If `None`,
-        defaults to
-        `tf.layers.BatchNormalization(gamma_constraint=nn_ops.relu(x) + 1e-6)`.
-        This ensures positivity of the scale variable.
-
+      batchnorm_layer: `tf.compat.v1.layers.BatchNormalization` layer object. If
+        `None`, defaults to
+        `tf.compat.v1.layers.BatchNormalization(gamma_constraint=nn_ops.relu(x)
+        + 1e-6)`. This ensures positivity of the scale variable.
       training: If True, updates running-average statistics during call to
         `inverse()`.
       validate_args: Python `bool` indicating whether arguments should be
         checked for correctness.
       name: Python `str` name given to ops managed by this object.
+
     Raises:
       ValueError: If bn_layer is not an instance of
-        `tf.layers.BatchNormalization`, or if it is specified with `renorm=True`
+        `tf.compat.v1.layers.BatchNormalization`, or if it is specified with
+        `renorm=True`
         or a virtual batch size.
     """
     # Scale must be positive.
@@ -157,17 +173,25 @@ class BatchNormalization(bijector.Bijector):
         gamma_constraint=g_constraint)
     self._validate_bn_layer(self.batchnorm)
     self._training = training
+    if isinstance(self.batchnorm.axis, int):
+      forward_min_event_ndims = 1
+    else:
+      forward_min_event_ndims = len(self.batchnorm.axis)
     super(BatchNormalization, self).__init__(
-        validate_args=validate_args, name=name)
+        forward_min_event_ndims=forward_min_event_ndims,
+        validate_args=validate_args,
+        name=name)
 
   def _validate_bn_layer(self, layer):
     """Check for valid BatchNormalization layer.
 
     Args:
-      layer: Instance of `tf.layers.BatchNormalization`.
+      layer: Instance of `tf.compat.v1.layers.BatchNormalization`.
+
     Raises:
       ValueError: If batchnorm_layer argument is not an instance of
-      `tf.layers.BatchNormalization`, or if `batchnorm_layer.renorm=True` or
+      `tf.compat.v1.layers.BatchNormalization`, or if
+      `batchnorm_layer.renorm=True` or
       if `batchnorm_layer.virtual_batch_size` is specified.
     """
     if not isinstance(layer, normalization.BatchNormalization):
@@ -186,19 +210,19 @@ class BatchNormalization(bijector.Bijector):
     input_shape = np.int32(x.shape.as_list())
 
     ndims = len(input_shape)
-    # event_dims = self._compute_event_dims(x)
     reduction_axes = [i for i in range(ndims) if i not in self.batchnorm.axis]
     # Broadcasting only necessary for single-axis batch norm where the axis is
     # not the last dimension
     broadcast_shape = [1] * ndims
     broadcast_shape[self.batchnorm.axis[0]] = (
         input_shape[self.batchnorm.axis[0]])
+
     def _broadcast(v):
-      if (v is not None and
-          len(v.get_shape()) != ndims and
+      if (v is not None and len(v.get_shape()) != ndims and
           reduction_axes != list(range(ndims - 1))):
         return array_ops.reshape(v, broadcast_shape)
       return v
+
     return _broadcast
 
   def _normalize(self, y):
@@ -214,8 +238,8 @@ class BatchNormalization(bijector.Bijector):
     variance = broadcast_fn(self.batchnorm.moving_variance)
     beta = broadcast_fn(self.batchnorm.beta) if self.batchnorm.center else None
     gamma = broadcast_fn(self.batchnorm.gamma) if self.batchnorm.scale else None
-    return _undo_batch_normalization(
-        x, mean, variance, beta, gamma, self.batchnorm.epsilon)
+    return _undo_batch_normalization(x, mean, variance, beta, gamma,
+                                     self.batchnorm.epsilon)
 
   def _forward(self, x):
     return self._de_normalize(x)
@@ -240,12 +264,12 @@ class BatchNormalization(bijector.Bijector):
     reduction_axes = [i for i in range(len(input_shape)) if i not in event_dims]
 
     if use_saved_statistics or not self._training:
-      log_variance = math_ops.log(
-          self.batchnorm.moving_variance + self.batchnorm.epsilon)
+      log_variance = math_ops.log(self.batchnorm.moving_variance +
+                                  self.batchnorm.epsilon)
     else:
       # At training-time, ildj is computed from the mean and log-variance across
       # the current minibatch.
-      _, v = nn.moments(y, axes=reduction_axes, keep_dims=True)
+      _, v = nn.moments(y, axes=reduction_axes, keepdims=True)
       log_variance = math_ops.log(v + self.batchnorm.epsilon)
 
     # `gamma` and `log Var(y)` reductions over event_dims.

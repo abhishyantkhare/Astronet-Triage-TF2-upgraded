@@ -22,11 +22,11 @@ from __future__ import print_function
 
 import time
 
-from astronet.contrib.factorization.python.ops import clustering_ops
+from tensorflow.contrib.factorization.python.ops import clustering_ops
 from tensorflow.python.estimator import estimator
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.estimator.export import export_output
-from tensorflow.python.feature_column import feature_column as fc
+from tensorflow.python.feature_column import feature_column_lib as fc
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import control_flow_ops
@@ -81,9 +81,9 @@ class _InitializeClustersHook(session_run_hook.SessionRunHook):
 
     Args:
       init_op: An op that, when run, will choose some initial cluster centers.
-          This op may need to be run multiple times to choose all the centers.
+        This op may need to be run multiple times to choose all the centers.
       is_initialized_var: A boolean variable reporting whether all initial
-          centers have been chosen.
+        centers have been chosen.
       is_chief: A boolean specifying whether this task is the chief.
     """
     self._init_op = init_op
@@ -113,8 +113,8 @@ def _parse_features_if_necessary(features, feature_columns):
     features: The input features.
     feature_columns: An optionable iterable containing all the feature columns
       used by the model. All items in the set should be feature column instances
-      that can be passed to `tf.feature_column.input_layer`. If this is None,
-      all features will be used.
+      that can be passed to `tf.compat.v1.feature_column.input_layer`. If this
+      is None, all features will be used.
 
   Returns:
     If `features` is a dict of `k` features (optionally filtered by
@@ -158,12 +158,12 @@ class _ModelFn(object):
     return either `features` or, equivalently, `(features, None)`.
 
     Args:
-      features: The input points. See @{tf.estimator.Estimator}.
-      mode: See @{tf.estimator.Estimator}.
-      config: See @{tf.estimator.Estimator}.
+      features: The input points. See `tf.estimator.Estimator`.
+      mode: See `tf.estimator.Estimator`.
+      config: See `tf.estimator.Estimator`.
 
     Returns:
-      A @{tf.estimator.EstimatorSpec} (see @{tf.estimator.Estimator}) specifying
+      A `tf.estimator.EstimatorSpec` (see `tf.estimator.Estimator`) specifying
       this behavior:
         * `train_op`: Execute one mini-batch or full-batch run of Lloyd's
              algorithm.
@@ -188,7 +188,6 @@ class _ModelFn(object):
     #   center.
     # is_initialized: scalar indicating whether the initial cluster centers
     #   have been chosen; see init_op.
-    # cluster_centers_var: a Variable containing the cluster centers.
     # init_op: an op to choose the initial cluster centers. A single worker
     #   repeatedly executes init_op until is_initialized becomes True.
     # training_op: an op that runs an iteration of training, either an entire
@@ -256,7 +255,7 @@ class KMeansClustering(estimator.Estimator):
   points = np.random.uniform(0, 1000, [num_points, dimensions])
 
   def input_fn():
-    return tf.train.limit_epochs(
+    return tf.compat.v1.train.limit_epochs(
         tf.convert_to_tensor(points, dtype=tf.float32), num_epochs=1)
 
   num_clusters = 5
@@ -359,26 +358,25 @@ class KMeansClustering(estimator.Estimator):
         argument is ignored if `initial_clusters` is a tensor or numpy array.
       model_dir: The directory to save the model results and log files.
       initial_clusters: Specifies how the initial cluster centers are chosen.
-        One of the following:
-        * a tensor or numpy array with the initial cluster centers.
-        * a callable `f(inputs, k)` that selects and returns up to `k` centers
-              from an input batch. `f` is free to return any number of centers
-              from `0` to `k`. It will be invoked on successive input batches
-              as necessary until all `num_clusters` centers are chosen.
+        One of the following: * a tensor or numpy array with the initial cluster
+          centers. * a callable `f(inputs, k)` that selects and returns up to
+          `k` centers from an input batch. `f` is free to return any number of
+          centers from `0` to `k`. It will be invoked on successive input
+          batches as necessary until all `num_clusters` centers are chosen.
         * `KMeansClustering.RANDOM_INIT`: Choose centers randomly from an input
-              batch. If the batch size is less than `num_clusters` then the
-              entire batch is chosen to be initial cluster centers and the
-              remaining centers are chosen from successive input batches.
+          batch. If the batch size is less than `num_clusters` then the entire
+          batch is chosen to be initial cluster centers and the remaining
+          centers are chosen from successive input batches.
         * `KMeansClustering.KMEANS_PLUS_PLUS_INIT`: Use kmeans++ to choose
-              centers from the first input batch. If the batch size is less
-              than `num_clusters`, a TensorFlow runtime error occurs.
+          centers from the first input batch. If the batch size is less than
+          `num_clusters`, a TensorFlow runtime error occurs.
       distance_metric: The distance metric used for clustering. One of:
         * `KMeansClustering.SQUARED_EUCLIDEAN_DISTANCE`: Euclidean distance
-             between vectors `u` and `v` is defined as `\\(||u - v||_2\\)`
-             which is the square root of the sum of the absolute squares of
-             the elements' difference.
+          between vectors `u` and `v` is defined as \\(||u - v||_2\\) which is
+          the square root of the sum of the absolute squares of the elements'
+          difference.
         * `KMeansClustering.COSINE_DISTANCE`: Cosine distance between vectors
-             `u` and `v` is defined as `\\(1 - (u . v) / (||u||_2 ||v||_2)\\)`.
+          `u` and `v` is defined as \\(1 - (u . v) / (||u||_2 ||v||_2)\\).
       random_seed: Python integer. Seed for PRNG used to initialize centers.
       use_mini_batch: A boolean specifying whether to use the mini-batch k-means
         algorithm. See explanation above.
@@ -394,11 +392,12 @@ class KMeansClustering(estimator.Estimator):
       relative_tolerance: A relative tolerance of change in the loss between
         iterations. Stops learning if the loss changes less than this amount.
         This may not work correctly if `use_mini_batch=True`.
-      config: See @{tf.estimator.Estimator}.
+      config: See `tf.estimator.Estimator`.
       feature_columns: An optionable iterable containing all the feature columns
         used by the model. All items in the set should be feature column
-        instances that can be passed to `tf.feature_column.input_layer`. If this
-        is None, all features will be used.
+        instances that can be passed to
+        `tf.compat.v1.feature_column.input_layer`. If this is None, all features
+        will be used.
 
     Raises:
       ValueError: An invalid argument was passed to `initial_clusters` or
@@ -407,19 +406,19 @@ class KMeansClustering(estimator.Estimator):
     if isinstance(initial_clusters, str) and initial_clusters not in [
         KMeansClustering.RANDOM_INIT, KMeansClustering.KMEANS_PLUS_PLUS_INIT
     ]:
-      raise ValueError(
-          "Unsupported initialization algorithm '%s'" % initial_clusters)
+      raise ValueError("Unsupported initialization algorithm '%s'" %
+                       initial_clusters)
     if distance_metric not in [
         KMeansClustering.SQUARED_EUCLIDEAN_DISTANCE,
         KMeansClustering.COSINE_DISTANCE
     ]:
       raise ValueError("Unsupported distance metric '%s'" % distance_metric)
     super(KMeansClustering, self).__init__(
-        model_fn=_ModelFn(
-            num_clusters, initial_clusters, distance_metric, random_seed,
-            use_mini_batch, mini_batch_steps_per_iteration,
-            kmeans_plus_plus_num_retries, relative_tolerance,
-            feature_columns).model_fn,
+        model_fn=_ModelFn(num_clusters, initial_clusters, distance_metric,
+                          random_seed, use_mini_batch,
+                          mini_batch_steps_per_iteration,
+                          kmeans_plus_plus_num_retries, relative_tolerance,
+                          feature_columns).model_fn,
         model_dir=model_dir,
         config=config)
 
@@ -431,7 +430,7 @@ class KMeansClustering(estimator.Estimator):
     """Finds the index of the closest cluster center to each input point.
 
     Args:
-      input_fn: Input points. See @{tf.estimator.Estimator.predict}.
+      input_fn: Input points. See `tf.estimator.Estimator.predict`.
 
     Yields:
       The index of the closest cluster center for each input point.
@@ -447,8 +446,8 @@ class KMeansClustering(estimator.Estimator):
     which returns the negative sum.
 
     Args:
-      input_fn: Input points. See @{tf.estimator.Estimator.evaluate}. Only one
-          batch is retrieved.
+      input_fn: Input points. See `tf.estimator.Estimator.evaluate`. Only one
+        batch is retrieved.
 
     Returns:
       The sum of the squared distance from each point in the first batch of
@@ -465,7 +464,7 @@ class KMeansClustering(estimator.Estimator):
     sklearn function returns the Euclidean distance.
 
     Args:
-      input_fn: Input points. See @{tf.estimator.Estimator.predict}.
+      input_fn: Input points. See `tf.estimator.Estimator.predict`.
 
     Yields:
       The distances from each input point to each cluster center.

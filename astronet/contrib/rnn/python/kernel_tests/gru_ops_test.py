@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.rnn.python.kernel_tests import benchmarking
-from astronet.contrib.rnn.python.ops import gru_ops
+from tensorflow.contrib.rnn.python.kernel_tests import benchmarking
+from tensorflow.contrib.rnn.python.ops import gru_ops
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
@@ -41,7 +41,7 @@ from tensorflow.python.training import gradient_descent
 class GRUBlockCellTest(test.TestCase):
 
   def testNoneDimsWithDynamicRNN(self):
-    with self.test_session(use_gpu=True, graph=ops.Graph()) as sess:
+    with self.session(use_gpu=True, graph=ops.Graph()) as sess:
       batch_size = 4
       cell_size = 5
       input_size = 6
@@ -58,7 +58,7 @@ class GRUBlockCellTest(test.TestCase):
       sess.run(output, feed)
 
   def testBlockGRUToGRUCellSingleStep(self):
-    with self.test_session(use_gpu=True, graph=ops.Graph()) as sess:
+    with self.session(use_gpu=True, graph=ops.Graph()) as sess:
       batch_size = 4
       cell_size = 5
       input_size = 6
@@ -91,7 +91,7 @@ class GRUBlockCellTest(test.TestCase):
         self.assertAllClose(block, basic)
 
   def testBlockGRUToGRUCellMultiStep(self):
-    with self.test_session(use_gpu=True, graph=ops.Graph()) as sess:
+    with self.session(use_gpu=True, graph=ops.Graph()) as sess:
       batch_size = 2
       cell_size = 3
       input_size = 3
@@ -150,7 +150,7 @@ class GRUBlockCellTest(test.TestCase):
       self.assertAllClose(block_res[1], block_res[1])
 
   def testDerivativeOfBlockGRUToGRUCellSingleStep(self):
-    with self.test_session(use_gpu=True, graph=ops.Graph()) as sess:
+    with self.session(use_gpu=True, graph=ops.Graph()) as sess:
       batch_size = 2
       cell_size = 3
       input_size = 4
@@ -220,7 +220,7 @@ class GRUBlockCellTest(test.TestCase):
     cell_size = 3
     input_size = 4
     time_steps = 2
-    with self.test_session(use_gpu=True, graph=ops.Graph()) as sess:
+    with self.session(use_gpu=True, graph=ops.Graph()) as sess:
       # Random initializers.
       seed = 1994
       initializer = init_ops.random_uniform_initializer(-0.01, 0.01, seed=seed)
@@ -287,7 +287,7 @@ class GRUBlockCellTest(test.TestCase):
       self.assertAllClose(block, basic)
 
   def testGradient(self):
-    with self.test_session(use_gpu=True, graph=ops.Graph()) as sess:
+    with self.session(use_gpu=True, graph=ops.Graph()) as sess:
       batch_size = 1
       cell_size = 3
       input_size = 2

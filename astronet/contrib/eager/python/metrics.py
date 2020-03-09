@@ -19,8 +19,9 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint:disable=wildcard-import
-from astronet.contrib.eager.python.metrics_impl import *
+from tensorflow.contrib.eager.python.metrics_impl import *
 from tensorflow.python.util.all_util import remove_undocumented
 
-_allowed_symbols = ['Accuracy', 'Mean', 'Metric']
+_allowed_symbols = ['Accuracy', 'Mean', 'Metric', 'CategoricalAccuracy',
+                    'BinaryAccuracy', 'SparseAccuracy']
 remove_undocumented(__name__, _allowed_symbols)

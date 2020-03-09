@@ -19,9 +19,9 @@ from __future__ import print_function
 
 import csv
 
-from astronet.contrib import lookup
-from astronet.contrib.text.python.ops import gen_skip_gram_ops
-from astronet.contrib.util import loader
+from tensorflow.contrib import lookup
+from tensorflow.contrib.text.python.ops import gen_skip_gram_ops
+from tensorflow.contrib.util import loader
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import random_seed

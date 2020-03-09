@@ -25,7 +25,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.learn.python.learn.learn_runner import *  # pylint: disable=wildcard-import
+from tensorflow.contrib.learn.python.learn.learn_runner import *  # pylint: disable=wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented
 

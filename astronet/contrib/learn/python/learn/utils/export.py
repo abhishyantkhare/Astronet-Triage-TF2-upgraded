@@ -24,9 +24,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.framework import deprecated
-from astronet.contrib.session_bundle import exporter
-from astronet.contrib.session_bundle import gc
+from tensorflow.contrib.framework import deprecated
+from tensorflow.contrib.session_bundle import exporter
+from tensorflow.contrib.session_bundle import gc
 from tensorflow.python.client import session as tf_session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
@@ -35,6 +35,7 @@ from tensorflow.python.ops import control_flow_ops
 from tensorflow.python.ops import lookup_ops
 from tensorflow.python.ops import variables
 from tensorflow.python.platform import tf_logging as logging
+from tensorflow.python.training import checkpoint_management
 from tensorflow.python.training import saver as tf_saver
 from tensorflow.python.training import training_util
 
@@ -298,7 +299,8 @@ def _export_estimator(estimator,
 
   # If checkpoint_path is specified, use the specified checkpoint path.
   checkpoint_path = (checkpoint_path or
-                     tf_saver.latest_checkpoint(estimator._model_dir))
+                     checkpoint_management.latest_checkpoint(
+                         estimator._model_dir))
   with ops.Graph().as_default() as g:
     training_util.create_global_step(g)
 

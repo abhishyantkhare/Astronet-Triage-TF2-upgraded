@@ -21,9 +21,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
-from astronet.contrib.timeseries.python.timeseries.state_space_models import state_space_model
-from astronet.contrib.timeseries.python.timeseries.state_space_models import varma
+from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import state_space_model
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import varma
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.framework import constant_op
@@ -46,7 +46,7 @@ class MakeModelTest(test.TestCase):
         },
         mode=estimator_lib.ModeKeys.TRAIN)
     initializer = variables.global_variables_initializer()
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       sess.run([initializer])
       outputs.loss.eval()
 
@@ -65,7 +65,7 @@ class MakeModelTest(test.TestCase):
         },
         mode=estimator_lib.ModeKeys.TRAIN)
     initializer = variables.global_variables_initializer()
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       sess.run([initializer])
       outputs.loss.eval()
 
@@ -85,7 +85,7 @@ class MakeModelTest(test.TestCase):
             TrainEvalFeatures.VALUES: constant_op.constant([[[1.], [2.]]])},
         mode=estimator_lib.ModeKeys.TRAIN)
     initializer = variables.global_variables_initializer()
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       sess.run([initializer])
       outputs.loss.eval()
 

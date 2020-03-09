@@ -22,8 +22,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.learn.python.learn.learn_io import HAS_PANDAS
-from astronet.contrib.learn.python.learn.preprocessing import categorical
+from tensorflow.contrib.learn.python.learn.learn_io import HAS_PANDAS
+from tensorflow.contrib.learn.python.learn.preprocessing import categorical
 from tensorflow.python.platform import test
 
 

@@ -15,7 +15,9 @@
 
 """Ops for building neural network seq2seq decoders and losses.
 
-See the @{$python/contrib.seq2seq} guide.
+See the
+[Contrib Seq2seq](https://tensorflow.org/api_guides/python/contrib.seq2seq)
+guide.
 """
 
 from __future__ import absolute_import
@@ -23,13 +25,13 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import,line-too-long
-from astronet.contrib.seq2seq.python.ops.attention_wrapper import *
-from astronet.contrib.seq2seq.python.ops.basic_decoder import *
-from astronet.contrib.seq2seq.python.ops.beam_search_decoder import *
-from astronet.contrib.seq2seq.python.ops.beam_search_ops import *
-from astronet.contrib.seq2seq.python.ops.decoder import *
-from astronet.contrib.seq2seq.python.ops.helper import *
-from astronet.contrib.seq2seq.python.ops.loss import *
+from tensorflow.contrib.seq2seq.python.ops.attention_wrapper import *
+from tensorflow.contrib.seq2seq.python.ops.basic_decoder import *
+from tensorflow.contrib.seq2seq.python.ops.beam_search_decoder import *
+from tensorflow.contrib.seq2seq.python.ops.beam_search_ops import *
+from tensorflow.contrib.seq2seq.python.ops.decoder import *
+from tensorflow.contrib.seq2seq.python.ops.helper import *
+from tensorflow.contrib.seq2seq.python.ops.loss import *
 from tensorflow.python.util.all_util import remove_undocumented
 # pylint: enable=unused-import,widcard-import,line-too-long
 

@@ -20,9 +20,9 @@ from __future__ import print_function
 import numpy as np
 from six.moves import range  # pylint: disable=redefined-builtin
 
-from astronet.contrib.labeled_tensor.python.ops import core
-from astronet.contrib.labeled_tensor.python.ops import ops
-from astronet.contrib.labeled_tensor.python.ops import test_util
+from tensorflow.contrib.labeled_tensor.python.ops import core
+from tensorflow.contrib.labeled_tensor.python.ops import ops
+from tensorflow.contrib.labeled_tensor.python.ops import test_util
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors_impl
@@ -270,7 +270,7 @@ class ReshapeTest(Base):
         array_ops.placeholder(dtypes.float32, [None]), ['x'])
     reshape_lt = ops.reshape(orig_lt, ['x'], ['y', ('z', 1)])
     self.assertEqual(reshape_lt.axes, core.Axes([('y', None), ('z', 1)]))
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       result = sess.run(reshape_lt, feed_dict={orig_lt.tensor: [1, 2]})
       np.testing.assert_array_equal(result, [[1], [2]])
 
@@ -660,7 +660,7 @@ class ReduceSumTest(Base):
     sum_lt = ops.reduce_sum(self.original_lt, {('channel', 'hihowareyou')})
     golden_lt = core.LabeledTensor(
         math_ops.reduce_sum(
-            self.original_lt.tensor, 1, keep_dims=True),
+            self.original_lt.tensor, 1, keepdims=True),
         [self.a0, ('channel', ['hihowareyou']), self.a2, self.a3])
     self.assertLabeledTensorsEqual(sum_lt, golden_lt)
 
@@ -668,7 +668,7 @@ class ReduceSumTest(Base):
     sum_lt = ops.reduce_sum(self.original_lt, ('channel', 'hihowareyou'))
     golden_lt = core.LabeledTensor(
         math_ops.reduce_sum(
-            self.original_lt.tensor, 1, keep_dims=True),
+            self.original_lt.tensor, 1, keepdims=True),
         [self.a0, ('channel', ['hihowareyou']), self.a2, self.a3])
     self.assertLabeledTensorsEqual(sum_lt, golden_lt)
 

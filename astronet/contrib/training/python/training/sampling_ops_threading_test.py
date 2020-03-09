@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.training.python.training import sampling_ops
+from tensorflow.contrib.training.python.training import sampling_ops
 from tensorflow.python.framework import dtypes as dtypes_lib
 from tensorflow.python.framework import random_seed
 from tensorflow.python.ops import data_flow_ops
@@ -59,7 +59,7 @@ class SamplingOpsThreadingTest(test.TestCase):
     out_tensor = queue.dequeue()
 
     # Run the multi-threaded session.
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       # Need to initialize variables that keep running total of classes seen.
       variables.global_variables_initializer().run()
 

@@ -42,11 +42,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib import layers
-from astronet.contrib.framework.python.ops import arg_scope
-from astronet.contrib.layers.python.layers import layers as layers_lib
-from astronet.contrib.layers.python.layers import regularizers
-from astronet.contrib.layers.python.layers import utils
+from tensorflow.contrib import layers
+from tensorflow.contrib.framework.python.ops import arg_scope
+from tensorflow.contrib.layers.python.layers import layers as layers_lib
+from tensorflow.contrib.layers.python.layers import regularizers
+from tensorflow.contrib.layers.python.layers import utils
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import init_ops
 from tensorflow.python.ops import nn_ops

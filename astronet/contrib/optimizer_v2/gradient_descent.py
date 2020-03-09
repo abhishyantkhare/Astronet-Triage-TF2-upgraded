@@ -13,12 +13,12 @@
 # limitations under the License.
 # ==============================================================================
 
-"""GradientDescent optimizer for TensorFlow."""
+"""Momentum for TensorFlow."""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.optimizer_v2 import optimizer_v2
+from tensorflow.contrib.optimizer_v2 import optimizer_v2
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import resource_variable_ops
 from tensorflow.python.training import training_ops
@@ -56,11 +56,11 @@ class GradientDescentOptimizer(optimizer_v2.OptimizerV2):
     return training_ops.resource_apply_gradient_descent(
         handle.handle, lr, grad, use_locking=self._use_locking)
 
-  def _resource_apply_sparse_duplicate_indices(
-      self, grad, handle, indices, state):
+  def _resource_apply_sparse_duplicate_indices(self, grad, handle, indices,
+                                               state):
     lr = state.get_hyper("learning_rate", grad.dtype.base_dtype)
-    return resource_variable_ops.resource_scatter_add(
-        handle.handle, indices, -grad * lr)
+    return resource_variable_ops.resource_scatter_add(handle.handle, indices,
+                                                      -grad * lr)
 
   def _apply_sparse_duplicate_indices(self, grad, var, state):
     delta = ops.IndexedSlices(

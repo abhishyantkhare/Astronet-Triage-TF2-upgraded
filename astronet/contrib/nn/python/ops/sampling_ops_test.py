@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.nn.python.ops import sampling_ops
+from tensorflow.contrib.nn.python.ops import sampling_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
@@ -227,7 +227,7 @@ class RankSampledSoftmaxLossTest(test.TestCase):
           sampled_values=self._resampled_values,
           remove_accidental_hits=self._remove_accidental_hits,
           partition_strategy=partition_strategy)
-      with self.test_session() as sess:
+      with self.cached_session() as sess:
         loss_val = sess.run(loss)
         loss_nn_val = sess.run(loss_nn)
 
@@ -299,7 +299,7 @@ class RankSampledSoftmaxLossTest(test.TestCase):
           sampled_values=resampled_values,
           remove_accidental_hits=remove_accidental_hits,
           partition_strategy='div')
-      with self.test_session() as sess:
+      with self.cached_session() as sess:
         loss_val = sess.run(loss)
         loss_nn_val = sess.run(loss_nn)
 

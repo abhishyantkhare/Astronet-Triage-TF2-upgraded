@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.timeseries.python.timeseries.state_space_models import periodic
-from astronet.contrib.timeseries.python.timeseries.state_space_models import state_space_model
-from astronet.contrib.timeseries.python.timeseries.state_space_models import test_utils
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import periodic
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import state_space_model
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import test_utils
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.platform import test

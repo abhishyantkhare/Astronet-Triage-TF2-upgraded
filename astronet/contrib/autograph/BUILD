@@ -1,6 +1,6 @@
-licenses(["notice"])  # Apache 2.0
-
-load("//tensorflow:tensorflow.bzl", "py_test")
+package(
+    licenses = ["notice"],  # Apache 2.0
+)
 
 filegroup(
     name = "all_files",
@@ -21,11 +21,9 @@ py_library(
     ],
     srcs_version = "PY2AND3",
     visibility = ["//visibility:public"],
+    # This module is kept for backward compatibility only. To depend on AutoGraph,
+    # use //third_party/tensorflow/python/autograph instead.
     deps = [
-        "//tensorflow/contrib/autograph/impl",
-        "//tensorflow/contrib/autograph/pyct",
-        "//tensorflow/contrib/autograph/utils",
-        "@gast_archive//:gast",
-        "@six_archive//:six",
+        "//tensorflow/python/autograph",
     ],
 )

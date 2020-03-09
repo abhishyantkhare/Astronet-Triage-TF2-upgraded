@@ -21,10 +21,10 @@ from __future__ import print_function
 import random
 
 # pylint: disable=wildcard-import
-from astronet.contrib.learn.python import learn
-from astronet.contrib.learn.python.learn import datasets
-from astronet.contrib.learn.python.learn.estimators._sklearn import accuracy_score
-from astronet.contrib.learn.python.learn.learn_io import *
+from tensorflow.contrib.learn.python import learn
+from tensorflow.contrib.learn.python.learn import datasets
+from tensorflow.contrib.learn.python.learn.estimators._sklearn import accuracy_score
+from tensorflow.contrib.learn.python.learn.learn_io import *
 from tensorflow.python.platform import test
 
 # pylint: enable=wildcard-import

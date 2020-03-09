@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 from google.protobuf.any_pb2 import Any
-from astronet.contrib.meta_graph_transform import meta_graph_transform
+from tensorflow.contrib.meta_graph_transform import meta_graph_transform
 from tensorflow.core.framework import function_pb2
 from tensorflow.core.framework import graph_pb2
 from tensorflow.core.framework import node_def_pb2

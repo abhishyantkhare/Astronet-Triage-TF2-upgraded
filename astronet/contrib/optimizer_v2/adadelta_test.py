@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.optimizer_v2 import adadelta
+from tensorflow.contrib.optimizer_v2 import adadelta
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import embedding_ops
@@ -37,7 +37,7 @@ class AdadeltaOptimizerTest(test.TestCase):
     for dtype in [dtypes.half, dtypes.float32]:
       for grad in [0.2, 0.1, 0.01]:
         for lr in [1.0, 0.5, 0.1]:
-          with self.test_session():
+          with self.cached_session():
             var0_init = [1.0, 2.0]
             var1_init = [3.0, 4.0]
             if use_resource:
@@ -146,7 +146,7 @@ class AdadeltaOptimizerTest(test.TestCase):
 
   def testMinimizeSparseResourceVariable(self):
     for dtype in [dtypes.half, dtypes.float32, dtypes.float64]:
-      with self.test_session():
+      with self.cached_session():
         var0 = resource_variable_ops.ResourceVariable([[1.0, 2.0]], dtype=dtype)
         x = constant_op.constant([[4.0], [5.0]], dtype=dtype)
         pred = math_ops.matmul(embedding_ops.embedding_lookup([var0], [0]), x)

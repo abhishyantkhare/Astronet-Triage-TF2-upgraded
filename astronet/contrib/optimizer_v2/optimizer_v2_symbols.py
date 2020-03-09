@@ -19,13 +19,13 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import
-from astronet.contrib.optimizer_v2.adadelta import AdadeltaOptimizer
-from astronet.contrib.optimizer_v2.adagrad import AdagradOptimizer
-from astronet.contrib.optimizer_v2.adam import AdamOptimizer
-from astronet.contrib.optimizer_v2.gradient_descent import GradientDescentOptimizer
-from astronet.contrib.optimizer_v2.momentum import MomentumOptimizer
-from astronet.contrib.optimizer_v2.optimizer_v2 import OptimizerV2
-from astronet.contrib.optimizer_v2.rmsprop import RMSPropOptimizer
+from tensorflow.contrib.optimizer_v2.adadelta import AdadeltaOptimizer
+from tensorflow.contrib.optimizer_v2.adagrad import AdagradOptimizer
+from tensorflow.contrib.optimizer_v2.adam import AdamOptimizer
+from tensorflow.contrib.optimizer_v2.gradient_descent import GradientDescentOptimizer
+from tensorflow.contrib.optimizer_v2.momentum import MomentumOptimizer
+from tensorflow.contrib.optimizer_v2.optimizer_v2 import OptimizerV2
+from tensorflow.contrib.optimizer_v2.rmsprop import RMSPropOptimizer
 
 from tensorflow.python.util.all_util import remove_undocumented
 

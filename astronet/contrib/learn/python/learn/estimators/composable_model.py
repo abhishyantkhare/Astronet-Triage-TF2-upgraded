@@ -28,10 +28,10 @@ import re
 
 import six
 
-from astronet.contrib import layers
-from astronet.contrib.framework import list_variables
-from astronet.contrib.framework import load_variable
-from astronet.contrib.layers.python.layers import feature_column_ops
+from tensorflow.contrib import layers
+from tensorflow.contrib.framework import list_variables
+from tensorflow.contrib.framework import load_variable
+from tensorflow.contrib.layers.python.layers import feature_column_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import clip_ops
 from tensorflow.python.ops import gradients

@@ -21,7 +21,7 @@ import glob
 import os
 import tempfile
 
-from astronet.contrib.rnn.python.tools import checkpoint_convert
+from tensorflow.contrib.rnn.python.tools import checkpoint_convert
 from tensorflow.python.client import session
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import variables

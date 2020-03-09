@@ -23,9 +23,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.learn.python.learn.estimators import run_config as run_config_lib
-from astronet.contrib.learn.python.learn.experiment import Experiment
-from astronet.contrib.training.python.training import hparam as hparam_lib
+from tensorflow.contrib.learn.python.learn.estimators import run_config as run_config_lib
+from tensorflow.contrib.learn.python.learn.experiment import Experiment
+from tensorflow.contrib.training.python.training import hparam as hparam_lib
 from tensorflow.python.platform import tf_logging as logging
 from tensorflow.python.util.deprecation import deprecated
 

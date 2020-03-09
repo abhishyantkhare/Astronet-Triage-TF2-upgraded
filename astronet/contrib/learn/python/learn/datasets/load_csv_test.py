@@ -17,7 +17,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.learn.python.learn import datasets
+from tensorflow.contrib.learn.python.learn import datasets
 from tensorflow.python.platform import test
 
 

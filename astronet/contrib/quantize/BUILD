@@ -1,10 +1,11 @@
-package(default_visibility = ["//tensorflow:__subpackages__"])
+load("//tensorflow:tensorflow.bzl", "py_test")
 
-licenses(["notice"])  # Apache 2.0
+package(
+    default_visibility = ["//visibility:public"],
+    licenses = ["notice"],  # Apache 2.0
+)
 
 exports_files(["LICENSE"])
-
-load("//tensorflow:tensorflow.bzl", "py_test")
 
 py_library(
     name = "common",
@@ -17,11 +18,17 @@ py_test(
     name = "common_test",
     size = "small",
     srcs = ["python/common_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":common",
+        "//tensorflow/contrib/layers:layers_py",
+        "//tensorflow/python:array_ops",
         "//tensorflow/python:framework_ops",
         "//tensorflow/python:framework_test_lib",
+        "//tensorflow/python:init_ops",
+        "//tensorflow/python:math_ops",
+        "//tensorflow/python:nn_ops",
         "//tensorflow/python:platform_test",
         "//tensorflow/python:session",
         "//tensorflow/python:variable_scope",
@@ -41,6 +48,7 @@ py_test(
     name = "graph_matcher_test",
     size = "small",
     srcs = ["python/graph_matcher_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":graph_matcher",
@@ -70,6 +78,7 @@ py_test(
     name = "input_to_ops_test",
     size = "small",
     srcs = ["python/input_to_ops_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":input_to_ops",
@@ -89,7 +98,6 @@ py_library(
         ":common",
         ":graph_matcher",
         ":input_to_ops",
-        "//tensorflow/contrib/graph_editor:graph_editor_py",
         "//tensorflow/core:protos_all_py",
         "//tensorflow/python:array_ops",
         "//tensorflow/python:dtypes",
@@ -108,6 +116,7 @@ py_library(
 py_test(
     name = "fold_batch_norms_test",
     srcs = ["python/fold_batch_norms_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":fold_batch_norms",
@@ -134,7 +143,6 @@ py_library(
     srcs = ["python/quant_ops.py"],
     srcs_version = "PY2AND3",
     deps = [
-        "//tensorflow/contrib/framework:framework_py",
         "//tensorflow/python:array_ops",
         "//tensorflow/python:framework_ops",
         "//tensorflow/python:init_ops",
@@ -149,14 +157,17 @@ py_test(
     name = "quant_ops_test",
     size = "small",
     srcs = ["python/quant_ops_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":quant_ops",
         "//tensorflow/python:array_ops",
         "//tensorflow/python:dtypes",
         "//tensorflow/python:framework_ops",
+        "//tensorflow/python:partitioned_variables",
         "//tensorflow/python:platform_test",
         "//tensorflow/python:session",
+        "//tensorflow/python:variable_scope",
         "//tensorflow/python:variables",
     ],
 )
@@ -169,7 +180,6 @@ py_library(
         ":graph_matcher",
         ":input_to_ops",
         ":quant_ops",
-        "//tensorflow/contrib/graph_editor:graph_editor_py",
         "//tensorflow/python:control_flow_ops",
         "//tensorflow/python:framework_ops",
         "//tensorflow/python:math_ops",
@@ -181,6 +191,7 @@ py_test(
     name = "quantize_test",
     size = "small",
     srcs = ["python/quantize_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":quantize",
@@ -198,9 +209,15 @@ py_test(
 
 py_test(
     name = "quantize_parameterized_test",
-    size = "large",
+    size = "medium",
     srcs = ["python/quantize_parameterized_test.py"],
+    python_version = "PY2",
+    shard_count = 4,
     srcs_version = "PY2AND3",
+    # TODO(b/118839526): Re-enable msan test.
+    tags = [
+        "nomsan",
+    ],
     deps = [
         ":fold_batch_norms",
         ":quantize",
@@ -234,6 +251,7 @@ py_test(
     name = "quantize_graph_test",
     size = "small",
     srcs = ["python/quantize_graph_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":quantize_graph",
@@ -242,7 +260,9 @@ py_test(
         "//tensorflow/python:framework_ops",
         "//tensorflow/python:framework_test_lib",
         "//tensorflow/python:init_ops",
+        "//tensorflow/python:math_ops",
         "//tensorflow/python:nn_ops",
         "//tensorflow/python:platform_test",
+        "//tensorflow/python:training",
     ],
 )

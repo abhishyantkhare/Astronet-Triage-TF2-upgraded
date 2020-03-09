@@ -18,13 +18,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import collections
 import numbers
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from astronet.contrib.factorization.python.ops import gen_factorization_ops
-from astronet.contrib.util import loader
+from tensorflow.contrib.factorization.python.ops import gen_factorization_ops
+from tensorflow.contrib.util import loader
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
@@ -42,6 +41,7 @@ from tensorflow.python.ops import state_ops
 from tensorflow.python.ops import variable_scope
 from tensorflow.python.ops import variables
 from tensorflow.python.platform import resource_loader
+from tensorflow.python.util.compat import collections_abc
 
 _factorization_ops = loader.load_op_library(
     resource_loader.get_path_to_datafile("_factorization_ops.so"))
@@ -107,7 +107,7 @@ class WALSModel(object):
       # the prep_gramian_op for row(column) can be run.
       worker_init_op = model.worker_init
 
-      # To be run once per integration sweep before the row(column) update
+      # To be run once per iteration sweep before the row(column) update
       # initialize ops can be run. Note that in the distributed training
       # situations, this should only be run by the chief trainer. All other
       # trainers need to block until this is done.
@@ -134,7 +134,7 @@ class WALSModel(object):
 
       # model_init_op is passed to Supervisor. Chief trainer runs it. Other
       # trainers wait.
-      sv = tf.train.Supervisor(is_chief=is_chief,
+      sv = tf.compat.v1.train.Supervisor(is_chief=is_chief,
                          ...,
                          init_op=tf.group(..., model_init_op, ...), ...)
       ...
@@ -197,7 +197,8 @@ class WALSModel(object):
                row_weights=1,
                col_weights=1,
                use_factors_weights_cache=True,
-               use_gramian_cache=True):
+               use_gramian_cache=True,
+               use_scoped_vars=False):
     """Creates model for WALS matrix factorization.
 
     Args:
@@ -239,6 +240,8 @@ class WALSModel(object):
         weights cache to take effect.
       use_gramian_cache: When True, the Gramians will be cached on the workers
         before the updates start. Defaults to True.
+      use_scoped_vars: When True, the factor and weight vars will also be nested
+        in a tf.name_scope.
     """
     self._input_rows = input_rows
     self._input_cols = input_cols
@@ -251,25 +254,46 @@ class WALSModel(object):
         regularization * linalg_ops.eye(self._n_components)
         if regularization is not None else None)
     assert (row_weights is None) == (col_weights is None)
-    self._row_weights = WALSModel._create_weights(
-        row_weights, self._input_rows, self._num_row_shards, "row_weights")
-    self._col_weights = WALSModel._create_weights(
-        col_weights, self._input_cols, self._num_col_shards, "col_weights")
     self._use_factors_weights_cache = use_factors_weights_cache
     self._use_gramian_cache = use_gramian_cache
-    self._row_factors = self._create_factors(
-        self._input_rows, self._n_components, self._num_row_shards, row_init,
-        "row_factors")
-    self._col_factors = self._create_factors(
-        self._input_cols, self._n_components, self._num_col_shards, col_init,
-        "col_factors")
+
+    if use_scoped_vars:
+      with ops.name_scope("row_weights"):
+        self._row_weights = WALSModel._create_weights(
+            row_weights, self._input_rows, self._num_row_shards, "row_weights")
+      with ops.name_scope("col_weights"):
+        self._col_weights = WALSModel._create_weights(
+            col_weights, self._input_cols, self._num_col_shards, "col_weights")
+      with ops.name_scope("row_factors"):
+        self._row_factors = self._create_factors(
+            self._input_rows, self._n_components, self._num_row_shards,
+            row_init, "row_factors")
+      with ops.name_scope("col_factors"):
+        self._col_factors = self._create_factors(
+            self._input_cols, self._n_components, self._num_col_shards,
+            col_init, "col_factors")
+    else:
+      self._row_weights = WALSModel._create_weights(
+          row_weights, self._input_rows, self._num_row_shards, "row_weights")
+      self._col_weights = WALSModel._create_weights(
+          col_weights, self._input_cols, self._num_col_shards, "col_weights")
+      self._row_factors = self._create_factors(
+          self._input_rows, self._n_components, self._num_row_shards, row_init,
+          "row_factors")
+      self._col_factors = self._create_factors(
+          self._input_cols, self._n_components, self._num_col_shards, col_init,
+          "col_factors")
+
     self._row_gramian = self._create_gramian(self._n_components, "row_gramian")
     self._col_gramian = self._create_gramian(self._n_components, "col_gramian")
-    self._row_update_prep_gramian = self._prepare_gramian(
-        self._col_factors, self._col_gramian)
-    self._col_update_prep_gramian = self._prepare_gramian(
-        self._row_factors, self._row_gramian)
-    self._create_transient_vars()
+    with ops.name_scope("row_prepare_gramian"):
+      self._row_update_prep_gramian = self._prepare_gramian(
+          self._col_factors, self._col_gramian)
+    with ops.name_scope("col_prepare_gramian"):
+      self._col_update_prep_gramian = self._prepare_gramian(
+          self._row_factors, self._row_gramian)
+    with ops.name_scope("transient_vars"):
+      self._create_transient_vars()
 
   @property
   def row_factors(self):
@@ -364,7 +388,7 @@ class WALSModel(object):
       return None
 
     init_mode = "list"
-    if isinstance(wt_init, collections.Iterable):
+    if isinstance(wt_init, collections_abc.Iterable):
       if num_shards == 1 and len(wt_init) == num_wts:
         wt_init = [wt_init]
       assert len(wt_init) == num_shards
@@ -436,7 +460,7 @@ class WALSModel(object):
       gramian: Variable storing the gramian calculated from the factors.
 
     Returns:
-      A op that updates the gramian with the calculated value from the factors.
+      An op that updates the gramian with the calculated value from the factors.
     """
     partial_gramians = []
     for f in factors:
@@ -617,9 +641,9 @@ class WALSModel(object):
         extras = size % num_shards
         assignments = math_ops.maximum(ids // (ids_per_shard + 1),
                                        (ids - extras) // ids_per_shard)
-        new_ids = array_ops.where(assignments < extras,
-                                  ids % (ids_per_shard + 1),
-                                  (ids - extras) % ids_per_shard)
+        new_ids = array_ops.where_v2(assignments < extras,
+                                     ids % (ids_per_shard + 1),
+                                     (ids - extras) % ids_per_shard)
         return assignments, new_ids
 
     return func
@@ -888,7 +912,7 @@ class WALSModel(object):
       total_rhs = (
           self._unobserved_weight * sparse_ops.sparse_tensor_dense_matmul(
               new_sp_input, right, adjoint_a=transpose_input))
-      # TODO(rmlarsen): handle transposing in tf.matrix_solve instead of
+      # TODO(rmlarsen): handle transposing in tf.linalg.solve instead of
       # transposing explicitly.
       # TODO(rmlarsen): multi-thread tf.matrix_solve.
       new_left_values = array_ops.transpose(
@@ -919,6 +943,7 @@ class WALSModel(object):
               row_weights_slice,
               new_sp_input.indices,
               new_sp_input.values,
+              [],
               num_rows,
               transpose_input,
               name="wals_compute_partial_lhs_rhs"))

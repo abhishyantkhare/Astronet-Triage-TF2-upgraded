@@ -20,5 +20,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from astronet.contrib.hooks.python.training import *
+from tensorflow.contrib.hooks.python.training import *
 # pylint: enable=wildcard-import

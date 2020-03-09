@@ -34,7 +34,7 @@ import sys
 
 import tensorflow as tf
 
-from astronet.contrib.session_bundle import exporter
+from tensorflow.contrib.session_bundle import exporter
 
 FLAGS = None
 

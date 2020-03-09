@@ -12,15 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Model evaluation tools for TFGAN."""
+"""Model evaluation tools for TF-GAN."""
 
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.gan.python.eval.python import classifier_metrics_impl
+from tensorflow.contrib.gan.python.eval.python import classifier_metrics_impl
 # pylint: disable=wildcard-import
-from astronet.contrib.gan.python.eval.python.classifier_metrics_impl import *
+from tensorflow.contrib.gan.python.eval.python.classifier_metrics_impl import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util.all_util import remove_undocumented
 

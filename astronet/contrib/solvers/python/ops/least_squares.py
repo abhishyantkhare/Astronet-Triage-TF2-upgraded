@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import collections
 
-from astronet.contrib.solvers.python.ops import util
+from tensorflow.contrib.solvers.python.ops import util
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

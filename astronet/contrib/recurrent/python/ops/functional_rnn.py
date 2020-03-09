@@ -12,8 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""A tf.nn.dynamic_rnn variant, built on the Recurrent class.
-"""
+"""A tf.compat.v1.nn.dynamic_rnn variant, built on the Recurrent class."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -21,8 +20,7 @@ from __future__ import print_function
 
 import copy
 
-from astronet.contrib.recurrent.python.ops import recurrent
-from tensorflow.python.framework import dtypes
+from tensorflow.contrib.recurrent.python.ops import recurrent
 from tensorflow.python.framework import function
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
@@ -62,7 +60,7 @@ class _FunctionalRnnCell(object):
     assert initial_state is not None
 
     # TODO(drpng): Dtype needs to be configurable.
-    input_dtypes = [dtypes.float32] + _GetDTypesFromStructure(initial_state)
+    input_dtypes = [seq_inputs.dtype] + _GetDTypesFromStructure(initial_state)
     # See _index.
     like_inputs_t = nest.map_structure(
         lambda x: array_ops.stop_gradient(array_ops.gather(x, 0)), seq_inputs)
@@ -144,7 +142,12 @@ class _FunctionalRnnCell(object):
   @property
   def extended_initial_state(self):
     if self._prepend_output:
-      return [array_ops.zeros(self._output_shape), self._state_template]
+      return [
+          array_ops.zeros(
+              self._output_shape,
+              dtype=_GetDTypesFromStructure(self._state_template)[0]),
+          self._state_template
+      ]
     else:
       # The base case, where the output is just the hidden state.
       return self._state_template
@@ -178,16 +181,16 @@ def _ApplyLengthsToBatch(sequence_lengths, tf_output):
   # TODO(drpng): just use Update so that we don't carry over the gradients?
   """Sets the output to be zero at the end of the sequence."""
   # output is batch major.
-  batch_size, max_time, vector_size = tf_output.shape
+  shape = array_ops.shape(tf_output)
+  batch_size, max_time, vector_size = shape[0], shape[1], shape[2]
   output_time = array_ops.tile(math_ops.range(0, max_time), [batch_size])
   output_time = array_ops.reshape(output_time, [batch_size, max_time])
   lengths = array_ops.tile(
       array_ops.reshape(sequence_lengths, [-1, 1]), [1, max_time])
   is_less = math_ops.cast(
-      math_ops.less(output_time, lengths), dtype=dtypes.float32)
+      math_ops.less(output_time, lengths), dtype=tf_output.dtype)
   keep_mask = array_ops.tile(
-      array_ops.expand_dims(is_less, -1),
-      [1, 1, vector_size])
+      array_ops.expand_dims(is_less, -1), [1, 1, vector_size])
   final_output = keep_mask * tf_output
   return final_output
 
@@ -203,10 +206,10 @@ def _PickFinalStateFromHistory(acc_state, sequence_length):
     max_time, batch_size = shape[0], shape[1]
     output_time = array_ops.tile(math_ops.range(0, max_time), [batch_size])
     output_time = array_ops.reshape(output_time, [batch_size, max_time])
-    lengths = array_ops.tile(array_ops.reshape(sequence_length,
-                                               [-1, 1]), [1, max_time])
-    last_idx = math_ops.cast(math_ops.equal(output_time, lengths - 1),
-                             dtype=dtypes.float32)
+    lengths = array_ops.tile(
+        array_ops.reshape(sequence_length, [-1, 1]), [1, max_time])
+    last_idx = math_ops.cast(
+        math_ops.equal(output_time, lengths - 1), dtype=state_var.dtype)
     last_idx = array_ops.transpose(last_idx)
     last_idx_for_bcast = array_ops.expand_dims(last_idx, -1)
     sliced = math_ops.multiply(last_idx_for_bcast, state_var)
@@ -216,7 +219,7 @@ def _PickFinalStateFromHistory(acc_state, sequence_length):
 
 
 def _PostProcessOutput(extended_acc_state, extended_final_state, func_cell,
-                       total_time, inputs_lengths):
+                       total_time, inputs_lengths, is_reversed):
   """Post-process output of recurrent.
 
   This function takes the accumulated extended state and extracts the requested
@@ -225,21 +228,24 @@ def _PostProcessOutput(extended_acc_state, extended_final_state, func_cell,
   When `inputs_lengths` has been set, it extracts the output from the
   accumulated state. It also sets outputs past.
 
+  When `is_reversed` is true, the output will be reversed in this function.
+
   It also sets the static shape information.
 
   Args:
     extended_acc_state: A structure containing the accumulated state at each
       time. It may contain the output at each time as well.
-    extended_final_state: A structure containing the final state. It may
-      contain the output at the final time.
+    extended_final_state: A structure containing the final state. It may contain
+      the output at the final time.
     func_cell: The functional wrapper around the cell.
     total_time: A scalar integer tensor.
     inputs_lengths: An integer tensor with one entry per input.
+    is_reversed: A boolean to indicate if the sequence is reversed.
 
   Returns:
     A tuple with the outputs at each time, and the final state.
   """
-  if inputs_lengths is None:
+  if inputs_lengths is None or is_reversed:
     flat_final_state = func_cell.MaybeRemoveOutputFromState(
         nest.flatten(extended_final_state))
     tf_state = nest.pack_sequence_as(func_cell.state_template, flat_final_state)
@@ -248,73 +254,97 @@ def _PostProcessOutput(extended_acc_state, extended_final_state, func_cell,
     # out from the acc_state sequence.
     flat_acc_state = func_cell.MaybeRemoveOutputFromState(
         nest.flatten(extended_acc_state))
-    acc_state = nest.pack_sequence_as(
-        func_cell.state_template, flat_acc_state)
+    acc_state = nest.pack_sequence_as(func_cell.state_template, flat_acc_state)
     tf_state = _PickFinalStateFromHistory(acc_state, inputs_lengths)
 
   output_from_state = func_cell.GetOutputFromState(extended_acc_state)
+  if is_reversed:
+    output_from_state = array_ops.reverse(output_from_state, [0])
   tf_output = array_ops.transpose(output_from_state, [1, 0, 2])
   tf_output.set_shape(
       [func_cell.output_shape[0], total_time, func_cell.output_shape[1]])
   if inputs_lengths is not None:
     # Need set the outputs to zero.
     tf_output = _ApplyLengthsToBatch(inputs_lengths, tf_output)
-    # tf_output = array_ops.zeros([4, 3, 5])
   _SetShapeFromTemplate(tf_state, func_cell.state_template)
   return tf_output, tf_state
 
 
 # pylint: disable=invalid-name
-def functional_rnn(cell, inputs, sequence_length=None,
-                   initial_state=None, dtype=None, time_major=False,
-                   scope=None, use_tpu=False):
-  """Same interface as `tf.nn.dynamic_rnn`."""
+def functional_rnn(cell,
+                   inputs,
+                   sequence_length=None,
+                   initial_state=None,
+                   dtype=None,
+                   time_major=False,
+                   scope=None,
+                   use_tpu=False,
+                   reverse=False):
+  """Same interface as `tf.compat.v1.nn.dynamic_rnn`."""
   with variable_scope.variable_scope(scope or 'rnn'):
     if not time_major:
-      inputs = nest.map_structure(
-          lambda t: array_ops.transpose(t, [1, 0, 2]), inputs)
+      inputs = nest.map_structure(lambda t: array_ops.transpose(t, [1, 0, 2]),
+                                  inputs)
     inputs_flat = nest.flatten(inputs)
     batch_size = array_ops.shape(inputs_flat[0])[1]
     if initial_state is None:
       initial_state = cell.zero_state(batch_size, dtype)
     func_cell = _FunctionalRnnCell(cell, inputs, initial_state)
+  if sequence_length is not None:
+    max_length = math_ops.reduce_max(sequence_length)
+  else:
+    max_length = None
+  if reverse:
+    inputs = array_ops.reverse(inputs, [0])
   extended_acc_state, extended_final_state = recurrent.Recurrent(
       theta=func_cell.theta,
       state0=func_cell.extended_initial_state,
       inputs=inputs,
       cell_fn=func_cell.cell_step,
-      use_tpu=use_tpu)
-  return _PostProcessOutput(extended_acc_state, extended_final_state,
-                            func_cell, inputs_flat[0].shape[0], sequence_length)
+      max_input_length=max_length,
+      use_tpu=use_tpu,
+      aligned_end=reverse)
+
+  tf_output, tf_state = _PostProcessOutput(
+      extended_acc_state,
+      extended_final_state,
+      func_cell,
+      inputs_flat[0].shape[0],
+      sequence_length,
+      is_reversed=reverse)
+
+  if time_major:
+    tf_output = array_ops.transpose(tf_output, [1, 0, 2])
+  return tf_output, tf_state
 
 
-def bidirectional_functional_rnn(
-    cell_fw,
-    cell_bw,
-    inputs,
-    initial_state_fw=None,
-    initial_state_bw=None,
-    dtype=None,
-    sequence_length=None,
-    time_major=False,
-    use_tpu=False,
-    scope=None):
+def bidirectional_functional_rnn(cell_fw,
+                                 cell_bw,
+                                 inputs,
+                                 initial_state_fw=None,
+                                 initial_state_bw=None,
+                                 dtype=None,
+                                 sequence_length=None,
+                                 time_major=False,
+                                 use_tpu=False,
+                                 fast_reverse=False,
+                                 scope=None):
   """Creates a bidirectional recurrent neural network.
 
   Performs fully dynamic unrolling of inputs in both directions. Built to be API
-  compatible with `tf.nn.bidirectional_dynamic_rnn`, but implemented with
+  compatible with `tf.compat.v1.nn.bidirectional_dynamic_rnn`, but implemented
+  with
   functional control flow for TPU compatibility.
 
   Args:
-    cell_fw: An instance of `tf.contrib.rnn.RNNCell`.
-    cell_bw: An instance of `tf.contrib.rnn.RNNCell`.
+    cell_fw: An instance of `tf.compat.v1.nn.rnn_cell.RNNCell`.
+    cell_bw: An instance of `tf.compat.v1.nn.rnn_cell.RNNCell`.
     inputs: The RNN inputs. If time_major == False (default), this must be a
-      Tensor (or hierarchical structure of Tensors) of shape
-      [batch_size, max_time, ...]. If time_major == True, this must be a Tensor
-      (or hierarchical structure of Tensors) of shape:
-      [max_time, batch_size, ...]. The first two dimensions must match across
-      all the inputs, but otherwise the ranks and other shape components may
-      differ.
+      Tensor (or hierarchical structure of Tensors) of shape [batch_size,
+      max_time, ...]. If time_major == True, this must be a Tensor
+      (or hierarchical structure of Tensors) of shape: [max_time, batch_size,
+        ...]. The first two dimensions must match across all the inputs, but
+        otherwise the ranks and other shape components may differ.
     initial_state_fw: An optional initial state for `cell_fw`. Should match
       `cell_fw.zero_state` in structure and type.
     initial_state_bw: An optional initial state for `cell_bw`. Should match
@@ -329,6 +359,10 @@ def bidirectional_functional_rnn(
     use_tpu: Whether to enable TPU-compatible operation. If True, does not truly
       reverse `inputs` in the backwards RNN. Once b/69305369 is fixed, we can
       remove this flag.
+    fast_reverse: Whether to use fast tf.reverse to replace tf.reverse_sequence.
+      This is only possible when either all sequence lengths are the same inside
+      the batch, or when the cell function does not change the state on padded
+      input.
     scope: An optional scope name for the dynamic RNN.
 
   Returns:
@@ -349,14 +383,19 @@ def bidirectional_functional_rnn(
     ValueError: If `initial_state_fw` is None or `initial_state_bw` is None and
       `dtype` is not provided.
   """
-  # Keep this code in sync with tf.nn.dynamic_rnn for compatibility.
+  # Keep this code in sync with tf.compat.v1.nn.dynamic_rnn for compatibility.
   with variable_scope.variable_scope(scope or 'bidirectional_rnn'):
     # Forward direction
     with variable_scope.variable_scope('fw') as fw_scope:
       output_fw, output_state_fw = functional_rnn(
-          cell=cell_fw, inputs=inputs, sequence_length=sequence_length,
-          initial_state=initial_state_fw, dtype=dtype,
-          time_major=time_major, scope=fw_scope, use_tpu=use_tpu)
+          cell=cell_fw,
+          inputs=inputs,
+          sequence_length=sequence_length,
+          initial_state=initial_state_fw,
+          dtype=dtype,
+          time_major=time_major,
+          scope=fw_scope,
+          use_tpu=use_tpu)
     # Backward direction
     if not time_major:
       time_dim = 1
@@ -368,8 +407,10 @@ def bidirectional_functional_rnn(
     def _reverse(input_, seq_lengths, seq_dim, batch_dim):
       if seq_lengths is not None:
         return array_ops.reverse_sequence(
-            input=input_, seq_lengths=seq_lengths,
-            seq_dim=seq_dim, batch_dim=batch_dim)
+            input=input_,
+            seq_lengths=seq_lengths,
+            seq_dim=seq_dim,
+            batch_dim=batch_dim)
       else:
         # See b/69305369.
         assert not use_tpu, (
@@ -377,20 +418,34 @@ def bidirectional_functional_rnn(
         return array_ops.reverse(input_, axis=[seq_dim])
 
     with variable_scope.variable_scope('bw') as bw_scope:
-      inputs_reverse = _reverse(
-          inputs, seq_lengths=sequence_length,
-          seq_dim=time_dim, batch_dim=batch_dim)
-      tmp, output_state_bw = functional_rnn(
-          cell=cell_bw, inputs=inputs_reverse, sequence_length=sequence_length,
-          initial_state=initial_state_bw, dtype=dtype,
-          time_major=time_major, scope=bw_scope, use_tpu=use_tpu)
+      if not fast_reverse:
+        inputs = _reverse(
+            inputs,
+            seq_lengths=sequence_length,
+            seq_dim=time_dim,
+            batch_dim=batch_dim)
+      output_bw, output_state_bw = functional_rnn(
+          cell=cell_bw,
+          inputs=inputs,
+          sequence_length=sequence_length,
+          initial_state=initial_state_bw,
+          dtype=dtype,
+          time_major=time_major,
+          scope=bw_scope,
+          use_tpu=use_tpu,
+          reverse=fast_reverse)
 
-  output_bw = _reverse(
-      tmp, seq_lengths=sequence_length,
-      seq_dim=time_dim, batch_dim=batch_dim)
+  if not fast_reverse:
+    output_bw = _reverse(
+        output_bw,
+        seq_lengths=sequence_length,
+        seq_dim=time_dim,
+        batch_dim=batch_dim)
 
   outputs = (output_fw, output_bw)
   output_states = (output_state_fw, output_state_bw)
 
   return (outputs, output_states)
+
+
 # pylint: enable=invalid-name

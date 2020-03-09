@@ -15,7 +15,9 @@
 
 """Integration and ODE solvers.
 
-See the @{$python/contrib.integrate} guide.
+See the
+[Contrib Integrate](https://tensorflow.org/api_guides/python/contrib.integrate)
+guide.
 
 @@odeint
 @@odeint_fixed
@@ -26,7 +28,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from astronet.contrib.integrate.python.ops.odes import *
+from tensorflow.contrib.integrate.python.ops.odes import *
 from tensorflow.python.util.all_util import remove_undocumented
 
 

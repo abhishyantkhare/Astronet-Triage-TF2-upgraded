@@ -1,18 +1,16 @@
 # TensorFlow code for training gradient boosted trees.
-licenses(["notice"])  # Apache 2.0
+
+load("//tensorflow:tensorflow.bzl", "py_test", "tf_custom_op_library", "tf_gen_op_libs", "tf_gen_op_wrapper_py", "tf_kernel_library")
+load("//tensorflow:tensorflow.bzl", "tf_custom_op_py_library")
+
+package(
+    default_visibility = [
+        "//visibility:public",
+    ],
+    licenses = ["notice"],  # Apache 2.0
+)
 
 exports_files(["LICENSE"])
-
-package(default_visibility = [
-    "//visibility:public",
-])
-
-load("//tensorflow:tensorflow.bzl", "py_test")
-load("//tensorflow:tensorflow.bzl", "tf_custom_op_library")
-load("//tensorflow:tensorflow.bzl", "tf_gen_op_libs")
-load("//tensorflow:tensorflow.bzl", "tf_gen_op_wrapper_py")
-load("//tensorflow:tensorflow.bzl", "tf_kernel_library")
-load("//tensorflow:tensorflow.bzl", "tf_custom_op_py_library")
 
 package_group(name = "friends")
 
@@ -71,6 +69,7 @@ py_test(
     name = "losses_test",
     size = "small",
     srcs = ["python/utils/losses_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":losses",
@@ -98,7 +97,6 @@ py_library(
         "//tensorflow/contrib/boosted_trees/proto:learner_proto_py",
         "//tensorflow/contrib/layers:layers_py",
         "//tensorflow/contrib/learn",
-        "//tensorflow/contrib/stateless",
         "//tensorflow/python:array_ops",
         "//tensorflow/python:constant_op",
         "//tensorflow/python:control_flow_ops",
@@ -108,6 +106,7 @@ py_library(
         "//tensorflow/python:math_ops",
         "//tensorflow/python:platform",
         "//tensorflow/python:sparse_tensor",
+        "//tensorflow/python:stateless_random_ops",
         "//tensorflow/python:summary",
         "//tensorflow/python:tensor_shape",
         "//tensorflow/python:training",
@@ -121,8 +120,10 @@ py_test(
     name = "gbdt_batch_test",
     size = "medium",
     srcs = ["python/training/functions/gbdt_batch_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     tags = [
+        "nofwdcompat",  # b/137641346
         "notsan",  # b/62863147
     ],
     deps = [
@@ -150,6 +151,7 @@ py_test(
     name = "model_ops_test",
     size = "small",
     srcs = ["python/kernel_tests/model_ops_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":model_ops_py",
@@ -170,6 +172,7 @@ py_test(
     name = "prediction_ops_test",
     size = "small",
     srcs = ["python/kernel_tests/prediction_ops_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":model_ops_py",
@@ -187,6 +190,7 @@ py_test(
     name = "quantile_ops_test",
     size = "small",
     srcs = ["python/kernel_tests/quantile_ops_test.py"],
+    python_version = "PY2",
     shard_count = 3,
     srcs_version = "PY2AND3",
     deps = [
@@ -209,6 +213,7 @@ py_test(
     name = "split_handler_ops_test",
     size = "small",
     srcs = ["python/kernel_tests/split_handler_ops_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":split_handler_ops_py",
@@ -225,6 +230,7 @@ py_test(
     name = "stats_accumulator_ops_test",
     size = "small",
     srcs = ["python/kernel_tests/stats_accumulator_ops_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":stats_accumulator_ops_py",
@@ -239,6 +245,7 @@ py_test(
     name = "training_ops_test",
     size = "small",
     srcs = ["python/kernel_tests/training_ops_test.py"],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     deps = [
         ":model_ops_py",
@@ -445,6 +452,7 @@ tf_kernel_library(
         "//tensorflow/contrib/boosted_trees/proto:learner_proto_cc",
         "//tensorflow/contrib/boosted_trees/proto:quantiles_proto_cc",
         "//tensorflow/contrib/boosted_trees/proto:split_info_proto_cc",
+        "//tensorflow/contrib/boosted_trees/proto:tree_config_proto_cc",
         "//tensorflow/contrib/boosted_trees/resources:decision_tree_ensemble_resource",
         "//tensorflow/contrib/boosted_trees/resources:quantile_stream_resource",
         "//tensorflow/core:framework_headers_lib",

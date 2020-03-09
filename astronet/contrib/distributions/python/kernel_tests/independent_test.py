@@ -21,8 +21,8 @@ from __future__ import print_function
 import importlib
 import numpy as np
 
-from astronet.contrib.distributions.python.ops import independent as independent_lib
-from astronet.contrib.distributions.python.ops import mvn_diag as mvn_diag_lib
+from tensorflow.contrib.distributions.python.ops import independent as independent_lib
+from tensorflow.contrib.distributions.python.ops import mvn_diag as mvn_diag_lib
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
@@ -52,7 +52,7 @@ class ProductDistributionTest(test.TestCase):
   def testSampleAndLogProbUnivariate(self):
     loc = np.float32([-1., 1])
     scale = np.float32([0.1, 0.5])
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       ind = independent_lib.Independent(
           distribution=normal_lib.Normal(loc=loc, scale=scale),
           reinterpreted_batch_ndims=1)
@@ -73,7 +73,7 @@ class ProductDistributionTest(test.TestCase):
   def testSampleAndLogProbMultivariate(self):
     loc = np.float32([[-1., 1], [1, -1]])
     scale = np.float32([1., 0.5])
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       ind = independent_lib.Independent(
           distribution=mvn_diag_lib.MultivariateNormalDiag(
               loc=loc,
@@ -98,7 +98,7 @@ class ProductDistributionTest(test.TestCase):
     loc = np.float32([[-1., 1], [1, -1]])
     scale = np.float32([1., 0.5])
     n_samp = 1e4
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       ind = independent_lib.Independent(
           distribution=mvn_diag_lib.MultivariateNormalDiag(
               loc=loc,
@@ -231,7 +231,7 @@ class ProductDistributionTest(test.TestCase):
     def expected_log_prob(x, logits):
       return (x * logits - np.log1p(np.exp(logits))).sum(-1).sum(-1).sum(-1)
 
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       logits_ph = array_ops.placeholder(
           dtypes.float32, shape=logits.shape if static_shape else None)
       ind = independent_lib.Independent(

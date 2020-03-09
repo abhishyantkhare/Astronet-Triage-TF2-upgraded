@@ -39,13 +39,13 @@ from __future__ import print_function
 import os
 import time
 
-from astronet.contrib.layers.python.layers import feature_column
-from astronet.contrib.learn.python.learn import export_strategy
-from astronet.contrib.learn.python.learn.estimators import constants
-from astronet.contrib.learn.python.learn.estimators import metric_key
-from astronet.contrib.learn.python.learn.estimators import prediction_key
-from astronet.contrib.learn.python.learn.utils import gc
-from astronet.contrib.learn.python.learn.utils import input_fn_utils
+from tensorflow.contrib.layers.python.layers import feature_column
+from tensorflow.contrib.learn.python.learn import export_strategy
+from tensorflow.contrib.learn.python.learn.estimators import constants
+from tensorflow.contrib.learn.python.learn.estimators import metric_key
+from tensorflow.contrib.learn.python.learn.estimators import prediction_key
+from tensorflow.contrib.learn.python.learn.utils import gc
+from tensorflow.contrib.learn.python.learn.utils import input_fn_utils
 from tensorflow.python.estimator import estimator as core_estimator
 from tensorflow.python.estimator.export import export as core_export
 from tensorflow.python.framework import dtypes
@@ -55,7 +55,7 @@ from tensorflow.python.platform import tf_logging as logging
 from tensorflow.python.saved_model import signature_constants
 from tensorflow.python.saved_model import signature_def_utils
 from tensorflow.python.summary import summary_iterator
-from tensorflow.python.training import saver
+from tensorflow.python.training import checkpoint_management
 from tensorflow.python.util import compat
 from tensorflow.python.util.deprecation import deprecated
 
@@ -343,7 +343,8 @@ def get_temp_export_dir(timestamped_export_dir):
   """
   (dirname, basename) = os.path.split(timestamped_export_dir)
   temp_export_dir = os.path.join(
-      compat.as_bytes(dirname), compat.as_bytes('temp-{}'.format(basename)))
+      compat.as_bytes(dirname),
+      compat.as_bytes('temp-{}'.format(compat.as_text(basename))))
   return temp_export_dir
 
 
@@ -414,7 +415,7 @@ def make_export_strategy(serving_input_fn,
       `InputFnOps`.
     default_output_alternative_key: the name of the head to serve when an
       incoming serving request does not explicitly request a specific head.
-      Must be `None` if the estimator inherits from @{tf.estimator.Estimator}
+      Must be `None` if the estimator inherits from `tf.estimator.Estimator`
       or for single-headed models.
     assets_extra: A dict specifying how to populate the assets.extra directory
       within the exported SavedModel.  Each key should give the destination
@@ -452,7 +453,7 @@ def make_export_strategy(serving_input_fn,
       The string path to the exported directory.
 
     Raises:
-      ValueError: If `estimator` is a @{tf.estimator.Estimator} instance
+      ValueError: If `estimator` is a `tf.estimator.Estimator` instance
         and `default_output_alternative_key` was specified.
     """
     if isinstance(estimator, core_estimator.Estimator):
@@ -503,7 +504,7 @@ def make_parsing_export_strategy(feature_columns,
       that must be provided at serving time (excluding labels!).
     default_output_alternative_key: the name of the head to serve when an
       incoming serving request does not explicitly request a specific head.
-      Must be `None` if the estimator inherits from @{tf.estimator.Estimator}
+      Must be `None` if the estimator inherits from `tf.estimator.Estimator`
       or for single-headed models.
     assets_extra: A dict specifying how to populate the assets.extra directory
       within the exported SavedModel.  Each key should give the destination
@@ -518,7 +519,7 @@ def make_parsing_export_strategy(feature_columns,
       collection.
     target_core: If True, prepare an ExportStrategy for use with
       tensorflow.python.estimator.*.  If False (default), prepare an
-      ExportStrategy for use with astronet.contrib.learn.python.learn.*.
+      ExportStrategy for use with tensorflow.contrib.learn.python.learn.*.
     strip_default_attrs: Boolean. If True, default attrs in the
       `GraphDef` will be stripped on write. This is recommended for better
       forward compatibility of the resulting `SavedModel`.
@@ -713,7 +714,8 @@ def make_best_model_export_strategy(
       #  as soon as contrib is cleaned up and we can thus be sure that
       #  estimator is a tf.estimator.Estimator and not a
       #  tf.contrib.learn.Estimator
-      checkpoint_path = saver.latest_checkpoint(estimator.model_dir)
+      checkpoint_path = checkpoint_management.latest_checkpoint(
+          estimator.model_dir)
     export_checkpoint_path, export_eval_result = best_model_selector.update(
         checkpoint_path, eval_result)
 
@@ -765,7 +767,7 @@ def extend_export_strategy(base_export_strategy,
       The string path to the SavedModel indicated by post_export_fn.
 
     Raises:
-      ValueError: If `estimator` is a @{tf.estimator.Estimator} instance
+      ValueError: If `estimator` is a `tf.estimator.Estimator` instance
         and `default_output_alternative_key` was specified or if post_export_fn
         does not return a valid directory.
       RuntimeError: If unable to create temporary or final export directory.

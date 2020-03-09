@@ -24,21 +24,21 @@ import tempfile
 
 import numpy as np
 
-from astronet.contrib.layers.python.layers import feature_column
-from astronet.contrib.learn.python.learn import experiment
-from astronet.contrib.learn.python.learn.datasets import base
-from astronet.contrib.learn.python.learn.estimators import _sklearn
-from astronet.contrib.learn.python.learn.estimators import dnn
-from astronet.contrib.learn.python.learn.estimators import dnn_linear_combined
-from astronet.contrib.learn.python.learn.estimators import estimator
-from astronet.contrib.learn.python.learn.estimators import estimator_test_utils
-from astronet.contrib.learn.python.learn.estimators import head as head_lib
-from astronet.contrib.learn.python.learn.estimators import model_fn
-from astronet.contrib.learn.python.learn.estimators import run_config
-from astronet.contrib.learn.python.learn.estimators import test_data
-from astronet.contrib.learn.python.learn.metric_spec import MetricSpec
-from astronet.contrib.metrics.python.ops import metric_ops
-from tensorflow.python.feature_column import feature_column as fc_core
+from tensorflow.contrib.layers.python.layers import feature_column
+from tensorflow.contrib.learn.python.learn import experiment
+from tensorflow.contrib.learn.python.learn.datasets import base
+from tensorflow.contrib.learn.python.learn.estimators import _sklearn
+from tensorflow.contrib.learn.python.learn.estimators import dnn
+from tensorflow.contrib.learn.python.learn.estimators import dnn_linear_combined
+from tensorflow.contrib.learn.python.learn.estimators import estimator
+from tensorflow.contrib.learn.python.learn.estimators import estimator_test_utils
+from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
+from tensorflow.contrib.learn.python.learn.estimators import model_fn
+from tensorflow.contrib.learn.python.learn.estimators import run_config
+from tensorflow.contrib.learn.python.learn.estimators import test_data
+from tensorflow.contrib.learn.python.learn.metric_spec import MetricSpec
+from tensorflow.contrib.metrics.python.ops import metric_ops
+from tensorflow.python.feature_column import feature_column_lib as fc_core
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor
@@ -815,7 +815,7 @@ class DNNClassifierTest(test.TestCase):
     def _my_metric_op(predictions, labels):
       # For the case of binary classification, the 2nd column of "predictions"
       # denotes the model predictions.
-      labels = math_ops.to_float(labels)
+      labels = math_ops.cast(labels, dtypes.float32)
       predictions = array_ops.strided_slice(
           predictions, [0, 1], [-1, 2], end_mask=1)
       labels = math_ops.cast(labels, predictions.dtype)

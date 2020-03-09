@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import math
 
-from astronet.contrib.opt.python.training import sign_decay
+from tensorflow.contrib.opt.python.training import sign_decay
 from tensorflow.python.platform import test
 
 
@@ -66,7 +66,7 @@ class SignDecaysTest(test.TestCase):
     linear_decay_fn = sign_decay.get_linear_decay_fn(num_training_steps)
 
     for step in range(0, 1000, 100):
-      with self.test_session():
+      with self.cached_session():
         tf_decayed = linear_decay_fn(step).eval()
         py_decayed = py_linear_decay_fn(num_training_steps)(step)
         self.assertAlmostEqual(tf_decayed, py_decayed, places=4)
@@ -78,7 +78,7 @@ class SignDecaysTest(test.TestCase):
         num_training_steps, num_periods=5, zero_after=2)
 
     for step in range(0, 1000, 100):
-      with self.test_session():
+      with self.cached_session():
         tf_decayed = cosine_decay_fn(step).eval()
         py_decayed = py_cosine_decay_fn(num_training_steps)(step)
         self.assertAlmostEqual(tf_decayed, py_decayed, places=4)
@@ -95,7 +95,7 @@ class SignDecaysTest(test.TestCase):
         num_training_steps, num_periods=5, zero_after=2)
 
     for step in range(0, 1000, 100):
-      with self.test_session():
+      with self.cached_session():
         tf_decayed = restart_decay_fn(step).eval()
         py_decayed = py_restart_decay_fn(num_training_steps)(step)
         self.assertAlmostEqual(tf_decayed, py_decayed, places=4)

@@ -20,7 +20,7 @@ from __future__ import print_function
 
 from six import string_types
 
-from astronet.contrib.graph_editor import select
+from tensorflow.contrib.graph_editor import select
 from tensorflow.python.framework import ops as tf_ops
 
 __all__ = [

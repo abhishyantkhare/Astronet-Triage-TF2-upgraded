@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.reduce_slice_ops.ops import gen_reduce_slice_ops
-from astronet.contrib.util import loader
+from tensorflow.contrib.reduce_slice_ops.ops import gen_reduce_slice_ops
+from tensorflow.contrib.util import loader
 from tensorflow.python.platform import resource_loader
 
 

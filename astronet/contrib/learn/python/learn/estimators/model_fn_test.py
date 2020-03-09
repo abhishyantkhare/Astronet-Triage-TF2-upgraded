@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import six
 
-from astronet.contrib.learn.python.learn.estimators import constants
-from astronet.contrib.learn.python.learn.estimators import model_fn
+from tensorflow.contrib.learn.python.learn.estimators import constants
+from tensorflow.contrib.learn.python.learn.estimators import model_fn
 from tensorflow.python.client import session
 from tensorflow.python.estimator.export import export_output as core_export_lib
 from tensorflow.python.framework import constant_op

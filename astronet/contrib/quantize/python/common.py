@@ -34,10 +34,10 @@ SKIPPED_PREFIXES = (
     'ScalarSummary')
 
 # Valid activation ops for quantization end points.
-_ACTIVATION_OP_SUFFIXES = ['/Relu6', '/Relu', '/Identity']
+_ACTIVATION_OP_SUFFIXES = ['Relu6', 'Relu', 'Identity']
 
 # Regular expression for recognizing nodes that are part of batch norm group.
-_BATCHNORM_RE = re.compile(r'^(.*)/BatchNorm/batchnorm')
+_BATCHNORM_RE = re.compile(r'^(.*)BatchNorm/batchnorm')
 
 
 def BatchNormGroups(graph):
@@ -115,7 +115,8 @@ def CreateOrGetQuantizationStep():
           dtype=dtypes.int64,
           initializer=init_ops.zeros_initializer(),
           trainable=False,
-          collections=[ops.GraphKeys.GLOBAL_VARIABLES])
+          collections=[ops.GraphKeys.GLOBAL_VARIABLES],
+          aggregation=variable_scope.VariableAggregation.ONLY_FIRST_REPLICA)
       with g.name_scope(quantization_step_tensor.op.name + '/'):
         # We return the incremented variable tensor. Since this is used in conds
         # for quant_delay and freeze_bn_delay, it will run once per graph
@@ -131,3 +132,29 @@ def DropStringPrefix(s, prefix):
     return s[len(prefix):]
   else:
     return s
+
+
+def RerouteTensor(t0, t1, can_modify=None):
+  """Reroute the end of the tensor t0 to the ends of the tensor t1.
+
+  Args:
+    t0: a tf.Tensor.
+    t1: a tf.Tensor.
+    can_modify: iterable of operations which can be modified. Any operation
+      outside within_ops will be left untouched by this function.
+
+  Returns:
+    The number of individual modifications made by the function.
+  """
+  nb_update_inputs = 0
+  consumers = t1.consumers()
+  if can_modify is not None:
+    consumers = [c for c in consumers if c in can_modify]
+  consumers_indices = {}
+  for c in consumers:
+    consumers_indices[c] = [i for i, t in enumerate(c.inputs) if t is t1]
+  for c in consumers:
+    for i in consumers_indices[c]:
+      c._update_input(i, t0)  # pylint: disable=protected-access
+      nb_update_inputs += 1
+  return nb_update_inputs

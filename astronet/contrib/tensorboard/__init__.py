@@ -19,4 +19,4 @@ from __future__ import division
 from __future__ import print_function
 
 # Add projects here, they will show up under tf.contrib.tensorboard.
-from astronet.contrib.tensorboard import plugins
+from tensorflow.contrib.tensorboard import plugins

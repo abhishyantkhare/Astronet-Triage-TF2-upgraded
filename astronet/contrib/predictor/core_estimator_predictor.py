@@ -19,7 +19,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.predictor import predictor
+from tensorflow.contrib.predictor import predictor
 from tensorflow.python.estimator import model_fn
 from tensorflow.python.framework import ops
 from tensorflow.python.saved_model import signature_constants
@@ -51,7 +51,8 @@ class CoreEstimatorPredictor(predictor.Predictor):
                estimator,
                serving_input_receiver_fn,
                output_key=None,
-               graph=None):
+               graph=None,
+               config=None):
     """Initialize a `CoreEstimatorPredictor`.
 
     Args:
@@ -62,6 +63,7 @@ class CoreEstimatorPredictor(predictor.Predictor):
         `None`, then `DEFAULT_SERVING_SIGNATURE_DEF_KEY` is used.
       graph: Optional. The Tensorflow `graph` in which prediction should be
         done.
+      config: `ConfigProto` proto used to configure the session.
     """
     self._graph = graph or ops.Graph()
     with self._graph.as_default():
@@ -71,6 +73,7 @@ class CoreEstimatorPredictor(predictor.Predictor):
       checkpoint_dir = estimator.model_dir
       self._session = monitored_session.MonitoredSession(
           session_creator=monitored_session.ChiefSessionCreator(
+              config=config,
               checkpoint_dir=checkpoint_dir))
 
     feed_tensor_info = signature_def.inputs

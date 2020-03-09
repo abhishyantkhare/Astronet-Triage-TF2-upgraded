@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib import slim
-from astronet.contrib.receptive_field import receptive_field_api as receptive_field
+from tensorflow.contrib import slim
+from tensorflow.contrib.receptive_field import receptive_field_api as receptive_field
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
@@ -385,7 +385,7 @@ class ReceptiveFieldTest(test.TestCase):
      effective_stride_y, effective_padding_x, effective_padding_y) = (
          receptive_field.compute_receptive_field_from_graph_def(
              graph_def, input_node, output_node,
-             ['Dropout/dropout/random_uniform']))
+             ['Dropout/dropout_1/random_uniform']))
     self.assertEqual(receptive_field_x, 3)
     self.assertEqual(receptive_field_y, 3)
     self.assertEqual(effective_stride_x, 4)

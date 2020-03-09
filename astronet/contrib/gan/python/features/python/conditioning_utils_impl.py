@@ -23,7 +23,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.layers.python.layers import layers
+from tensorflow.contrib.layers.python.layers import layers
 from tensorflow.python.framework import tensor_util
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import embedding_ops
@@ -64,6 +64,9 @@ def condition_tensor(tensor, conditioning):
   """
   tensor.shape[1:].assert_is_fully_defined()
   num_features = tensor.shape[1:].num_elements()
+  if conditioning.shape.ndims < 2:
+    raise ValueError('conditioning must be at least 2D, but saw shape: %s'
+                     % conditioning.shape)
 
   mapped_conditioning = layers.linear(
       layers.flatten(conditioning), num_features)

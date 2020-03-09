@@ -18,11 +18,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.timeseries.python.timeseries import saved_model_utils
+from tensorflow.contrib.timeseries.python.timeseries import saved_model_utils
 
 # pylint: disable=wildcard-import
-from astronet.contrib.timeseries.python.timeseries.ar_model import *
-from astronet.contrib.timeseries.python.timeseries.estimators import *
-from astronet.contrib.timeseries.python.timeseries.feature_keys import *
-from astronet.contrib.timeseries.python.timeseries.input_pipeline import *
+from tensorflow.contrib.timeseries.python.timeseries.ar_model import *
+from tensorflow.contrib.timeseries.python.timeseries.estimators import *
+from tensorflow.contrib.timeseries.python.timeseries.feature_keys import *
+from tensorflow.contrib.timeseries.python.timeseries.head import *
+from tensorflow.contrib.timeseries.python.timeseries.input_pipeline import *
 # pylint: enable=wildcard-import

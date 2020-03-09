@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Tests for astronet.contrib.graph_editor."""
+"""Tests for tensorflow.contrib.graph_editor."""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.graph_editor.tests import match
+from tensorflow.contrib.graph_editor.tests import match
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import math_ops

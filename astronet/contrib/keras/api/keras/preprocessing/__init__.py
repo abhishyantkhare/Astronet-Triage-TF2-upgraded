@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.keras.api.keras.preprocessing import image
-from astronet.contrib.keras.api.keras.preprocessing import sequence
-from astronet.contrib.keras.api.keras.preprocessing import text
+from tensorflow.contrib.keras.api.keras.preprocessing import image
+from tensorflow.contrib.keras.api.keras.preprocessing import sequence
+from tensorflow.contrib.keras.api.keras.preprocessing import text
 
 del absolute_import
 del division

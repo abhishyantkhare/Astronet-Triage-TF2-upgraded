@@ -22,7 +22,7 @@ set -e
 prog=compile_nsync.sh
 android_api_version=21
 default_android_arch=armeabi-v7a
-default_ios_arch="i386 x86_64 armv7 armv7s arm64"
+default_ios_arch="x86_64 armv7 armv7s arm64"
 
 usage="usage: $prog [-t linux|ios|android|macos|native]
         [-a architecture] [-v android_api_version]
@@ -130,7 +130,7 @@ for arch in $archs; do
 
         ios)    arch_flags=
                 case "$arch" in
-                i386|x86_64)
+                x86_64)
                         arch_flags="$arch_flags -mios-simulator-version-min=8.0"
                         arch_flags="$arch_flags -isysroot $(xcrun --sdk iphonesimulator --show-sdk-path)"
                         ;;
@@ -256,6 +256,7 @@ for arch in $archs; do
                 esac
 
                 makefile='
+			AR := ${NDK_ROOT}/toolchains/'"$toolchain"'/prebuilt/'"$android_os_arch"'/bin/'"$bin_prefix"'-ar
                         CC=${CC_PREFIX} \
                            ${NDK_ROOT}/toolchains/'"$toolchain"'/prebuilt/'"$android_os_arch"'/bin/'"$bin_prefix"'-g++
                         PLATFORM_CPPFLAGS=--sysroot \
@@ -270,7 +271,7 @@ for arch in $archs; do
                         PLATFORM_LDFLAGS=-pthread
                         MKDEP=${CC} -M -std=c++11
                         PLATFORM_C=../../platform/c++11/src/nsync_semaphore_mutex.cc \
-                                   ../../platform/c++11/src/per_thread_waiter.cc \
+                                   ../../platform/posix/src/per_thread_waiter.c \
                                    ../../platform/c++11/src/yield.cc \
                                    ../../platform/c++11/src/time_rep_timespec.cc \
                                    ../../platform/c++11/src/nsync_panic.cc

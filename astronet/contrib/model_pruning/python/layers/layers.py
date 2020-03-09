@@ -23,11 +23,11 @@ from __future__ import print_function
 
 import six
 
-from astronet.contrib.framework.python.ops import add_arg_scope
-from astronet.contrib.framework.python.ops import variables
-from astronet.contrib.layers.python.layers import initializers
-from astronet.contrib.layers.python.layers import utils
-from astronet.contrib.model_pruning.python.layers import core_layers as core
+from tensorflow.contrib.framework.python.ops import add_arg_scope
+from tensorflow.contrib.framework.python.ops import variables
+from tensorflow.contrib.layers.python.layers import initializers
+from tensorflow.contrib.layers.python.layers import utils
+from tensorflow.contrib.model_pruning.python.layers import core_layers as core
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import init_ops
 from tensorflow.python.ops import nn
@@ -139,7 +139,7 @@ def masked_convolution(inputs,
       with "NC".
     num_outputs: Integer, the number of output filters.
     kernel_size: A sequence of N positive integers specifying the spatial
-      dimensions of of the filters.  Can be a single integer to specify the same
+      dimensions of the filters.  Can be a single integer to specify the same
       value for all spatial dimensions.
     stride: A sequence of N positive integers specifying the stride at which to
       compute output.  Can be a single integer to specify the same value for all

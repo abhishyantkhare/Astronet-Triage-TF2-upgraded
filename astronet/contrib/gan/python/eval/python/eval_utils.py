@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.gan.python.eval.python import eval_utils_impl
+from tensorflow.contrib.gan.python.eval.python import eval_utils_impl
 # pylint: disable=wildcard-import
-from astronet.contrib.gan.python.eval.python.eval_utils_impl import *
+from tensorflow.contrib.gan.python.eval.python.eval_utils_impl import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util.all_util import remove_undocumented
 

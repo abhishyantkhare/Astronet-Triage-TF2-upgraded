@@ -1,23 +1,21 @@
-# TODO(b/76425722): Port everything in here to OS (currently excluded).
-
-package(default_visibility = ["//visibility:public"])
-
-licenses(["notice"])  # Apache 2.0
-
-exports_files(["LICENSE"])
-
 load("//tensorflow:tensorflow.bzl", "tf_py_test")
 load("//tensorflow:tensorflow.bzl", "tf_cc_shared_object")
-load("//tensorflow/core:platform/default/build_config_root.bzl", "if_static")
-load("//tensorflow/core:platform/default/build_config.bzl", "tf_proto_library")
+load("//tensorflow/core/platform:default/build_config_root.bzl", "if_static")
+load("//tensorflow/core/platform:default/build_config.bzl", "tf_proto_library")
 # Placeholder for loading internal BUILD rule.
+
+package(
+    default_visibility = ["//visibility:public"],
+    licenses = ["notice"],  # Apache 2.0
+)
+
+exports_files(["LICENSE"])
 
 tf_proto_library(
     name = "test_example_proto",
     srcs = ["test_example.proto"],
     has_services = 1,
     cc_api_version = 2,
-    protodeps = ["//tensorflow/core:protos_all"],
 )
 
 py_library(

@@ -35,8 +35,8 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from astronet.contrib.cudnn_rnn.python.layers import cudnn_rnn
-from astronet.contrib.eager.python import tfe
+from tensorflow.contrib.cudnn_rnn.python.layers import cudnn_rnn
+from tensorflow.contrib.eager.python import tfe
 
 layers = tf.keras.layers
 
@@ -44,13 +44,13 @@ layers = tf.keras.layers
 class RNN(tf.keras.Model):
   """A static RNN.
 
-  Similar to tf.nn.static_rnn, implemented as a class.
+  Similar to tf.compat.v1.nn.static_rnn, implemented as a class.
   """
 
   def __init__(self, hidden_dim, num_layers, keep_ratio):
     super(RNN, self).__init__()
     self.keep_ratio = keep_ratio
-    self.cells = self._add_cells([
+    self.cells = tf.contrib.checkpoint.List([
         tf.nn.rnn_cell.BasicLSTMCell(num_units=hidden_dim)
         for _ in range(num_layers)
     ])
@@ -73,14 +73,6 @@ class RNN(tf.keras.Model):
     # in PTBModel.call works for both this RNN and CudnnLSTM (which returns a
     # tuple (output, output_states).
     return [input_seq]
-
-  def _add_cells(self, cells):
-    # "Magic" required for keras.Model classes to track all the variables in
-    # a list of Layer objects.
-    # TODO(ashankar): Figure out API so user code doesn't have to do this.
-    for i, c in enumerate(cells):
-      setattr(self, "cell-%d" % i, c)
-    return cells
 
 
 class Embedding(layers.Layer):
@@ -136,7 +128,7 @@ class PTBModel(tf.keras.Model):
 
     self.linear = layers.Dense(
         vocab_size, kernel_initializer=tf.random_uniform_initializer(-0.1, 0.1))
-    self._output_shape = [-1, embedding_dim]
+    self._output_shape = [-1, hidden_dim]
 
   def call(self, input_seq, training):
     """Run the forward pass of PTBModel.
@@ -304,7 +296,7 @@ def test_model(use_cudnn_rnn):
 
 
 def main(_):
-  tfe.enable_eager_execution()
+  tf.enable_eager_execution()
 
   if not FLAGS.data_path:
     raise ValueError("Must specify --data-path")
@@ -318,12 +310,12 @@ def main(_):
   with tf.device("/device:GPU:0" if have_gpu else None):
     # Make learning_rate a Variable so it can be included in the checkpoint
     # and we can resume training with the last saved learning_rate.
-    learning_rate = tfe.Variable(20.0, name="learning_rate")
+    learning_rate = tf.Variable(20.0, name="learning_rate")
     model = PTBModel(corpus.vocab_size(), FLAGS.embedding_dim,
                      FLAGS.hidden_dim, FLAGS.num_layers, FLAGS.dropout,
                      use_cudnn_rnn)
     optimizer = tf.train.GradientDescentOptimizer(learning_rate)
-    checkpoint = tfe.Checkpoint(
+    checkpoint = tf.train.Checkpoint(
         learning_rate=learning_rate, model=model,
         # GradientDescentOptimizer has no state to checkpoint, but noting it
         # here lets us swap in an optimizer that does.

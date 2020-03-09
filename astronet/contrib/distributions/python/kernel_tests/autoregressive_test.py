@@ -18,11 +18,11 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.distributions.python.ops import autoregressive as autoregressive_lib
-from astronet.contrib.distributions.python.ops import independent as independent_lib
-from astronet.contrib.distributions.python.ops import test_util
-from astronet.contrib.distributions.python.ops.bijectors.affine import Affine
-from astronet.contrib.distributions.python.ops.bijectors.masked_autoregressive import MaskedAutoregressiveFlow
+from tensorflow.contrib.distributions.python.ops import autoregressive as autoregressive_lib
+from tensorflow.contrib.distributions.python.ops import independent as independent_lib
+from tensorflow.contrib.distributions.python.ops import test_util
+from tensorflow.contrib.distributions.python.ops.bijectors.affine import Affine
+from tensorflow.contrib.distributions.python.ops.bijectors.masked_autoregressive import MaskedAutoregressiveFlow
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops.distributions import normal as normal_lib
@@ -53,7 +53,7 @@ class AutogressiveTest(test_util.VectorDistributionTestHelpers, test.TestCase):
   def testSampleAndLogProbConsistency(self):
     batch_shape = []
     event_size = 2
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       batch_event_shape = np.concatenate([batch_shape, [event_size]], axis=0)
       sample0 = array_ops.zeros(batch_event_shape)
       affine = Affine(scale_tril=self._random_scale_tril(event_size))
@@ -67,7 +67,7 @@ class AutogressiveTest(test_util.VectorDistributionTestHelpers, test.TestCase):
     sample_shape = np.int32([4, 5])
     batch_shape = np.int32([])
     event_size = np.int32(2)
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       batch_event_shape = np.concatenate([batch_shape, [event_size]], axis=0)
       sample0 = array_ops.zeros(batch_event_shape)
       affine = Affine(scale_tril=self._random_scale_tril(event_size))

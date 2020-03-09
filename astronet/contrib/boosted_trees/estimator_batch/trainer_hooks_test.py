@@ -21,8 +21,8 @@ from __future__ import print_function
 import os
 import tempfile
 
-from astronet.contrib.boosted_trees.estimator_batch import trainer_hooks
-from astronet.contrib.framework.python.ops import variables
+from tensorflow.contrib.boosted_trees.estimator_batch import trainer_hooks
+from tensorflow.contrib.framework.python.ops import variables
 from tensorflow.python.client import session as tf_session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import ops

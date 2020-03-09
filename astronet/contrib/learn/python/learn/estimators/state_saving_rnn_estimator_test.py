@@ -22,15 +22,15 @@ import tempfile
 
 import numpy as np
 
-from astronet.contrib import lookup
-from astronet.contrib.layers.python.layers import feature_column
-from astronet.contrib.layers.python.layers import target_column as target_column_lib
-from astronet.contrib.learn.python.learn.estimators import constants
-from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
-from astronet.contrib.learn.python.learn.estimators import prediction_key
-from astronet.contrib.learn.python.learn.estimators import rnn_common
-from astronet.contrib.learn.python.learn.estimators import run_config
-from astronet.contrib.learn.python.learn.estimators import state_saving_rnn_estimator as ssre
+from tensorflow.contrib import lookup
+from tensorflow.contrib.layers.python.layers import feature_column
+from tensorflow.contrib.layers.python.layers import target_column as target_column_lib
+from tensorflow.contrib.learn.python.learn.estimators import constants
+from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from tensorflow.contrib.learn.python.learn.estimators import prediction_key
+from tensorflow.contrib.learn.python.learn.estimators import rnn_common
+from tensorflow.contrib.learn.python.learn.estimators import run_config
+from tensorflow.contrib.learn.python.learn.estimators import state_saving_rnn_estimator as ssre
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor
@@ -53,7 +53,7 @@ class PrepareInputsForRnnTest(test.TestCase):
                                                     sequence_feature_columns,
                                                     num_unroll)
 
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       sess.run(variables.global_variables_initializer())
       sess.run(lookup_ops.tables_initializer())
       features_val = sess.run(features_by_time)
@@ -314,7 +314,7 @@ class StateSavingRnnEstimatorTest(test.TestCase):
         else:
           self.assertAllEqual(v, got[k])
 
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       sess.run(variables.global_variables_initializer())
       sess.run(lookup_ops.tables_initializer())
       actual_sequence, actual_context = sess.run(
@@ -396,8 +396,9 @@ class StateSavingRnnEstimatorTest(test.TestCase):
         random_sequence = random_ops.random_uniform(
             [sequence_length + 1], 0, 2, dtype=dtypes.int32, seed=seed)
         labels = array_ops.slice(random_sequence, [0], [sequence_length])
-        inputs = math_ops.to_float(
-            array_ops.slice(random_sequence, [1], [sequence_length]))
+        inputs = math_ops.cast(
+            array_ops.slice(random_sequence, [1], [sequence_length]),
+            dtypes.float32)
         features = {'inputs': inputs}
 
         if mode == model_fn_lib.ModeKeys.INFER:
@@ -450,8 +451,9 @@ class LegacyConstructorTest(test.TestCase):
       random_sequence = random_ops.random_uniform(
           [sequence_length + 1], 0, 2, dtype=dtypes.int32, seed=seed)
       labels = array_ops.slice(random_sequence, [0], [sequence_length])
-      inputs = math_ops.to_float(
-          array_ops.slice(random_sequence, [1], [sequence_length]))
+      inputs = math_ops.cast(
+          array_ops.slice(random_sequence, [1], [sequence_length]),
+          dtypes.float32)
       return {'inputs': inputs}, labels
     return input_fn
 
@@ -537,8 +539,9 @@ class StateSavingRNNEstimatorLearningTest(test.TestCase):
         random_sequence = random_ops.random_uniform(
             [sequence_length + 1], 0, 2, dtype=dtypes.int32, seed=seed)
         labels = array_ops.slice(random_sequence, [0], [sequence_length])
-        inputs = math_ops.to_float(
-            array_ops.slice(random_sequence, [1], [sequence_length]))
+        inputs = math_ops.cast(
+            array_ops.slice(random_sequence, [1], [sequence_length]),
+            dtypes.float32)
         return {'inputs': inputs}, labels
 
       return input_fn

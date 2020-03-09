@@ -21,11 +21,11 @@ from __future__ import print_function
 import time
 import numpy as np
 
-from astronet.contrib import framework
-from astronet.contrib.factorization.python.ops import gmm_ops
-from astronet.contrib.framework.python.framework import checkpoint_utils
-from astronet.contrib.learn.python.learn.estimators import estimator
-from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from tensorflow.contrib import framework
+from tensorflow.contrib.factorization.python.ops import gmm_ops
+from tensorflow.contrib.framework.python.framework import checkpoint_utils
+from tensorflow.contrib.learn.python.learn.estimators import estimator
+from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

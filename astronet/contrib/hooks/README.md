@@ -13,7 +13,7 @@ neat timeline through a Chromium-based web browser (via
 [about:tracing](chrome://tracing)) or the standalone [Catapult](https://github.com/catapult-project/catapult/blob/master/tracing/README.md) tool.
 
 ```python
-from astronet.contrib.hooks import ProfilerHook
+from tensorflow.contrib.hooks import ProfilerHook
 
 hooks = [ProfilerHook(save_secs=30, output_dir="profiling")]
 with SingularMonitoredSession(hooks=hooks) as sess:

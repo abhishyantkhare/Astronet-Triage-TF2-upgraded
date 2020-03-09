@@ -24,8 +24,8 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from astronet.contrib.eager.python import tfe
-from astronet.contrib.eager.python.examples.rnn_ptb import rnn_ptb
+from tensorflow.contrib.eager.python import tfe
+from tensorflow.contrib.eager.python.examples.rnn_ptb import rnn_ptb
 
 
 def device():

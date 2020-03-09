@@ -14,7 +14,7 @@
 # ==============================================================================
 """Ops for building neural network losses.
 
-See @{$python/contrib.losses}.
+See [Contrib Losses](https://tensorflow.org/api_guides/python/contrib.losses).
 """
 
 from __future__ import absolute_import
@@ -22,7 +22,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from astronet.contrib.losses.python.metric_learning.metric_loss_ops import *
+from tensorflow.contrib.losses.python.metric_learning.metric_loss_ops import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util.all_util import remove_undocumented
 
@@ -35,5 +35,3 @@ _allowed_symbols = [
     'triplet_semihard_loss',
 ]
 remove_undocumented(__name__, _allowed_symbols)
-
-

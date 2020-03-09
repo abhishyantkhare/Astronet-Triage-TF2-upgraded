@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib import nn as contrib_nn
-from astronet.contrib.labeled_tensor.python.ops import core
+from tensorflow.contrib import nn as contrib_nn
+from tensorflow.contrib.labeled_tensor.python.ops import core
 from tensorflow.python.ops import nn
 
 relu = core.define_unary_op('relu', nn.relu)

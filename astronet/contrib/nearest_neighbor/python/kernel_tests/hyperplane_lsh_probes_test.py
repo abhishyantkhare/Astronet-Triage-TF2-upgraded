@@ -21,7 +21,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.nearest_neighbor.python.ops.nearest_neighbor_ops import hyperplane_lsh_probes
+from tensorflow.contrib.nearest_neighbor.python.ops.nearest_neighbor_ops import hyperplane_lsh_probes
 from tensorflow.python.platform import test
 
 
@@ -31,7 +31,7 @@ class HyperplaneLshProbesTest(test.TestCase):
   # tests in hyperplane_lsh_probes_test.cc already cover most of the LSH
   # functionality.
   def simple_batch_test(self):
-    with self.test_session():
+    with self.cached_session():
       hyperplanes = np.eye(4)
       points = np.array([[1.2, 0.5, -0.9, -1.0], [2.0, -3.0, 1.0, -1.5]])
       product = np.dot(points, hyperplanes)

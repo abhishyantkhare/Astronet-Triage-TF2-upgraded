@@ -19,8 +19,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.rpc.python.ops.gen_rpc_op import rpc
-from astronet.contrib.rpc.python.ops.gen_rpc_op import try_rpc
+from tensorflow.contrib.rpc.python.ops.gen_rpc_op import rpc
+from tensorflow.contrib.rpc.python.ops.gen_rpc_op import try_rpc
 from tensorflow.python.framework import ops
 ops.NotDifferentiable("Rpc")
 ops.NotDifferentiable("TryRpc")

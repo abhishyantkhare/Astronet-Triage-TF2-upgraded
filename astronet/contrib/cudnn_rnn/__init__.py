@@ -24,6 +24,10 @@
 @@CudnnGRUSaveable
 @@CudnnRNNReluSaveable
 @@CudnnRNNTanhSaveable
+@@CudnnParamsFormatConverterLSTM
+@@CudnnParamsFormatConverterGRU
+@@CudnnParamsFormatConverterTanh
+@@CudnnParamsFormatConverterRelu
 """
 
 from __future__ import absolute_import
@@ -31,7 +35,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from astronet.contrib.cudnn_rnn.python.layers import *
+from tensorflow.contrib.cudnn_rnn.python.layers import *
 # pylint: enable=unused-import,wildcard-import
 
 
@@ -48,6 +52,10 @@ _allowed_symbols = [
     "CudnnGRUSaveable",
     "CudnnRNNReluSaveable",
     "CudnnRNNTanhSaveable",
+    "CudnnParamsFormatConverterLSTM",
+    "CudnnParamsFormatConverterGRU",
+    "CudnnParamsFormatConverterTanh",
+    "CudnnParamsFormatConverterRelu",
 ]
 
 remove_undocumented(__name__, _allowed_symbols)

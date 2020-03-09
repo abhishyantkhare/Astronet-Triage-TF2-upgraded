@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.nn.python.ops.scaled_softplus import scaled_softplus
+from tensorflow.contrib.nn.python.ops.scaled_softplus import scaled_softplus
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import gradient_checker
 from tensorflow.python.platform import test

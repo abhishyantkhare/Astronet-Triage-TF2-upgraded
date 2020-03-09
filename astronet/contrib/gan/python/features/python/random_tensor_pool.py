@@ -25,9 +25,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.gan.python.features.python import random_tensor_pool_impl
+from tensorflow.contrib.gan.python.features.python import random_tensor_pool_impl
 # pylint: disable=wildcard-import
-from astronet.contrib.gan.python.features.python.random_tensor_pool_impl import *
+from tensorflow.contrib.gan.python.features.python.random_tensor_pool_impl import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util.all_util import remove_undocumented
 

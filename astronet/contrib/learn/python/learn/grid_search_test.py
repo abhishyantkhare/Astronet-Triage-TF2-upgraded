@@ -21,7 +21,7 @@ from __future__ import print_function
 import os
 import random
 
-from astronet.contrib.learn.python import learn
+from tensorflow.contrib.learn.python import learn
 from tensorflow.python.platform import test
 
 HAS_SKLEARN = os.environ.get('TENSORFLOW_SKLEARN', False)

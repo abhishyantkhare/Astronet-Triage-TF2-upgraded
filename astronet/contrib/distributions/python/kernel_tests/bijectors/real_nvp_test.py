@@ -19,10 +19,10 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from astronet.contrib.distributions.python.ops import test_util
-from astronet.contrib.distributions.python.ops.bijectors.invert import Invert
-from astronet.contrib.distributions.python.ops.bijectors.real_nvp import real_nvp_default_template
-from astronet.contrib.distributions.python.ops.bijectors.real_nvp import RealNVP
+from tensorflow.contrib.distributions.python.ops import test_util
+from tensorflow.contrib.distributions.python.ops.bijectors.invert import Invert
+from tensorflow.contrib.distributions.python.ops.bijectors.real_nvp import real_nvp_default_template
+from tensorflow.contrib.distributions.python.ops.bijectors.real_nvp import RealNVP
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import variables
@@ -43,7 +43,7 @@ class RealNVPTest(test_util.VectorDistributionTestHelpers, test.TestCase):
 
   def testBijector(self):
     x_ = np.arange(3 * 4 * 2).astype(np.float32).reshape(3, 4 * 2)
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       nvp = RealNVP(
           num_masked=4,
           validate_args=True,
@@ -52,29 +52,33 @@ class RealNVPTest(test_util.VectorDistributionTestHelpers, test.TestCase):
       forward_x = nvp.forward(x)
       # Use identity to invalidate cache.
       inverse_y = nvp.inverse(array_ops.identity(forward_x))
-      fldj = nvp.forward_log_det_jacobian(x)
+      forward_inverse_y = nvp.forward(inverse_y)
+      fldj = nvp.forward_log_det_jacobian(x, event_ndims=1)
       # Use identity to invalidate cache.
-      ildj = nvp.inverse_log_det_jacobian(array_ops.identity(forward_x))
+      ildj = nvp.inverse_log_det_jacobian(
+          array_ops.identity(forward_x), event_ndims=1)
       variables.global_variables_initializer().run()
       [
           forward_x_,
           inverse_y_,
+          forward_inverse_y_,
           ildj_,
           fldj_,
       ] = sess.run([
           forward_x,
           inverse_y,
+          forward_inverse_y,
           ildj,
           fldj,
       ])
       self.assertEqual("real_nvp", nvp.name)
-      self.assertAllClose(forward_x_, forward_x_, rtol=1e-6, atol=0.)
-      self.assertAllClose(x_, inverse_y_, rtol=1e-5, atol=0.)
+      self.assertAllClose(forward_x_, forward_inverse_y_, rtol=1e-1, atol=0.)
+      self.assertAllClose(x_, inverse_y_, rtol=1e-1, atol=0.)
       self.assertAllClose(ildj_, -fldj_, rtol=1e-6, atol=0.)
 
   def testMutuallyConsistent(self):
     dims = 4
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       nvp = RealNVP(
           num_masked=3,
           validate_args=True,
@@ -94,7 +98,7 @@ class RealNVPTest(test_util.VectorDistributionTestHelpers, test.TestCase):
 
   def testInvertMutuallyConsistent(self):
     dims = 4
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       nvp = Invert(RealNVP(
           num_masked=3,
           validate_args=True,

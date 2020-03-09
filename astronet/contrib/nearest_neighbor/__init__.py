@@ -32,5 +32,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import, line-too-long
-from astronet.contrib.nearest_neighbor.python.ops.nearest_neighbor_ops import *
+from tensorflow.contrib.nearest_neighbor.python.ops.nearest_neighbor_ops import *
 # pylint: enable=unused-import,wildcard-import,line-too-long

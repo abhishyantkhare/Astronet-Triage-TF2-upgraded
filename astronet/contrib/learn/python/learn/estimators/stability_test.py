@@ -20,13 +20,13 @@ from __future__ import print_function
 
 import random
 
-from astronet.contrib.framework.python.ops import variables
-from astronet.contrib.layers.python.layers import feature_column
-from astronet.contrib.learn.python.learn.datasets import base
-from astronet.contrib.learn.python.learn.estimators import dnn
-from astronet.contrib.learn.python.learn.estimators import linear
-from astronet.contrib.learn.python.learn.estimators import run_config
-from astronet.contrib.learn.python.learn.learn_io import data_feeder
+from tensorflow.contrib.framework.python.ops import variables
+from tensorflow.contrib.layers.python.layers import feature_column
+from tensorflow.contrib.learn.python.learn.datasets import base
+from tensorflow.contrib.learn.python.learn.estimators import dnn
+from tensorflow.contrib.learn.python.learn.estimators import linear
+from tensorflow.contrib.learn.python.learn.estimators import run_config
+from tensorflow.contrib.learn.python.learn.learn_io import data_feeder
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import control_flow_ops
 from tensorflow.python.ops import random_ops
@@ -68,12 +68,12 @@ class StabilityTest(test.TestCase):
     minval = -0.3333
     maxval = 0.3333
     with ops.Graph().as_default() as g:
-      with self.test_session(graph=g) as session:
+      with self.session(graph=g) as session:
         g.seed = my_seed
         x = random_ops.random_uniform([10, 10], minval=minval, maxval=maxval)
         val1 = session.run(x)
     with ops.Graph().as_default() as g:
-      with self.test_session(graph=g) as session:
+      with self.session(graph=g) as session:
         g.seed = my_seed
         x = random_ops.random_uniform([10, 10], minval=minval, maxval=maxval)
         val2 = session.run(x)

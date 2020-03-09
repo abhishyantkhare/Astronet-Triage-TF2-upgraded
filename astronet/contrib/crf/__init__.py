@@ -14,12 +14,11 @@
 # ==============================================================================
 """Linear-chain CRF layer.
 
-See the @{$python/contrib.crf} guide.
-
 @@crf_binary_score
 @@crf_decode
 @@crf_log_likelihood
 @@crf_log_norm
+@@crf_multitag_sequence_score
 @@crf_sequence_score
 @@crf_unary_score
 @@CrfDecodeBackwardRnnCell
@@ -32,16 +31,17 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.crf.python.ops.crf import crf_binary_score
-from astronet.contrib.crf.python.ops.crf import crf_decode
-from astronet.contrib.crf.python.ops.crf import crf_log_likelihood
-from astronet.contrib.crf.python.ops.crf import crf_log_norm
-from astronet.contrib.crf.python.ops.crf import crf_sequence_score
-from astronet.contrib.crf.python.ops.crf import crf_unary_score
-from astronet.contrib.crf.python.ops.crf import CrfDecodeBackwardRnnCell
-from astronet.contrib.crf.python.ops.crf import CrfDecodeForwardRnnCell
-from astronet.contrib.crf.python.ops.crf import CrfForwardRnnCell
-from astronet.contrib.crf.python.ops.crf import viterbi_decode
+from tensorflow.contrib.crf.python.ops.crf import crf_binary_score
+from tensorflow.contrib.crf.python.ops.crf import crf_decode
+from tensorflow.contrib.crf.python.ops.crf import crf_log_likelihood
+from tensorflow.contrib.crf.python.ops.crf import crf_log_norm
+from tensorflow.contrib.crf.python.ops.crf import crf_multitag_sequence_score
+from tensorflow.contrib.crf.python.ops.crf import crf_sequence_score
+from tensorflow.contrib.crf.python.ops.crf import crf_unary_score
+from tensorflow.contrib.crf.python.ops.crf import CrfDecodeBackwardRnnCell
+from tensorflow.contrib.crf.python.ops.crf import CrfDecodeForwardRnnCell
+from tensorflow.contrib.crf.python.ops.crf import CrfForwardRnnCell
+from tensorflow.contrib.crf.python.ops.crf import viterbi_decode
 
 from tensorflow.python.util.all_util import remove_undocumented
 

@@ -20,7 +20,7 @@
   Example of how to use tf.contrib.framework.arg_scope:
 
   ```
-  from third_party.astronet.contrib.layers.python import layers
+  from third_party.tensorflow.contrib.layers.python import layers
 
   arg_scope = tf.contrib.framework.arg_scope
 
@@ -103,9 +103,8 @@ def _kwarg_names(func):
 
 
 def _add_op(op):
-  key = arg_scope_func_key(op)
-  if key not in _DECORATED_OPS:
-    _DECORATED_OPS[key] = _kwarg_names(op)
+  key_op = arg_scope_func_key(op)
+  _DECORATED_OPS[key_op] = _kwarg_names(op)
 
 
 @tf_contextlib.contextmanager

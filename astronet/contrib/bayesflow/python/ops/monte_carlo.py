@@ -14,7 +14,7 @@
 # ==============================================================================
 """Monte Carlo integration and helpers.
 
-See the @{$python/contrib.bayesflow.monte_carlo} guide.
+Use [tfp.monte_carlo](/probability/api_docs/python/tfp/monte_carlo) instead.
 """
 
 from __future__ import absolute_import
@@ -23,7 +23,7 @@ from __future__ import print_function
 
 # go/tf-wildcard-import
 # pylint: disable=wildcard-import
-from astronet.contrib.bayesflow.python.ops.monte_carlo_impl import *
+from tensorflow.contrib.bayesflow.python.ops.monte_carlo_impl import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util.all_util import remove_undocumented
 

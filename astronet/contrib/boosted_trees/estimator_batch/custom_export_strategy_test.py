@@ -14,7 +14,7 @@
 # ==============================================================================
 """Tests for the conversion code and for feature importances export.
 
-Tests that cover conversion from TFBT format to a astronet.contrib.
+Tests that cover conversion from TFBT format to a tensorflow.contrib.
 decision_tree generic_tree_model format and feature importances export.
 """
 
@@ -23,8 +23,8 @@ from __future__ import division
 from __future__ import print_function
 
 from google.protobuf import text_format
-from astronet.contrib.boosted_trees.estimator_batch import custom_export_strategy
-from astronet.contrib.boosted_trees.proto import tree_config_pb2
+from tensorflow.contrib.boosted_trees.estimator_batch import custom_export_strategy
+from tensorflow.contrib.boosted_trees.proto import tree_config_pb2
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import googletest
 

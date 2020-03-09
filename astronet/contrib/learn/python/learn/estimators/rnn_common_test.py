@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.learn.python.learn.estimators import rnn_common
+from tensorflow.contrib.learn.python.learn.estimators import rnn_common
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
@@ -44,7 +44,7 @@ class RnnCommonTest(test.TestCase):
          constant_op.constant(labels, dtype=dtypes.int32),
          constant_op.constant(sequence_length, dtype=dtypes.int32))
 
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       activations_masked, labels_masked = sess.run(
           [activations_masked_t, labels_masked_t])
 

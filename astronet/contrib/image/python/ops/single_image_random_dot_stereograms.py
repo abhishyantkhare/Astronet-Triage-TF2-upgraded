@@ -17,8 +17,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.image.ops import gen_single_image_random_dot_stereograms_ops
-from astronet.contrib.util import loader
+from tensorflow.contrib.image.ops import gen_single_image_random_dot_stereograms_ops
+from tensorflow.contrib.util import loader
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import resource_loader
 
@@ -45,10 +45,10 @@ def single_image_random_dot_stereograms(depth_values,
   Given the 2-D tensor 'depth_values' with encoded Z values, this operation
   will encode 3-D data into a 2-D image.  The output of this Op is suitable
   for the encode_PNG/JPG ops.  Be careful with image compression as this may
-  corrupt the encode 3-D data witin the image.
+  corrupt the encode 3-D data within the image.
 
   Based upon [this
-  paper](http://www.learningace.com/doc/4331582/b6ab058d1e206d68ab60e4e1ead2fe6e/sirds-paper).
+  paper](https://www.cs.waikato.ac.nz/~ihw/papers/94-HWT-SI-IHW-SIRDS-paper.pdf).
 
   This outputs a SIRDS image as picture_out.png:
 
@@ -58,7 +58,7 @@ def single_image_random_dot_stereograms(depth_values,
        [1,2,3,4,5,3],
        [1,2,3,4,5,4],
        [6,5,4,4,5,5]]
-  session = tf.InteractiveSession()
+  session = tf.compat.v1.InteractiveSession()
   sirds = single_image_random_dot_stereograms(
       img,
       convergence_dots_size=8,

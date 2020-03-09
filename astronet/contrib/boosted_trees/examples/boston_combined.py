@@ -38,12 +38,12 @@ import argparse
 import sys
 import tensorflow as tf
 
-from astronet.contrib.boosted_trees.estimator_batch.dnn_tree_combined_estimator import DNNBoostedTreeCombinedRegressor
-from astronet.contrib.boosted_trees.proto import learner_pb2
-from astronet.contrib.layers.python.layers import feature_column
-from astronet.contrib.learn.python.learn import learn_runner
-from astronet.contrib.learn.python.learn.utils import input_fn_utils
-from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
+from tensorflow.contrib.boosted_trees.estimator_batch.dnn_tree_combined_estimator import DNNBoostedTreeCombinedRegressor
+from tensorflow.contrib.boosted_trees.proto import learner_pb2
+from tensorflow.contrib.layers.python.layers import feature_column
+from tensorflow.contrib.learn.python.learn import learn_runner
+from tensorflow.contrib.learn.python.learn.utils import input_fn_utils
+from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
 
 _BOSTON_NUM_FEATURES = 13
 
@@ -80,13 +80,13 @@ def _make_experiment_fn(output_dir):
   (x_train, y_train), (x_test,
                        y_test) = tf.keras.datasets.boston_housing.load_data()
 
-  train_input_fn = tf.estimator.inputs.numpy_input_fn(
+  train_input_fn = tf.compat.v1.estimator.inputs.numpy_input_fn(
       x={"x": x_train},
       y=y_train,
       batch_size=FLAGS.batch_size,
       num_epochs=None,
       shuffle=True)
-  eval_input_fn = tf.estimator.inputs.numpy_input_fn(
+  eval_input_fn = tf.compat.v1.estimator.inputs.numpy_input_fn(
       x={"x": x_test}, y=y_test, num_epochs=1, shuffle=False)
 
   feature_columns = [

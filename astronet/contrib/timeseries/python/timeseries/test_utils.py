@@ -18,10 +18,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.timeseries.python.timeseries import estimators
-from astronet.contrib.timeseries.python.timeseries import input_pipeline
-from astronet.contrib.timeseries.python.timeseries import state_management
-from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from tensorflow.contrib.timeseries.python.timeseries import estimators
+from tensorflow.contrib.timeseries.python.timeseries import input_pipeline
+from tensorflow.contrib.timeseries.python.timeseries import state_management
+from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
 
 from tensorflow.python.client import session
 from tensorflow.python.estimator import estimator_lib

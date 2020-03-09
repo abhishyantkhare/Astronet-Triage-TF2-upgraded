@@ -18,12 +18,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.keras.api.keras.datasets import boston_housing
-from astronet.contrib.keras.api.keras.datasets import cifar10
-from astronet.contrib.keras.api.keras.datasets import cifar100
-from astronet.contrib.keras.api.keras.datasets import imdb
-from astronet.contrib.keras.api.keras.datasets import mnist
-from astronet.contrib.keras.api.keras.datasets import reuters
+from tensorflow.contrib.keras.api.keras.datasets import boston_housing
+from tensorflow.contrib.keras.api.keras.datasets import cifar10
+from tensorflow.contrib.keras.api.keras.datasets import cifar100
+from tensorflow.contrib.keras.api.keras.datasets import imdb
+from tensorflow.contrib.keras.api.keras.datasets import mnist
+from tensorflow.contrib.keras.api.keras.datasets import reuters
 
 del absolute_import
 del division

@@ -40,13 +40,13 @@ from __future__ import print_function
 
 import collections
 
-from astronet.contrib import layers as layers_lib
-from astronet.contrib.framework.python.ops import add_arg_scope
-from astronet.contrib.framework.python.ops import arg_scope
-from astronet.contrib.layers.python.layers import initializers
-from astronet.contrib.layers.python.layers import layers
-from astronet.contrib.layers.python.layers import regularizers
-from astronet.contrib.layers.python.layers import utils
+from tensorflow.contrib import layers as layers_lib
+from tensorflow.contrib.framework.python.ops import add_arg_scope
+from tensorflow.contrib.framework.python.ops import arg_scope
+from tensorflow.contrib.layers.python.layers import initializers
+from tensorflow.contrib.layers.python.layers import layers
+from tensorflow.contrib.layers.python.layers import regularizers
+from tensorflow.contrib.layers.python.layers import utils
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import nn_ops

@@ -25,8 +25,8 @@ import six
 from six import iteritems
 from six import StringIO
 
-from astronet.contrib.graph_editor import select
-from astronet.contrib.graph_editor import util
+from tensorflow.contrib.graph_editor import select
+from tensorflow.contrib.graph_editor import util
 from tensorflow.python.framework import ops as tf_ops
 
 __all__ = [
@@ -538,7 +538,7 @@ class SubGraphView(object):
     reason, a SubGraphView instance can be used within a Python context. For
     example:
 
-    from astronet.contrib import graph_editor as ge
+    from tensorflow.contrib import graph_editor as ge
     with ge.make_sgv(...) as sgv:
       print(sgv)
 

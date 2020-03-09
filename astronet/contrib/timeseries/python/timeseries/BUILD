@@ -4,9 +4,8 @@ package(
     default_visibility = [
         "//tensorflow:internal",
     ],
+    licenses = ["notice"],  # Apache 2.0
 )
-
-licenses(["notice"])  # Apache 2.0
 
 exports_files(["LICENSE"])
 
@@ -94,7 +93,6 @@ py_library(
         "//tensorflow/python:training",
         "//tensorflow/python:util",
         "//tensorflow/python/estimator:estimator_py",
-        "//tensorflow/python/estimator:export",
         "//tensorflow/python/feature_column",
     ],
 )
@@ -105,11 +103,15 @@ py_test(
     srcs = [
         "estimators_test.py",
     ],
+    python_version = "PY2",
+    shard_count = 3,
     srcs_version = "PY2AND3",
     tags = [
+        "no_mac",
         "no_pip_gpu",  # b/63391119
         "nomsan",  # Takes too long to run.
         "notsan",  # b/67865658
+        "optonly",  # Takes too long to run without optimization.
     ],
     deps = [
         ":ar_model",
@@ -148,19 +150,22 @@ py_library(
         "//tensorflow/python:util",
         "//tensorflow/python:variable_scope",
         "//tensorflow/python/estimator:estimator_py",
-        "//tensorflow/python/estimator:export",
-        "//tensorflow/python/estimator:head",
-        "//tensorflow/python/estimator:metric_keys",
     ],
 )
 
 py_test(
     name = "head_test",
+    size = "medium",
     srcs = [
         "head_test.py",
     ],
+    python_version = "PY2",
+    shard_count = 10,
     srcs_version = "PY2AND3",
-    tags = ["no_pip_gpu"],  # b/63391119
+    tags = [
+        "no_pip_gpu",  # b/63391119
+        "notap",  # b/124520733
+    ],
     deps = [
         ":estimators",
         ":feature_keys",
@@ -168,7 +173,7 @@ py_test(
         ":input_pipeline",
         ":model",
         ":state_management",
-        "//tensorflow/contrib/timeseries/examples:lstm",
+        "//tensorflow/contrib/timeseries/examples:lstm_main_lib",
         "//tensorflow/python:array_ops",
         "//tensorflow/python:client_testlib",
         "//tensorflow/python:dtypes",
@@ -183,6 +188,7 @@ py_test(
         "//tensorflow/python/saved_model:loader",
         "//tensorflow/python/saved_model:tag_constants",
         "//third_party/py/numpy",
+        "@absl_py//absl/testing:parameterized",
         "@six_archive//:six",
     ],
 )
@@ -209,6 +215,7 @@ py_test(
     srcs = [
         "model_utils_test.py",
     ],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     tags = [
         "no_pip_gpu",  # b/63391119
@@ -244,6 +251,7 @@ py_test(
     srcs = [
         "state_management_test.py",
     ],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     tags = [
         "no_oss",
@@ -279,6 +287,7 @@ py_library(
         "input_pipeline.py",
     ],
     srcs_version = "PY2AND3",
+    visibility = ["//visibility:public"],
     deps = [
         ":feature_keys",
         ":model_utils",
@@ -308,6 +317,7 @@ py_test(
     srcs = [
         "input_pipeline_test.py",
     ],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     tags = [
         "no_oss",  # b/63709811
@@ -359,9 +369,10 @@ py_library(
     srcs_version = "PY2AND3",
     deps = [
         ":feature_keys",
+        ":math_utils",
         ":model",
         ":model_utils",
-        "//tensorflow/contrib/distributions:distributions_py",
+        "//tensorflow/contrib/rnn:rnn_py",
         "//tensorflow/python:array_ops",
         "//tensorflow/python:check_ops",
         "//tensorflow/python:constant_op",
@@ -383,6 +394,7 @@ py_test(
     srcs = [
         "ar_model_test.py",
     ],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     tags = ["notsan"],
     deps = [
@@ -436,6 +448,7 @@ py_test(
     srcs = [
         "math_utils_test.py",
     ],
+    python_version = "PY2",
     srcs_version = "PY2AND3",
     tags = [
         "no_pip_gpu",  # b/63391119

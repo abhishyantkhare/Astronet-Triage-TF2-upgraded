@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.framework.python.ops import variables
-from astronet.contrib.layers.python.layers import embedding_ops as contrib_embedding_ops
-from astronet.contrib.layers.python.ops import sparse_ops
+from tensorflow.contrib.framework.python.ops import variables
+from tensorflow.contrib.layers.python.layers import embedding_ops as contrib_embedding_ops
+from tensorflow.contrib.layers.python.ops import sparse_ops
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.ops import embedding_ops
 from tensorflow.python.ops import math_ops
@@ -84,8 +84,7 @@ def bow_encoder(ids,
       if isinstance(ids, sparse_tensor.SparseTensor):
         raise TypeError('ids are expected to be dense Tensor, got: %s', ids)
       return math_ops.reduce_mean(
-          embedding_ops.embedding_lookup(embeddings, ids),
-          reduction_indices=1)
+          embedding_ops.embedding_lookup(embeddings, ids), axis=1)
 
 
 def embed_sequence(ids,

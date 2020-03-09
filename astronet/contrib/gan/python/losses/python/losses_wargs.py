@@ -18,8 +18,8 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from astronet.contrib.gan.python.losses.python import losses_impl
-from astronet.contrib.gan.python.losses.python.losses_impl import *
+from tensorflow.contrib.gan.python.losses.python import losses_impl
+from tensorflow.contrib.gan.python.losses.python.losses_impl import *
 # pylint: enable=wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

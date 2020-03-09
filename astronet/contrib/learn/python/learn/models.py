@@ -25,8 +25,8 @@ from __future__ import print_function
 
 import functools
 
-from astronet.contrib import rnn as contrib_rnn
-from astronet.contrib.learn.python.learn.ops import losses_ops
+from tensorflow.contrib import rnn as contrib_rnn
+from tensorflow.contrib.learn.python.learn.ops import losses_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops as array_ops_

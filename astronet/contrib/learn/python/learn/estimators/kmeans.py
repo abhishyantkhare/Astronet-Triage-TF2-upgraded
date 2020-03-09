@@ -15,9 +15,9 @@
 """Implementation of k-means clustering on top of `Estimator` API (deprecated).
 
 This module is deprecated. Please use
-@{tf.contrib.factorization.KMeansClustering} instead of
-@{tf.contrib.learn.KMeansClustering}. It has a similar interface, but uses the
-@{tf.estimator.Estimator} API instead of @{tf.contrib.learn.Estimator}.
+`tf.contrib.factorization.KMeansClustering` instead of
+`tf.contrib.learn.KMeansClustering`. It has a similar interface, but uses the
+`tf.estimator.Estimator` API instead of `tf.contrib.learn.Estimator`.
 """
 
 from __future__ import absolute_import
@@ -27,10 +27,10 @@ from __future__ import print_function
 import time
 import numpy as np
 
-from astronet.contrib.factorization.python.ops import clustering_ops
+from tensorflow.contrib.factorization.python.ops import clustering_ops
 from tensorflow.python.training import training_util
-from astronet.contrib.learn.python.learn.estimators import estimator
-from astronet.contrib.learn.python.learn.estimators.model_fn import ModelFnOps
+from tensorflow.contrib.learn.python.learn.estimators import estimator
+from tensorflow.contrib.learn.python.learn.estimators.model_fn import ModelFnOps
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

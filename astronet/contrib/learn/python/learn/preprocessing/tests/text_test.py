@@ -20,8 +20,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from astronet.contrib.learn.python.learn.preprocessing import CategoricalVocabulary
-from astronet.contrib.learn.python.learn.preprocessing import text
+from tensorflow.contrib.learn.python.learn.preprocessing import CategoricalVocabulary
+from tensorflow.contrib.learn.python.learn.preprocessing import text
 from tensorflow.python.platform import test
 
 

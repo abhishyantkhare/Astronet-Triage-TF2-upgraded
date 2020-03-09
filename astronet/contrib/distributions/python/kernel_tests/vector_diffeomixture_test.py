@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from astronet.contrib.distributions.python.ops import test_util
-from astronet.contrib.distributions.python.ops import vector_diffeomixture as vdm_lib
+from tensorflow.contrib.distributions.python.ops import test_util
+from tensorflow.contrib.distributions.python.ops import vector_diffeomixture as vdm_lib
 from tensorflow.python.ops.distributions import normal as normal_lib
 from tensorflow.python.ops.linalg import linear_operator_diag as linop_diag_lib
 from tensorflow.python.ops.linalg import linear_operator_identity as linop_identity_lib
@@ -35,7 +35,7 @@ class VectorDiffeomixtureTest(
   """Tests the VectorDiffeomixture distribution."""
 
   def testSampleProbConsistentBroadcastMixNoBatch(self):
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 4
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[[0.], [1.]],
@@ -64,7 +64,7 @@ class VectorDiffeomixtureTest(
           sess.run, vdm, radius=4., center=2., rtol=0.015)
 
   def testSampleProbConsistentBroadcastMixNonStandardBase(self):
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 4
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[[0.], [1.]],
@@ -93,7 +93,7 @@ class VectorDiffeomixtureTest(
           sess.run, vdm, radius=4., center=3., rtol=0.01)
 
   def testSampleProbConsistentBroadcastMixBatch(self):
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 4
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[[0.], [1.]],
@@ -128,7 +128,7 @@ class VectorDiffeomixtureTest(
     dims = 4
     loc_1 = rng.randn(2, 3, dims).astype(np.float32)
 
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=(rng.rand(2, 3, 1) - 0.5).astype(np.float32),
           temperature=[1.],
@@ -152,7 +152,7 @@ class VectorDiffeomixtureTest(
           sess.run, vdm, radius=3., center=loc_1, rtol=0.02)
 
   def testMeanCovarianceNoBatch(self):
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 3
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[[0.], [4.]],
@@ -179,7 +179,7 @@ class VectorDiffeomixtureTest(
   def testTemperatureControlsHowMuchThisLooksLikeDiscreteMixture(self):
     # As temperature decreases, this should approach a mixture of normals, with
     # components at -2, 2.
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 1
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[0.],
@@ -216,7 +216,7 @@ class VectorDiffeomixtureTest(
           sess.run, vdm, rtol=0.02, cov_rtol=0.08)
 
   def testConcentrationLocControlsHowMuchWeightIsOnEachComponent(self):
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 1
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[[-1.], [0.], [1.]],
@@ -259,7 +259,7 @@ class VectorDiffeomixtureTest(
           sess.run, vdm, rtol=0.02, cov_rtol=0.08)
 
   def testMeanCovarianceNoBatchUncenteredNonStandardBase(self):
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 3
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[[0.], [4.]],
@@ -284,7 +284,7 @@ class VectorDiffeomixtureTest(
           sess.run, vdm, num_samples=int(1e6), rtol=0.01, cov_atol=0.025)
 
   def testMeanCovarianceBatch(self):
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 3
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[[0.], [4.]],
@@ -312,7 +312,7 @@ class VectorDiffeomixtureTest(
           sess.run, vdm, rtol=0.02, cov_rtol=0.07)
 
   def testSampleProbConsistentQuadrature(self):
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       dims = 4
       vdm = vdm_lib.VectorDiffeomixture(
           mix_loc=[0.],

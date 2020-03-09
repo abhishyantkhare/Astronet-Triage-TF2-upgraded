@@ -23,8 +23,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.learn.python.learn.datasets import base
-from astronet.contrib.learn.python.learn.datasets import text_datasets
+from tensorflow.contrib.learn.python.learn.datasets import base
+from tensorflow.contrib.learn.python.learn.datasets import text_datasets
 from tensorflow.python.platform import app
 
 

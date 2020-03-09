@@ -19,7 +19,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.learn.python.learn.preprocessing import categorical_vocabulary
+from tensorflow.contrib.learn.python.learn.preprocessing import categorical_vocabulary
 from tensorflow.python.platform import test
 
 

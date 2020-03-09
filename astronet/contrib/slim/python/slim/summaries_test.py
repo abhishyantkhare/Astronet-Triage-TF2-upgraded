@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Tests for astronet.contrib.slim.summaries."""
+"""Tests for tensorflow.contrib.slim.summaries."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -22,7 +22,7 @@ import glob
 import os
 
 
-from astronet.contrib.slim.python.slim import summaries
+from tensorflow.contrib.slim.python.slim import summaries
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import gfile
@@ -88,7 +88,7 @@ class SummariesTest(test.TestCase):
     summary_op = summary.merge_all()
 
     summary_writer = summary.FileWriter(output_dir)
-    with self.test_session() as sess:
+    with self.cached_session() as sess:
       new_summary = sess.run(summary_op)
       summary_writer.add_summary(new_summary, 1)
       summary_writer.flush()

@@ -24,7 +24,7 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from astronet.contrib.eager.python.examples.rnn_ptb import rnn_ptb
+from tensorflow.contrib.eager.python.examples.rnn_ptb import rnn_ptb
 
 
 class PTBTest(tf.test.TestCase):
@@ -82,7 +82,7 @@ class PTBBenchmark(tf.test.Benchmark):
         tf.ones(
             [PTBBenchmark.SEQ_LEN, PTBBenchmark.BATCH_SIZE],
             dtype=tf.int64)).repeat(num_iters + num_warmup)
-    inputs = dataset.make_one_shot_iterator().get_next()
+    inputs = tf.compat.v1.data.make_one_shot_iterator(dataset).get_next()
 
     with tf.device(tf.test.gpu_device_name()):
       outputs = model(inputs, training=True)
@@ -124,7 +124,8 @@ class PTBBenchmark(tf.test.Benchmark):
             dtype=tf.int64)).repeat(num_iters + num_warmup)
     # inputs and labels have the same shape
     dataset = tf.data.Dataset.zip((dataset, dataset))
-    (inputs, labels) = dataset.make_one_shot_iterator().get_next()
+    (inputs, labels) = tf.compat.v1.data.make_one_shot_iterator(
+        dataset).get_next()
 
     with tf.device(tf.test.gpu_device_name()):
       optimizer = tf.train.GradientDescentOptimizer(learning_rate=1.0)

@@ -14,6 +14,8 @@
 # ==============================================================================
 """Ops for representing Bayesian computation.
 
+Use [tfp](/probability/api_docs/python/tfp) instead.
+
 ## This package provides classes for Bayesian computation with TensorFlow.
 """
 from __future__ import absolute_import
@@ -21,7 +23,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,line-too-long
-from astronet.contrib.bayesflow.python.ops import monte_carlo
+from tensorflow.contrib.bayesflow.python.ops import monte_carlo
 # pylint: enable=unused-import,line-too-long
 
 from tensorflow.python.util.all_util import remove_undocumented

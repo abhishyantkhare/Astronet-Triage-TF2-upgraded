@@ -18,11 +18,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.labeled_tensor.python.ops import core as _core
-from astronet.contrib.labeled_tensor.python.ops import io_ops as _io_ops
-from astronet.contrib.labeled_tensor.python.ops import nn
-from astronet.contrib.labeled_tensor.python.ops import ops as _ops
-from astronet.contrib.labeled_tensor.python.ops import sugar as _sugar
+from tensorflow.contrib.labeled_tensor.python.ops import core as _core
+from tensorflow.contrib.labeled_tensor.python.ops import io_ops as _io_ops
+from tensorflow.contrib.labeled_tensor.python.ops import nn
+from tensorflow.contrib.labeled_tensor.python.ops import ops as _ops
+from tensorflow.contrib.labeled_tensor.python.ops import sugar as _sugar
 
 # pylint: disable=invalid-name
 

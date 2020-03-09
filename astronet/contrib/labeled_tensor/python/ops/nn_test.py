@@ -17,9 +17,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.labeled_tensor.python.ops import core
-from astronet.contrib.labeled_tensor.python.ops import nn
-from astronet.contrib.labeled_tensor.python.ops import test_util
+from tensorflow.contrib.labeled_tensor.python.ops import core
+from tensorflow.contrib.labeled_tensor.python.ops import nn
+from tensorflow.contrib.labeled_tensor.python.ops import test_util
 from tensorflow.python.ops import nn_impl
 from tensorflow.python.ops import nn_ops
 

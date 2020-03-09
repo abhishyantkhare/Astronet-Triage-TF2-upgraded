@@ -20,21 +20,19 @@ from __future__ import print_function
 
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import ops
+from tensorflow.python.framework import tensor_shape
 from tensorflow.python.layers import core as layers
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import nn_ops
 from tensorflow.python.ops import template as template_ops
-from tensorflow.python.ops.distributions import bijector as bijector_lib
+from tensorflow.python.ops.distributions import bijector
+from tensorflow.python.util import deprecation
+
+__all__ = ["RealNVP", "real_nvp_default_template"]
 
 
-__all__ = [
-    "RealNVP",
-    "real_nvp_default_template"
-]
-
-
-class RealNVP(bijector_lib.Bijector):
+class RealNVP(bijector.Bijector):
   """RealNVP "affine coupling layer" for vector-valued events.
 
   Real NVP models a normalizing flow on a `D`-dimensional distribution via a
@@ -89,21 +87,24 @@ class RealNVP(bijector_lib.Bijector):
   #### Example Use
 
   ```python
-  tfd = tf.contrib.distributions
-  tfb = tfd.bijectors
+  import tensorflow_probability as tfp
+  tfd = tfp.distributions
+  tfb = tfp.bijectors
 
   # A common choice for a normalizing flow is to use a Gaussian for the base
   # distribution. (However, any continuous distribution would work.) E.g.,
+  num_dims = 3
+  num_samples = 1
   nvp = tfd.TransformedDistribution(
-      distribution=tfd.MultivariateNormalDiag(loc=[0., 0., 0.])),
+      distribution=tfd.MultivariateNormalDiag(loc=np.zeros(num_dims)),
       bijector=tfb.RealNVP(
           num_masked=2,
           shift_and_log_scale_fn=tfb.real_nvp_default_template(
               hidden_layers=[512, 512])))
 
-  x = nvp.sample()
+  x = nvp.sample(num_samples)
   nvp.log_prob(x)
-  nvp.log_prob(0.)
+  nvp.log_prob(np.zeros([num_samples, num_dims]))
   ```
 
   For more examples, see [Jang (2018)][3].
@@ -126,6 +127,13 @@ class RealNVP(bijector_lib.Bijector):
        Processing Systems_, 2017. https://arxiv.org/abs/1705.07057
   """
 
+  @deprecation.deprecated(
+      "2018-10-01", "The TensorFlow Distributions library has moved to "
+      "TensorFlow Probability "
+      "(https://github.com/tensorflow/probability). You "
+      "should update all references to use `tfp.distributions` "
+      "instead of `tf.contrib.distributions`.",
+      warn_once=True)
   def __init__(self,
                num_masked,
                shift_and_log_scale_fn,
@@ -142,10 +150,11 @@ class RealNVP(bijector_lib.Bijector):
         `log_scale` from both the forward domain (`x`) and the inverse domain
         (`y`). Calculation must respect the "autoregressive property" (see class
         docstring). Suggested default
-        `masked_autoregressive_default_template(hidden_layers=...)`.
-        Typically the function contains `tf.Variables` and is wrapped using
-        `tf.make_template`. Returning `None` for either (both) `shift`,
-        `log_scale` is equivalent to (but more efficient than) returning zero.
+        `masked_autoregressive_default_template(hidden_layers=...)`. Typically
+        the function contains `tf.Variables` and is wrapped using
+        `tf.compat.v1.make_template`. Returning `None` for either (both)
+        `shift`, `log_scale` is equivalent to (but more efficient than)
+        returning zero.
       is_constant_jacobian: Python `bool`. Default: `False`. When `True` the
         implementation assumes `log_scale` does not depend on the forward domain
         (`x`) or inverse domain (`y`) values. (No validation is made;
@@ -166,14 +175,15 @@ class RealNVP(bijector_lib.Bijector):
     self._input_depth = None
     self._shift_and_log_scale_fn = shift_and_log_scale_fn
     super(RealNVP, self).__init__(
-        event_ndims=1,
+        forward_min_event_ndims=1,
         is_constant_jacobian=is_constant_jacobian,
         validate_args=validate_args,
         name=name)
 
   def _cache_input_depth(self, x):
     if self._input_depth is None:
-      self._input_depth = x.shape.with_rank_at_least(1)[-1].value
+      self._input_depth = tensor_shape.dimension_value(
+          x.shape.with_rank_at_least(1)[-1])
       if self._input_depth is None:
         raise NotImplementedError(
             "Rightmost dimension must be known prior to graph execution.")
@@ -224,10 +234,17 @@ class RealNVP(bijector_lib.Bijector):
     _, log_scale = self._shift_and_log_scale_fn(
         x0, self._input_depth - self._num_masked)
     if log_scale is None:
-      return constant_op.constant(0., dtype=x.dtype, name="ildj")
+      return constant_op.constant(0., dtype=x.dtype, name="fldj")
     return math_ops.reduce_sum(log_scale, axis=-1)
 
 
+@deprecation.deprecated(
+    "2018-10-01", "The TensorFlow Distributions library has moved to "
+    "TensorFlow Probability "
+    "(https://github.com/tensorflow/probability). You "
+    "should update all references to use `tfp.distributions` "
+    "instead of `tf.contrib.distributions`.",
+    warn_once=True)
 def real_nvp_default_template(
     hidden_layers,
     shift_only=False,
@@ -250,8 +267,8 @@ def real_nvp_default_template(
       implies a linear activation.
     name: A name for ops managed by this function. Default:
       "real_nvp_default_template".
-    *args: `tf.layers.dense` arguments.
-    **kwargs: `tf.layers.dense` keyword arguments.
+    *args: `tf.compat.v1.layers.dense` arguments.
+    **kwargs: `tf.compat.v1.layers.dense` keyword arguments.
 
   Returns:
     shift: `Float`-like `Tensor` of shift terms ("mu" in
@@ -271,15 +288,12 @@ def real_nvp_default_template(
   """
 
   with ops.name_scope(name, "real_nvp_default_template"):
+
     def _fn(x, output_units):
       """Fully connected MLP parameterized via `real_nvp_template`."""
       for units in hidden_layers:
         x = layers.dense(
-            inputs=x,
-            units=units,
-            activation=activation,
-            *args,
-            **kwargs)
+            inputs=x, units=units, activation=activation, *args, **kwargs)
       x = layers.dense(
           inputs=x,
           units=(1 if shift_only else 2) * output_units,
@@ -290,5 +304,5 @@ def real_nvp_default_template(
         return x, None
       shift, log_scale = array_ops.split(x, 2, axis=-1)
       return shift, log_scale
-    return template_ops.make_template(
-        "real_nvp_default_template", _fn)
+
+    return template_ops.make_template("real_nvp_default_template", _fn)

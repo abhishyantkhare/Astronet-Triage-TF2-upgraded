@@ -22,9 +22,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.tensor_forest.hybrid.ops import gen_training_ops
-from astronet.contrib.tensor_forest.hybrid.python import hybrid_layer
-from astronet.contrib.tensor_forest.hybrid.python.ops import training_ops
+from tensorflow.contrib.tensor_forest.hybrid.ops import gen_training_ops
+from tensorflow.contrib.tensor_forest.hybrid.python import hybrid_layer
+from tensorflow.contrib.tensor_forest.hybrid.python.ops import training_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import init_ops

@@ -21,7 +21,7 @@ from __future__ import print_function
 import functools
 
 # pylint: disable=g-bad-todo,g-import-not-at-top
-from astronet.contrib.learn.python.learn.metric_spec import MetricSpec
+from tensorflow.contrib.learn.python.learn.metric_spec import MetricSpec
 from tensorflow.python.platform import test
 
 

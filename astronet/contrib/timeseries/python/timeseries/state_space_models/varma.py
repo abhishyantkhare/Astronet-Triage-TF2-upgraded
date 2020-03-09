@@ -48,10 +48,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.timeseries.python.timeseries import math_utils
-from astronet.contrib.timeseries.python.timeseries.state_space_models import state_space_model
+from tensorflow.contrib.timeseries.python.timeseries import math_utils
+from tensorflow.contrib.timeseries.python.timeseries.state_space_models import state_space_model
 
 from tensorflow.python.framework import ops
+from tensorflow.python.framework import tensor_shape
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import init_ops
 from tensorflow.python.ops import linalg_ops
@@ -191,7 +192,8 @@ class VARMA(state_space_model.StateSpaceModel):
       initial_transition_noise_scale = 0.
     state_noise_transform = ops.convert_to_tensor(
         self.get_noise_transform(), dtype=self.dtype)
-    state_noise_dimension = state_noise_transform.get_shape()[1].value
+    state_noise_dimension = tensor_shape.dimension_value(
+        state_noise_transform.shape[1])
     return math_utils.variable_covariance_matrix(
         state_noise_dimension, "state_transition_noise",
         dtype=self.dtype,

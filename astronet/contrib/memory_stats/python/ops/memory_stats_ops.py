@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from astronet.contrib.memory_stats.ops import gen_memory_stats_ops
-from astronet.contrib.util import loader
+from tensorflow.contrib.memory_stats.ops import gen_memory_stats_ops
+from tensorflow.contrib.util import loader
 from tensorflow.python.platform import resource_loader
 
 _memory_stats_ops_so = loader.load_op_library(

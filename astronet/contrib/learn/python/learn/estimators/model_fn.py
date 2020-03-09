@@ -28,10 +28,10 @@ import collections
 
 import six
 
-from astronet.contrib.framework import get_graph_from_inputs
-from astronet.contrib.learn.python.learn.estimators import constants
-from astronet.contrib.learn.python.learn.estimators import metric_key
-from astronet.contrib.learn.python.learn.estimators import prediction_key
+from tensorflow.contrib.framework import get_graph_from_inputs
+from tensorflow.contrib.learn.python.learn.estimators import constants
+from tensorflow.contrib.learn.python.learn.estimators import metric_key
+from tensorflow.contrib.learn.python.learn.estimators import prediction_key
 from tensorflow.python.estimator import model_fn as core_model_fn_lib
 from tensorflow.python.estimator.export import export_output as core_export_lib
 from tensorflow.python.framework import dtypes
@@ -131,7 +131,7 @@ class ModelFnOps(
         run on the chief worker during training.
       training_hooks: A list of `SessionRunHook` objects that will be run on
         all workers during training.
-      scaffold: A `tf.train.Scaffold` object that can be used to set
+      scaffold: A `tf.compat.v1.train.Scaffold` object that can be used to set
         initialization, saver, and more to be used in training.
 
     Returns:
@@ -162,7 +162,7 @@ class ModelFnOps(
       loss_shape = loss.get_shape()
       if loss_shape.num_elements() not in (None, 1):
         raise ValueError('Loss must be scalar: %s.' % loss)
-      if not loss_shape.is_compatible_with(tensor_shape.scalar()):
+      if not loss_shape.is_compatible_with(tensor_shape.TensorShape([])):
         loss = array_ops.reshape(loss, [])
 
     # Validate predictions.
@@ -219,8 +219,8 @@ class ModelFnOps(
         used if a Servo request does not explicitly mention which head to infer
         on. Pass the key of the output alternative here that you want to
         designate as default. A separate ExportOutpout for this default head
-        wil be added to the export_outputs dict with the special key
-        signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY, unless there is
+        will be added to the export_outputs dict with the special key
+        saved_model.DEFAULT_SERVING_SIGNATURE_DEF_KEY, unless there is
         already an enry in output_alternatives with this special key.
 
     Returns:

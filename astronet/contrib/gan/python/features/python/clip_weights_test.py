@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import collections
 
-from astronet.contrib.gan.python.features.python import clip_weights_impl as clip_weights
+from tensorflow.contrib.gan.python.features.python import clip_weights_impl as clip_weights
 
 from tensorflow.python.ops import variables
 from tensorflow.python.platform import test
@@ -47,13 +47,13 @@ class ClipWeightsTest(test.TestCase):
     train_op1 = opt.minimize(loss, var_list=self.variables)
     train_op2 = opt_clip.minimize(loss, var_list=self.variables)
 
-    with self.test_session(use_gpu=True) as sess:
+    with self.cached_session(use_gpu=True) as sess:
       sess.run(variables.global_variables_initializer())
       self.assertEqual(2.0, self.variables[0].eval())
       sess.run(train_op1)
       self.assertLess(0.1, self.variables[0].eval())
 
-    with self.test_session(use_gpu=True) as sess:
+    with self.cached_session(use_gpu=True) as sess:
       sess.run(variables.global_variables_initializer())
       self.assertEqual(2.0, self.variables[0].eval())
       sess.run(train_op2)
