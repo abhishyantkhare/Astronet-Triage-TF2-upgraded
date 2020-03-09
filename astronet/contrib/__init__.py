@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 from tensorflow.python.util.lazy_loader import LazyLoader
 from astronet.contrib.summary import summary
 from astronet.contrib.specs import python as specs
@@ -21,9 +24,6 @@ from astronet.contrib.receptive_field import receptive_field_api as receptive_fi
 from astronet.contrib.optimizer_v2 import optimizer_v2_symbols as optimizer_v2
 """contrib module containing volatile or experimental code."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import os
 
