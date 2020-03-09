@@ -25,10 +25,10 @@ from __future__ import print_function
 import functools
 import six
 import tensorflow.compat.v1 as tf
-from astronet.tf_slim.layers import initializers
-from astronet.tf_slim.layers import utils
-from astronet.tf_slim.ops import variables
-from astronet.tf_slim.ops.arg_scope import add_arg_scope
+import astronet.astro_fc_model.initializers as initializers
+import astronet.astro_fc_model.utils as utils
+import astronet.ops.variables as variables
+from astronet.ops.arg_scope import add_arg_scope
 
 # pylint: disable=g-direct-tensorflow-import
 from tensorflow.python.framework import constant_op

@@ -21,7 +21,7 @@ from __future__ import print_function
 import functools
 import re
 import tensorflow.compat.v1 as tf
-import astronet.tf_slim.ops.arg_scope as arg_scope
+import astronet.ops.arg_scope as arg_scope
 # pylint: disable=g-direct-tensorflow-import
 from tensorflow.core.protobuf import saver_pb2
 from tensorflow.python.framework import device as tf_device
