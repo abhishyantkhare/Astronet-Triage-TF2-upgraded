@@ -19,7 +19,7 @@ from __future__ import print_function
 import functools
 import os
 
-from tensorflow.contrib.checkpoint.python import visualize
+from astronet.contrib.checkpoint.python import visualize
 
 from tensorflow.python.eager import context
 from tensorflow.python.eager import test

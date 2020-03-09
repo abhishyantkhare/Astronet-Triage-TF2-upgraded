@@ -23,7 +23,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from tensorflow.contrib.opt.python.training import matrix_functions
+from astronet.contrib.opt.python.training import matrix_functions
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

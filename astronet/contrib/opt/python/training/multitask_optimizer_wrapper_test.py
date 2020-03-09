@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 import six
 
-from tensorflow.contrib.opt.python.training import multitask_optimizer_wrapper
+from astronet.contrib.opt.python.training import multitask_optimizer_wrapper
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import variables

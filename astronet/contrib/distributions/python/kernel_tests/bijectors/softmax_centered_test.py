@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops.bijectors.softmax_centered import SoftmaxCentered
+from astronet.contrib.distributions.python.ops.bijectors.softmax_centered import SoftmaxCentered
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.ops import array_ops

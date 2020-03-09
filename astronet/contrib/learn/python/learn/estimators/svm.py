@@ -15,7 +15,7 @@
 """Support Vector Machine (SVM) Estimator (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -23,14 +23,14 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.framework import deprecated_arg_values
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import linear
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.linear_optimizer.python import sdca_optimizer
+from astronet.contrib import layers
+from astronet.contrib.framework import deprecated
+from astronet.contrib.framework import deprecated_arg_values
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import linear
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.linear_optimizer.python import sdca_optimizer
 
 
 def _as_iterable(preds, output):
@@ -42,7 +42,7 @@ class SVM(estimator.Estimator):
   """Support Vector Machine (SVM) model for binary classification.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Currently, only linear SVMs are supported. For the underlying optimization

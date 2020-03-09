@@ -22,7 +22,7 @@ import logging
 
 import numpy as np
 
-from tensorflow.contrib.image.python.ops import image_ops
+from astronet.contrib.image.python.ops import image_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import test_util
 from tensorflow.python.ops import array_ops

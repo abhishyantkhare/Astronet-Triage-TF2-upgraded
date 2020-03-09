@@ -20,9 +20,9 @@ from __future__ import print_function
 
 from six import string_types
 
-from tensorflow.contrib.labeled_tensor.python.ops import _typecheck as tc
-from tensorflow.contrib.labeled_tensor.python.ops import core
-from tensorflow.contrib.labeled_tensor.python.ops import ops
+from astronet.contrib.labeled_tensor.python.ops import _typecheck as tc
+from astronet.contrib.labeled_tensor.python.ops import core
+from astronet.contrib.labeled_tensor.python.ops import ops
 from tensorflow.python.framework import ops as tf_ops
 
 

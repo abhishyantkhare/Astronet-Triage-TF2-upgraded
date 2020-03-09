@@ -18,7 +18,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from tensorflow.contrib.distributions.python.ops import deterministic as deterministic_lib
+from astronet.contrib.distributions.python.ops import deterministic as deterministic_lib
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import test

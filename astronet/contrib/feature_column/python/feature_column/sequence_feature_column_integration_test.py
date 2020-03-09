@@ -23,7 +23,7 @@ import tempfile
 
 from google.protobuf import text_format
 
-from tensorflow.contrib.feature_column.python.feature_column import sequence_feature_column as sfc
+from astronet.contrib.feature_column.python.feature_column import sequence_feature_column as sfc
 from tensorflow.core.example import example_pb2
 from tensorflow.core.example import feature_pb2
 from tensorflow.python.data.ops import dataset_ops

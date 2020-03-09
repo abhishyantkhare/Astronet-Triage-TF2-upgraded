@@ -21,9 +21,9 @@ from __future__ import print_function
 import collections
 import numpy as np
 
-from tensorflow.contrib.seq2seq.python.ops import attention_wrapper
-from tensorflow.contrib.seq2seq.python.ops import beam_search_ops
-from tensorflow.contrib.seq2seq.python.ops import decoder
+from astronet.contrib.seq2seq.python.ops import attention_wrapper
+from astronet.contrib.seq2seq.python.ops import beam_search_ops
+from astronet.contrib.seq2seq.python.ops import decoder
 from tensorflow.python.eager import context
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

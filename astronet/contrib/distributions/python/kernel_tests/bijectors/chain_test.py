@@ -20,11 +20,11 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops.bijectors.affine import Affine
-from tensorflow.contrib.distributions.python.ops.bijectors.chain import Chain
-from tensorflow.contrib.distributions.python.ops.bijectors.exp import Exp
-from tensorflow.contrib.distributions.python.ops.bijectors.softmax_centered import SoftmaxCentered
-from tensorflow.contrib.distributions.python.ops.bijectors.softplus import Softplus
+from astronet.contrib.distributions.python.ops.bijectors.affine import Affine
+from astronet.contrib.distributions.python.ops.bijectors.chain import Chain
+from astronet.contrib.distributions.python.ops.bijectors.exp import Exp
+from astronet.contrib.distributions.python.ops.bijectors.softmax_centered import SoftmaxCentered
+from astronet.contrib.distributions.python.ops.bijectors.softplus import Softplus
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops.distributions import bijector

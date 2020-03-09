@@ -31,7 +31,7 @@ def main():
   # TODO(aselle): it is unfortunate to use all of tensorflow to lookup binary.
   print("""TOCO from pip install is currently not working on command line.
 Please use the python TOCO API or use
-bazel run tensorflow/contrib/lite:toco -- <args> from a TensorFlow source dir.
+bazel run astronet.contrib/lite:toco -- <args> from a TensorFlow source dir.
 """)
   sys.exit(1)
   # TODO(aselle): Replace this when we find a way to run toco without

@@ -19,9 +19,9 @@ from __future__ import print_function
 
 # go/tf-wildcard-import
 # pylint: disable=wildcard-import
-from tensorflow.contrib.tensor_forest.python.ops.gen_tensor_forest_ops import *
+from astronet.contrib.tensor_forest.python.ops.gen_tensor_forest_ops import *
 # pylint: enable=wildcard-import
-from tensorflow.contrib.util import loader
+from astronet.contrib.util import loader
 from tensorflow.python.platform import resource_loader
 
 _tensor_forest_ops = loader.load_op_library(

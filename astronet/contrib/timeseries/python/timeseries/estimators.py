@@ -20,14 +20,14 @@ from __future__ import print_function
 
 import functools
 
-from tensorflow.contrib.timeseries.python.timeseries import ar_model
-from tensorflow.contrib.timeseries.python.timeseries import feature_keys
-from tensorflow.contrib.timeseries.python.timeseries import head as ts_head_lib
-from tensorflow.contrib.timeseries.python.timeseries import math_utils
-from tensorflow.contrib.timeseries.python.timeseries import state_management
-from tensorflow.contrib.timeseries.python.timeseries.state_space_models import state_space_model
-from tensorflow.contrib.timeseries.python.timeseries.state_space_models import structural_ensemble
-from tensorflow.contrib.timeseries.python.timeseries.state_space_models.filtering_postprocessor import StateInterpolatingAnomalyDetector
+from astronet.contrib.timeseries.python.timeseries import ar_model
+from astronet.contrib.timeseries.python.timeseries import feature_keys
+from astronet.contrib.timeseries.python.timeseries import head as ts_head_lib
+from astronet.contrib.timeseries.python.timeseries import math_utils
+from astronet.contrib.timeseries.python.timeseries import state_management
+from astronet.contrib.timeseries.python.timeseries.state_space_models import state_space_model
+from astronet.contrib.timeseries.python.timeseries.state_space_models import structural_ensemble
+from astronet.contrib.timeseries.python.timeseries.state_space_models.filtering_postprocessor import StateInterpolatingAnomalyDetector
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.estimator.canned import optimizers

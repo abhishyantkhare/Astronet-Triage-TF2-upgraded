@@ -21,12 +21,12 @@ from __future__ import print_function
 import collections
 import os
 
-from tensorflow.contrib.boosted_trees.proto import tree_config_pb2
-from tensorflow.contrib.boosted_trees.python.training.functions import gbdt_batch
-from tensorflow.contrib.decision_trees.proto import generic_tree_model_extensions_pb2
-from tensorflow.contrib.decision_trees.proto import generic_tree_model_pb2
-from tensorflow.contrib.learn.python.learn import export_strategy
-from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
+from astronet.contrib.boosted_trees.proto import tree_config_pb2
+from astronet.contrib.boosted_trees.python.training.functions import gbdt_batch
+from astronet.contrib.decision_trees.proto import generic_tree_model_extensions_pb2
+from astronet.contrib.decision_trees.proto import generic_tree_model_pb2
+from astronet.contrib.learn.python.learn import export_strategy
+from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
 from tensorflow.python.client import session as tf_session
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import gfile

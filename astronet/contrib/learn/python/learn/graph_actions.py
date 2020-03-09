@@ -16,7 +16,7 @@
 """High level operations on graphs (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -33,10 +33,10 @@ import numpy as np
 
 from six import reraise
 
-from tensorflow.contrib.framework import load_variable
-from tensorflow.contrib.framework.python.ops import ops as contrib_ops
-from tensorflow.contrib.framework.python.ops import variables as contrib_variables
-from tensorflow.contrib.learn.python.learn import monitors as monitors_lib
+from astronet.contrib.framework import load_variable
+from astronet.contrib.framework.python.ops import ops as contrib_ops
+from astronet.contrib.framework.python.ops import variables as contrib_variables
+from astronet.contrib.learn.python.learn import monitors as monitors_lib
 from tensorflow.core.framework import summary_pb2
 from tensorflow.python.client import session as tf_session
 from tensorflow.python.framework import errors

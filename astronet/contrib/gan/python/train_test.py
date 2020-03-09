@@ -21,12 +21,12 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework.python.ops import variables as variables_lib
-from tensorflow.contrib.gan.python import namedtuples
-from tensorflow.contrib.gan.python import train
-from tensorflow.contrib.gan.python.features.python import random_tensor_pool
-from tensorflow.contrib.slim.python.slim import learning as slim_learning
+from astronet.contrib import layers
+from astronet.contrib.framework.python.ops import variables as variables_lib
+from astronet.contrib.gan.python import namedtuples
+from astronet.contrib.gan.python import train
+from astronet.contrib.gan.python.features.python import random_tensor_pool
+from astronet.contrib.slim.python.slim import learning as slim_learning
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

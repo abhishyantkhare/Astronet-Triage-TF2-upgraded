@@ -20,11 +20,11 @@ from __future__ import print_function
 
 import functools
 
-from tensorflow.contrib.framework.python.framework import experimental
-from tensorflow.contrib.framework.python.ops import variables as contrib_variables
-from tensorflow.contrib.layers.python.layers import embedding_ops
-from tensorflow.contrib.layers.python.layers import feature_column as fc
-from tensorflow.contrib.layers.python.layers import layers
+from astronet.contrib.framework.python.framework import experimental
+from astronet.contrib.framework.python.ops import variables as contrib_variables
+from astronet.contrib.layers.python.layers import embedding_ops
+from astronet.contrib.layers.python.layers import feature_column as fc
+from astronet.contrib.layers.python.layers import layers
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import sparse_tensor as sparse_tensor_py

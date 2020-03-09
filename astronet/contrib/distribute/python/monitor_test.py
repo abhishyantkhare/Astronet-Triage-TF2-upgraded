@@ -20,7 +20,7 @@ from __future__ import print_function
 
 from absl.testing import parameterized
 import numpy
-from tensorflow.contrib.distribute.python import monitor as monitor_lib
+from astronet.contrib.distribute.python import monitor as monitor_lib
 from tensorflow.python.client import session
 from tensorflow.python.distribute import combinations
 from tensorflow.python.distribute import one_device_strategy

@@ -32,8 +32,8 @@ import gym
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib import eager
-from tensorflow.contrib.autograph.examples.benchmarks import benchmark_base
+from astronet.contrib import eager
+from astronet.contrib.autograph.examples.benchmarks import benchmark_base
 from tensorflow.python import autograph as ag
 from tensorflow.python.eager import context
 

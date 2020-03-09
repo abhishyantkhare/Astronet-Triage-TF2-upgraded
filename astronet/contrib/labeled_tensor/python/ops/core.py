@@ -35,7 +35,7 @@ from six import string_types
 from six import text_type
 from six.moves import range  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.labeled_tensor.python.ops import _typecheck as tc
+from astronet.contrib.labeled_tensor.python.ops import _typecheck as tc
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

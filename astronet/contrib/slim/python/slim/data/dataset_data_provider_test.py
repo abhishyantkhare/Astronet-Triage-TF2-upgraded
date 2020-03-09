@@ -21,11 +21,11 @@ from __future__ import print_function
 import os
 import tempfile
 
-from tensorflow.contrib.slim.python.slim import queues
-from tensorflow.contrib.slim.python.slim.data import dataset
-from tensorflow.contrib.slim.python.slim.data import dataset_data_provider
-from tensorflow.contrib.slim.python.slim.data import test_utils
-from tensorflow.contrib.slim.python.slim.data import tfexample_decoder
+from astronet.contrib.slim.python.slim import queues
+from astronet.contrib.slim.python.slim.data import dataset
+from astronet.contrib.slim.python.slim.data import dataset_data_provider
+from astronet.contrib.slim.python.slim.data import test_utils
+from astronet.contrib.slim.python.slim.data import tfexample_decoder
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

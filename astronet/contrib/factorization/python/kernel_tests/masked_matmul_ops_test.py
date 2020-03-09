@@ -21,7 +21,7 @@ from __future__ import print_function
 # pylint: disable=g-bad-todo, g-import-not-at-top
 import numpy as np
 
-from tensorflow.contrib.factorization.python.ops import gen_factorization_ops
+from astronet.contrib.factorization.python.ops import gen_factorization_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

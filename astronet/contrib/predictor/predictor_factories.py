@@ -18,11 +18,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.predictor import contrib_estimator_predictor
-from tensorflow.contrib.predictor import core_estimator_predictor
-from tensorflow.contrib.predictor import saved_model_predictor
+from astronet.contrib.predictor import contrib_estimator_predictor
+from astronet.contrib.predictor import core_estimator_predictor
+from astronet.contrib.predictor import saved_model_predictor
 
-from tensorflow.contrib.learn.python.learn.estimators import estimator as contrib_estimator
+from astronet.contrib.learn.python.learn.estimators import estimator as contrib_estimator
 from tensorflow.python.estimator import estimator as core_estimator
 
 

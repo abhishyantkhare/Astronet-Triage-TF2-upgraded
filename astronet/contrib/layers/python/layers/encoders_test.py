@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Tests for tensorflow.contrib.layers.python.layers.encoders."""
+"""Tests for astronet.contrib.layers.python.layers.encoders."""
 
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.layers.python.layers import encoders
-from tensorflow.contrib.layers.python.ops import sparse_ops
+from astronet.contrib.layers.python.layers import encoders
+from astronet.contrib.layers.python.ops import sparse_ops
 from tensorflow.python.ops import init_ops
 from tensorflow.python.ops import variable_scope
 from tensorflow.python.ops import variables

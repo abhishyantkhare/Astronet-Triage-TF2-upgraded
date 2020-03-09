@@ -24,9 +24,9 @@ import textwrap
 import numpy as np
 from six.moves import range  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.labeled_tensor.python.ops import _typecheck as tc
-from tensorflow.contrib.labeled_tensor.python.ops import core
-from tensorflow.contrib.labeled_tensor.python.ops import test_util
+from astronet.contrib.labeled_tensor.python.ops import _typecheck as tc
+from astronet.contrib.labeled_tensor.python.ops import core
+from astronet.contrib.labeled_tensor.python.ops import test_util
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

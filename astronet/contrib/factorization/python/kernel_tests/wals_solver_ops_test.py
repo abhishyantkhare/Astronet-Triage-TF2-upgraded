@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.factorization.python.ops import gen_factorization_ops
+from astronet.contrib.factorization.python.ops import gen_factorization_ops
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.platform import test
 

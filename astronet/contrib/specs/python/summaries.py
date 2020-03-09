@@ -23,7 +23,7 @@ from __future__ import division
 from __future__ import print_function
 
 import re
-from tensorflow.contrib.specs.python import specs
+from astronet.contrib.specs.python import specs
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

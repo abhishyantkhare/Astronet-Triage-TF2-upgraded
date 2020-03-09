@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.timeseries.python.timeseries.state_space_models import filtering_postprocessor
+from astronet.contrib.timeseries.python.timeseries.state_space_models import filtering_postprocessor
 
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

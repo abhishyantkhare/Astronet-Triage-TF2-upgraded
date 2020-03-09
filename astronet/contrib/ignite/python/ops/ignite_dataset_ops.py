@@ -24,8 +24,8 @@ import struct
 
 import six
 
-from tensorflow.contrib.ignite.python.ops import gen_dataset_ops
-from tensorflow.contrib.ignite.python.ops import ignite_op_loader  # pylint: disable=unused-import
+from astronet.contrib.ignite.python.ops import gen_dataset_ops
+from astronet.contrib.ignite.python.ops import ignite_op_loader  # pylint: disable=unused-import
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.data.util import structure
 from tensorflow.python.framework import dtypes

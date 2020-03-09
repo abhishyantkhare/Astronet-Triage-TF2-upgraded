@@ -20,11 +20,11 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework.python.ops import arg_scope
-from tensorflow.contrib.layers.python.layers import utils
-from tensorflow.contrib.slim.python.slim.nets import resnet_utils
-from tensorflow.contrib.slim.python.slim.nets import resnet_v1
+from astronet.contrib import layers
+from astronet.contrib.framework.python.ops import arg_scope
+from astronet.contrib.layers.python.layers import utils
+from astronet.contrib.slim.python.slim.nets import resnet_utils
+from astronet.contrib.slim.python.slim.nets import resnet_v1
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

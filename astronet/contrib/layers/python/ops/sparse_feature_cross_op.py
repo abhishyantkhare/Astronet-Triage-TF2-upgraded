@@ -17,9 +17,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework import deprecated_arg_values
-from tensorflow.contrib.layers.ops import gen_sparse_feature_cross_op
-from tensorflow.contrib.util import loader
+from astronet.contrib.framework import deprecated_arg_values
+from astronet.contrib.layers.ops import gen_sparse_feature_cross_op
+from astronet.contrib.util import loader
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import sparse_tensor

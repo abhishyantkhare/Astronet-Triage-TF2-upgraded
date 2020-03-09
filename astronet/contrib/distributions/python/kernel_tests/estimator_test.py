@@ -21,13 +21,13 @@ from __future__ import print_function
 import numpy as np
 import six
 
-from tensorflow.contrib.distributions.python.ops import estimator as estimator_lib
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.learn.python.learn.estimators.head_test import _assert_metrics
-from tensorflow.contrib.learn.python.learn.estimators.head_test import _assert_no_variables
-from tensorflow.contrib.learn.python.learn.estimators.head_test import _assert_summary_tags
+from astronet.contrib.distributions.python.ops import estimator as estimator_lib
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators.head_test import _assert_metrics
+from astronet.contrib.learn.python.learn.estimators.head_test import _assert_no_variables
+from astronet.contrib.learn.python.learn.estimators.head_test import _assert_summary_tags
 from tensorflow.python.client import session
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import nn_ops

@@ -21,7 +21,7 @@ from __future__ import print_function
 import json
 import os
 
-from tensorflow.contrib.cloud.python.ops import gen_gcs_config_ops
+from astronet.contrib.cloud.python.ops import gen_gcs_config_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

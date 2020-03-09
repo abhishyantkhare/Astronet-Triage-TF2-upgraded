@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.keras.api.keras.wrappers import scikit_learn
+from astronet.contrib.keras.api.keras.wrappers import scikit_learn
 
 del absolute_import
 del division

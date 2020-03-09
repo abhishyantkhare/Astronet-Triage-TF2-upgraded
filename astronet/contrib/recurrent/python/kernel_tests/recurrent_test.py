@@ -22,7 +22,7 @@ import collections
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.recurrent.python.ops import recurrent
+from astronet.contrib.recurrent.python.ops import recurrent
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import function
 from tensorflow.python.framework import random_seed

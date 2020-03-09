@@ -18,8 +18,8 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-from tensorflow.contrib.checkpoint.python import split_dependency
-from tensorflow.contrib.rnn.python.ops import lstm_ops
+from astronet.contrib.checkpoint.python import split_dependency
+from astronet.contrib.rnn.python.ops import lstm_ops
 from tensorflow.python.compat import compat
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

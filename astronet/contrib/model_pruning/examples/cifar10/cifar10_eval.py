@@ -42,7 +42,7 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.model_pruning.examples.cifar10 import cifar10_pruning as cifar10
+from astronet.contrib.model_pruning.examples.cifar10 import cifar10_pruning as cifar10
 
 FLAGS = None
 

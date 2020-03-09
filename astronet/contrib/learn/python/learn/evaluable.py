@@ -15,7 +15,7 @@
 """`Evaluable` interface (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -33,7 +33,7 @@ class Evaluable(object):
   """Interface for objects that are evaluatable by, e.g., `Experiment`.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
   """
 

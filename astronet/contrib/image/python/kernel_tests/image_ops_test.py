@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.image.ops import gen_image_ops
-from tensorflow.contrib.image.python.ops import image_ops
+from astronet.contrib.image.ops import gen_image_ops
+from astronet.contrib.image.python.ops import image_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import test_util

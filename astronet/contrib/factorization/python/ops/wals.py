@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.factorization.python.ops import factorization_ops
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.factorization.python.ops import factorization_ops
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import model_fn
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
@@ -381,7 +381,7 @@ class WALSMatrixFactorization(estimator.Estimator):
   matrix and `V` is a (m x k) matrix. Here k is the rank of the approximation,
   also called the embedding dimension. We refer to `U` as the row factors, and
   `V` as the column factors.
-  See tensorflow/contrib/factorization/g3doc/wals.md for the precise problem
+  See astronet.contrib/factorization/g3doc/wals.md for the precise problem
   formulation.
 
   The training proceeds in sweeps: during a row_sweep, we fix `V` and solve for

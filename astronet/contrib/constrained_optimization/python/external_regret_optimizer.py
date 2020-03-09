@@ -46,7 +46,7 @@ import abc
 
 import six
 
-from tensorflow.contrib.constrained_optimization.python import constrained_optimizer
+from astronet.contrib.constrained_optimization.python import constrained_optimizer
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

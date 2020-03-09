@@ -42,8 +42,8 @@ import tarfile
 from six.moves import urllib
 import tensorflow as tf
 
-from tensorflow.contrib.model_pruning.examples.cifar10 import cifar10_input
-from tensorflow.contrib.model_pruning.python import pruning
+from astronet.contrib.model_pruning.examples.cifar10 import cifar10_input
+from astronet.contrib.model_pruning.python import pruning
 
 # Global constants describing the CIFAR-10 data set.
 IMAGE_SIZE = cifar10_input.IMAGE_SIZE

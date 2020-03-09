@@ -24,10 +24,10 @@ import math
 import numpy as np
 import six
 
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators import prediction_key
 from tensorflow.core.framework import summary_pb2
 from tensorflow.python.client import session
 from tensorflow.python.framework import ops

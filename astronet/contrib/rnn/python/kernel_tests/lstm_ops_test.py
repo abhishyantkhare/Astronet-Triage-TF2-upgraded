@@ -21,8 +21,8 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib.rnn.python.kernel_tests import benchmarking
-from tensorflow.contrib.rnn.python.ops import lstm_ops
+from astronet.contrib.rnn.python.kernel_tests import benchmarking
+from astronet.contrib.rnn.python.ops import lstm_ops
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

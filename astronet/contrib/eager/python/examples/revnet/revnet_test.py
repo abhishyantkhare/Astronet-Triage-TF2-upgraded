@@ -22,9 +22,9 @@ import gc
 import time
 
 import tensorflow as tf
-from tensorflow.contrib.eager.python.examples.revnet import blocks_test
-from tensorflow.contrib.eager.python.examples.revnet import config as config_
-from tensorflow.contrib.eager.python.examples.revnet import revnet
+from astronet.contrib.eager.python.examples.revnet import blocks_test
+from astronet.contrib.eager.python.examples.revnet import config as config_
+from astronet.contrib.eager.python.examples.revnet import revnet
 from tensorflow.python.client import device_lib
 tfe = tf.contrib.eager
 

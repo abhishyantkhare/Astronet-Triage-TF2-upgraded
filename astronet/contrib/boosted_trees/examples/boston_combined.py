@@ -16,7 +16,7 @@ r"""Regression on Boston housing data using DNNBoostedTreeCombinedRegressor.
 
   Example Usage:
 
-  python tensorflow/contrib/boosted_trees/examples/boston_combined.py \
+  python astronet.contrib/boosted_trees/examples/boston_combined.py \
   --batch_size=404 --output_dir="/tmp/boston" \
   --dnn_hidden_units="8,4" --dnn_steps_to_train=1000 \
   --tree_depth=4 --tree_learning_rate=0.1 \
@@ -38,12 +38,12 @@ import argparse
 import sys
 import tensorflow as tf
 
-from tensorflow.contrib.boosted_trees.estimator_batch.dnn_tree_combined_estimator import DNNBoostedTreeCombinedRegressor
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn import learn_runner
-from tensorflow.contrib.learn.python.learn.utils import input_fn_utils
-from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
+from astronet.contrib.boosted_trees.estimator_batch.dnn_tree_combined_estimator import DNNBoostedTreeCombinedRegressor
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn import learn_runner
+from astronet.contrib.learn.python.learn.utils import input_fn_utils
+from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
 
 _BOSTON_NUM_FEATURES = 13
 

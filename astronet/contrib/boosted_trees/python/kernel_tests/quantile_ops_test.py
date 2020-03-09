@@ -24,8 +24,8 @@ import tempfile
 
 import numpy as np
 
-from tensorflow.contrib.boosted_trees.proto.quantiles_pb2 import QuantileConfig
-from tensorflow.contrib.boosted_trees.python.ops import quantile_ops
+from astronet.contrib.boosted_trees.proto.quantiles_pb2 import QuantileConfig
+from astronet.contrib.boosted_trees.python.ops import quantile_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

@@ -20,7 +20,7 @@ import importlib
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import kumaraswamy as kumaraswamy_lib
+from astronet.contrib.distributions.python.ops import kumaraswamy as kumaraswamy_lib
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import random_seed

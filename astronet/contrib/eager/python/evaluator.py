@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib.eager.python import datasets
-from tensorflow.contrib.eager.python import metrics
+from astronet.contrib.eager.python import datasets
+from astronet.contrib.eager.python import metrics
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.eager import context
 from tensorflow.python.eager import function

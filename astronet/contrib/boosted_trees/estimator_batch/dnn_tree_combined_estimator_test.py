@@ -20,11 +20,11 @@ from __future__ import print_function
 
 import os
 import tempfile
-from tensorflow.contrib.boosted_trees.estimator_batch import dnn_tree_combined_estimator as estimator
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn.estimators import estimator_test_utils
-from tensorflow.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.boosted_trees.estimator_batch import dnn_tree_combined_estimator as estimator
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn.estimators import estimator_test_utils
+from astronet.contrib.learn.python.learn.estimators import run_config
 from tensorflow.python.estimator import exporter
 from tensorflow.python.estimator.canned import head as head_lib
 from tensorflow.python.estimator.export import export

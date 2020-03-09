@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python.examples.rnn_colorbot import rnn_colorbot
+from astronet.contrib.eager.python.examples.rnn_colorbot import rnn_colorbot
 from tensorflow.python.framework import test_util
 
 

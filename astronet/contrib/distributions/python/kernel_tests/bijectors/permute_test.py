@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops.bijectors.permute import Permute
+from astronet.contrib.distributions.python.ops.bijectors.permute import Permute
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops.distributions.bijector_test_util import assert_bijective_and_finite

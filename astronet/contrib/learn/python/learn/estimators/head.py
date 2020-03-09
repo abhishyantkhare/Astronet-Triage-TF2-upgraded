@@ -15,7 +15,7 @@
 """Abstractions for the head(s) of a model (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -27,12 +27,12 @@ import abc
 
 import six
 
-from tensorflow.contrib import framework as framework_lib
-from tensorflow.contrib import layers as layers_lib
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.learn.python.learn.estimators.metric_key import MetricKey as mkey
+from astronet.contrib import framework as framework_lib
+from astronet.contrib import layers as layers_lib
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.learn.python.learn.estimators.metric_key import MetricKey as mkey
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import sparse_tensor
@@ -60,7 +60,7 @@ class Head(object):
   """Interface for the head/top of a model.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Given logits (or output of a hidden layer), a Head knows how to compute

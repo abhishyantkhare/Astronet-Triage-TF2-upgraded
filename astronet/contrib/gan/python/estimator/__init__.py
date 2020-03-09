@@ -24,17 +24,17 @@ from __future__ import print_function
 
 # Collapse `estimator` into a single namespace.
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.gan.python.estimator.python import gan_estimator
-from tensorflow.contrib.gan.python.estimator.python import head
-from tensorflow.contrib.gan.python.estimator.python import latent_gan_estimator
-from tensorflow.contrib.gan.python.estimator.python import stargan_estimator
-from tensorflow.contrib.gan.python.estimator.python import tpu_gan_estimator
+from astronet.contrib.gan.python.estimator.python import gan_estimator
+from astronet.contrib.gan.python.estimator.python import head
+from astronet.contrib.gan.python.estimator.python import latent_gan_estimator
+from astronet.contrib.gan.python.estimator.python import stargan_estimator
+from astronet.contrib.gan.python.estimator.python import tpu_gan_estimator
 
-from tensorflow.contrib.gan.python.estimator.python.gan_estimator import *
-from tensorflow.contrib.gan.python.estimator.python.head import *
-from tensorflow.contrib.gan.python.estimator.python.latent_gan_estimator import *
-from tensorflow.contrib.gan.python.estimator.python.stargan_estimator import *
-from tensorflow.contrib.gan.python.estimator.python.tpu_gan_estimator import *
+from astronet.contrib.gan.python.estimator.python.gan_estimator import *
+from astronet.contrib.gan.python.estimator.python.head import *
+from astronet.contrib.gan.python.estimator.python.latent_gan_estimator import *
+from astronet.contrib.gan.python.estimator.python.stargan_estimator import *
+from astronet.contrib.gan.python.estimator.python.tpu_gan_estimator import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

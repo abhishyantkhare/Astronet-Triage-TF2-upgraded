@@ -18,8 +18,8 @@ from __future__ import print_function
 
 import gc
 
-from tensorflow.contrib.eager.python import network
-from tensorflow.contrib.layers.python.layers import regularizers
+from astronet.contrib.eager.python import network
+from astronet.contrib.layers.python.layers import regularizers
 from tensorflow.python.eager import function
 from tensorflow.python.eager import test
 from tensorflow.python.framework import constant_op

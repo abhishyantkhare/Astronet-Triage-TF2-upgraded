@@ -19,8 +19,8 @@ from __future__ import division
 from __future__ import print_function
 
 from google.protobuf.json_format import ParseDict
-from tensorflow.contrib.decision_trees.proto import generic_tree_model_pb2 as _tree_proto
-from tensorflow.contrib.tensor_forest.python import tensor_forest
+from astronet.contrib.decision_trees.proto import generic_tree_model_pb2 as _tree_proto
+from astronet.contrib.tensor_forest.python import tensor_forest
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.framework import test_util

@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.learn.python.learn.estimators.head import _compute_weighted_loss
-from tensorflow.contrib.learn.python.learn.estimators.head import _RegressionHead
+from astronet.contrib.learn.python.learn.estimators.head import _compute_weighted_loss
+from astronet.contrib.learn.python.learn.estimators.head import _RegressionHead
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_util
 from tensorflow.python.ops import array_ops

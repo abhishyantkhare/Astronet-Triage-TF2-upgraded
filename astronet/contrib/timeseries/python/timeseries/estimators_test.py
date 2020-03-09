@@ -22,11 +22,11 @@ import tempfile
 import numpy
 import six
 
-from tensorflow.contrib.timeseries.python.timeseries import ar_model
-from tensorflow.contrib.timeseries.python.timeseries import estimators
-from tensorflow.contrib.timeseries.python.timeseries import feature_keys
-from tensorflow.contrib.timeseries.python.timeseries import input_pipeline
-from tensorflow.contrib.timeseries.python.timeseries import saved_model_utils
+from astronet.contrib.timeseries.python.timeseries import ar_model
+from astronet.contrib.timeseries.python.timeseries import estimators
+from astronet.contrib.timeseries.python.timeseries import feature_keys
+from astronet.contrib.timeseries.python.timeseries import input_pipeline
+from astronet.contrib.timeseries.python.timeseries import saved_model_utils
 
 from tensorflow.python.client import session
 from tensorflow.python.estimator import estimator_lib

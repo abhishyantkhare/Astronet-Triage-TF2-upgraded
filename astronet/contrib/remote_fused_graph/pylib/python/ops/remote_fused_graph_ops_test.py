@@ -20,7 +20,7 @@ from __future__ import print_function
 import numpy as np
 
 # pylint: disable=unused-import,wildcard-import, line-too-long
-from tensorflow.contrib.remote_fused_graph.pylib.python.ops import remote_fused_graph_ops
+from astronet.contrib.remote_fused_graph.pylib.python.ops import remote_fused_graph_ops
 # pylint: enable=unused-import,wildcard-import,line-too-long
 
 from tensorflow.core.framework import graph_pb2

@@ -54,13 +54,13 @@ import time
 import numpy as np
 import six
 
-from tensorflow.contrib.cluster_resolver.python.training import tpu_cluster_resolver as tpu_cluster_resolver_lib
-from tensorflow.contrib.tpu.python.ops import tpu_ops
-from tensorflow.contrib.tpu.python.tpu import keras_tpu_variables
-from tensorflow.contrib.tpu.python.tpu import tpu
-from tensorflow.contrib.tpu.python.tpu import tpu_function
-from tensorflow.contrib.tpu.python.tpu import tpu_optimizer
-from tensorflow.contrib.tpu.python.tpu import tpu_system_metadata as tpu_system_metadata_lib
+from astronet.contrib.cluster_resolver.python.training import tpu_cluster_resolver as tpu_cluster_resolver_lib
+from astronet.contrib.tpu.python.ops import tpu_ops
+from astronet.contrib.tpu.python.tpu import keras_tpu_variables
+from astronet.contrib.tpu.python.tpu import tpu
+from astronet.contrib.tpu.python.tpu import tpu_function
+from astronet.contrib.tpu.python.tpu import tpu_optimizer
+from astronet.contrib.tpu.python.tpu import tpu_system_metadata as tpu_system_metadata_lib
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.core.protobuf.tpu import compilation_result_pb2 as tpu_compilation_result
 from tensorflow.python import tf2

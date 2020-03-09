@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.layers.python.layers import layers
-from tensorflow.contrib.layers.python.layers import rev_block_lib
+from astronet.contrib.layers.python.layers import layers
+from astronet.contrib.layers.python.layers import rev_block_lib
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import random_seed

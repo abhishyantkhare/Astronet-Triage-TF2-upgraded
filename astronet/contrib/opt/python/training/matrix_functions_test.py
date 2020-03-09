@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.opt.python.training import matrix_functions
+from astronet.contrib.opt.python.training import matrix_functions
 from tensorflow.python.platform import test
 
 TOLERANCE = 1e-3

@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib import slim
-from tensorflow.contrib.gan.python.features.python import spectral_normalization_impl as spectral_normalization
-from tensorflow.contrib.layers.python.layers import layers as contrib_layers
+from astronet.contrib import slim
+from astronet.contrib.gan.python.features.python import spectral_normalization_impl as spectral_normalization
+from astronet.contrib.layers.python.layers import layers as contrib_layers
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.keras.layers import convolutional as keras_convolutional

@@ -25,17 +25,17 @@ import tempfile
 
 import numpy as np
 
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.layers.python.layers import feature_column_ops
-from tensorflow.contrib.learn.python.learn import experiment
-from tensorflow.contrib.learn.python.learn.datasets import base
-from tensorflow.contrib.learn.python.learn.estimators import _sklearn
-from tensorflow.contrib.learn.python.learn.estimators import debug
-from tensorflow.contrib.learn.python.learn.estimators import estimator_test_utils
-from tensorflow.contrib.learn.python.learn.estimators import run_config
-from tensorflow.contrib.learn.python.learn.estimators import test_data
-from tensorflow.contrib.learn.python.learn.metric_spec import MetricSpec
-from tensorflow.contrib.metrics.python.ops import metric_ops
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.layers.python.layers import feature_column_ops
+from astronet.contrib.learn.python.learn import experiment
+from astronet.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.estimators import _sklearn
+from astronet.contrib.learn.python.learn.estimators import debug
+from astronet.contrib.learn.python.learn.estimators import estimator_test_utils
+from astronet.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.learn.python.learn.estimators import test_data
+from astronet.contrib.learn.python.learn.metric_spec import MetricSpec
+from astronet.contrib.metrics.python.ops import metric_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor

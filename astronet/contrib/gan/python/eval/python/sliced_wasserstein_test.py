@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 from scipy import ndimage
-from tensorflow.contrib.gan.python.eval.python import sliced_wasserstein_impl as swd
+from astronet.contrib.gan.python.eval.python import sliced_wasserstein_impl as swd
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import random_ops

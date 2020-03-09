@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import bijectors
-from tensorflow.contrib.distributions.python.ops import distribution_util
+from astronet.contrib.distributions.python.ops import bijectors
+from astronet.contrib.distributions.python.ops import distribution_util
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

@@ -36,7 +36,7 @@ from tensorflow_estimator.contrib import estimator
 # 'python' to this package. If this first import happens
 # after the call to remove_undocumented, then the 'python'
 # attribute won't be removed.
-import tensorflow.contrib.estimator.python
+import astronet.contrib.estimator.python
 
 # Include attrs that start with single underscore.
 _HAS_DYNAMIC_ATTRIBUTES = True

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # =============================================================================
-"""Tests for third_party.tensorflow.contrib.ffmpeg.decode_audio_op."""
+"""Tests for third_party.astronet.contrib.ffmpeg.decode_audio_op."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -22,7 +22,7 @@ import os.path
 
 import six
 
-from tensorflow.contrib import ffmpeg
+from astronet.contrib import ffmpeg
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import resource_loader
@@ -78,10 +78,10 @@ class DecodeAudioOpTest(test.TestCase):
 
   def testStreamIdentifier(self):
     # mono_16khz_mp3_32khz_aac.mp4 was generated from:
-    # ffmpeg -i tensorflow/contrib/ffmpeg/testdata/mono_16khz_mp3.mp4 \
-    #        -i tensorflow/contrib/ffmpeg/testdata/mono_32khz_aac.mp4 \
+    # ffmpeg -i astronet.contrib/ffmpeg/testdata/mono_16khz_mp3.mp4 \
+    #        -i astronet.contrib/ffmpeg/testdata/mono_32khz_aac.mp4 \
     #        -strict -2 -map 0:a -map 1:a \
-    #        tensorflow/contrib/ffmpeg/testdata/mono_16khz_mp3_32khz_aac.mp4
+    #        astronet.contrib/ffmpeg/testdata/mono_16khz_mp3_32khz_aac.mp4
     self._loadFileAndTest('mono_16khz_mp3_32khz_aac.mp4', 'mp4', 2.77, 20000,
                           1, stream='0')
     self._loadFileAndTest('mono_16khz_mp3_32khz_aac.mp4', 'mp4', 2.77, 20000,

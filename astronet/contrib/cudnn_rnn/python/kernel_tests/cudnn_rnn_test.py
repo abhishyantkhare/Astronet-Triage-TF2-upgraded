@@ -26,9 +26,9 @@ import unittest
 
 import numpy as np
 
-from tensorflow.contrib.cudnn_rnn.python.layers import cudnn_rnn
-from tensorflow.contrib.cudnn_rnn.python.ops import cudnn_rnn_ops
-from tensorflow.contrib.rnn.python.ops import rnn as contrib_rnn_lib
+from astronet.contrib.cudnn_rnn.python.layers import cudnn_rnn
+from astronet.contrib.cudnn_rnn.python.ops import cudnn_rnn_ops
+from astronet.contrib.rnn.python.ops import rnn as contrib_rnn_lib
 from tensorflow.python.eager import backprop
 from tensorflow.python.eager import context
 from tensorflow.python.framework import dtypes

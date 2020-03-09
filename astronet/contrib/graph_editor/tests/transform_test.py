@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Tests for tensorflow.contrib.graph_editor."""
+"""Tests for astronet.contrib.graph_editor."""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -20,8 +20,8 @@ from __future__ import print_function
 import collections
 import functools
 import numpy as np
-from tensorflow.contrib import graph_editor as ge
-from tensorflow.contrib.graph_editor.tests import match
+from astronet.contrib import graph_editor as ge
+from astronet.contrib.graph_editor.tests import match
 from tensorflow.core.framework import attr_value_pb2
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op

@@ -20,8 +20,8 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib.seq2seq.python.ops import basic_decoder
-from tensorflow.contrib.seq2seq.python.ops import sampler as sampler_py
+from astronet.contrib.seq2seq.python.ops import basic_decoder
+from astronet.contrib.seq2seq.python.ops import sampler as sampler_py
 
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

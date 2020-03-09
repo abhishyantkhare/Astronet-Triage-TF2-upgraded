@@ -24,14 +24,14 @@ import tempfile
 import numpy as np
 
 from tensorflow.python.training import training_util
-from tensorflow.contrib.layers.python.layers import optimizers
-from tensorflow.contrib.learn.python.learn import metric_spec
-from tensorflow.contrib.learn.python.learn import models
-from tensorflow.contrib.learn.python.learn.datasets import base
-from tensorflow.contrib.learn.python.learn.estimators import _sklearn
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.metrics.python.ops import metric_ops
+from astronet.contrib.layers.python.layers import optimizers
+from astronet.contrib.learn.python.learn import metric_spec
+from astronet.contrib.learn.python.learn import models
+from astronet.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.estimators import _sklearn
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.metrics.python.ops import metric_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

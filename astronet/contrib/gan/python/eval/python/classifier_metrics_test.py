@@ -28,7 +28,7 @@ from scipy import linalg as scp_linalg
 
 from google.protobuf import text_format
 
-from tensorflow.contrib.gan.python.eval.python import classifier_metrics_impl as classifier_metrics
+from astronet.contrib.gan.python.eval.python import classifier_metrics_impl as classifier_metrics
 from tensorflow.core.framework import graph_pb2
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

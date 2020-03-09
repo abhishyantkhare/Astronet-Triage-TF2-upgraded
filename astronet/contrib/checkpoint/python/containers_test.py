@@ -20,7 +20,7 @@ import os
 
 import six
 
-from tensorflow.contrib.checkpoint.python import containers
+from astronet.contrib.checkpoint.python import containers
 from tensorflow.python.framework import test_util
 from tensorflow.python.keras import layers
 from tensorflow.python.ops import array_ops

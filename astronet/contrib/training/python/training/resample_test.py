@@ -21,7 +21,7 @@ import collections
 import math
 
 import numpy
-from tensorflow.contrib.training.python.training import resample
+from astronet.contrib.training.python.training import resample
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

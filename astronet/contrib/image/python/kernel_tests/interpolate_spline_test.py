@@ -20,7 +20,7 @@ from __future__ import print_function
 import numpy as np
 from scipy import interpolate as sc_interpolate
 
-from tensorflow.contrib.image.python.ops import interpolate_spline
+from astronet.contrib.image.python.ops import interpolate_spline
 
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import ops

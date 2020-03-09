@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 from scipy import stats
-from tensorflow.contrib import distributions
+from astronet.contrib import distributions
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import nn_ops

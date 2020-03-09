@@ -21,13 +21,13 @@ from __future__ import print_function
 import json
 import os
 
-from tensorflow.contrib.learn.python.learn import evaluable  # pylint: disable=g-import-not-at-top
-from tensorflow.contrib.learn.python.learn import experiment
-from tensorflow.contrib.learn.python.learn import learn_runner
-from tensorflow.contrib.learn.python.learn import trainable
+from astronet.contrib.learn.python.learn import evaluable  # pylint: disable=g-import-not-at-top
+from astronet.contrib.learn.python.learn import experiment
+from astronet.contrib.learn.python.learn import learn_runner
+from astronet.contrib.learn.python.learn import trainable
 
-from tensorflow.contrib.learn.python.learn.estimators import run_config as run_config_lib
-from tensorflow.contrib.training.python.training import hparam as hparam_lib
+from astronet.contrib.learn.python.learn.estimators import run_config as run_config_lib
+from astronet.contrib.training.python.training import hparam as hparam_lib
 from tensorflow.python.estimator import run_config as core_run_config_lib
 from tensorflow.python.platform import test
 from tensorflow.python.platform import tf_logging

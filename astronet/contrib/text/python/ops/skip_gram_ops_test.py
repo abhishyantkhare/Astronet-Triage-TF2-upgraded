@@ -20,9 +20,9 @@ from __future__ import print_function
 import csv
 import os
 
-from tensorflow.contrib import lookup
-from tensorflow.contrib import text
-from tensorflow.contrib.text.python.ops import skip_gram_ops
+from astronet.contrib import lookup
+from astronet.contrib import text
+from astronet.contrib.text.python.ops import skip_gram_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

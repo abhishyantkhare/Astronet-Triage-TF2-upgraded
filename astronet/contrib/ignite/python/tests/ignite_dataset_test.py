@@ -20,7 +20,7 @@ from __future__ import print_function
 import os
 
 from tensorflow import compat
-from tensorflow.contrib.ignite import IgniteDataset
+from astronet.contrib.ignite import IgniteDataset
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

@@ -22,9 +22,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.kernel_methods.python.kernel_estimators import KernelLinearClassifier
-from tensorflow.contrib.kernel_methods.python.losses import sparse_multiclass_hinge_loss
-from tensorflow.contrib.kernel_methods.python.mappers.random_fourier_features import RandomFourierFeatureMapper
+from astronet.contrib.kernel_methods.python.kernel_estimators import KernelLinearClassifier
+from astronet.contrib.kernel_methods.python.losses import sparse_multiclass_hinge_loss
+from astronet.contrib.kernel_methods.python.mappers.random_fourier_features import RandomFourierFeatureMapper
 
 from tensorflow.python.util.all_util import remove_undocumented
 remove_undocumented(__name__)

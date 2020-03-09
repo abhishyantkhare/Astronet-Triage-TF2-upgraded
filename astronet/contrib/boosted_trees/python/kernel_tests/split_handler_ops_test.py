@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import random
 
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.boosted_trees.proto import split_info_pb2
-from tensorflow.contrib.boosted_trees.python.ops import split_handler_ops
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.boosted_trees.proto import split_info_pb2
+from astronet.contrib.boosted_trees.python.ops import split_handler_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import test_util
 from tensorflow.python.ops import array_ops

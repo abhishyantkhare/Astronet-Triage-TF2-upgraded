@@ -22,7 +22,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.losses.python.metric_learning.metric_loss_ops import *
+from astronet.contrib.losses.python.metric_learning.metric_loss_ops import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util.all_util import remove_undocumented
 

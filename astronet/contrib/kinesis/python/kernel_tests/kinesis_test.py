@@ -18,7 +18,7 @@ NOTE: boto3 is needed and the test has to be invoked manually:
 $ bazel test -s --verbose_failures --config=opt \
     --action_env=AWS_ACCESS_KEY_ID=XXXXXX       \
     --action_env=AWS_SECRET_ACCESS_KEY=XXXXXX   \
-    //tensorflow/contrib/kinesis:kinesis_test
+    //astronet.contrib/kinesis:kinesis_test
 ```
 """
 
@@ -28,7 +28,7 @@ from __future__ import print_function
 
 import boto3
 
-from tensorflow.contrib.kinesis.python.ops import kinesis_dataset_ops
+from astronet.contrib.kinesis.python.ops import kinesis_dataset_ops
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.data.ops import iterator_ops
 from tensorflow.python.framework import dtypes

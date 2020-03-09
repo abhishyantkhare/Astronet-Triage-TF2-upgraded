@@ -15,7 +15,7 @@
 """Run Config (deprecated, use tf.estimator.RunConfig instead).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -29,7 +29,7 @@ import os
 
 import six
 
-from tensorflow.contrib.framework.python.framework import experimental
+from astronet.contrib.framework.python.framework import experimental
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.estimator import run_config as core_run_config
 from tensorflow.python.platform import tf_logging as logging

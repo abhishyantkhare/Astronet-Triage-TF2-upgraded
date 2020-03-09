@@ -19,9 +19,9 @@ from __future__ import print_function
 
 # pylint: disable=unused-import
 
-from tensorflow.contrib.tensor_forest.hybrid.python import hybrid_model
-from tensorflow.contrib.tensor_forest.hybrid.python.layers import fully_connected
-from tensorflow.contrib.tensor_forest.python import tensor_forest
+from astronet.contrib.tensor_forest.hybrid.python import hybrid_model
+from astronet.contrib.tensor_forest.hybrid.python.layers import fully_connected
+from astronet.contrib.tensor_forest.python import tensor_forest
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import googletest
 

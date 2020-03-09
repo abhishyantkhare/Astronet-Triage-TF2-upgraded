@@ -23,7 +23,7 @@ import os
 
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python.examples.revnet import resnet_preprocessing
+from astronet.contrib.eager.python.examples.revnet import resnet_preprocessing
 
 
 def image_serving_input_fn():

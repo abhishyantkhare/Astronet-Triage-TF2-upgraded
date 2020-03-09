@@ -19,10 +19,10 @@ from __future__ import print_function
 
 import re
 
-from tensorflow.contrib.model_pruning.python import pruning
-from tensorflow.contrib.model_pruning.python import strip_pruning_vars_lib
-from tensorflow.contrib.model_pruning.python.layers import layers
-from tensorflow.contrib.model_pruning.python.layers import rnn_cells
+from astronet.contrib.model_pruning.python import pruning
+from astronet.contrib.model_pruning.python import strip_pruning_vars_lib
+from astronet.contrib.model_pruning.python.layers import layers
+from astronet.contrib.model_pruning.python.layers import rnn_cells
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import graph_util
 from tensorflow.python.framework import importer

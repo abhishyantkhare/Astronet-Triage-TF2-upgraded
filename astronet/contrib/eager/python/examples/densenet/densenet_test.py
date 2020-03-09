@@ -21,9 +21,9 @@ from __future__ import print_function
 import gc
 import time
 import tensorflow as tf
-import tensorflow.contrib.eager as tfe
+import astronet.contrib.eager as tfe
 
-from tensorflow.contrib.eager.python.examples.densenet import densenet
+from astronet.contrib.eager.python.examples.densenet import densenet
 from tensorflow.python.client import device_lib
 
 

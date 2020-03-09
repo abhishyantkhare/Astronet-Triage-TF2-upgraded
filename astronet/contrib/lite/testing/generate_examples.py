@@ -19,7 +19,7 @@ Usage:
 
 generate_examples <output directory>
 
-bazel run //tensorflow/contrib/lite/testing:generate_examples
+bazel run //astronet.contrib/lite/testing:generate_examples
 """
 from __future__ import absolute_import
 from __future__ import division

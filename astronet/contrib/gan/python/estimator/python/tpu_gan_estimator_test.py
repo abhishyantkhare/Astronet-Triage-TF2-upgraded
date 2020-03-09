@@ -24,13 +24,13 @@ import tempfile
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.gan.python import namedtuples as tfgan_tuples
-from tensorflow.contrib.gan.python.estimator.python import tpu_gan_estimator_impl as estimator
-from tensorflow.contrib.gan.python.losses.python import tuple_losses as losses
-from tensorflow.contrib.tpu.python.tpu import tpu_config
-from tensorflow.contrib.tpu.python.tpu import tpu_estimator
-from tensorflow.contrib.tpu.python.tpu import tpu_optimizer
+from astronet.contrib import layers
+from astronet.contrib.gan.python import namedtuples as tfgan_tuples
+from astronet.contrib.gan.python.estimator.python import tpu_gan_estimator_impl as estimator
+from astronet.contrib.gan.python.losses.python import tuple_losses as losses
+from astronet.contrib.tpu.python.tpu import tpu_config
+from astronet.contrib.tpu.python.tpu import tpu_estimator
+from astronet.contrib.tpu.python.tpu import tpu_optimizer
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.estimator.estimator import WarmStartSettings

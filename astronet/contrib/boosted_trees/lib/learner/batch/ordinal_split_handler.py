@@ -63,13 +63,13 @@ from __future__ import print_function
 
 import re
 
-from tensorflow.contrib.boosted_trees.lib.learner.batch import base_split_handler
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.boosted_trees.python.ops import gen_quantile_ops
-from tensorflow.contrib.boosted_trees.python.ops import gen_stats_accumulator_ops
-from tensorflow.contrib.boosted_trees.python.ops import quantile_ops
-from tensorflow.contrib.boosted_trees.python.ops import split_handler_ops
-from tensorflow.contrib.boosted_trees.python.ops import stats_accumulator_ops
+from astronet.contrib.boosted_trees.lib.learner.batch import base_split_handler
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.boosted_trees.python.ops import gen_quantile_ops
+from astronet.contrib.boosted_trees.python.ops import gen_stats_accumulator_ops
+from astronet.contrib.boosted_trees.python.ops import quantile_ops
+from astronet.contrib.boosted_trees.python.ops import split_handler_ops
+from astronet.contrib.boosted_trees.python.ops import stats_accumulator_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import function

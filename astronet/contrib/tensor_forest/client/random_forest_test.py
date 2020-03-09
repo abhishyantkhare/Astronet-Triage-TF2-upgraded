@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.learn.python.learn.datasets import base
-from tensorflow.contrib.tensor_forest.client import random_forest
-from tensorflow.contrib.tensor_forest.python import tensor_forest
+from astronet.contrib.learn.python.learn.datasets import base
+from astronet.contrib.tensor_forest.client import random_forest
+from astronet.contrib.tensor_forest.python import tensor_forest
 from tensorflow.python.estimator.canned import head as head_lib
 from tensorflow.python.estimator.inputs import numpy_io
 from tensorflow.python.feature_column import feature_column_lib as core_feature_column

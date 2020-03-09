@@ -20,12 +20,12 @@ from __future__ import print_function
 
 import numpy
 
-from tensorflow.contrib.timeseries.python.timeseries import feature_keys
-from tensorflow.contrib.timeseries.python.timeseries import input_pipeline
-from tensorflow.contrib.timeseries.python.timeseries import math_utils
-from tensorflow.contrib.timeseries.python.timeseries import model
-from tensorflow.contrib.timeseries.python.timeseries import state_management
-from tensorflow.contrib.timeseries.python.timeseries import test_utils
+from astronet.contrib.timeseries.python.timeseries import feature_keys
+from astronet.contrib.timeseries.python.timeseries import input_pipeline
+from astronet.contrib.timeseries.python.timeseries import math_utils
+from astronet.contrib.timeseries.python.timeseries import model
+from astronet.contrib.timeseries.python.timeseries import state_management
+from astronet.contrib.timeseries.python.timeseries import test_utils
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.framework import constant_op

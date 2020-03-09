@@ -15,7 +15,7 @@
 """ExportStrategy class represents different flavors of model export (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -37,7 +37,7 @@ class ExportStrategy(
   """A class representing a type of model export.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Typically constructed by a utility function specific to the exporter, such as

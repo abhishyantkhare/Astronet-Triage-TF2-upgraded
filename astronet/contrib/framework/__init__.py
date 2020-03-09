@@ -105,9 +105,9 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.framework.python.framework import *
-from tensorflow.contrib.framework.python.framework import nest
-from tensorflow.contrib.framework.python.ops import *
+from astronet.contrib.framework.python.framework import *
+from astronet.contrib.framework.python.framework import nest
+from astronet.contrib.framework.python.ops import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.framework.ops import prepend_name_scope

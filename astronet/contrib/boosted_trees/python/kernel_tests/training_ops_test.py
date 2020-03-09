@@ -22,11 +22,11 @@ import numpy as np
 
 from google.protobuf import text_format
 
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.boosted_trees.proto import split_info_pb2
-from tensorflow.contrib.boosted_trees.proto import tree_config_pb2
-from tensorflow.contrib.boosted_trees.python.ops import model_ops
-from tensorflow.contrib.boosted_trees.python.ops import training_ops
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.boosted_trees.proto import split_info_pb2
+from astronet.contrib.boosted_trees.proto import tree_config_pb2
+from astronet.contrib.boosted_trees.python.ops import model_ops
+from astronet.contrib.boosted_trees.python.ops import training_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import test_util
 from tensorflow.python.ops import array_ops

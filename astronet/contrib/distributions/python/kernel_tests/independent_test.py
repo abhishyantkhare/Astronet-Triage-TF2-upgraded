@@ -21,8 +21,8 @@ from __future__ import print_function
 import importlib
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import independent as independent_lib
-from tensorflow.contrib.distributions.python.ops import mvn_diag as mvn_diag_lib
+from astronet.contrib.distributions.python.ops import independent as independent_lib
+from astronet.contrib.distributions.python.ops import mvn_diag as mvn_diag_lib
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

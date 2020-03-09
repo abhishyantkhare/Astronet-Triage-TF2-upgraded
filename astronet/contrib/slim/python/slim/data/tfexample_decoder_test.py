@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 import sys
 
-from tensorflow.contrib.slim.python.slim.data import tfexample_decoder
+from astronet.contrib.slim.python.slim.data import tfexample_decoder
 from tensorflow.core.example import example_pb2
 from tensorflow.core.example import feature_pb2
 from tensorflow.python.framework import constant_op

@@ -15,7 +15,7 @@
 """Estimator for State Saving RNNs (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -23,15 +23,15 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import layers
-from tensorflow.contrib import rnn as rnn_cell
-from tensorflow.contrib.layers.python.layers import feature_column_ops
-from tensorflow.contrib.layers.python.layers import optimizers
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.learn.python.learn.estimators import rnn_common
-from tensorflow.contrib.training.python.training import sequence_queueing_state_saver as sqss
+from astronet.contrib import layers
+from astronet.contrib import rnn as rnn_cell
+from astronet.contrib.layers.python.layers import feature_column_ops
+from astronet.contrib.layers.python.layers import optimizers
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators import rnn_common
+from astronet.contrib.training.python.training import sequence_queueing_state_saver as sqss
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import sparse_tensor
@@ -536,7 +536,7 @@ class StateSavingRnnEstimator(estimator.Estimator):
   """RNN with static unrolling and state saving (deprecated).
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
   """
 

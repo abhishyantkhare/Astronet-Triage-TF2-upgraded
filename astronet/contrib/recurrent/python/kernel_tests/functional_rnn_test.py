@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 
 
-from tensorflow.contrib.recurrent.python.ops import functional_rnn
+from astronet.contrib.recurrent.python.ops import functional_rnn
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import test_util

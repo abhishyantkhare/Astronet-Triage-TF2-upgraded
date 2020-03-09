@@ -19,8 +19,8 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.mixed_precision.python.loss_scale_manager import *
-from tensorflow.contrib.mixed_precision.python.loss_scale_optimizer import *
+from astronet.contrib.mixed_precision.python.loss_scale_manager import *
+from astronet.contrib.mixed_precision.python.loss_scale_optimizer import *
 
 from tensorflow.python.util.all_util import remove_undocumented
 

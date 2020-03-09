@@ -21,8 +21,8 @@ from __future__ import print_function
 import threading
 
 # pylint: disable=g-direct-tensorflow-import
-from tensorflow.contrib.distribute.python import collective_all_reduce_strategy as collective_strategy
-from tensorflow.contrib.distribute.python import parameter_server_strategy
+from astronet.contrib.distribute.python import collective_all_reduce_strategy as collective_strategy
+from astronet.contrib.distribute.python import parameter_server_strategy
 from tensorflow.python.distribute import combinations
 from tensorflow.python.distribute import distribute_coordinator as dc
 from tensorflow.python.distribute import multi_worker_test_base

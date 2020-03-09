@@ -24,11 +24,11 @@ import tempfile
 import numpy as np
 import six
 
-from tensorflow.contrib import learn
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn.utils import export
-from tensorflow.contrib.session_bundle import exporter
-from tensorflow.contrib.session_bundle import manifest_pb2
+from astronet.contrib import learn
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn.utils import export
+from astronet.contrib.session_bundle import exporter
+from astronet.contrib.session_bundle import manifest_pb2
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

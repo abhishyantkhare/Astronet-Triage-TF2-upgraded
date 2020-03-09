@@ -20,9 +20,9 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import,g-bad-import-order
-from tensorflow.contrib.quantization.python import array_ops as quantized_array_ops
-from tensorflow.contrib.quantization.python.math_ops import *
-from tensorflow.contrib.quantization.python.nn_ops import *
+from astronet.contrib.quantization.python import array_ops as quantized_array_ops
+from astronet.contrib.quantization.python.math_ops import *
+from astronet.contrib.quantization.python.nn_ops import *
 
 from tensorflow.python.ops import gen_array_ops as quantized_gen_array_ops
 from tensorflow.python.ops.gen_array_ops import dequantize

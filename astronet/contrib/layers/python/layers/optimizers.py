@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib import framework as contrib_framework
+from astronet.contrib import framework as contrib_framework
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

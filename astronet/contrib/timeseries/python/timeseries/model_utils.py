@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy
 
-from tensorflow.contrib.timeseries.python.timeseries import feature_keys
+from astronet.contrib.timeseries.python.timeseries import feature_keys
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

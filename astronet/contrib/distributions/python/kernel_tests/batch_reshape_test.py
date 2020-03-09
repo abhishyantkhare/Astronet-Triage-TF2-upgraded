@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import batch_reshape as batch_reshape_lib
-from tensorflow.contrib.distributions.python.ops import mvn_diag as mvn_lib
-from tensorflow.contrib.distributions.python.ops import poisson as poisson_lib
-from tensorflow.contrib.distributions.python.ops import wishart as wishart_lib
+from astronet.contrib.distributions.python.ops import batch_reshape as batch_reshape_lib
+from astronet.contrib.distributions.python.ops import mvn_diag as mvn_lib
+from astronet.contrib.distributions.python.ops import poisson as poisson_lib
+from astronet.contrib.distributions.python.ops import wishart as wishart_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops.distributions import normal as normal_lib

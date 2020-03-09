@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.factorization.python.ops import clustering_ops
+from astronet.contrib.factorization.python.ops import clustering_ops
 from tensorflow.python.platform import test
 
 

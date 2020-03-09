@@ -23,7 +23,7 @@ from __future__ import print_function
 
 # go/tf-wildcard-import
 # pylint: disable=wildcard-import
-from tensorflow.contrib.bayesflow.python.ops.monte_carlo_impl import *
+from astronet.contrib.bayesflow.python.ops.monte_carlo_impl import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util.all_util import remove_undocumented
 

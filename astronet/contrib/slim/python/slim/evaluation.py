@@ -127,7 +127,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.training.python.training import evaluation
+from astronet.contrib.training.python.training import evaluation
 from tensorflow.python.summary import summary
 from tensorflow.python.training import monitored_session
 from tensorflow.python.training import saver as tf_saver

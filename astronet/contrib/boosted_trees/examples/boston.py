@@ -20,7 +20,7 @@ r"""Demonstrates a regression on Boston housing data.
 
   Example Usage:
 
-  python tensorflow/contrib/boosted_trees/examples/boston.py \
+  python astronet.contrib/boosted_trees/examples/boston.py \
   --batch_size=404 --output_dir="/tmp/boston" --depth=4 --learning_rate=0.1 \
   --num_eval_steps=1 --num_trees=500 --l2=0.001 \
   --vmodule=training_ops=1
@@ -40,11 +40,11 @@ import argparse
 import os
 import sys
 import tensorflow as tf
-from tensorflow.contrib.boosted_trees.estimator_batch import custom_export_strategy
-from tensorflow.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeRegressor
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn import learn_runner
+from astronet.contrib.boosted_trees.estimator_batch import custom_export_strategy
+from astronet.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeRegressor
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn import learn_runner
 from tensorflow.python.util import compat
 
 _BOSTON_NUM_FEATURES = 13

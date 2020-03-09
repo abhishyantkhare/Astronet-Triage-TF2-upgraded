@@ -15,7 +15,7 @@
 """Experiment class collecting information for a single training run (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -29,14 +29,14 @@ import math
 import os
 import time
 
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.framework.python.framework import experimental
-from tensorflow.contrib.learn.python.learn import evaluable
-from tensorflow.contrib.learn.python.learn import export_strategy
-from tensorflow.contrib.learn.python.learn import monitors
-from tensorflow.contrib.learn.python.learn import trainable
-from tensorflow.contrib.learn.python.learn.estimators import run_config
-from tensorflow.contrib.tpu.python.tpu import tpu_estimator
+from astronet.contrib.framework import deprecated
+from astronet.contrib.framework.python.framework import experimental
+from astronet.contrib.learn.python.learn import evaluable
+from astronet.contrib.learn.python.learn import export_strategy
+from astronet.contrib.learn.python.learn import monitors
+from astronet.contrib.learn.python.learn import trainable
+from astronet.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.tpu.python.tpu import tpu_estimator
 from tensorflow.python.estimator import estimator as core_estimator
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import tf_logging as logging
@@ -123,7 +123,7 @@ class Experiment(object):
   """Experiment is a class containing all information needed to train a model.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   After an experiment is created (by passing an Estimator and inputs for

@@ -19,7 +19,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework.python.framework import experimental
+from astronet.contrib.framework.python.framework import experimental
 from tensorflow.python.platform import test
 from tensorflow.python.platform import tf_logging as logging
 

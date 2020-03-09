@@ -22,7 +22,7 @@ import abc
 
 import six
 
-from tensorflow.contrib.timeseries.python.timeseries import math_utils
+from astronet.contrib.timeseries.python.timeseries import math_utils
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

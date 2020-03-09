@@ -22,11 +22,11 @@ import math
 
 import numpy as np
 
-from tensorflow.contrib import layers as layers_lib
-from tensorflow.contrib.framework.python.ops import arg_scope
-from tensorflow.contrib.framework.python.ops import variables
-from tensorflow.contrib.layers.python.layers import layers as _layers
-from tensorflow.contrib.layers.python.layers import regularizers
+from astronet.contrib import layers as layers_lib
+from astronet.contrib.framework.python.ops import arg_scope
+from astronet.contrib.framework.python.ops import variables
+from astronet.contrib.layers.python.layers import layers as _layers
+from astronet.contrib.layers.python.layers import regularizers
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

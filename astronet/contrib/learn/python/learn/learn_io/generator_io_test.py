@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from tensorflow.contrib.learn.python.learn.learn_io import generator_io
+from astronet.contrib.learn.python.learn.learn_io import generator_io
 from tensorflow.python.framework import errors
 from tensorflow.python.platform import test
 from tensorflow.python.training import coordinator

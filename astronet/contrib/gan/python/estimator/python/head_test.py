@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.gan.python import namedtuples as tfgan_tuples
-from tensorflow.contrib.gan.python.estimator.python import head
+from astronet.contrib.gan.python import namedtuples as tfgan_tuples
+from astronet.contrib.gan.python.estimator.python import head
 
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.ops import array_ops

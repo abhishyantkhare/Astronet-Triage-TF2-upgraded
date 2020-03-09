@@ -22,7 +22,7 @@ import os
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib.feature_column.python.feature_column import sequence_feature_column as sfc
+from astronet.contrib.feature_column.python.feature_column import sequence_feature_column as sfc
 from tensorflow.python.feature_column import feature_column as fc
 from tensorflow.python.feature_column import feature_column_lib as fc_lib
 from tensorflow.python.feature_column.feature_column import _LazyBuilder

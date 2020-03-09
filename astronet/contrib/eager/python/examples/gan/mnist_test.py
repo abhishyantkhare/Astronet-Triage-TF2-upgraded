@@ -22,7 +22,7 @@ import time
 
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python.examples.gan import mnist
+from astronet.contrib.eager.python.examples.gan import mnist
 
 NOISE_DIM = 100
 # Big enough so that summaries are never recorded.

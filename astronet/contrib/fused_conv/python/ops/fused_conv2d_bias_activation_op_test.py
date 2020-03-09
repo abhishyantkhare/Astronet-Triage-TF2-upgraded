@@ -19,7 +19,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.fused_conv.python.ops import fused_conv2d_bias_activation_op_test_base as test_base
+from astronet.contrib.fused_conv.python.ops import fused_conv2d_bias_activation_op_test_base as test_base
 from tensorflow.python.platform import test
 
 

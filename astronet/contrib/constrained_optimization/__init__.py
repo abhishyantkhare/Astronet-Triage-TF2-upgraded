@@ -19,11 +19,11 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.constrained_optimization.python.candidates import *
-from tensorflow.contrib.constrained_optimization.python.constrained_minimization_problem import *
-from tensorflow.contrib.constrained_optimization.python.constrained_optimizer import *
-from tensorflow.contrib.constrained_optimization.python.external_regret_optimizer import *
-from tensorflow.contrib.constrained_optimization.python.swap_regret_optimizer import *
+from astronet.contrib.constrained_optimization.python.candidates import *
+from astronet.contrib.constrained_optimization.python.constrained_minimization_problem import *
+from astronet.contrib.constrained_optimization.python.constrained_optimizer import *
+from astronet.contrib.constrained_optimization.python.external_regret_optimizer import *
+from astronet.contrib.constrained_optimization.python.swap_regret_optimizer import *
 # pylint: enable=wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

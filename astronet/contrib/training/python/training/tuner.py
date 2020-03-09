@@ -23,7 +23,7 @@ import abc
 
 import six
 
-from tensorflow.contrib.framework.python.framework import experimental
+from astronet.contrib.framework.python.framework import experimental
 
 
 @six.add_metaclass(abc.ABCMeta)

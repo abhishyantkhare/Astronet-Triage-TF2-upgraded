@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.model_pruning.python import pruning
+from astronet.contrib.model_pruning.python import pruning
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import partitioned_variables

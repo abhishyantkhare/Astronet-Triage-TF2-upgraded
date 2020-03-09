@@ -25,7 +25,7 @@ import tempfile
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.learn.python.learn.learn_io import graph_io
+from astronet.contrib.learn.python.learn.learn_io import graph_io
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes as dtypes_lib

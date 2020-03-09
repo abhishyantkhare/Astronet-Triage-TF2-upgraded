@@ -23,10 +23,10 @@ import math
 
 import numpy as np
 
-from tensorflow.contrib import lookup
-from tensorflow.contrib.layers.python.layers import layers
+from astronet.contrib import lookup
+from astronet.contrib.layers.python.layers import layers
 
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
 
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

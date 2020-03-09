@@ -20,7 +20,7 @@ import os
 
 import numpy
 
-from tensorflow.contrib.checkpoint.python import python_state
+from astronet.contrib.checkpoint.python import python_state
 from tensorflow.python.client import session
 from tensorflow.python.eager import test
 from tensorflow.python.framework import ops

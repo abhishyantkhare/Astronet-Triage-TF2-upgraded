@@ -19,10 +19,10 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from tensorflow.contrib.distributions.python.ops import test_util
-from tensorflow.contrib.distributions.python.ops.bijectors.invert import Invert
-from tensorflow.contrib.distributions.python.ops.bijectors.real_nvp import real_nvp_default_template
-from tensorflow.contrib.distributions.python.ops.bijectors.real_nvp import RealNVP
+from astronet.contrib.distributions.python.ops import test_util
+from astronet.contrib.distributions.python.ops.bijectors.invert import Invert
+from astronet.contrib.distributions.python.ops.bijectors.real_nvp import real_nvp_default_template
+from astronet.contrib.distributions.python.ops.bijectors.real_nvp import RealNVP
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import variables

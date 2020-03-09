@@ -17,14 +17,14 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.estimator.python.estimator import head as core_head_lib
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
-from tensorflow.contrib.tensor_forest.client import eval_metrics
-from tensorflow.contrib.tensor_forest.python import tensor_forest
+from astronet.contrib import layers
+from astronet.contrib.estimator.python.estimator import head as core_head_lib
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from astronet.contrib.tensor_forest.client import eval_metrics
+from astronet.contrib.tensor_forest.python import tensor_forest
 from tensorflow.python.estimator import estimator as core_estimator
 from tensorflow.python.estimator.export.export_output import PredictOutput
 from tensorflow.python.feature_column import feature_column as fc_core

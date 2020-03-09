@@ -22,7 +22,7 @@ from __future__ import print_function
 
 import time
 
-from tensorflow.contrib.factorization.python.ops import clustering_ops
+from astronet.contrib.factorization.python.ops import clustering_ops
 from tensorflow.python.estimator import estimator
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.estimator.export import export_output

@@ -23,9 +23,9 @@ import sys
 
 from absl import flags
 import tensorflow as tf
-from tensorflow.contrib.eager.python.examples.revnet import cifar_input
-from tensorflow.contrib.eager.python.examples.revnet import config as config_
-from tensorflow.contrib.eager.python.examples.revnet import revnet
+from astronet.contrib.eager.python.examples.revnet import cifar_input
+from astronet.contrib.eager.python.examples.revnet import config as config_
+from astronet.contrib.eager.python.examples.revnet import revnet
 tfe = tf.contrib.eager
 
 

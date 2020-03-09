@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from tensorflow.contrib import distributions
+from astronet.contrib import distributions
 from tensorflow.python.ops import math_ops
 from tensorflow.python.platform import test
 from tensorflow.python.platform import tf_logging as logging

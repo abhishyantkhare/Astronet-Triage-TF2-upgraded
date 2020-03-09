@@ -21,8 +21,8 @@ from __future__ import print_function
 import math
 import numpy as np
 
-from tensorflow.contrib.opt.python.training import powersign
-from tensorflow.contrib.opt.python.training import sign_decay
+from astronet.contrib.opt.python.training import powersign
+from astronet.contrib.opt.python.training import sign_decay
 from tensorflow.python.eager import context
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

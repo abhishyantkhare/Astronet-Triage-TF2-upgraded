@@ -23,7 +23,7 @@ import os
 
 import numpy as np
 
-from tensorflow.contrib.eager.python import parameter_server
+from astronet.contrib.eager.python import parameter_server
 from tensorflow.core.protobuf import cluster_pb2
 from tensorflow.core.protobuf import tensorflow_server_pb2
 from tensorflow.python import pywrap_tensorflow

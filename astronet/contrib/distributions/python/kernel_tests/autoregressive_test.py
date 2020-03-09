@@ -18,11 +18,11 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import autoregressive as autoregressive_lib
-from tensorflow.contrib.distributions.python.ops import independent as independent_lib
-from tensorflow.contrib.distributions.python.ops import test_util
-from tensorflow.contrib.distributions.python.ops.bijectors.affine import Affine
-from tensorflow.contrib.distributions.python.ops.bijectors.masked_autoregressive import MaskedAutoregressiveFlow
+from astronet.contrib.distributions.python.ops import autoregressive as autoregressive_lib
+from astronet.contrib.distributions.python.ops import independent as independent_lib
+from astronet.contrib.distributions.python.ops import test_util
+from astronet.contrib.distributions.python.ops.bijectors.affine import Affine
+from astronet.contrib.distributions.python.ops.bijectors.masked_autoregressive import MaskedAutoregressiveFlow
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops.distributions import normal as normal_lib

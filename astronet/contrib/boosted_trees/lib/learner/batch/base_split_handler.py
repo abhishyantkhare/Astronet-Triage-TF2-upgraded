@@ -22,7 +22,7 @@ import abc
 
 import six
 
-from tensorflow.contrib.boosted_trees.python.ops import batch_ops_utils
+from astronet.contrib.boosted_trees.python.ops import batch_ops_utils
 from tensorflow.python.ops import control_flow_ops
 
 

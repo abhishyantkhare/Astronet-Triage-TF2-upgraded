@@ -15,7 +15,7 @@
 """Various high level TF models (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -25,8 +25,8 @@ from __future__ import print_function
 
 import functools
 
-from tensorflow.contrib import rnn as contrib_rnn
-from tensorflow.contrib.learn.python.learn.ops import losses_ops
+from astronet.contrib import rnn as contrib_rnn
+from astronet.contrib.learn.python.learn.ops import losses_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops as array_ops_

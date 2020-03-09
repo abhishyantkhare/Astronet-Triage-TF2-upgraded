@@ -25,8 +25,8 @@ import tempfile
 
 import numpy as np
 
-from tensorflow.contrib.layers.python.layers import feature_column as fc
-from tensorflow.contrib.layers.python.layers import feature_column_ops
+from astronet.contrib.layers.python.layers import feature_column as fc
+from astronet.contrib.layers.python.layers import feature_column_ops
 from tensorflow.python.feature_column import feature_column_lib as fc_core
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

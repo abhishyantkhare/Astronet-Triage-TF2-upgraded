@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.mixed_precision.python import loss_scale_manager as lsm_lib
+from astronet.contrib.mixed_precision.python import loss_scale_manager as lsm_lib
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.eager import context
 from tensorflow.python.framework import test_util

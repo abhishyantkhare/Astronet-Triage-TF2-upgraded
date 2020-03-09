@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.losses.python.losses import loss_ops
-from tensorflow.contrib.metrics.python.ops import metric_ops
+from astronet.contrib.framework import deprecated
+from astronet.contrib.losses.python.losses import loss_ops
+from astronet.contrib.metrics.python.ops import metric_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
@@ -34,7 +34,7 @@ from tensorflow.python.ops import nn
 @deprecated(
     "2016-11-12", "This file will be removed after the deprecation date."
     "Please switch to "
-    "third_party/tensorflow/contrib/learn/python/learn/estimators/head.py")
+    "third_party/astronet.contrib/learn/python/learn/estimators/head.py")
 def regression_target(label_name=None,
                       weight_column_name=None,
                       label_dimension=1):
@@ -64,7 +64,7 @@ def regression_target(label_name=None,
 @deprecated(
     "2016-11-12", "This file will be removed after the deprecation date."
     "Please switch to "
-    "third_party/tensorflow/contrib/learn/python/learn/estimators/head.py")
+    "third_party/astronet.contrib/learn/python/learn/estimators/head.py")
 def multi_class_target(n_classes, label_name=None, weight_column_name=None):
   """Creates a _TargetColumn for multi class single label classification.
 
@@ -100,7 +100,7 @@ def multi_class_target(n_classes, label_name=None, weight_column_name=None):
 @deprecated(
     "2016-11-12", "This file will be removed after the deprecation date."
     "Please switch to "
-    "third_party/tensorflow/contrib/learn/python/learn/estimators/head.py")
+    "third_party/astronet.contrib/learn/python/learn/estimators/head.py")
 def binary_svm_target(label_name=None, weight_column_name=None):
   """Creates a _TargetColumn for binary classification with SVMs.
 
@@ -124,7 +124,7 @@ def binary_svm_target(label_name=None, weight_column_name=None):
 @deprecated(
     "2016-11-12", "This file will be removed after the deprecation date."
     "Please switch to "
-    "third_party/tensorflow/contrib/learn/python/learn/estimators/head.py")
+    "third_party/astronet.contrib/learn/python/learn/estimators/head.py")
 class ProblemType(object):
   UNSPECIFIED = 0
   CLASSIFICATION = 1
@@ -443,7 +443,7 @@ def _run_metrics(predictions, labels, metrics, weights):
 @deprecated(
     "2016-11-12", "This file will be removed after the deprecation date."
     "Please switch to "
-    "third_party/tensorflow/contrib/learn/python/learn/estimators/head.py")
+    "third_party/astronet.contrib/learn/python/learn/estimators/head.py")
 def get_default_binary_metrics_for_eval(thresholds):
   """Returns a dictionary of basic metrics for logistic regression.
 

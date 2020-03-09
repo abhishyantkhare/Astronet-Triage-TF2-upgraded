@@ -18,12 +18,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.gan.python import namedtuples as tfgan_tuples
-from tensorflow.contrib.gan.python import train as tfgan_train
-from tensorflow.contrib.gan.python.estimator.python import gan_estimator_impl as gan_estimator_lib
-from tensorflow.contrib.tpu.python.tpu import tpu_estimator
-from tensorflow.contrib.tpu.python.tpu import tpu_optimizer
-from tensorflow.contrib.training.python.training import training
+from astronet.contrib.gan.python import namedtuples as tfgan_tuples
+from astronet.contrib.gan.python import train as tfgan_train
+from astronet.contrib.gan.python.estimator.python import gan_estimator_impl as gan_estimator_lib
+from astronet.contrib.tpu.python.tpu import tpu_estimator
+from astronet.contrib.tpu.python.tpu import tpu_optimizer
+from astronet.contrib.training.python.training import training
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import control_flow_ops

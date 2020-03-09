@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 from scipy.special import gamma
 
-from tensorflow.contrib.distributions.python.ops import relaxed_onehot_categorical
+from astronet.contrib.distributions.python.ops import relaxed_onehot_categorical
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

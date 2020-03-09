@@ -17,8 +17,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework.python.ops import variables as framework_variables
+from astronet.contrib import layers
+from astronet.contrib.framework.python.ops import variables as framework_variables
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

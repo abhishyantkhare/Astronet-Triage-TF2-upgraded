@@ -25,7 +25,7 @@ import os
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib.cudnn_rnn.python.ops import cudnn_rnn_ops
+from astronet.contrib.cudnn_rnn.python.ops import cudnn_rnn_ops
 from tensorflow.core.protobuf import saver_pb2
 from tensorflow.python.compat import compat
 from tensorflow.python.framework import constant_op

@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 from scipy import stats
-from tensorflow.contrib.distributions.python.ops import inverse_gamma
+from astronet.contrib.distributions.python.ops import inverse_gamma
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import tensor_shape

@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import tempfile
 
-from tensorflow.contrib.eager.python import evaluator
+from astronet.contrib.eager.python import evaluator
 
-from tensorflow.contrib.eager.python import metrics
-from tensorflow.contrib.summary import summary_test_util
+from astronet.contrib.eager.python import metrics
+from astronet.contrib.summary import summary_test_util
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.eager import context
 from tensorflow.python.eager import test

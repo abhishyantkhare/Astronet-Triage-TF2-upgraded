@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops.bijectors.affine_linear_operator import AffineLinearOperator
+from astronet.contrib.distributions.python.ops.bijectors.affine_linear_operator import AffineLinearOperator
 from tensorflow.python.ops.linalg import linalg
 from tensorflow.python.platform import test
 

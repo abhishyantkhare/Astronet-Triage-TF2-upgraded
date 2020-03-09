@@ -20,8 +20,8 @@ import random
 
 # pylint: disable=unused-import
 
-from tensorflow.contrib.tensor_forest.hybrid.python.layers import decisions_to_data
-from tensorflow.contrib.tensor_forest.python import tensor_forest
+from astronet.contrib.tensor_forest.hybrid.python.layers import decisions_to_data
+from astronet.contrib.tensor_forest.python import tensor_forest
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import test_util
 from tensorflow.python.framework.ops import Operation

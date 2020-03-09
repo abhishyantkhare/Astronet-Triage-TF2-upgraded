@@ -34,7 +34,7 @@ import tarfile
 
 from six.moves import urllib
 
-from tensorflow.contrib.layers.python.layers import layers
+from astronet.contrib.layers.python.layers import layers
 from tensorflow.core.framework import graph_pb2
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import importer

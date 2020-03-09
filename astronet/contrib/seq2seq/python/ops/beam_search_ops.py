@@ -17,8 +17,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.seq2seq.ops import gen_beam_search_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.seq2seq.ops import gen_beam_search_ops
+from astronet.contrib.util import loader
 from tensorflow.python.platform import resource_loader
 
 _beam_search_ops_so = loader.load_op_library(

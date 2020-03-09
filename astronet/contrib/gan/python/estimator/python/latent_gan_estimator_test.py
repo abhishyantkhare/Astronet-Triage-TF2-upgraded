@@ -14,7 +14,7 @@
 # ==============================================================================
 """Tests for latent_gan_estimator.
 
-See g3.tp.tensorflow.contrib.gan.python.estimator.python.latent_gan_estimator.
+See g3.tp.astronet.contrib.gan.python.estimator.python.latent_gan_estimator.
 """
 
 from __future__ import absolute_import
@@ -23,7 +23,7 @@ from __future__ import print_function
 
 import tempfile
 import numpy as np
-from tensorflow.contrib.gan.python.estimator.python import latent_gan_estimator
+from astronet.contrib.gan.python.estimator.python import latent_gan_estimator
 from tensorflow.python.estimator import run_config as run_config
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import variable_scope

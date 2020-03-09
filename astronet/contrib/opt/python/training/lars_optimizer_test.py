@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.opt.python.training import lars_optimizer as lo
+from astronet.contrib.opt.python.training import lars_optimizer as lo
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import variables
 from tensorflow.python.platform import test

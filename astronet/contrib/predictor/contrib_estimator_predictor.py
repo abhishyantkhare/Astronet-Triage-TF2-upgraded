@@ -19,8 +19,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
-from tensorflow.contrib.predictor import predictor
+from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
+from astronet.contrib.predictor import predictor
 from tensorflow.python.framework import ops
 from tensorflow.python.training import checkpoint_management
 from tensorflow.python.training import monitored_session

@@ -22,10 +22,10 @@ import collections
 
 import numpy as np
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.gan.python import namedtuples
-from tensorflow.contrib.gan.python.losses.python import losses_impl as tfgan_losses_impl
-from tensorflow.contrib.gan.python.losses.python import tuple_losses_impl as tfgan_losses
+from astronet.contrib import layers
+from astronet.contrib.gan.python import namedtuples
+from astronet.contrib.gan.python.losses.python import losses_impl as tfgan_losses_impl
+from astronet.contrib.gan.python.losses.python import tuple_losses_impl as tfgan_losses
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

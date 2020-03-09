@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
-from tensorflow.contrib.metrics.python.ops import metric_ops
+from astronet.contrib.metrics.python.ops import metric_ops
 from tensorflow.python.framework import dtypes as dtypes_lib
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import math_ops

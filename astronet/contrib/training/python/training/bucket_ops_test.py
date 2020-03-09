@@ -20,7 +20,7 @@ from __future__ import print_function
 import random
 
 import numpy as np
-from tensorflow.contrib.training.python.training import bucket_ops
+from astronet.contrib.training.python.training import bucket_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes as dtypes_lib
 from tensorflow.python.framework import errors

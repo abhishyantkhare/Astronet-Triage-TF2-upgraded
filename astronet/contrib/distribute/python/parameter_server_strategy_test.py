@@ -21,7 +21,7 @@ from __future__ import print_function
 import copy
 import threading
 from absl.testing import parameterized
-from tensorflow.contrib.distribute.python import parameter_server_strategy
+from astronet.contrib.distribute.python import parameter_server_strategy
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.distribute import combinations

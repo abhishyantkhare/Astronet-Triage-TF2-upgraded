@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.image.python.ops import sparse_image_warp
+from astronet.contrib.image.python.ops import sparse_image_warp
 
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

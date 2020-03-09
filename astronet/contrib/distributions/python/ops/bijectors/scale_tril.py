@@ -18,11 +18,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.distributions.python.ops.bijectors import affine_scalar
-from tensorflow.contrib.distributions.python.ops.bijectors import chain
-from tensorflow.contrib.distributions.python.ops.bijectors import fill_triangular
-from tensorflow.contrib.distributions.python.ops.bijectors import softplus
-from tensorflow.contrib.distributions.python.ops.bijectors import transform_diagonal
+from astronet.contrib.distributions.python.ops.bijectors import affine_scalar
+from astronet.contrib.distributions.python.ops.bijectors import chain
+from astronet.contrib.distributions.python.ops.bijectors import fill_triangular
+from astronet.contrib.distributions.python.ops.bijectors import softplus
+from astronet.contrib.distributions.python.ops.bijectors import transform_diagonal
 from tensorflow.python.util import deprecation
 
 __all__ = [

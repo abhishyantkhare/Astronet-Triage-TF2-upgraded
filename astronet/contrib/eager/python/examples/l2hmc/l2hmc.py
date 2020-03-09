@@ -27,8 +27,8 @@ from __future__ import print_function
 import numpy as np
 import numpy.random as npr
 import tensorflow as tf
-import tensorflow.contrib.eager as tfe
-from tensorflow.contrib.eager.python.examples.l2hmc import neural_nets
+import astronet.contrib.eager as tfe
+from astronet.contrib.eager.python.examples.l2hmc import neural_nets
 
 
 class Dynamics(tf.keras.Model):

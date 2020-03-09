@@ -20,15 +20,15 @@ from __future__ import print_function
 
 import functools
 
-from tensorflow.contrib.boosted_trees.estimator_batch import model
-from tensorflow.contrib.boosted_trees.python.utils import losses
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.boosted_trees.estimator_batch import model
+from astronet.contrib.boosted_trees.python.utils import losses
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
 from tensorflow.python.estimator.canned import head as core_head_lib
 from tensorflow.python.estimator import estimator as core_estimator
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops.losses import losses as core_losses
-from tensorflow.contrib.boosted_trees.estimator_batch import custom_loss_head
+from astronet.contrib.boosted_trees.estimator_batch import custom_loss_head
 from tensorflow.python.ops import array_ops
 
 # ================== Old estimator interface===================================

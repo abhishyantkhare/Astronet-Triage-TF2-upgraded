@@ -29,7 +29,7 @@ import os
 import sys
 
 # Schema to use for flatbuffers
-_SCHEMA = "third_party/tensorflow/contrib/lite/schema/schema.fbs"
+_SCHEMA = "third_party/astronet.contrib/lite/schema/schema.fbs"
 
 # Where the binary will be once built in for the flatc converter
 _BINARY = "third_party/flatbuffers/flatc"

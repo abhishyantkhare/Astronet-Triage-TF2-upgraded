@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import collections
 import numpy as np
-from tensorflow.contrib.optimizer_v2 import optimizer_v2
+from astronet.contrib.optimizer_v2 import optimizer_v2
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

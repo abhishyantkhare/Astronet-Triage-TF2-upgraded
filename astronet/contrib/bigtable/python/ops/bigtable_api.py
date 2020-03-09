@@ -30,8 +30,8 @@ from __future__ import print_function
 from six import iteritems
 from six import string_types
 
-from tensorflow.contrib.bigtable.ops import gen_bigtable_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.bigtable.ops import gen_bigtable_ops
+from astronet.contrib.util import loader
 from tensorflow.python.data.experimental.ops import interleave_ops
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.data.util import nest

@@ -15,7 +15,7 @@
 """Monitors instrument the training process (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 
 @@get_default_monitors
@@ -64,7 +64,7 @@ class BaseMonitor(object):
   """Base class for Monitors.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Defines basic interfaces of Monitors.
@@ -238,7 +238,7 @@ class EveryN(BaseMonitor):
   """Base class for monitors that execute callbacks every N steps.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   This class adds three new callbacks:
@@ -431,7 +431,7 @@ class PrintTensor(EveryN):
   """Prints given tensors every N steps.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   This is an `EveryN` monitor and has consistent semantic for `every_n`
@@ -472,7 +472,7 @@ class LoggingTrainable(EveryN):
   """Writes trainable variable values into log every N steps.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Write the tensors in trainable variables `every_n` steps,
@@ -515,7 +515,7 @@ class SummarySaver(EveryN):
   """Saves summaries every N steps.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
   """
 
@@ -579,7 +579,7 @@ class ValidationMonitor(EveryN):
   """Runs evaluation of a given estimator, at most every N steps.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Note that the evaluation is done based on the saved checkpoint, which will
@@ -786,7 +786,7 @@ class CaptureVariable(EveryN):
   """Captures a variable's values into a collection.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   This monitor is useful for unit testing. You should exercise caution when
@@ -863,7 +863,7 @@ class GraphDump(BaseMonitor):
   """Dumps almost all tensors in the graph at every step.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Note, this is very expensive, prefer `PrintTensor` in production.
@@ -958,7 +958,7 @@ class ExportMonitor(EveryN):
   """Monitor that exports Estimator every N steps.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
   """
 
@@ -1087,7 +1087,7 @@ class CheckpointSaver(BaseMonitor):
   """Saves checkpoints every N steps or N seconds.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
   """
 
@@ -1177,7 +1177,7 @@ class StepCounter(EveryN):
   """Steps per second monitor.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
   """
 
@@ -1220,7 +1220,7 @@ class NanLoss(EveryN):
   """NaN Loss monitor.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Monitors loss and stops training if loss is NaN.

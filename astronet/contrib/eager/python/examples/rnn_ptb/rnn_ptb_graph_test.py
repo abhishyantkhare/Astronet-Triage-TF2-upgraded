@@ -24,7 +24,7 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python.examples.rnn_ptb import rnn_ptb
+from astronet.contrib.eager.python.examples.rnn_ptb import rnn_ptb
 
 
 class PTBTest(tf.test.TestCase):

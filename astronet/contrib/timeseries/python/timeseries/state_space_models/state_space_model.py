@@ -23,13 +23,13 @@ import collections
 
 import numpy
 
-from tensorflow.contrib.layers.python.layers import layers
+from astronet.contrib.layers.python.layers import layers
 
-from tensorflow.contrib.timeseries.python.timeseries import math_utils
-from tensorflow.contrib.timeseries.python.timeseries import model
-from tensorflow.contrib.timeseries.python.timeseries import model_utils
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
-from tensorflow.contrib.timeseries.python.timeseries.state_space_models import kalman_filter
+from astronet.contrib.timeseries.python.timeseries import math_utils
+from astronet.contrib.timeseries.python.timeseries import model
+from astronet.contrib.timeseries.python.timeseries import model_utils
+from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from astronet.contrib.timeseries.python.timeseries.state_space_models import kalman_filter
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.framework import constant_op

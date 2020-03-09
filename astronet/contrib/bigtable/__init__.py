@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.bigtable.python.ops.bigtable_api import BigtableClient
-from tensorflow.contrib.bigtable.python.ops.bigtable_api import BigtableTable
+from astronet.contrib.bigtable.python.ops.bigtable_api import BigtableClient
+from astronet.contrib.bigtable.python.ops.bigtable_api import BigtableTable
 
 from tensorflow.python.util.all_util import remove_undocumented
 

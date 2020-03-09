@@ -18,11 +18,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import bigtable
-from tensorflow.contrib.bigtable.ops import gen_bigtable_ops
-from tensorflow.contrib.bigtable.ops import gen_bigtable_test_ops
-from tensorflow.contrib.bigtable.python.ops import bigtable_api
-from tensorflow.contrib.util import loader
+from astronet.contrib import bigtable
+from astronet.contrib.bigtable.ops import gen_bigtable_ops
+from astronet.contrib.bigtable.ops import gen_bigtable_test_ops
+from astronet.contrib.bigtable.python.ops import bigtable_api
+from astronet.contrib.util import loader
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import errors
 from tensorflow.python.platform import resource_loader

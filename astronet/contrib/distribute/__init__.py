@@ -14,8 +14,8 @@
 # ==============================================================================
 """A distributed computation library for TF.
 
-See [tensorflow/contrib/distribute/README.md](
-https://www.tensorflow.org/code/tensorflow/contrib/distribute/README.md)
+See [astronet.contrib/distribute/README.md](
+https://www.tensorflow.org/code/astronet.contrib/distribute/README.md)
 for overview and examples.
 """
 
@@ -24,13 +24,13 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.distribute.python.collective_all_reduce_strategy import CollectiveAllReduceStrategy
-from tensorflow.contrib.distribute.python.mirrored_strategy import MirroredStrategy
-from tensorflow.contrib.distribute.python.monitor import Monitor
-from tensorflow.contrib.distribute.python.one_device_strategy import OneDeviceStrategy
-from tensorflow.contrib.distribute.python.parameter_server_strategy import ParameterServerStrategy
-from tensorflow.contrib.distribute.python.tpu_strategy import initialize_tpu_system
-from tensorflow.contrib.distribute.python.tpu_strategy import TPUStrategy
+from astronet.contrib.distribute.python.collective_all_reduce_strategy import CollectiveAllReduceStrategy
+from astronet.contrib.distribute.python.mirrored_strategy import MirroredStrategy
+from astronet.contrib.distribute.python.monitor import Monitor
+from astronet.contrib.distribute.python.one_device_strategy import OneDeviceStrategy
+from astronet.contrib.distribute.python.parameter_server_strategy import ParameterServerStrategy
+from astronet.contrib.distribute.python.tpu_strategy import initialize_tpu_system
+from astronet.contrib.distribute.python.tpu_strategy import TPUStrategy
 from tensorflow.python.distribute.cross_device_ops import *
 from tensorflow.python.distribute.distribute_config import DistributeConfig
 from tensorflow.python.distribute.distribute_coordinator import run_standard_tensorflow_server

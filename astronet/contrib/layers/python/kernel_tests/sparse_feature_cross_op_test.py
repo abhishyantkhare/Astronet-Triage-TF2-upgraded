@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.layers.python.ops import sparse_feature_cross_op
+from astronet.contrib import layers
+from astronet.contrib.layers.python.ops import sparse_feature_cross_op
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

@@ -16,11 +16,11 @@
 
 Usage examples:
 
-bazel run tensorflow/contrib/lite/schema/upgrade_schema -- in.json out.json
-bazel run tensorflow/contrib/lite/schema/upgrade_schema -- in.bin out.bin
-bazel run tensorflow/contrib/lite/schema/upgrade_schema -- in.bin out.json
-bazel run tensorflow/contrib/lite/schema/upgrade_schema -- in.json out.bin
-bazel run tensorflow/contrib/lite/schema/upgrade_schema -- in.tflite out.tflite
+bazel run astronet.contrib/lite/schema/upgrade_schema -- in.json out.json
+bazel run astronet.contrib/lite/schema/upgrade_schema -- in.bin out.bin
+bazel run astronet.contrib/lite/schema/upgrade_schema -- in.bin out.json
+bazel run astronet.contrib/lite/schema/upgrade_schema -- in.json out.bin
+bazel run astronet.contrib/lite/schema/upgrade_schema -- in.tflite out.tflite
 """
 from __future__ import absolute_import
 from __future__ import division

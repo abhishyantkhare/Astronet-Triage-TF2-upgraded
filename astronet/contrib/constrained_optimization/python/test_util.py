@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.constrained_optimization.python import constrained_minimization_problem
+from astronet.contrib.constrained_optimization.python import constrained_minimization_problem
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import standard_ops

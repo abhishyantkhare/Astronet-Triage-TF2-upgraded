@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib import distributions
-from tensorflow.contrib.distributions.python.kernel_tests import transformed_distribution_test
-from tensorflow.contrib.distributions.python.ops.bijectors.conditional_bijector import ConditionalBijector
+from astronet.contrib import distributions
+from astronet.contrib.distributions.python.kernel_tests import transformed_distribution_test
+from astronet.contrib.distributions.python.ops.bijectors.conditional_bijector import ConditionalBijector
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

@@ -23,7 +23,7 @@ import re
 
 import six
 
-from tensorflow.contrib.training.python.training import hparam_pb2
+from astronet.contrib.training.python.training import hparam_pb2
 from tensorflow.python.framework import ops
 from tensorflow.python.util import compat
 from tensorflow.python.util import deprecation

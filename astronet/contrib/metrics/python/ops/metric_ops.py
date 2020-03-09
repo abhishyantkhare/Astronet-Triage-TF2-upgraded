@@ -15,7 +15,7 @@
 """Contains metric-computing operations on streamed tensors.
 
 Module documentation, including "@@" callouts, should be put in
-third_party/tensorflow/contrib/metrics/__init__.py
+third_party/astronet.contrib/metrics/__init__.py
 """
 
 from __future__ import absolute_import

@@ -21,8 +21,8 @@ from __future__ import print_function
 
 import logging
 
-from tensorflow.contrib.predictor import predictor
-from tensorflow.contrib.saved_model.python.saved_model import reader
+from astronet.contrib.predictor import predictor
+from astronet.contrib.saved_model.python.saved_model import reader
 from tensorflow.python.client import session
 from tensorflow.python.framework import ops
 from tensorflow.python.saved_model import loader

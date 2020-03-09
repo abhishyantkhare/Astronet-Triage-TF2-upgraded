@@ -20,9 +20,9 @@ from __future__ import print_function
 
 from absl.testing import parameterized
 
-from tensorflow.contrib import slim
-from tensorflow.contrib.receptive_field.python.util import graph_compute_order
-from tensorflow.contrib.receptive_field.python.util import parse_layer_parameters
+from astronet.contrib import slim
+from astronet.contrib.receptive_field.python.util import graph_compute_order
+from astronet.contrib.receptive_field.python.util import parse_layer_parameters
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import graph_util

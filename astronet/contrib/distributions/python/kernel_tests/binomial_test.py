@@ -18,7 +18,7 @@ from __future__ import print_function
 
 import numpy as np
 from scipy import stats
-from tensorflow.contrib.distributions.python.ops import binomial
+from astronet.contrib.distributions.python.ops import binomial
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.ops import array_ops

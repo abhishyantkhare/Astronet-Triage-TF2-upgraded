@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.distributions.python.ops.bijectors.conditional_bijector import ConditionalBijector
+from astronet.contrib.distributions.python.ops.bijectors.conditional_bijector import ConditionalBijector
 from tensorflow.python.framework import dtypes
 from tensorflow.python.platform import test
 

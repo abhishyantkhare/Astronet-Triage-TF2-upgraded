@@ -22,7 +22,7 @@ import numpy as np
 from scipy import linalg
 from scipy import special
 
-from tensorflow.contrib.distributions.python.ops.vector_student_t import _VectorStudentT
+from astronet.contrib.distributions.python.ops.vector_student_t import _VectorStudentT
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import test

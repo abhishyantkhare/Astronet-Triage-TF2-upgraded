@@ -22,9 +22,9 @@ import os
 
 from absl import flags
 import tensorflow as tf
-from tensorflow.contrib.eager.python.examples.revnet import cifar_input
-from tensorflow.contrib.eager.python.examples.revnet import main as main_
-from tensorflow.contrib.eager.python.examples.revnet import revnet
+from astronet.contrib.eager.python.examples.revnet import cifar_input
+from astronet.contrib.eager.python.examples.revnet import main as main_
+from astronet.contrib.eager.python.examples.revnet import revnet
 
 
 def model_fn(features, labels, mode, params):

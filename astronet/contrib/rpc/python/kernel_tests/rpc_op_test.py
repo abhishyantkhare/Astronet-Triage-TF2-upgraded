@@ -25,9 +25,9 @@ import grpc
 from grpc.framework.foundation import logging_pool
 import portpicker
 
-from tensorflow.contrib.rpc.python.kernel_tests import rpc_op_test_base
-from tensorflow.contrib.rpc.python.kernel_tests import rpc_op_test_servicer
-from tensorflow.contrib.rpc.python.kernel_tests import test_example_pb2_grpc
+from astronet.contrib.rpc.python.kernel_tests import rpc_op_test_base
+from astronet.contrib.rpc.python.kernel_tests import rpc_op_test_servicer
+from astronet.contrib.rpc.python.kernel_tests import test_example_pb2_grpc
 from tensorflow.python.platform import test
 
 
@@ -43,7 +43,7 @@ class RpcOpTest(test.TestCase, rpc_op_test_base.RpcOpTestBase):
       ct.cdll.LoadLibrary(lib)
 
   def get_method_name(self, suffix):
-    return '/tensorflow.contrib.rpc.TestCaseService/%s' % suffix
+    return '/astronet.contrib.rpc.TestCaseService/%s' % suffix
 
   def setUp(self):
     super(RpcOpTest, self).setUp()

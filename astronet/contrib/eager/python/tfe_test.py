@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import tempfile
 
-from tensorflow.contrib.eager.python import tfe
+from astronet.contrib.eager.python import tfe
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import errors
 from tensorflow.python.framework import ops

@@ -18,7 +18,7 @@ r"""Demonstrates multiclass MNIST TF Boosted trees example.
   a binary dataset. We use digits 4 and 9 from the original MNIST dataset.
 
   Example Usage:
-  python tensorflow/contrib/boosted_trees/examples/binary_mnist.py \
+  python astronet.contrib/boosted_trees/examples/binary_mnist.py \
   --output_dir="/tmp/binary_mnist" --depth=4 --learning_rate=0.3 \
   --batch_size=10761 --examples_per_layer=10761 --eval_batch_size=1030 \
   --num_eval_steps=1 --num_trees=10 --l2=1 --vmodule=training_ops=1
@@ -38,9 +38,9 @@ import sys
 
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeClassifier
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.learn import learn_runner
+from astronet.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeClassifier
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.learn import learn_runner
 
 
 def get_input_fn(data,

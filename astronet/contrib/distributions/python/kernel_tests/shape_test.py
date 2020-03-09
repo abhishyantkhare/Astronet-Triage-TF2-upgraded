@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops.shape import _DistributionShape
+from astronet.contrib.distributions.python.ops.shape import _DistributionShape
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import tensor_util
 from tensorflow.python.ops import array_ops

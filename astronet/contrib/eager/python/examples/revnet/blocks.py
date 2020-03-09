@@ -28,7 +28,7 @@ import functools
 import operator
 
 import tensorflow as tf
-from tensorflow.contrib.eager.python.examples.revnet import ops
+from astronet.contrib.eager.python.examples.revnet import ops
 
 
 class RevBlock(tf.keras.Model):

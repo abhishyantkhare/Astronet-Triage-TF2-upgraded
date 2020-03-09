@@ -75,8 +75,8 @@ import abc
 
 import numpy
 
-from tensorflow.contrib.timeseries.python.timeseries import feature_keys
-from tensorflow.contrib.timeseries.python.timeseries import model_utils
+from astronet.contrib.timeseries.python.timeseries import feature_keys
+from astronet.contrib.timeseries.python.timeseries import model_utils
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.framework import constant_op

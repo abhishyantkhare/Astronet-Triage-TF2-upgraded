@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import mixture_same_family as mixture_same_family_lib
-from tensorflow.contrib.distributions.python.ops import mvn_diag as mvn_diag_lib
-from tensorflow.contrib.distributions.python.ops import test_util
+from astronet.contrib.distributions.python.ops import mixture_same_family as mixture_same_family_lib
+from astronet.contrib.distributions.python.ops import mvn_diag as mvn_diag_lib
+from astronet.contrib.distributions.python.ops import test_util
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops.distributions import bernoulli as bernoulli_lib

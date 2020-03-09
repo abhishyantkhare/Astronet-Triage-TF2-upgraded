@@ -16,14 +16,14 @@
 """Metrics that use histograms.
 
 Module documentation, including "@@" callouts, should be put in
-third_party/tensorflow/contrib/metrics/__init__.py
+third_party/astronet.contrib/metrics/__init__.py
 """
 
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework.python.framework import tensor_util
+from astronet.contrib.framework.python.framework import tensor_util
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

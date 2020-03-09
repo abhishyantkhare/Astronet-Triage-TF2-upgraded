@@ -20,7 +20,7 @@ from __future__ import print_function
 import numpy as np
 from scipy import special
 from scipy import stats
-from tensorflow.contrib.distributions.python.ops import poisson as poisson_lib
+from astronet.contrib.distributions.python.ops import poisson as poisson_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import tensor_shape

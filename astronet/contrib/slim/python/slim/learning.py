@@ -253,7 +253,7 @@ import os
 import sys
 import time
 
-from tensorflow.contrib.training.python.training import training
+from astronet.contrib.training.python.training import training
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import timeline
 from tensorflow.python.framework import constant_op

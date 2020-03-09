@@ -24,7 +24,7 @@ import sys
 from absl import flags
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib.eager.python.examples.l2hmc import l2hmc
+from astronet.contrib.eager.python.examples.l2hmc import l2hmc
 try:
   import matplotlib.pyplot as plt  # pylint: disable=g-import-not-at-top
   HAS_MATPLOTLIB = True

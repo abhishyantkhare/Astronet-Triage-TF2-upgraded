@@ -71,7 +71,7 @@ from __future__ import division
 from __future__ import print_function
 
 import functools
-from tensorflow.contrib.gan.python import train as tfgan_train
+from astronet.contrib.gan.python import train as tfgan_train
 from tensorflow.python.estimator import estimator
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.ops import clip_ops

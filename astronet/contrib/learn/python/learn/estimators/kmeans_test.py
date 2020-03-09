@@ -25,9 +25,9 @@ import numpy as np
 from sklearn.cluster import KMeans as SklearnKMeans
 
 # pylint: disable=g-import-not-at-top
-from tensorflow.contrib.learn.python import learn
-from tensorflow.contrib.learn.python.learn.estimators import kmeans as kmeans_lib
-from tensorflow.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.learn.python import learn
+from astronet.contrib.learn.python.learn.estimators import kmeans as kmeans_lib
+from astronet.contrib.learn.python.learn.estimators import run_config
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

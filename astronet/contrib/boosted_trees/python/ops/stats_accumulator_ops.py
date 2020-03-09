@@ -17,11 +17,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 import re
-from tensorflow.contrib.boosted_trees.python.ops import batch_ops_utils
+from astronet.contrib.boosted_trees.python.ops import batch_ops_utils
 # pylint: disable=unused-import
-from tensorflow.contrib.boosted_trees.python.ops import boosted_trees_ops_loader
+from astronet.contrib.boosted_trees.python.ops import boosted_trees_ops_loader
 # pylint: enable=unused-import
-from tensorflow.contrib.boosted_trees.python.ops import gen_stats_accumulator_ops
+from astronet.contrib.boosted_trees.python.ops import gen_stats_accumulator_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import resources
 from tensorflow.python.training import saver

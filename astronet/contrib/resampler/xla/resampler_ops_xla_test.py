@@ -21,8 +21,8 @@ from __future__ import print_function
 import numpy as np
 
 from tensorflow.compiler.tests import xla_test
-from tensorflow.contrib import resampler
-from tensorflow.contrib.resampler.ops import gen_resampler_ops
+from astronet.contrib import resampler
+from astronet.contrib.resampler.ops import gen_resampler_ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import test
 

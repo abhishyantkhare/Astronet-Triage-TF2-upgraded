@@ -19,7 +19,7 @@ r"""Demonstrates multiclass MNIST TF Boosted trees example.
   strategy for multiclass handling, and cross entropy loss.
 
   Example Usage:
-  python tensorflow/contrib/boosted_trees/examples/mnist.py \
+  python astronet.contrib/boosted_trees/examples/mnist.py \
   --output_dir="/tmp/mnist" --depth=4 --learning_rate=0.3 --batch_size=60000  \
   --examples_per_layer=60000 --eval_batch_size=10000 --num_eval_steps=1 \
   --num_trees=10 --l2=1 --vmodule=training_ops=1
@@ -39,9 +39,9 @@ import sys
 
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeClassifier
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.learn import learn_runner
+from astronet.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeClassifier
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.learn import learn_runner
 
 
 def get_input_fn(dataset_split,

@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.constrained_optimization.python import candidates
+from astronet.contrib.constrained_optimization.python import candidates
 from tensorflow.python.platform import test
 
 

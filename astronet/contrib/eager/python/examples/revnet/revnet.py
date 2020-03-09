@@ -25,7 +25,7 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
-from tensorflow.contrib.eager.python.examples.revnet import blocks
+from astronet.contrib.eager.python.examples.revnet import blocks
 
 
 class RevNet(tf.keras.Model):

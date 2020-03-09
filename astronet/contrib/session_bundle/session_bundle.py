@@ -23,8 +23,8 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.session_bundle import constants
-from tensorflow.contrib.session_bundle import manifest_pb2
+from astronet.contrib.session_bundle import constants
+from astronet.contrib.session_bundle import manifest_pb2
 from tensorflow.core.framework import graph_pb2
 from tensorflow.core.protobuf import meta_graph_pb2
 from tensorflow.python.client import session

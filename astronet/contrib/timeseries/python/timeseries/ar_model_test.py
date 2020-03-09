@@ -22,12 +22,12 @@ import functools
 
 import numpy as np
 
-from tensorflow.contrib.timeseries.python.timeseries import ar_model
-from tensorflow.contrib.timeseries.python.timeseries import input_pipeline
-from tensorflow.contrib.timeseries.python.timeseries import test_utils
-from tensorflow.contrib.timeseries.python.timeseries.estimators import ARRegressor
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import PredictionFeatures
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from astronet.contrib.timeseries.python.timeseries import ar_model
+from astronet.contrib.timeseries.python.timeseries import input_pipeline
+from astronet.contrib.timeseries.python.timeseries import test_utils
+from astronet.contrib.timeseries.python.timeseries.estimators import ARRegressor
+from astronet.contrib.timeseries.python.timeseries.feature_keys import PredictionFeatures
+from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
 
 from tensorflow.python.client import session
 from tensorflow.python.estimator import estimator_lib

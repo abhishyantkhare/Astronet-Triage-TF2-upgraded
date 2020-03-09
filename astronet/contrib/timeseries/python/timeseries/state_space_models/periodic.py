@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy
 
-from tensorflow.contrib.timeseries.python.timeseries.state_space_models import state_space_model
+from astronet.contrib.timeseries.python.timeseries.state_space_models import state_space_model
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

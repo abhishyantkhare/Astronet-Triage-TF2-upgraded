@@ -22,9 +22,9 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.session_bundle import constants as legacy_constants
-from tensorflow.contrib.session_bundle import manifest_pb2
-from tensorflow.contrib.session_bundle import session_bundle
+from astronet.contrib.session_bundle import constants as legacy_constants
+from astronet.contrib.session_bundle import manifest_pb2
+from astronet.contrib.session_bundle import session_bundle
 from tensorflow.core.protobuf import meta_graph_pb2
 from tensorflow.python.client import session
 from tensorflow.python.framework import meta_graph

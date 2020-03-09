@@ -62,7 +62,7 @@ import copy
 from six.moves import xrange  # pylint: disable=redefined-builtin
 from six.moves import zip  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.rnn.python.ops import core_rnn_cell
+from astronet.contrib.rnn.python.ops import core_rnn_cell
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

@@ -22,7 +22,7 @@ import itertools
 
 import numpy as np
 
-from tensorflow.contrib.crf.python.ops import crf
+from astronet.contrib.crf.python.ops import crf
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

@@ -335,7 +335,7 @@ class GmmAlgorithm(object):
       shard: current data shard, 1 X num_examples X dimensions.
     """
     # TODO(xavigonzalvo): Use the pdf defined in
-    # third_party/tensorflow/contrib/distributions/python/ops/gaussian.py
+    # third_party/astronet.contrib/distributions/python/ops/gaussian.py
     if self._covariance_type == FULL_COVARIANCE:
       self._define_full_covariance_probs(shard_id, shard)
     elif self._covariance_type == DIAG_COVARIANCE:

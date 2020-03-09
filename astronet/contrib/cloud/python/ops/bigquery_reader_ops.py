@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.cloud.python.ops import gen_bigquery_reader_ops
+from astronet.contrib.cloud.python.ops import gen_bigquery_reader_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import io_ops
 

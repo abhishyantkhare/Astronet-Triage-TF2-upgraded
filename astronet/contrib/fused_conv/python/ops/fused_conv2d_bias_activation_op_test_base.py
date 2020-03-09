@@ -29,7 +29,7 @@ from __future__ import print_function
 import contextlib
 import numpy as np
 
-from tensorflow.contrib.fused_conv.python.ops import fused_conv2d_bias_activation_op
+from astronet.contrib.fused_conv.python.ops import fused_conv2d_bias_activation_op
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors_impl

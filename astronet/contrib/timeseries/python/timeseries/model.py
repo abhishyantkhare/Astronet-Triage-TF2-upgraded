@@ -23,9 +23,9 @@ import collections
 
 import six
 
-from tensorflow.contrib.timeseries.python.timeseries import math_utils
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import PredictionFeatures
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from astronet.contrib.timeseries.python.timeseries import math_utils
+from astronet.contrib.timeseries.python.timeseries.feature_keys import PredictionFeatures
+from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
 
 from tensorflow.python.feature_column import feature_column_lib as feature_column
 from tensorflow.python.framework import dtypes

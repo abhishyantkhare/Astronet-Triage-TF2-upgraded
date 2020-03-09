@@ -22,8 +22,8 @@ import itertools
 
 import numpy as np
 
-from tensorflow.contrib.rpc.python.kernel_tests import test_example_pb2
-from tensorflow.contrib.rpc.python.ops import rpc_op
+from astronet.contrib.rpc.python.kernel_tests import test_example_pb2
+from astronet.contrib.rpc.python.ops import rpc_op
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors
@@ -220,7 +220,7 @@ class RpcOpTestBase(object):
   def testVecHostPortRpcUsingEncodeAndDecodeProto(self):
     with self.cached_session() as sess:
       request_tensors = proto_ops.encode_proto(
-          message_type='tensorflow.contrib.rpc.TestCase',
+          message_type='astronet.contrib.rpc.TestCase',
           field_names=['values'],
           sizes=[[3]] * 20,
           values=[
@@ -232,7 +232,7 @@ class RpcOpTestBase(object):
           request=request_tensors)
       _, (response_shape,) = proto_ops.decode_proto(
           bytes=response_tensor_strings,
-          message_type='tensorflow.contrib.rpc.TestCase',
+          message_type='astronet.contrib.rpc.TestCase',
           field_names=['values'],
           output_types=[dtypes.int32])
       response_shape_values = sess.run(response_shape)

@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=g-importing-member
-from tensorflow.contrib.distributions.python.ops.bijectors.absolute_value import AbsoluteValue
+from astronet.contrib.distributions.python.ops.bijectors.absolute_value import AbsoluteValue
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.platform import test

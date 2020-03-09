@@ -16,7 +16,7 @@
 """Export utilities (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -24,9 +24,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.session_bundle import exporter
-from tensorflow.contrib.session_bundle import gc
+from astronet.contrib.framework import deprecated
+from astronet.contrib.session_bundle import exporter
+from astronet.contrib.session_bundle import gc
 from tensorflow.python.client import session as tf_session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

@@ -21,11 +21,11 @@ import tempfile
 import numpy as np
 
 from google.protobuf import text_format
-from tensorflow.contrib.boosted_trees.estimator_batch import estimator
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.boosted_trees.proto import tree_config_pb2
-from tensorflow.contrib.layers.python.layers import feature_column as contrib_feature_column
-from tensorflow.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.boosted_trees.estimator_batch import estimator
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.boosted_trees.proto import tree_config_pb2
+from astronet.contrib.layers.python.layers import feature_column as contrib_feature_column
+from astronet.contrib.learn.python.learn.estimators import run_config
 from tensorflow.python.estimator.canned import head as head_lib
 from tensorflow.python.estimator.inputs import numpy_io
 from tensorflow.python.feature_column import feature_column_lib as core_feature_column

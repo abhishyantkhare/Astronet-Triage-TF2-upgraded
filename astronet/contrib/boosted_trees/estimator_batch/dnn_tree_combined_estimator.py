@@ -25,17 +25,17 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.boosted_trees.estimator_batch import model
-from tensorflow.contrib.boosted_trees.estimator_batch import distillation_loss
-from tensorflow.contrib.boosted_trees.estimator_batch import trainer_hooks
-from tensorflow.contrib.boosted_trees.python.ops import model_ops
-from tensorflow.contrib.boosted_trees.python.training.functions import gbdt_batch
-from tensorflow.contrib.layers.python.layers import optimizers
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib import layers
+from astronet.contrib.boosted_trees.estimator_batch import model
+from astronet.contrib.boosted_trees.estimator_batch import distillation_loss
+from astronet.contrib.boosted_trees.estimator_batch import trainer_hooks
+from astronet.contrib.boosted_trees.python.ops import model_ops
+from astronet.contrib.boosted_trees.python.training.functions import gbdt_batch
+from astronet.contrib.layers.python.layers import optimizers
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
 from tensorflow.python.estimator import estimator as core_estimator
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators import model_fn
 from tensorflow.python.feature_column import feature_column_lib
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

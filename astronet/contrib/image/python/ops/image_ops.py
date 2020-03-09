@@ -18,8 +18,8 @@ from __future__ import division
 from __future__ import print_function
 
 from tensorflow.python.eager import context
-from tensorflow.contrib.image.ops import gen_image_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.image.ops import gen_image_ops
+from astronet.contrib.util import loader
 from tensorflow.python.framework import common_shapes
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

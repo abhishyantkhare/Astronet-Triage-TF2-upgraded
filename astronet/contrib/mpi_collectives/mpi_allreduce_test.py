@@ -20,7 +20,7 @@ from __future__ import print_function
 import os
 import numpy as np
 import tensorflow as tf
-import tensorflow.contrib.mpi_collectives as mpi
+import astronet.contrib.mpi_collectives as mpi
 from tensorflow.python.platform import test
 
 

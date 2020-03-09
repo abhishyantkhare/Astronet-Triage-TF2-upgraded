@@ -14,7 +14,7 @@
 # ==============================================================================
 """This file is deprecated. Use `tensorflow.python.training.session_run_hook`.
 
-See [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+See [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 

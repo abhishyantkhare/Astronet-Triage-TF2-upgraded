@@ -22,7 +22,7 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib.opt.python.training import shampoo
+from astronet.contrib.opt.python.training import shampoo
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

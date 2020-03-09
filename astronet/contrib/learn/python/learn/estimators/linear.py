@@ -16,7 +16,7 @@
 """Linear Estimators (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -28,15 +28,15 @@ import math
 
 import six
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.framework import deprecated_arg_values
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.learn.python.learn.utils import export
-from tensorflow.contrib.linear_optimizer.python import sdca_optimizer
+from astronet.contrib import layers
+from astronet.contrib.framework import deprecated
+from astronet.contrib.framework import deprecated_arg_values
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.learn.python.learn.utils import export
+from astronet.contrib.linear_optimizer.python import sdca_optimizer
 from tensorflow.python.feature_column import feature_column_lib as fc_core
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
@@ -313,7 +313,7 @@ class LinearClassifier(estimator.Estimator):
   """Linear classifier model.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Train a linear model to classify instances into one of multiple possible
@@ -637,7 +637,7 @@ class LinearRegressor(estimator.Estimator):
   """Linear regressor model.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Train a linear regression model to predict label value given observation of
@@ -876,7 +876,7 @@ class LinearEstimator(estimator.Estimator):
   """Linear model with user specified head.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Train a generalized linear model to predict label value given observation of

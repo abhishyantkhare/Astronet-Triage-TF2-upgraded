@@ -21,8 +21,8 @@ from __future__ import print_function
 import math
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import distribution_util
-from tensorflow.contrib.framework.python.framework import tensor_util as contrib_tensor_util
+from astronet.contrib.distributions.python.ops import distribution_util
+from astronet.contrib.framework.python.framework import tensor_util as contrib_tensor_util
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

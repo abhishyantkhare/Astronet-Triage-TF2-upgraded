@@ -24,11 +24,11 @@ import time
 
 import numpy as np
 
-from tensorflow.contrib.framework.python.ops import variables
-from tensorflow.contrib.layers.python.layers import layers
-from tensorflow.contrib.losses.python.losses import loss_ops
-from tensorflow.contrib.training.python.training import evaluation
-from tensorflow.contrib.training.python.training import training
+from astronet.contrib.framework.python.ops import variables
+from astronet.contrib.layers.python.layers import layers
+from astronet.contrib.losses.python.losses import loss_ops
+from astronet.contrib.training.python.training import evaluation
+from astronet.contrib.training.python.training import training
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.framework import constant_op

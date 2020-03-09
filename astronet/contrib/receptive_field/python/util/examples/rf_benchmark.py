@@ -26,9 +26,9 @@ import argparse
 import csv
 import sys
 
-from tensorflow.contrib import framework
-from tensorflow.contrib import slim
-from tensorflow.contrib.receptive_field import receptive_field_api as receptive_field
+from astronet.contrib import framework
+from astronet.contrib import slim
+from astronet.contrib.receptive_field import receptive_field_api as receptive_field
 from tensorflow.python.client import session
 from tensorflow.python.framework import graph_util
 from tensorflow.python.framework import dtypes

@@ -62,9 +62,9 @@ from __future__ import print_function
 
 import re
 
-from tensorflow.contrib.model_pruning.python import pruning_utils
-from tensorflow.contrib.model_pruning.python.layers import core_layers as core
-from tensorflow.contrib.training.python.training import hparam
+from astronet.contrib.model_pruning.python import pruning_utils
+from astronet.contrib.model_pruning.python.layers import core_layers as core
+from astronet.contrib.training.python.training import hparam
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

@@ -20,7 +20,7 @@ from __future__ import print_function
 
 from absl.testing import parameterized
 
-from tensorflow.contrib.model_pruning.python import pruning_utils
+from astronet.contrib.model_pruning.python import pruning_utils
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import nn_ops
 from tensorflow.python.ops import random_ops

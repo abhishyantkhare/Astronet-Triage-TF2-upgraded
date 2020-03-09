@@ -16,7 +16,7 @@ r"""TensorFlow Lite flatbuffer generation from saved_models.
 
 Example:
 
-bazel run third_party/tensorflow/contrib/lite/python:convert_saved_model -- \
+bazel run third_party/astronet.contrib/lite/python:convert_saved_model -- \
   --saved_model_dir=/tmp/test_saved_model/1519865537 \
   --output_tflite=/tmp/test.lite
 

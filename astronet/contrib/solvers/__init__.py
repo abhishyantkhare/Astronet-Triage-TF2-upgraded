@@ -21,7 +21,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import,line-too-long
-from tensorflow.contrib.solvers.python.ops import lanczos
-from tensorflow.contrib.solvers.python.ops import least_squares
-from tensorflow.contrib.solvers.python.ops import linear_equations
-from tensorflow.contrib.solvers.python.ops import util
+from astronet.contrib.solvers.python.ops import lanczos
+from astronet.contrib.solvers.python.ops import least_squares
+from astronet.contrib.solvers.python.ops import linear_equations
+from astronet.contrib.solvers.python.ops import util

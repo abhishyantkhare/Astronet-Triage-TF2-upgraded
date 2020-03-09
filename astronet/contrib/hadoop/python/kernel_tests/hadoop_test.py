@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.hadoop.python.ops import hadoop_dataset_ops
+from astronet.contrib.hadoop.python.ops import hadoop_dataset_ops
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

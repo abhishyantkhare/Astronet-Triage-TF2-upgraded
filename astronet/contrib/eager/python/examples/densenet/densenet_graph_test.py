@@ -22,7 +22,7 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python.examples.densenet import densenet
+from astronet.contrib.eager.python.examples.densenet import densenet
 
 
 def data_format():

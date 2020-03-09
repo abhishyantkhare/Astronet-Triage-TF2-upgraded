@@ -15,7 +15,7 @@
 """Utilities supporting export to SavedModel (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 
 Some contents of this file are moved to tensorflow/python/estimator/export.py:
@@ -39,13 +39,13 @@ from __future__ import print_function
 import os
 import time
 
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn import export_strategy
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import metric_key
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.learn.python.learn.utils import gc
-from tensorflow.contrib.learn.python.learn.utils import input_fn_utils
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn import export_strategy
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import metric_key
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.learn.python.learn.utils import gc
+from astronet.contrib.learn.python.learn.utils import input_fn_utils
 from tensorflow.python.estimator import estimator as core_estimator
 from tensorflow.python.estimator.export import export as core_export
 from tensorflow.python.framework import dtypes
@@ -519,7 +519,7 @@ def make_parsing_export_strategy(feature_columns,
       collection.
     target_core: If True, prepare an ExportStrategy for use with
       tensorflow.python.estimator.*.  If False (default), prepare an
-      ExportStrategy for use with tensorflow.contrib.learn.python.learn.*.
+      ExportStrategy for use with astronet.contrib.learn.python.learn.*.
     strip_default_attrs: Boolean. If True, default attrs in the
       `GraphDef` will be stripped on write. This is recommended for better
       forward compatibility of the resulting `SavedModel`.
@@ -575,7 +575,7 @@ class BestModelSelector(object):
   """A helper that keeps track of export selection candidates.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
   """
 

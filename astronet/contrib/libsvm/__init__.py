@@ -21,7 +21,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.libsvm.python.ops.libsvm_ops import decode_libsvm
+from astronet.contrib.libsvm.python.ops.libsvm_ops import decode_libsvm
 
 from tensorflow.python.util.all_util import remove_undocumented
 

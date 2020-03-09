@@ -33,7 +33,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import nn
 

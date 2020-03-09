@@ -18,7 +18,7 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.checkpoint.python import split_dependency
+from astronet.contrib.checkpoint.python import split_dependency
 from tensorflow.python.eager import test
 from tensorflow.python.framework import test_util
 from tensorflow.python.ops import array_ops

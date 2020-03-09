@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.constrained_optimization.python import swap_regret_optimizer
-from tensorflow.contrib.constrained_optimization.python import test_util
+from astronet.contrib.constrained_optimization.python import swap_regret_optimizer
+from astronet.contrib.constrained_optimization.python import test_util
 
 from tensorflow.python.ops import standard_ops
 from tensorflow.python.platform import test

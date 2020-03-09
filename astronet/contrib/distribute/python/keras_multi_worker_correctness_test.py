@@ -25,8 +25,8 @@ from absl.testing import parameterized
 import numpy as np
 
 # pylint: disable=g-direct-tensorflow-import
-from tensorflow.contrib.distribute.python import collective_all_reduce_strategy as collective_strategy
-from tensorflow.contrib.distribute.python import keras_multi_worker_test_base
+from astronet.contrib.distribute.python import collective_all_reduce_strategy as collective_strategy
+from astronet.contrib.distribute.python import keras_multi_worker_test_base
 from tensorflow.python import keras
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.distribute import combinations

@@ -21,7 +21,7 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib.distribute.python import mirrored_strategy
+from astronet.contrib.distribute.python import mirrored_strategy
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.distribute import combinations
 from tensorflow.python.distribute import values

@@ -16,7 +16,7 @@
 """Text datasets (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -29,7 +29,7 @@ import tarfile
 
 import numpy as np
 
-from tensorflow.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.datasets import base
 from tensorflow.python.platform import gfile
 from tensorflow.python.util.deprecation import deprecated
 

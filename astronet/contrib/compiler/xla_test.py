@@ -21,9 +21,9 @@ from __future__ import print_function
 import re
 from absl.testing import parameterized
 
-from tensorflow.contrib.compiler import xla
-from tensorflow.contrib.tpu.python.tpu import tpu_estimator
-from tensorflow.contrib.training.python.training import hparam
+from astronet.contrib.compiler import xla
+from astronet.contrib.tpu.python.tpu import tpu_estimator
+from astronet.contrib.training.python.training import hparam
 from tensorflow.python import summary
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.estimator import model_fn as model_fn_lib

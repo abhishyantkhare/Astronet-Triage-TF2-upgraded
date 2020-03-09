@@ -86,17 +86,17 @@ def test_missing_directory(test, path):
 class PythonModuleTest(unittest.TestCase):
 
   def setUp(self):
-    self.entries_file = "tensorflow/contrib/cmake/python_modules.txt"
+    self.entries_file = "astronet.contrib/cmake/python_modules.txt"
     read_entries(self)
 
   def testInvalidEntries(self):
     test_invalid_directories(self)
 
   def testMissingModules(self):
-    module_names = next(os.walk(abs_path("tensorflow/contrib")))[1]
+    module_names = next(os.walk(abs_path("astronet.contrib")))[1]
 
     for module_name in module_names:
-      path = "tensorflow/contrib/" + module_name
+      path = "astronet.contrib/" + module_name
 
       test_missing_directory(self, path + "/python")
       test_missing_directory(self, path + "/python/ops")
@@ -107,7 +107,7 @@ class PythonModuleTest(unittest.TestCase):
 class PythonProtoTest(unittest.TestCase):
 
   def setUp(self):
-    self.entries_file = "tensorflow/contrib/cmake/python_protos.txt"
+    self.entries_file = "astronet.contrib/cmake/python_protos.txt"
     read_entries(self)
 
   def testInvalidEntries(self):
@@ -117,7 +117,7 @@ class PythonProtoTest(unittest.TestCase):
 class PythonProtoCCTest(unittest.TestCase):
 
   def setUp(self):
-    self.entries_file = "tensorflow/contrib/cmake/python_protos_cc.txt"
+    self.entries_file = "astronet.contrib/cmake/python_protos_cc.txt"
     read_entries(self)
 
   def testInvalidEntries(self):

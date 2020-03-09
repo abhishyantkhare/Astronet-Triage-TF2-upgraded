@@ -20,17 +20,17 @@ from __future__ import print_function
 
 import copy
 
-from tensorflow.contrib import learn
-from tensorflow.contrib.boosted_trees.estimator_batch import estimator_utils
-from tensorflow.contrib.boosted_trees.estimator_batch import trainer_hooks
-from tensorflow.contrib.boosted_trees.python.ops import model_ops
-from tensorflow.contrib.boosted_trees.python.training.functions import gbdt_batch
+from astronet.contrib import learn
+from astronet.contrib.boosted_trees.estimator_batch import estimator_utils
+from astronet.contrib.boosted_trees.estimator_batch import trainer_hooks
+from astronet.contrib.boosted_trees.python.ops import model_ops
+from astronet.contrib.boosted_trees.python.training.functions import gbdt_batch
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import state_ops
 from tensorflow.python.training import training_util
 from google.protobuf import text_format
-from tensorflow.contrib.boosted_trees.proto import tree_config_pb2
+from astronet.contrib.boosted_trees.proto import tree_config_pb2
 
 
 class ModelBuilderOutputType(object):

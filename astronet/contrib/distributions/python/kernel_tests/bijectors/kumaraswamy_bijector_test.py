@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops.bijectors.kumaraswamy import Kumaraswamy
+from astronet.contrib.distributions.python.ops.bijectors.kumaraswamy import Kumaraswamy
 from tensorflow.python.ops.distributions.bijector_test_util import assert_bijective_and_finite
 from tensorflow.python.ops.distributions.bijector_test_util import assert_scalar_congruency
 from tensorflow.python.platform import test

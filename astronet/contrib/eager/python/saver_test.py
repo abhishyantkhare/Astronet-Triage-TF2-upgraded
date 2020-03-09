@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.eager.python import saver as _saver
+from astronet.contrib.eager.python import saver as _saver
 from tensorflow.python.eager import context
 from tensorflow.python.eager import test
 from tensorflow.python.framework import errors

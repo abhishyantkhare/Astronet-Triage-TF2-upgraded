@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from tensorflow.contrib.mpi_collectives.ops import gen_mpi_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.mpi_collectives.ops import gen_mpi_ops
+from astronet.contrib.util import loader
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import resource_loader
 

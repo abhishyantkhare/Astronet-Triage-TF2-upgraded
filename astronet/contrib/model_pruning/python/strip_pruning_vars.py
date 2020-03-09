@@ -16,8 +16,8 @@ r"""Removes the auxiliary variables and ops added by the pruning library.
 
 Usage:
 
-bazel build tensorflow/contrib/model_pruning:strip_pruning_vars && \
-bazel-bin/tensorflow/contrib/model_pruning/strip_pruning_vars \
+bazel build astronet.contrib/model_pruning:strip_pruning_vars && \
+bazel-bin/astronet.contrib/model_pruning/strip_pruning_vars \
 --checkpoint_dir=/tmp/model_ckpts \
 --output_node_names=softmax \
 --output_dir=/tmp \
@@ -32,7 +32,7 @@ import argparse
 import os
 import sys
 
-from tensorflow.contrib.model_pruning.python import strip_pruning_vars_lib
+from astronet.contrib.model_pruning.python import strip_pruning_vars_lib
 from tensorflow.python.framework import graph_io
 from tensorflow.python.platform import app
 from tensorflow.python.platform import tf_logging as logging

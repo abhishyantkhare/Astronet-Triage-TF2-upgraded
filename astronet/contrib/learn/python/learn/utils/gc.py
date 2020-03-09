@@ -16,7 +16,7 @@
 r"""System for specifying garbage collection (GC) of path based data (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 
 This framework allows for GC of data specified by path names, for example files

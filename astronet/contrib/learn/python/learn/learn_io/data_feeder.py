@@ -15,7 +15,7 @@
 """Implementations of different data feeders to provide data for TF trainer (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -288,7 +288,7 @@ class DataFeeder(object):
   """Data feeder is an example class to sample data for TF trainer.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
   """
 
@@ -580,7 +580,7 @@ class StreamingDataFeeder(DataFeeder):
   """Data feeder for TF trainer that reads data from iterator.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Streaming data feeder allows to read data as it comes it from disk or
@@ -792,7 +792,7 @@ class DaskDataFeeder(object):
   """Data feeder for that reads data from dask.Series and dask.DataFrame.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   Numpy arrays can be serialized to disk and it's possible to do random seeks

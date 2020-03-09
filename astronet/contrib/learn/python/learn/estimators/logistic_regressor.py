@@ -15,7 +15,7 @@
 """Logistic regression (aka binary classifier) class (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 
 This defines some useful basic metrics for using logistic regression to classify
@@ -26,11 +26,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import metrics as metrics_lib
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import metric_key
-from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from astronet.contrib import metrics as metrics_lib
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import metric_key
+from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import math_ops
 
@@ -81,7 +81,7 @@ def LogisticRegressor(  # pylint: disable=invalid-name
   """Builds a logistic regression Estimator for binary classification.
 
   THIS CLASS IS DEPRECATED. See
-  [contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+  [contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
   for general migration instructions.
 
   This method provides a basic Estimator with some additional metrics for custom

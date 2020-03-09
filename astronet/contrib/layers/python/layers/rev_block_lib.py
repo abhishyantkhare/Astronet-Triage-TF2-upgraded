@@ -33,7 +33,7 @@ import numpy as np
 import six
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.framework.python import ops as contrib_framework_ops
+from astronet.contrib.framework.python import ops as contrib_framework_ops
 from tensorflow.python.eager import backprop
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops as framework_ops

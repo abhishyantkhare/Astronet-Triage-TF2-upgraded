@@ -22,8 +22,8 @@ import time
 
 import numpy.random as npr
 import tensorflow as tf
-import tensorflow.contrib.eager as tfe
-from tensorflow.contrib.eager.python.examples.l2hmc import l2hmc
+import astronet.contrib.eager as tfe
+from astronet.contrib.eager.python.examples.l2hmc import l2hmc
 
 
 def get_default_hparams():

@@ -24,9 +24,9 @@ import tempfile
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.gan.python import namedtuples as tfgan_tuples
-from tensorflow.contrib.gan.python.estimator.python import stargan_estimator_impl as estimator
+from astronet.contrib import layers
+from astronet.contrib.gan.python import namedtuples as tfgan_tuples
+from astronet.contrib.gan.python.estimator.python import stargan_estimator_impl as estimator
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.estimator.inputs import numpy_io
 from tensorflow.python.framework import ops

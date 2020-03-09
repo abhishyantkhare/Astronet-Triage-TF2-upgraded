@@ -18,7 +18,7 @@ from __future__ import division
 from __future__ import print_function
 
 import collections
-from tensorflow.contrib.training.python.training import device_setter as device_setter_lib
+from astronet.contrib.training.python.training import device_setter as device_setter_lib
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import variables

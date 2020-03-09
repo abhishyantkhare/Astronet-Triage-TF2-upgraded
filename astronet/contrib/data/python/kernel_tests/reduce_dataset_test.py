@@ -20,8 +20,8 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib.data.python.ops import get_single_element
-from tensorflow.contrib.data.python.ops import grouping
+from astronet.contrib.data.python.ops import get_single_element
+from astronet.contrib.data.python.ops import grouping
 from tensorflow.python.data.kernel_tests import test_base
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import test_util

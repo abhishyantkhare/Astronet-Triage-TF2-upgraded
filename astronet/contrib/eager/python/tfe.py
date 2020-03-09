@@ -92,15 +92,15 @@ from __future__ import print_function
 
 # pylint:disable=g-bad-import-order,g-import-not-at-top,unused-import
 #
-from tensorflow.contrib.eager.python import metrics
-from tensorflow.contrib.eager.python.datasets import Iterator
-from tensorflow.contrib.eager.python.network import Network
-from tensorflow.contrib.eager.python.network import Sequential
-from tensorflow.contrib.eager.python.network import save_network_checkpoint
-from tensorflow.contrib.eager.python.network import restore_network_checkpoint
-from tensorflow.contrib.eager.python.saver import get_optimizer_variables
-from tensorflow.contrib.eager.python.saver import restore_variables_on_create
-from tensorflow.contrib.eager.python.saver import Saver
+from astronet.contrib.eager.python import metrics
+from astronet.contrib.eager.python.datasets import Iterator
+from astronet.contrib.eager.python.network import Network
+from astronet.contrib.eager.python.network import Sequential
+from astronet.contrib.eager.python.network import save_network_checkpoint
+from astronet.contrib.eager.python.network import restore_network_checkpoint
+from astronet.contrib.eager.python.saver import get_optimizer_variables
+from astronet.contrib.eager.python.saver import restore_variables_on_create
+from astronet.contrib.eager.python.saver import Saver
 from tensorflow.python.eager import backprop
 from tensorflow.python.eager import function as _function_lib
 from tensorflow.python.eager.context import DEVICE_PLACEMENT_EXPLICIT

@@ -34,7 +34,7 @@ from tensorflow.python.training import server_lib
 from tensorflow.python.training import training
 from tensorflow.python.training import training_util
 
-from tensorflow.contrib.opt.python.training.elastic_average_optimizer import \
+from astronet.contrib.opt.python.training.elastic_average_optimizer import \
   ElasticAverageOptimizer, ElasticAverageCustomGetter, GLOBAL_VARIABLE_NAME
 
 

@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.timeseries.examples import lstm
+from astronet.contrib.timeseries.examples import lstm
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.platform import test

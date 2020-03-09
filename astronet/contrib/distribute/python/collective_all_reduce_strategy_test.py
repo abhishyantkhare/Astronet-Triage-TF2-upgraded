@@ -21,7 +21,7 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy as np
 
-from tensorflow.contrib.distribute.python import collective_all_reduce_strategy
+from astronet.contrib.distribute.python import collective_all_reduce_strategy
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.core.protobuf import rewriter_config_pb2
 from tensorflow.python import keras

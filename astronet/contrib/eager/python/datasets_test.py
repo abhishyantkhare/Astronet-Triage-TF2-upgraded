@@ -23,8 +23,8 @@ import time
 
 import numpy as np
 
-from tensorflow.contrib import lookup
-from tensorflow.contrib.eager.python import datasets
+from astronet.contrib import lookup
+from astronet.contrib.eager.python import datasets
 from tensorflow.python.data.experimental.ops import threadpool
 from tensorflow.python.data.experimental.ops import unique
 from tensorflow.python.data.ops import dataset_ops

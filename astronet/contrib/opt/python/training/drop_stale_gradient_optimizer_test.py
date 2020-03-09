@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import portpicker
 
-from tensorflow.contrib.opt.python.training import drop_stale_gradient_optimizer
+from astronet.contrib.opt.python.training import drop_stale_gradient_optimizer
 from tensorflow.python.client import session
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import data_flow_ops

@@ -22,8 +22,8 @@ import itertools
 
 import numpy as np
 
-from tensorflow.contrib.rnn.python.ops import core_rnn_cell as legacy_rnn_cell
-from tensorflow.contrib.rnn.python.ops import rnn_cell as contrib_rnn_cell
+from astronet.contrib.rnn.python.ops import core_rnn_cell as legacy_rnn_cell
+from astronet.contrib.rnn.python.ops import rnn_cell as contrib_rnn_cell
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op

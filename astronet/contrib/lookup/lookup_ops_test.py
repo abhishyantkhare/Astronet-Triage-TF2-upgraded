@@ -20,7 +20,7 @@ from __future__ import print_function
 import os
 import numpy as np
 
-from tensorflow.contrib import lookup
+from astronet.contrib import lookup
 from tensorflow.python.client import session
 from tensorflow.python.eager import context
 from tensorflow.python.framework import constant_op

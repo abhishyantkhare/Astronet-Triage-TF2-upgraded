@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.tensor_forest.python.ops import tensor_forest_ops
+from astronet.contrib.tensor_forest.python.ops import tensor_forest_ops
 from tensorflow.python.framework import test_util
 from tensorflow.python.ops import variables
 from tensorflow.python.platform import googletest

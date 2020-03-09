@@ -16,9 +16,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.linear_optimizer.python.ops import sdca_ops
-from tensorflow.contrib.linear_optimizer.python.ops.sparse_feature_column import SparseFeatureColumn
+from astronet.contrib import layers
+from astronet.contrib.linear_optimizer.python.ops import sdca_ops
+from astronet.contrib.linear_optimizer.python.ops.sparse_feature_column import SparseFeatureColumn
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

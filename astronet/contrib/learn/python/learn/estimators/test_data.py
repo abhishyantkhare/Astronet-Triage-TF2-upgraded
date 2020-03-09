@@ -15,7 +15,7 @@
 """Test data utilities (deprecated).
 
 This module and all its submodules are deprecated. See
-[contrib/learn/README.md](https://www.tensorflow.org/code/tensorflow/contrib/learn/README.md)
+[contrib/learn/README.md](https://www.tensorflow.org/code/astronet.contrib/learn/README.md)
 for migration instructions.
 """
 
@@ -24,7 +24,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from tensorflow.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.datasets import base
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 

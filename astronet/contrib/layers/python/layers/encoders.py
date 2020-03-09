@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework.python.ops import variables
-from tensorflow.contrib.layers.python.layers import embedding_ops as contrib_embedding_ops
-from tensorflow.contrib.layers.python.ops import sparse_ops
+from astronet.contrib.framework.python.ops import variables
+from astronet.contrib.layers.python.layers import embedding_ops as contrib_embedding_ops
+from astronet.contrib.layers.python.ops import sparse_ops
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.ops import embedding_ops
 from tensorflow.python.ops import math_ops

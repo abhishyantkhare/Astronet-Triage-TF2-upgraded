@@ -44,10 +44,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.checkpoint.python.containers import UniqueNameTracker
-from tensorflow.contrib.checkpoint.python.python_state import NumpyState
-from tensorflow.contrib.checkpoint.python.split_dependency import split_dependency
-from tensorflow.contrib.checkpoint.python.visualize import dot_graph_from_checkpoint
+from astronet.contrib.checkpoint.python.containers import UniqueNameTracker
+from astronet.contrib.checkpoint.python.python_state import NumpyState
+from astronet.contrib.checkpoint.python.split_dependency import split_dependency
+from astronet.contrib.checkpoint.python.visualize import dot_graph_from_checkpoint
 from tensorflow.core.protobuf.trackable_object_graph_pb2 import TrackableObjectGraph as CheckpointableObjectGraph
 from tensorflow.python.training.checkpoint_management import CheckpointManager
 from tensorflow.python.training.tracking.base import Trackable as CheckpointableBase

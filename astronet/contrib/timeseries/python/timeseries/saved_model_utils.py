@@ -23,10 +23,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.timeseries.python.timeseries import feature_keys as _feature_keys
-from tensorflow.contrib.timeseries.python.timeseries import head as _head
-from tensorflow.contrib.timeseries.python.timeseries import input_pipeline as _input_pipeline
-from tensorflow.contrib.timeseries.python.timeseries import model_utils as _model_utils
+from astronet.contrib.timeseries.python.timeseries import feature_keys as _feature_keys
+from astronet.contrib.timeseries.python.timeseries import head as _head
+from astronet.contrib.timeseries.python.timeseries import input_pipeline as _input_pipeline
+from astronet.contrib.timeseries.python.timeseries import model_utils as _model_utils
 
 from tensorflow.python.util.all_util import remove_undocumented
 

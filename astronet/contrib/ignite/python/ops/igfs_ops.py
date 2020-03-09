@@ -31,7 +31,7 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.ignite.python.ops import ignite_op_loader  # pylint: disable=unused-import
+from astronet.contrib.ignite.python.ops import ignite_op_loader  # pylint: disable=unused-import
 from tensorflow.python.framework import load_library
 from tensorflow.python.platform import resource_loader
 
