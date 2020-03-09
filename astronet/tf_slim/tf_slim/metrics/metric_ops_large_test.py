@@ -22,7 +22,7 @@ from __future__ import print_function
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow.compat.v1 as tf
-from tf_slim.metrics import metric_ops
+from astronet.tf_slim.tf_slim.metrics import metric_ops
 # pylint: disable=g-direct-tensorflow-import
 from tensorflow.python.framework import dtypes as dtypes_lib
 from tensorflow.python.ops import math_ops
@@ -32,41 +32,43 @@ from tensorflow.python.platform import test
 
 
 def setUpModule():
-  tf.disable_eager_execution()
+    tf.disable_eager_execution()
 
 
 class StreamingPrecisionRecallAtEqualThresholdsLargeTest(test.TestCase):
 
-  def setUp(self):
-    super(StreamingPrecisionRecallAtEqualThresholdsLargeTest, self).setUp()
-    np.random.seed(1)
+    def setUp(self):
+        super(StreamingPrecisionRecallAtEqualThresholdsLargeTest, self).setUp()
+        np.random.seed(1)
 
-  def testLargeCase(self):
-    shape = [32, 512, 256, 1]
-    predictions = random_ops.random_uniform(
-        shape, 0.0, 1.0, dtype=dtypes_lib.float32)
-    labels = math_ops.greater(random_ops.random_uniform(shape, 0.0, 1.0), 0.5)
+    def testLargeCase(self):
+        shape = [32, 512, 256, 1]
+        predictions = random_ops.random_uniform(
+            shape, 0.0, 1.0, dtype=dtypes_lib.float32)
+        labels = math_ops.greater(
+            random_ops.random_uniform(shape, 0.0, 1.0), 0.5)
 
-    result, update_op = metric_ops.precision_recall_at_equal_thresholds(
-        labels=labels, predictions=predictions, num_thresholds=201)
-    # Run many updates, enough to cause highly inaccurate values if the
-    # code used float32 for accumulation.
-    num_updates = 71
+        result, update_op = metric_ops.precision_recall_at_equal_thresholds(
+            labels=labels, predictions=predictions, num_thresholds=201)
+        # Run many updates, enough to cause highly inaccurate values if the
+        # code used float32 for accumulation.
+        num_updates = 71
 
-    with self.cached_session() as sess:
-      sess.run(variables.local_variables_initializer())
-      for _ in xrange(num_updates):
-        sess.run(update_op)
+        with self.cached_session() as sess:
+            sess.run(variables.local_variables_initializer())
+            for _ in xrange(num_updates):
+                sess.run(update_op)
 
-      prdata = sess.run(result)
+            prdata = sess.run(result)
 
-      # Since we use random values, we won't know the tp/fp/tn/fn values, but
-      # tp and fp at threshold 0 should be the total number of positive and
-      # negative labels, hence their sum should be total number of pixels.
-      expected_value = 1.0 * np.product(shape) * num_updates
-      got_value = prdata.tp[0] + prdata.fp[0]
-      # They should be at least within 1.
-      self.assertNear(got_value, expected_value, 1.0)
+            # Since we use random values, we won't know the tp/fp/tn/fn values, but
+            # tp and fp at threshold 0 should be the total number of positive and
+            # negative labels, hence their sum should be total number of pixels.
+            expected_value = 1.0 * np.product(shape) * num_updates
+            got_value = prdata.tp[0] + prdata.fp[0]
+            # They should be at least within 1.
+            self.assertNear(got_value, expected_value, 1.0)
+
 
 if __name__ == '__main__':
-  test.main()
+    test.main()

@@ -22,8 +22,8 @@ from __future__ import print_function
 import numpy as np
 
 import astronet.tf_slim.tf_slim
-from tf_slim.layers import initializers
-from tf_slim.layers import regularizers
+from astronet.tf_slim.tf_slim.layers import initializers
+from astronet.tf_slim.tf_slim.layers import regularizers
 
 # pylint: disable=g-direct-tensorflow-import
 from tensorflow.python.client import session

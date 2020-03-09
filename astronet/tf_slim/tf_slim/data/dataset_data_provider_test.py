@@ -24,11 +24,11 @@ import tempfile
 import tensorflow.compat.v1 as tf
 
 
-from tf_slim import queues
-from tf_slim.data import dataset
-from tf_slim.data import dataset_data_provider
-from tf_slim.data import test_utils
-from tf_slim.data import tfexample_decoder
+from astronet.tf_slim.tf_slim import queues
+from astronet.tf_slim.tf_slim.data import dataset
+from astronet.tf_slim.tf_slim.data import dataset_data_provider
+from astronet.tf_slim.tf_slim.data import test_utils
+from astronet.tf_slim.tf_slim.data import tfexample_decoder
 
 
 # pylint:disable=g-direct-tensorflow-import
@@ -44,102 +44,103 @@ from tensorflow.python.platform import test
 
 
 def setUpModule():
-  tf.disable_eager_execution()
+    tf.disable_eager_execution()
 
 
 def _resize_image(image, height, width):
-  image = array_ops.expand_dims(image, 0)
-  image = image_ops.resize_bilinear(image, [height, width])
-  return array_ops.squeeze(image, [0])
+    image = array_ops.expand_dims(image, 0)
+    image = image_ops.resize_bilinear(image, [height, width])
+    return array_ops.squeeze(image, [0])
 
 
 def _create_tfrecord_dataset(tmpdir):
-  if not gfile.Exists(tmpdir):
-    gfile.MakeDirs(tmpdir)
+    if not gfile.Exists(tmpdir):
+        gfile.MakeDirs(tmpdir)
 
-  data_sources = test_utils.create_tfrecord_files(tmpdir, num_files=1)
+    data_sources = test_utils.create_tfrecord_files(tmpdir, num_files=1)
 
-  keys_to_features = {
-      'image/encoded':
-          parsing_ops.FixedLenFeature(
-              shape=(), dtype=dtypes.string, default_value=''),
-      'image/format':
-          parsing_ops.FixedLenFeature(
-              shape=(), dtype=dtypes.string, default_value='jpeg'),
-      'image/class/label':
-          parsing_ops.FixedLenFeature(
-              shape=[1],
-              dtype=dtypes.int64,
-              default_value=array_ops.zeros(
-                  [1], dtype=dtypes.int64))
-  }
+    keys_to_features = {
+        'image/encoded':
+            parsing_ops.FixedLenFeature(
+                shape=(), dtype=dtypes.string, default_value=''),
+        'image/format':
+            parsing_ops.FixedLenFeature(
+                shape=(), dtype=dtypes.string, default_value='jpeg'),
+        'image/class/label':
+            parsing_ops.FixedLenFeature(
+                shape=[1],
+                dtype=dtypes.int64,
+                default_value=array_ops.zeros(
+                    [1], dtype=dtypes.int64))
+    }
 
-  items_to_handlers = {
-      'image': tfexample_decoder.Image(),
-      'label': tfexample_decoder.Tensor('image/class/label'),
-  }
+    items_to_handlers = {
+        'image': tfexample_decoder.Image(),
+        'label': tfexample_decoder.Tensor('image/class/label'),
+    }
 
-  decoder = tfexample_decoder.TFExampleDecoder(keys_to_features,
-                                               items_to_handlers)
+    decoder = tfexample_decoder.TFExampleDecoder(keys_to_features,
+                                                 items_to_handlers)
 
-  return dataset.Dataset(
-      data_sources=data_sources,
-      reader=io_ops.TFRecordReader,
-      decoder=decoder,
-      num_samples=100,
-      items_to_descriptions=None)
+    return dataset.Dataset(
+        data_sources=data_sources,
+        reader=io_ops.TFRecordReader,
+        decoder=decoder,
+        num_samples=100,
+        items_to_descriptions=None)
 
 
 class DatasetDataProviderTest(test.TestCase):
 
-  def testTFRecordDataset(self):
-    dataset_dir = tempfile.mkdtemp('tfrecord_dataset')
+    def testTFRecordDataset(self):
+        dataset_dir = tempfile.mkdtemp('tfrecord_dataset')
 
-    height = 300
-    width = 280
+        height = 300
+        width = 280
 
-    with self.cached_session():
-      test_dataset = _create_tfrecord_dataset(dataset_dir)
-      provider = dataset_data_provider.DatasetDataProvider(test_dataset)
-      key, image, label = provider.get(['record_key', 'image', 'label'])
-      image = _resize_image(image, height, width)
+        with self.cached_session():
+            test_dataset = _create_tfrecord_dataset(dataset_dir)
+            provider = dataset_data_provider.DatasetDataProvider(test_dataset)
+            key, image, label = provider.get(['record_key', 'image', 'label'])
+            image = _resize_image(image, height, width)
 
-      with session.Session('') as sess:
-        with queues.QueueRunners(sess):
-          key, image, label = sess.run([key, image, label])
-      split_key = key.decode('utf-8').split(':')
-      self.assertEqual(2, len(split_key))
-      self.assertEqual(test_dataset.data_sources[0], split_key[0])
-      self.assertTrue(split_key[1].isdigit())
-      self.assertListEqual([height, width, 3], list(image.shape))
-      self.assertListEqual([1], list(label.shape))
+            with session.Session('') as sess:
+                with queues.QueueRunners(sess):
+                    key, image, label = sess.run([key, image, label])
+            split_key = key.decode('utf-8').split(':')
+            self.assertEqual(2, len(split_key))
+            self.assertEqual(test_dataset.data_sources[0], split_key[0])
+            self.assertTrue(split_key[1].isdigit())
+            self.assertListEqual([height, width, 3], list(image.shape))
+            self.assertListEqual([1], list(label.shape))
 
-  def testTFRecordSeparateGetDataset(self):
-    dataset_dir = tempfile.mkdtemp('tfrecord_separate_get')
+    def testTFRecordSeparateGetDataset(self):
+        dataset_dir = tempfile.mkdtemp('tfrecord_separate_get')
 
-    height = 300
-    width = 280
+        height = 300
+        width = 280
 
-    with self.cached_session():
-      provider = dataset_data_provider.DatasetDataProvider(
-          _create_tfrecord_dataset(dataset_dir))
-    [image] = provider.get(['image'])
-    [label] = provider.get(['label'])
-    image = _resize_image(image, height, width)
+        with self.cached_session():
+            provider = dataset_data_provider.DatasetDataProvider(
+                _create_tfrecord_dataset(dataset_dir))
+        [image] = provider.get(['image'])
+        [label] = provider.get(['label'])
+        image = _resize_image(image, height, width)
 
-    with session.Session('') as sess:
-      with queues.QueueRunners(sess):
-        image, label = sess.run([image, label])
-      self.assertListEqual([height, width, 3], list(image.shape))
-      self.assertListEqual([1], list(label.shape))
+        with session.Session('') as sess:
+            with queues.QueueRunners(sess):
+                image, label = sess.run([image, label])
+            self.assertListEqual([height, width, 3], list(image.shape))
+            self.assertListEqual([1], list(label.shape))
 
-  def testConflictingRecordKeyItem(self):
-    dataset_dir = tempfile.mkdtemp('tfrecord_dataset')
+    def testConflictingRecordKeyItem(self):
+        dataset_dir = tempfile.mkdtemp('tfrecord_dataset')
 
-    with self.cached_session():
-      with self.assertRaises(ValueError):
-        dataset_data_provider.DatasetDataProvider(
-            _create_tfrecord_dataset(dataset_dir), record_key='image')
+        with self.cached_session():
+            with self.assertRaises(ValueError):
+                dataset_data_provider.DatasetDataProvider(
+                    _create_tfrecord_dataset(dataset_dir), record_key='image')
+
 
 if __name__ == '__main__':
-  test.main()
+    test.main()

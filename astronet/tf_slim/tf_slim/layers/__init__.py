@@ -20,13 +20,13 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tf_slim.layers.bucketization_op import *
-from tf_slim.layers.initializers import *
-from tf_slim.layers.layers import *
-from tf_slim.layers.normalization import *
-from tf_slim.layers.optimizers import *
-from tf_slim.layers.regularizers import *
-from tf_slim.layers.rev_block_lib import *
-from tf_slim.layers.summaries import *
+from astronet.tf_slim.tf_slim.layers.bucketization_op import *
+from astronet.tf_slim.tf_slim.layers.initializers import *
+from astronet.tf_slim.tf_slim.layers.layers import *
+from astronet.tf_slim.tf_slim.layers.normalization import *
+from astronet.tf_slim.tf_slim.layers.optimizers import *
+from astronet.tf_slim.tf_slim.layers.regularizers import *
+from astronet.tf_slim.tf_slim.layers.rev_block_lib import *
+from astronet.tf_slim.tf_slim.layers.summaries import *
 
 # pylint: enable=wildcard-import

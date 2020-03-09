@@ -35,13 +35,13 @@ from __future__ import print_function
 
 # pylint: disable=unused-import,
 # Collapse nets into a single namespace.
-from tf_slim.nets import alexnet
-from tf_slim.nets import inception
-from tf_slim.nets import overfeat
-from tf_slim.nets import resnet_utils
-from tf_slim.nets import resnet_v1
-from tf_slim.nets import resnet_v2
-from tf_slim.nets import vgg
+from astronet.tf_slim.tf_slim.nets import alexnet
+from astronet.tf_slim.tf_slim.nets import inception
+from astronet.tf_slim.tf_slim.nets import overfeat
+from astronet.tf_slim.tf_slim.nets import resnet_utils
+from astronet.tf_slim.tf_slim.nets import resnet_v1
+from astronet.tf_slim.tf_slim.nets import resnet_v2
+from astronet.tf_slim.tf_slim.nets import vgg
 from tensorflow.python.util.all_util import make_all  # pylint:disable=g-direct-tensorflow-import
 # pylint: enable=unused-import
 

@@ -22,7 +22,7 @@ from __future__ import print_function
 
 import numpy as np
 import tensorflow.compat.v1 as tf
-from tf_slim.ops.arg_scope import arg_scope
+from astronet.tf_slim.tf_slim.ops.arg_scope import arg_scope
 import astronet.tf_slim.tf_slim.losses as loss_ops
 
 # pylint: disable=g-direct-tensorflow-import

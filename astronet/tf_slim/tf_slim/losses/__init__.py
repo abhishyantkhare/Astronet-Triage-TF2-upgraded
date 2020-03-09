@@ -24,10 +24,10 @@ from __future__ import division
 from __future__ import print_function
 
 
-from tf_slim.losses import metric_learning
+from astronet.tf_slim.tf_slim.losses import metric_learning
 # pylint: disable=wildcard-import
-from tf_slim.losses.loss_ops import *
-from tf_slim.losses.metric_learning import *
+from astronet.tf_slim.tf_slim.losses.loss_ops import *
+from astronet.tf_slim.tf_slim.losses.metric_learning import *
 
 # pylint: disable=g-direct-tensorflow-import
 from tensorflow.python.util.all_util import remove_undocumented

@@ -26,11 +26,11 @@ import time
 
 import numpy as np
 import tensorflow.compat.v1 as tf
-from tf_slim.layers import layers
+from astronet.tf_slim.tf_slim.layers import layers
 import astronet.tf_slim.tf_slim.losses as loss_ops
-from tf_slim.ops import variables
-from tf_slim.training import evaluation
-from tf_slim.training import training
+from astronet.tf_slim.tf_slim.ops import variables
+from astronet.tf_slim.tf_slim.training import evaluation
+from astronet.tf_slim.tf_slim.training import training
 
 # pylint: disable=g-direct-tensorflow-import
 from tensorflow.core.protobuf import config_pb2
