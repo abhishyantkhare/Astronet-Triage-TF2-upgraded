@@ -22,9 +22,9 @@ import imp
 
 import gast
 
-from tensorflow.contrib.autograph.pyct import compiler
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.pyct import templates
+from astronet.contrib.autograph.pyct import compiler
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import templates
 from tensorflow.python.platform import test
 
 

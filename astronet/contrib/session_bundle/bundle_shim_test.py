@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import os.path
 
-from tensorflow.contrib.session_bundle import bundle_shim
-from tensorflow.contrib.session_bundle import constants
-from tensorflow.contrib.session_bundle import manifest_pb2
+from astronet.contrib.session_bundle import bundle_shim
+from astronet.contrib.session_bundle import constants
+from astronet.contrib.session_bundle import manifest_pb2
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.core.protobuf import meta_graph_pb2
 from tensorflow.python.framework import meta_graph

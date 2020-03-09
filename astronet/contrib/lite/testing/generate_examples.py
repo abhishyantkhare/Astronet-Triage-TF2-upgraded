@@ -44,7 +44,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import tensorflow as tf
 from google.protobuf import text_format
 # TODO(aselle): switch to TensorFlow's resource_loader
-from tensorflow.contrib.lite.testing import generate_examples_report as report_lib
+from astronet.contrib.lite.testing import generate_examples_report as report_lib
 from tensorflow.python.framework import graph_util as tf_graph_util
 from tensorflow.python.ops import rnn
 

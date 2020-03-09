@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework.python.ops import variables as variables_lib
-from tensorflow.contrib.slim.python.slim.nets import alexnet
+from astronet.contrib.framework.python.ops import variables as variables_lib
+from astronet.contrib.slim.python.slim.nets import alexnet
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import random_ops
 from tensorflow.python.ops import variable_scope

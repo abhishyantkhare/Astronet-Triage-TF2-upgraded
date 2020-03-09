@@ -28,10 +28,10 @@ from os import path
 
 import numpy as np
 
-from tensorflow.contrib.learn.python.learn.datasets import base
-from tensorflow.contrib.learn.python.learn.datasets import mnist
-from tensorflow.contrib.learn.python.learn.datasets import synthetic
-from tensorflow.contrib.learn.python.learn.datasets import text_datasets
+from astronet.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.datasets import mnist
+from astronet.contrib.learn.python.learn.datasets import synthetic
+from astronet.contrib.learn.python.learn.datasets import text_datasets
 from tensorflow.python.util.deprecation import deprecated
 
 # Export load_iris and load_boston.

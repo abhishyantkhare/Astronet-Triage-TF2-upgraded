@@ -20,13 +20,13 @@ from __future__ import print_function
 
 import gast
 
-from tensorflow.contrib.autograph.pyct import anno
-from tensorflow.contrib.autograph.pyct import context
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.pyct import qual_names
-from tensorflow.contrib.autograph.pyct.qual_names import QN
-from tensorflow.contrib.autograph.pyct.static_analysis import activity
-from tensorflow.contrib.autograph.pyct.static_analysis.annos import NodeAnno
+from astronet.contrib.autograph.pyct import anno
+from astronet.contrib.autograph.pyct import context
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import qual_names
+from astronet.contrib.autograph.pyct.qual_names import QN
+from astronet.contrib.autograph.pyct.static_analysis import activity
+from astronet.contrib.autograph.pyct.static_analysis.annos import NodeAnno
 from tensorflow.python.platform import test
 
 

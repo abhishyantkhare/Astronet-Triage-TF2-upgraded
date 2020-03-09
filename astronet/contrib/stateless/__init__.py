@@ -32,7 +32,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.stateless.gen_stateless_random_ops import *
+from astronet.contrib.stateless.gen_stateless_random_ops import *
 
 from tensorflow.python.framework import ops
 from tensorflow.python.util.all_util import remove_undocumented

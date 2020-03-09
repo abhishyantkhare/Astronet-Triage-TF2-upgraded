@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Tests for tensorflow.contrib.slim.summaries."""
+"""Tests for astronet.contrib.slim.summaries."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -22,7 +22,7 @@ import glob
 import os
 
 
-from tensorflow.contrib.slim.python.slim import summaries
+from astronet.contrib.slim.python.slim import summaries
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import gfile

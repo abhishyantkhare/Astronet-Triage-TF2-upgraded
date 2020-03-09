@@ -22,7 +22,7 @@ from tensorflow.python.framework import errors
 
 # pylint: disable=unused-import,wildcard-import,g-import-not-at-top
 try:
-  from tensorflow.contrib.tensorrt.python import *
+  from astronet.contrib.tensorrt.python import *
 except errors.NotFoundError as e:
   no_trt_message = (
       '**** Failed to initialize TensorRT. This is either because the TensorRT'

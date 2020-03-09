@@ -33,27 +33,27 @@ import numpy as np
 import six
 
 from google.protobuf import message
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.framework import deprecated_args
-from tensorflow.contrib.framework import list_variables
-from tensorflow.contrib.framework import load_variable
-from tensorflow.contrib.learn.python.learn import evaluable
-from tensorflow.contrib.learn.python.learn import metric_spec
-from tensorflow.contrib.learn.python.learn import monitors as monitor_lib
-from tensorflow.contrib.learn.python.learn import trainable
-from tensorflow.contrib.learn.python.learn.estimators import _sklearn as sklearn
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import metric_key
-from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
-from tensorflow.contrib.learn.python.learn.estimators import run_config
-from tensorflow.contrib.learn.python.learn.estimators import tensor_signature
-from tensorflow.contrib.learn.python.learn.estimators._sklearn import NotFittedError
-from tensorflow.contrib.learn.python.learn.learn_io import data_feeder
-from tensorflow.contrib.learn.python.learn.utils import export
-from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
-from tensorflow.contrib.meta_graph_transform import meta_graph_transform
-from tensorflow.contrib.training.python.training import evaluation
+from astronet.contrib import layers
+from astronet.contrib.framework import deprecated
+from astronet.contrib.framework import deprecated_args
+from astronet.contrib.framework import list_variables
+from astronet.contrib.framework import load_variable
+from astronet.contrib.learn.python.learn import evaluable
+from astronet.contrib.learn.python.learn import metric_spec
+from astronet.contrib.learn.python.learn import monitors as monitor_lib
+from astronet.contrib.learn.python.learn import trainable
+from astronet.contrib.learn.python.learn.estimators import _sklearn as sklearn
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import metric_key
+from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from astronet.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.learn.python.learn.estimators import tensor_signature
+from astronet.contrib.learn.python.learn.estimators._sklearn import NotFittedError
+from astronet.contrib.learn.python.learn.learn_io import data_feeder
+from astronet.contrib.learn.python.learn.utils import export
+from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
+from astronet.contrib.meta_graph_transform import meta_graph_transform
+from astronet.contrib.training.python.training import evaluation
 from tensorflow.core.framework import summary_pb2
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session as tf_session

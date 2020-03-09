@@ -30,11 +30,11 @@ from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
 # pylint: disable=g-bad-import-order
-import tensorflow.contrib.eager as tfe
-from tensorflow.contrib.eager.python.examples.spinn import data
+import astronet.contrib.eager as tfe
+from astronet.contrib.eager.python.examples.spinn import data
 from third_party.examples.eager.spinn import spinn
-from tensorflow.contrib.eager.proto import checkpointable_object_graph_pb2
-from tensorflow.contrib.summary import summary_test_util
+from astronet.contrib.eager.proto import checkpointable_object_graph_pb2
+from astronet.contrib.summary import summary_test_util
 from tensorflow.python.eager import test
 from tensorflow.python.framework import test_util
 from tensorflow.python.training import checkpoint_utils

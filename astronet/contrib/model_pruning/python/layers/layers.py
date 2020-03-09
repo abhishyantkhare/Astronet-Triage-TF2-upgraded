@@ -23,11 +23,11 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib.framework.python.ops import add_arg_scope
-from tensorflow.contrib.framework.python.ops import variables
-from tensorflow.contrib.layers.python.layers import initializers
-from tensorflow.contrib.layers.python.layers import utils
-from tensorflow.contrib.model_pruning.python.layers import core_layers as core
+from astronet.contrib.framework.python.ops import add_arg_scope
+from astronet.contrib.framework.python.ops import variables
+from astronet.contrib.layers.python.layers import initializers
+from astronet.contrib.layers.python.layers import utils
+from astronet.contrib.model_pruning.python.layers import core_layers as core
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import init_ops
 from tensorflow.python.ops import nn

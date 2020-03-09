@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.framework.python.framework import checkpoint_utils
+from astronet.contrib.framework.python.framework import checkpoint_utils
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors_impl
 from tensorflow.python.framework import ops

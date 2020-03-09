@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import test_util
-from tensorflow.contrib.distributions.python.ops import vector_diffeomixture as vdm_lib
+from astronet.contrib.distributions.python.ops import test_util
+from astronet.contrib.distributions.python.ops import vector_diffeomixture as vdm_lib
 from tensorflow.python.ops.distributions import normal as normal_lib
 from tensorflow.python.ops.linalg import linear_operator_diag as linop_diag_lib
 from tensorflow.python.ops.linalg import linear_operator_identity as linop_identity_lib

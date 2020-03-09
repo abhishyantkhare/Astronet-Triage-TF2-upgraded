@@ -20,8 +20,8 @@ from __future__ import print_function
 
 # pylint: disable=unused-import,line-too-long
 import six as _six
-from tensorflow.contrib.tensorrt.wrap_conversion import calib_convert
-from tensorflow.contrib.tensorrt.wrap_conversion import trt_convert
+from astronet.contrib.tensorrt.wrap_conversion import calib_convert
+from astronet.contrib.tensorrt.wrap_conversion import trt_convert
 from tensorflow.core.framework import graph_pb2
 from tensorflow.core.protobuf import rewriter_config_pb2
 from tensorflow.python.framework import errors

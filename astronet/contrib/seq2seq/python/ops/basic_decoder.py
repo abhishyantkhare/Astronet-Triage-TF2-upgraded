@@ -21,8 +21,8 @@ from __future__ import print_function
 
 import collections
 
-from tensorflow.contrib.seq2seq.python.ops import decoder
-from tensorflow.contrib.seq2seq.python.ops import helper as helper_py
+from astronet.contrib.seq2seq.python.ops import decoder
+from astronet.contrib.seq2seq.python.ops import helper as helper_py
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.layers import base as layers_base

@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import ast
 
-from tensorflow.contrib.autograph.pyct import pretty_printer
+from astronet.contrib.autograph.pyct import pretty_printer
 from tensorflow.python.platform import test
 
 

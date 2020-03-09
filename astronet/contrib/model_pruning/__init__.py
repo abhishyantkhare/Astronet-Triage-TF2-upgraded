@@ -19,20 +19,20 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import
-from tensorflow.contrib.model_pruning.python.layers.layers import masked_conv2d
-from tensorflow.contrib.model_pruning.python.layers.layers import masked_convolution
-from tensorflow.contrib.model_pruning.python.layers.layers import masked_fully_connected
-from tensorflow.contrib.model_pruning.python.layers.rnn_cells import MaskedBasicLSTMCell
-from tensorflow.contrib.model_pruning.python.layers.rnn_cells import MaskedLSTMCell
-from tensorflow.contrib.model_pruning.python.learning import train
-from tensorflow.contrib.model_pruning.python.pruning import apply_mask
-from tensorflow.contrib.model_pruning.python.pruning import get_masked_weights
-from tensorflow.contrib.model_pruning.python.pruning import get_masks
-from tensorflow.contrib.model_pruning.python.pruning import get_pruning_hparams
-from tensorflow.contrib.model_pruning.python.pruning import get_thresholds
-from tensorflow.contrib.model_pruning.python.pruning import get_weight_sparsity
-from tensorflow.contrib.model_pruning.python.pruning import get_weights
-from tensorflow.contrib.model_pruning.python.pruning import Pruning
+from astronet.contrib.model_pruning.python.layers.layers import masked_conv2d
+from astronet.contrib.model_pruning.python.layers.layers import masked_convolution
+from astronet.contrib.model_pruning.python.layers.layers import masked_fully_connected
+from astronet.contrib.model_pruning.python.layers.rnn_cells import MaskedBasicLSTMCell
+from astronet.contrib.model_pruning.python.layers.rnn_cells import MaskedLSTMCell
+from astronet.contrib.model_pruning.python.learning import train
+from astronet.contrib.model_pruning.python.pruning import apply_mask
+from astronet.contrib.model_pruning.python.pruning import get_masked_weights
+from astronet.contrib.model_pruning.python.pruning import get_masks
+from astronet.contrib.model_pruning.python.pruning import get_pruning_hparams
+from astronet.contrib.model_pruning.python.pruning import get_thresholds
+from astronet.contrib.model_pruning.python.pruning import get_weight_sparsity
+from astronet.contrib.model_pruning.python.pruning import get_weights
+from astronet.contrib.model_pruning.python.pruning import Pruning
 # pylint: enable=unused-import
 
 from tensorflow.python.util.all_util import remove_undocumented

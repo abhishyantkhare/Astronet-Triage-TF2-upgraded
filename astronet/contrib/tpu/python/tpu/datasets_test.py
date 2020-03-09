@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.tpu.python.tpu import datasets
+from astronet.contrib.tpu.python.tpu import datasets
 from tensorflow.core.protobuf import cluster_pb2
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session

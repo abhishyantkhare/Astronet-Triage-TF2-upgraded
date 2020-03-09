@@ -24,7 +24,7 @@ import math
 
 import numpy as np
 
-from tensorflow.contrib.framework.python.framework import tensor_util
+from astronet.contrib.framework.python.framework import tensor_util
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

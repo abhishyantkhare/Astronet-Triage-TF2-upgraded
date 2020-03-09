@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.layers.python.layers import layers
-from tensorflow.contrib.quantize.python import quantize
+from astronet.contrib.layers.python.layers import layers
+from astronet.contrib.quantize.python import quantize
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import test_util
 from tensorflow.python.ops import array_ops

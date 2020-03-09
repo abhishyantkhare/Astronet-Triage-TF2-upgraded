@@ -23,8 +23,8 @@ import re
 
 import numpy as np
 
-from tensorflow.contrib.framework.python.framework import tensor_util
-from tensorflow.contrib.framework.python.ops import variables as variables_lib2
+from astronet.contrib.framework.python.framework import tensor_util
+from astronet.contrib.framework.python.ops import variables as variables_lib2
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors_impl

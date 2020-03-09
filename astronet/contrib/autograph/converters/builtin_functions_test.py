@@ -22,8 +22,8 @@ import sys
 
 import six
 
-from tensorflow.contrib.autograph.converters import builtin_functions
-from tensorflow.contrib.autograph.converters import converter_test_base
+from astronet.contrib.autograph.converters import builtin_functions
+from astronet.contrib.autograph.converters import converter_test_base
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import logging_ops

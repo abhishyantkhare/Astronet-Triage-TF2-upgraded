@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy
 
-from tensorflow.contrib.periodic_resample import periodic_resample
+from astronet.contrib.periodic_resample import periodic_resample
 from tensorflow.python.framework import errors_impl
 from tensorflow.python.framework import test_util
 from tensorflow.python.ops import variables

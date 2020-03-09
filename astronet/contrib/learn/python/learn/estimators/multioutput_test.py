@@ -22,8 +22,8 @@ import random
 
 import numpy as np
 
-from tensorflow.contrib.learn.python import learn
-from tensorflow.contrib.learn.python.learn.estimators._sklearn import mean_squared_error
+from astronet.contrib.learn.python import learn
+from astronet.contrib.learn.python.learn.estimators._sklearn import mean_squared_error
 from tensorflow.python.platform import test
 
 

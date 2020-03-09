@@ -22,11 +22,11 @@ import itertools
 import json
 import numpy as np
 
-from tensorflow.contrib.factorization.python.ops import factorization_ops_test_utils
-from tensorflow.contrib.factorization.python.ops import wals as wals_lib
-from tensorflow.contrib.learn.python.learn import run_config
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.learn.python.learn.estimators import run_config as run_config_lib
+from astronet.contrib.factorization.python.ops import factorization_ops_test_utils
+from astronet.contrib.factorization.python.ops import wals as wals_lib
+from astronet.contrib.learn.python.learn import run_config
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators import run_config as run_config_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor

@@ -22,22 +22,22 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.keras.api.keras import activations
-from tensorflow.contrib.keras.api.keras import applications
-from tensorflow.contrib.keras.api.keras import backend
-from tensorflow.contrib.keras.api.keras import callbacks
-from tensorflow.contrib.keras.api.keras import constraints
-from tensorflow.contrib.keras.api.keras import datasets
-from tensorflow.contrib.keras.api.keras import initializers
-from tensorflow.contrib.keras.api.keras import layers
-from tensorflow.contrib.keras.api.keras import losses
-from tensorflow.contrib.keras.api.keras import metrics
-from tensorflow.contrib.keras.api.keras import models
-from tensorflow.contrib.keras.api.keras import optimizers
-from tensorflow.contrib.keras.api.keras import preprocessing
-from tensorflow.contrib.keras.api.keras import regularizers
-from tensorflow.contrib.keras.api.keras import utils
-from tensorflow.contrib.keras.api.keras import wrappers
+from astronet.contrib.keras.api.keras import activations
+from astronet.contrib.keras.api.keras import applications
+from astronet.contrib.keras.api.keras import backend
+from astronet.contrib.keras.api.keras import callbacks
+from astronet.contrib.keras.api.keras import constraints
+from astronet.contrib.keras.api.keras import datasets
+from astronet.contrib.keras.api.keras import initializers
+from astronet.contrib.keras.api.keras import layers
+from astronet.contrib.keras.api.keras import losses
+from astronet.contrib.keras.api.keras import metrics
+from astronet.contrib.keras.api.keras import models
+from astronet.contrib.keras.api.keras import optimizers
+from astronet.contrib.keras.api.keras import preprocessing
+from astronet.contrib.keras.api.keras import regularizers
+from astronet.contrib.keras.api.keras import utils
+from astronet.contrib.keras.api.keras import wrappers
 
 del absolute_import
 del division

@@ -20,13 +20,13 @@ from __future__ import print_function
 
 import random
 
-from tensorflow.contrib.framework.python.ops import variables
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn.datasets import base
-from tensorflow.contrib.learn.python.learn.estimators import dnn
-from tensorflow.contrib.learn.python.learn.estimators import linear
-from tensorflow.contrib.learn.python.learn.estimators import run_config
-from tensorflow.contrib.learn.python.learn.learn_io import data_feeder
+from astronet.contrib.framework.python.ops import variables
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.estimators import dnn
+from astronet.contrib.learn.python.learn.estimators import linear
+from astronet.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.learn.python.learn.learn_io import data_feeder
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import control_flow_ops
 from tensorflow.python.ops import random_ops

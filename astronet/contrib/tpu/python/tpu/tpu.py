@@ -21,8 +21,8 @@ from __future__ import print_function
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.tpu.python.ops import tpu_ops
-from tensorflow.contrib.tpu.python.tpu import tpu_function
+from astronet.contrib.tpu.python.ops import tpu_ops
+from astronet.contrib.tpu.python.tpu import tpu_function
 
 from tensorflow.core.framework import attr_value_pb2
 from tensorflow.python.framework import device as pydev

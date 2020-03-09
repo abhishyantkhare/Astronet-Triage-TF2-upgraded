@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy
 
-from tensorflow.contrib.autograph.utils import type_check
+from astronet.contrib.autograph.utils import type_check
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import test

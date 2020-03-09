@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.fused_conv.ops import gen_fused_conv2d_bias_activation_op
-from tensorflow.contrib.util import loader
+from astronet.contrib.fused_conv.ops import gen_fused_conv2d_bias_activation_op
+from astronet.contrib.util import loader
 from tensorflow.python.platform import resource_loader
 
 _fused_conv2d_bias_activation_op_so = loader.load_op_library(

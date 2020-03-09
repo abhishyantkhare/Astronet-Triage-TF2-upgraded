@@ -65,7 +65,7 @@ import urllib
 import six
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python import tfe
+from astronet.contrib.eager.python import tfe
 
 try:
   import matplotlib.pyplot as plt  # pylint: disable=g-import-not-at-top

@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import distributions
-from tensorflow.contrib.distributions.python.kernel_tests import distribution_test
+from astronet.contrib import distributions
+from astronet.contrib.distributions.python.kernel_tests import distribution_test
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.platform import test

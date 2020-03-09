@@ -24,10 +24,10 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import
-from tensorflow.contrib.tfprof import model_analyzer
-from tensorflow.contrib.tfprof import tfprof_logger
+from astronet.contrib.tfprof import model_analyzer
+from astronet.contrib.tfprof import tfprof_logger
 
-from tensorflow.contrib.tfprof.model_analyzer import ProfileContext
+from astronet.contrib.tfprof.model_analyzer import ProfileContext
 
 from tensorflow.python.util.all_util import remove_undocumented
 

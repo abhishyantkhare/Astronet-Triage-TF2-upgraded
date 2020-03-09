@@ -25,7 +25,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,line-too-long,wildcard-import
-from tensorflow.contrib.kfac.python.ops.layer_collection import *
+from astronet.contrib.kfac.python.ops.layer_collection import *
 from tensorflow.python.util.all_util import remove_undocumented
 # pylint: enable=unused-import,line-too-long,wildcard-import
 

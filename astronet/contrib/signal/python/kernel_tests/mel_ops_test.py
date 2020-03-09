@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.signal.python.kernel_tests import test_util
-from tensorflow.contrib.signal.python.ops import mel_ops
+from astronet.contrib.signal.python.kernel_tests import test_util
+from astronet.contrib.signal.python.ops import mel_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import test

@@ -20,8 +20,8 @@ from __future__ import print_function
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.kernel_methods.python.mappers import dense_kernel_mapper
-from tensorflow.contrib.kernel_methods.python.mappers.random_fourier_features import RandomFourierFeatureMapper
+from astronet.contrib.kernel_methods.python.mappers import dense_kernel_mapper
+from astronet.contrib.kernel_methods.python.mappers.random_fourier_features import RandomFourierFeatureMapper
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework.test_util import TensorFlowTestCase
 from tensorflow.python.ops import math_ops

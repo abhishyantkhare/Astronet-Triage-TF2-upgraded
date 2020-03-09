@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.learn.python.learn import ops
+from astronet.contrib.learn.python.learn import ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import rnn_cell

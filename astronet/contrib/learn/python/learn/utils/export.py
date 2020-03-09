@@ -24,9 +24,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.session_bundle import exporter
-from tensorflow.contrib.session_bundle import gc
+from astronet.contrib.framework import deprecated
+from astronet.contrib.session_bundle import exporter
+from astronet.contrib.session_bundle import gc
 from tensorflow.python.client import session as tf_session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

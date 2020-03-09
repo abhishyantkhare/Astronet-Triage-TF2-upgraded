@@ -21,7 +21,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.nearest_neighbor.python.ops.nearest_neighbor_ops import hyperplane_lsh_probes
+from astronet.contrib.nearest_neighbor.python.ops.nearest_neighbor_ops import hyperplane_lsh_probes
 from tensorflow.python.platform import test
 
 

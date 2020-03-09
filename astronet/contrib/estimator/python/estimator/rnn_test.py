@@ -25,8 +25,8 @@ import tempfile
 import numpy as np
 import six
 
-from tensorflow.contrib.estimator.python.estimator import rnn
-from tensorflow.contrib.feature_column.python.feature_column import sequence_feature_column as seq_fc
+from astronet.contrib.estimator.python.estimator import rnn
+from astronet.contrib.feature_column.python.feature_column import sequence_feature_column as seq_fc
 from tensorflow.core.example import example_pb2
 from tensorflow.core.example import feature_pb2
 from tensorflow.python.estimator import model_fn

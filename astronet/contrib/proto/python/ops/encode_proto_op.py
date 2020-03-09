@@ -19,7 +19,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.proto.python.ops.gen_encode_proto_op import encode_proto
+from astronet.contrib.proto.python.ops.gen_encode_proto_op import encode_proto
 from tensorflow.python.framework import ops
 
 ops.NotDifferentiable("EncodeProto")

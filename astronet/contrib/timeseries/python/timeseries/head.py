@@ -20,9 +20,9 @@ from __future__ import print_function
 import re
 
 from tensorflow.python.training import training_util
-from tensorflow.contrib.layers.python.layers import optimizers
+from astronet.contrib.layers.python.layers import optimizers
 
-from tensorflow.contrib.timeseries.python.timeseries import feature_keys
+from astronet.contrib.timeseries.python.timeseries import feature_keys
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.estimator.canned import head as head_lib

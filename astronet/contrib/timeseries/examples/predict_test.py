@@ -20,7 +20,7 @@ from __future__ import print_function
 
 from os import path
 
-from tensorflow.contrib.timeseries.examples import predict
+from astronet.contrib.timeseries.examples import predict
 
 from tensorflow.python.platform import test
 

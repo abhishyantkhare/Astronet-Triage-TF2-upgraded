@@ -21,7 +21,7 @@ from __future__ import print_function
 import math
 import re
 
-from tensorflow.contrib import nccl
+from astronet.contrib import nccl
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

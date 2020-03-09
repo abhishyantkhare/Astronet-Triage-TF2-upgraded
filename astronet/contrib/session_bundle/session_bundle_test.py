@@ -23,9 +23,9 @@ import shutil
 
 import numpy as np
 
-from tensorflow.contrib.session_bundle import constants
-from tensorflow.contrib.session_bundle import manifest_pb2
-from tensorflow.contrib.session_bundle import session_bundle
+from astronet.contrib.session_bundle import constants
+from astronet.contrib.session_bundle import manifest_pb2
+from astronet.contrib.session_bundle import session_bundle
 from tensorflow.core.example.example_pb2 import Example
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.framework import dtypes

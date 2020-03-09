@@ -43,10 +43,10 @@ from collections import OrderedDict
 import sys
 from absl.testing import parameterized
 
-from tensorflow.contrib.distribute.python import mirrored_strategy
-from tensorflow.contrib.distribute.python import one_device_strategy
-from tensorflow.contrib.optimizer_v2 import adam as adam_v2
-from tensorflow.contrib.optimizer_v2 import gradient_descent as gradient_descent_v2
+from astronet.contrib.distribute.python import mirrored_strategy
+from astronet.contrib.distribute.python import one_device_strategy
+from astronet.contrib.optimizer_v2 import adam as adam_v2
+from astronet.contrib.optimizer_v2 import gradient_descent as gradient_descent_v2
 from tensorflow.python.eager import context
 from tensorflow.python.framework import ops
 from tensorflow.python.training import adam

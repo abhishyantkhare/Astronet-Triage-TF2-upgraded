@@ -22,85 +22,85 @@ from __future__ import print_function
 import os
 
 # Add projects here, they will show up under tf.contrib.
-from tensorflow.contrib import batching
-from tensorflow.contrib import bayesflow
-from tensorflow.contrib import cloud
-from tensorflow.contrib import cluster_resolver
-from tensorflow.contrib import coder
-from tensorflow.contrib import compiler
-from tensorflow.contrib import copy_graph
-from tensorflow.contrib import crf
-from tensorflow.contrib import cudnn_rnn
-from tensorflow.contrib import data
-from tensorflow.contrib import deprecated
-from tensorflow.contrib import distribute
-from tensorflow.contrib import distributions
-from tensorflow.contrib import estimator
-from tensorflow.contrib import factorization
-from tensorflow.contrib import feature_column
-from tensorflow.contrib import framework
-from tensorflow.contrib import gan
-from tensorflow.contrib import graph_editor
-from tensorflow.contrib import grid_rnn
-from tensorflow.contrib import image
-from tensorflow.contrib import input_pipeline
-from tensorflow.contrib import integrate
-from tensorflow.contrib import keras
-from tensorflow.contrib import kernel_methods
-from tensorflow.contrib import kfac
-from tensorflow.contrib import labeled_tensor
-from tensorflow.contrib import layers
-from tensorflow.contrib import learn
-from tensorflow.contrib import legacy_seq2seq
-from tensorflow.contrib import linalg
-from tensorflow.contrib import linear_optimizer
-from tensorflow.contrib import lookup
-from tensorflow.contrib import losses
-from tensorflow.contrib import memory_stats
-from tensorflow.contrib import metrics
-from tensorflow.contrib import model_pruning
-from tensorflow.contrib import nccl
-from tensorflow.contrib import nn
-from tensorflow.contrib import opt
-from tensorflow.contrib import periodic_resample
-from tensorflow.contrib import predictor
-from tensorflow.contrib import proto
-from tensorflow.contrib import quantization
-from tensorflow.contrib import quantize
-from tensorflow.contrib import recurrent
-from tensorflow.contrib import reduce_slice_ops
-from tensorflow.contrib import resampler
-from tensorflow.contrib import rnn
-from tensorflow.contrib import rpc
-from tensorflow.contrib import saved_model
-from tensorflow.contrib import seq2seq
-from tensorflow.contrib import signal
-from tensorflow.contrib import slim
-from tensorflow.contrib import solvers
-from tensorflow.contrib import sparsemax
-from tensorflow.contrib import staging
-from tensorflow.contrib import stat_summarizer
-from tensorflow.contrib import stateless
-from tensorflow.contrib import tensor_forest
-from tensorflow.contrib import tensorboard
-from tensorflow.contrib import testing
-from tensorflow.contrib import tfprof
-from tensorflow.contrib import timeseries
-from tensorflow.contrib import tpu
-from tensorflow.contrib import training
-from tensorflow.contrib import util
-from tensorflow.contrib.eager.python import tfe as eager
+from astronet.contrib import batching
+from astronet.contrib import bayesflow
+from astronet.contrib import cloud
+from astronet.contrib import cluster_resolver
+from astronet.contrib import coder
+from astronet.contrib import compiler
+from astronet.contrib import copy_graph
+from astronet.contrib import crf
+from astronet.contrib import cudnn_rnn
+from astronet.contrib import data
+from astronet.contrib import deprecated
+from astronet.contrib import distribute
+from astronet.contrib import distributions
+from astronet.contrib import estimator
+from astronet.contrib import factorization
+from astronet.contrib import feature_column
+from astronet.contrib import framework
+from astronet.contrib import gan
+from astronet.contrib import graph_editor
+from astronet.contrib import grid_rnn
+from astronet.contrib import image
+from astronet.contrib import input_pipeline
+from astronet.contrib import integrate
+from astronet.contrib import keras
+from astronet.contrib import kernel_methods
+from astronet.contrib import kfac
+from astronet.contrib import labeled_tensor
+from astronet.contrib import layers
+from astronet.contrib import learn
+from astronet.contrib import legacy_seq2seq
+from astronet.contrib import linalg
+from astronet.contrib import linear_optimizer
+from astronet.contrib import lookup
+from astronet.contrib import losses
+from astronet.contrib import memory_stats
+from astronet.contrib import metrics
+from astronet.contrib import model_pruning
+from astronet.contrib import nccl
+from astronet.contrib import nn
+from astronet.contrib import opt
+from astronet.contrib import periodic_resample
+from astronet.contrib import predictor
+from astronet.contrib import proto
+from astronet.contrib import quantization
+from astronet.contrib import quantize
+from astronet.contrib import recurrent
+from astronet.contrib import reduce_slice_ops
+from astronet.contrib import resampler
+from astronet.contrib import rnn
+from astronet.contrib import rpc
+from astronet.contrib import saved_model
+from astronet.contrib import seq2seq
+from astronet.contrib import signal
+from astronet.contrib import slim
+from astronet.contrib import solvers
+from astronet.contrib import sparsemax
+from astronet.contrib import staging
+from astronet.contrib import stat_summarizer
+from astronet.contrib import stateless
+from astronet.contrib import tensor_forest
+from astronet.contrib import tensorboard
+from astronet.contrib import testing
+from astronet.contrib import tfprof
+from astronet.contrib import timeseries
+from astronet.contrib import tpu
+from astronet.contrib import training
+from astronet.contrib import util
+from astronet.contrib.eager.python import tfe as eager
 if os.name != "nt":
-  from tensorflow.contrib.lite.python import lite
-from tensorflow.contrib.optimizer_v2 import optimizer_v2_symbols as optimizer_v2
-from tensorflow.contrib.receptive_field import receptive_field_api as receptive_field
-from tensorflow.contrib.remote_fused_graph import pylib as remote_fused_graph
-from tensorflow.contrib.specs import python as specs
-from tensorflow.contrib.summary import summary
+  from astronet.contrib.lite.python import lite
+from astronet.contrib.optimizer_v2 import optimizer_v2_symbols as optimizer_v2
+from astronet.contrib.receptive_field import receptive_field_api as receptive_field
+from astronet.contrib.remote_fused_graph import pylib as remote_fused_graph
+from astronet.contrib.specs import python as specs
+from astronet.contrib.summary import summary
 
 from tensorflow.python.util.lazy_loader import LazyLoader
 ffmpeg = LazyLoader("ffmpeg", globals(),
-                    "tensorflow.contrib.ffmpeg")
+                    "astronet.contrib.ffmpeg")
 del os
 del LazyLoader
 

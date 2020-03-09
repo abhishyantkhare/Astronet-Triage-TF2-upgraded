@@ -21,8 +21,8 @@ from __future__ import print_function
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.factorization.python.ops import factorization_ops
-from tensorflow.contrib.factorization.python.ops import factorization_ops_test_utils
+from astronet.contrib.factorization.python.ops import factorization_ops
+from astronet.contrib.factorization.python.ops import factorization_ops_test_utils
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import sparse_tensor

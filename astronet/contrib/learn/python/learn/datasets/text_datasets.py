@@ -29,7 +29,7 @@ import tarfile
 
 import numpy as np
 
-from tensorflow.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.datasets import base
 from tensorflow.python.platform import gfile
 from tensorflow.python.util.deprecation import deprecated
 

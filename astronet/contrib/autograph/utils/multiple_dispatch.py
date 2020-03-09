@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.autograph.utils.type_check import is_tensor
+from astronet.contrib.autograph.utils.type_check import is_tensor
 from tensorflow.python.ops import control_flow_ops
 
 

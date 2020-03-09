@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.linalg.python.ops import linear_operator_block_diag as block_diag
+from astronet.contrib.linalg.python.ops import linear_operator_block_diag as block_diag
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import random_seed
 from tensorflow.python.ops import array_ops

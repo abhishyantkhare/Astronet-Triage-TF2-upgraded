@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,line-too-long,wildcard-import
-from tensorflow.contrib.kfac.python.ops.op_queue import *
+from astronet.contrib.kfac.python.ops.op_queue import *
 from tensorflow.python.util.all_util import remove_undocumented
 # pylint: enable=unused-import,line-too-long,wildcard-import
 

@@ -32,9 +32,9 @@ from __future__ import print_function
 
 import gast
 
-from tensorflow.contrib.autograph.pyct import anno
-from tensorflow.contrib.autograph.pyct import templates
-from tensorflow.contrib.autograph.pyct import transformer
+from astronet.contrib.autograph.pyct import anno
+from astronet.contrib.autograph.pyct import templates
+from astronet.contrib.autograph.pyct import transformer
 from tensorflow.python.framework import dtypes
 
 

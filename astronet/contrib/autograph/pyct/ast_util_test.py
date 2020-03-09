@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import ast
 
-from tensorflow.contrib.autograph.pyct import ast_util
-from tensorflow.contrib.autograph.pyct import compiler
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.pyct import qual_names
+from astronet.contrib.autograph.pyct import ast_util
+from astronet.contrib.autograph.pyct import compiler
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import qual_names
 from tensorflow.python.platform import test
 
 

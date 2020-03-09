@@ -19,10 +19,10 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.framework.python.framework.checkpoint_utils import *
-from tensorflow.contrib.framework.python.framework.experimental import experimental
-from tensorflow.contrib.framework.python.framework.graph_util import *
-from tensorflow.contrib.framework.python.framework.tensor_util import *
+from astronet.contrib.framework.python.framework.checkpoint_utils import *
+from astronet.contrib.framework.python.framework.experimental import experimental
+from astronet.contrib.framework.python.framework.graph_util import *
+from astronet.contrib.framework.python.framework.tensor_util import *
 # pylint: enable=wildcard-import
 from tensorflow.python.util import decorator_utils
 from tensorflow.python.util import nest

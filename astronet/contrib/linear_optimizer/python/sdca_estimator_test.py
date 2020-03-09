@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.layers.python.layers import feature_column as feature_column_lib
-from tensorflow.contrib.linear_optimizer.python import sdca_estimator
+from astronet.contrib.layers.python.layers import feature_column as feature_column_lib
+from astronet.contrib.linear_optimizer.python import sdca_estimator
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import sparse_tensor

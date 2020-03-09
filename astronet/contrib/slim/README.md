@@ -5,8 +5,9 @@ models in TensorFlow. Components of tf-slim can be freely mixed with native
 tensorflow, as well as other frameworks, such as tf.contrib.learn.
 
 ## Usage
+
 ```python
-import tensorflow.contrib.slim as slim
+import astronet.contrib.slim as slim
 ```
 
 ## Why TF-Slim?
@@ -14,66 +15,66 @@ import tensorflow.contrib.slim as slim
 TF-Slim is a library that makes building, training and evaluation neural
 networks simple:
 
-* Allows the user to define models much more compactly by eliminating
-boilerplate code. This is accomplished through the use of
-[argument scoping](https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/arg_scope.py)
-and numerous high level
-[layers](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-and
-[variables](https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/variables.py).
-These tools increase readability and maintainability, reduce the likelihood
-of an error from copy-and-pasting hyperparameter values and simplifies
-hyperparameter tuning.
-* Makes developing models simple by providing commonly used
-[regularizers](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/regularizers.py).
-* Several widely used computer vision models (e.g., VGG, AlexNet) have been
-developed in slim, and are
-[available](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/nets/)
-to users. These can either be used as black boxes, or can be extended in various
-ways, e.g., by adding "multiple heads" to different internal layers.
-* Slim makes it easy to extend complex models, and to warm start training
-algorithms by using pieces of pre-existing model checkpoints.
+- Allows the user to define models much more compactly by eliminating
+  boilerplate code. This is accomplished through the use of
+  [argument scoping](https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/arg_scope.py)
+  and numerous high level
+  [layers](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
+  and
+  [variables](https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/variables.py).
+  These tools increase readability and maintainability, reduce the likelihood
+  of an error from copy-and-pasting hyperparameter values and simplifies
+  hyperparameter tuning.
+- Makes developing models simple by providing commonly used
+  [regularizers](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/regularizers.py).
+- Several widely used computer vision models (e.g., VGG, AlexNet) have been
+  developed in slim, and are
+  [available](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/nets/)
+  to users. These can either be used as black boxes, or can be extended in various
+  ways, e.g., by adding "multiple heads" to different internal layers.
+- Slim makes it easy to extend complex models, and to warm start training
+  algorithms by using pieces of pre-existing model checkpoints.
 
 ## What are the various components of TF-Slim?
 
 TF-Slim is composed of several parts which were design to exist independently.
 These include the following main pieces (explained in detail below).
 
-* [arg_scope](https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/arg_scope.py):
-provides a new scope named `arg_scope` that allows a user to define default
-arguments for specific operations within that scope.
-* [data](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/):
-contains TF-slim's
-[dataset](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/dataset.py)
-definition,
-[data providers](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/data_provider.py),
-[parallel_reader](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/parallel_reader.py),
-and
-[decoding](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/data_decoder.py)
-utilities.
-* [evaluation](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/evaluation.py):
-contains routines for evaluating models.
-* [layers](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py):
-contains high level layers for building models using tensorflow.
-* [learning](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/learning.py):
-contains routines for training models.
-* [losses](https://www.tensorflow.org/code/tensorflow/contrib/losses/python/losses/loss_ops.py):
-contains commonly used loss functions.
-* [metrics](https://www.tensorflow.org/code/tensorflow/contrib/metrics/python/ops/metric_ops.py):
-contains popular evaluation metrics.
-* [nets](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/nets/):
-contains popular network definitions such as
-[VGG](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/nets/vgg.py)
-and
-[AlexNet](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/nets/alexnet.py)
-models.
-* [queues](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/queues.py):
-provides a context manager for easily and safely starting and closing
-QueueRunners.
-* [regularizers](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/regularizers.py):
-contains weight regularizers.
-* [variables](https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/variables.py):
-provides convenience wrappers for variable creation and manipulation.
+- [arg_scope](https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/arg_scope.py):
+  provides a new scope named `arg_scope` that allows a user to define default
+  arguments for specific operations within that scope.
+- [data](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/):
+  contains TF-slim's
+  [dataset](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/dataset.py)
+  definition,
+  [data providers](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/data_provider.py),
+  [parallel_reader](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/parallel_reader.py),
+  and
+  [decoding](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/data/data_decoder.py)
+  utilities.
+- [evaluation](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/evaluation.py):
+  contains routines for evaluating models.
+- [layers](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py):
+  contains high level layers for building models using tensorflow.
+- [learning](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/learning.py):
+  contains routines for training models.
+- [losses](https://www.tensorflow.org/code/tensorflow/contrib/losses/python/losses/loss_ops.py):
+  contains commonly used loss functions.
+- [metrics](https://www.tensorflow.org/code/tensorflow/contrib/metrics/python/ops/metric_ops.py):
+  contains popular evaluation metrics.
+- [nets](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/nets/):
+  contains popular network definitions such as
+  [VGG](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/nets/vgg.py)
+  and
+  [AlexNet](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/nets/alexnet.py)
+  models.
+- [queues](https://www.tensorflow.org/code/tensorflow/contrib/slim/python/slim/queues.py):
+  provides a context manager for easily and safely starting and closing
+  QueueRunners.
+- [regularizers](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/regularizers.py):
+  contains weight regularizers.
+- [variables](https://www.tensorflow.org/code/tensorflow/contrib/framework/python/ops/variables.py):
+  provides convenience wrappers for variable creation and manipulation.
 
 ## Defining Models
 
@@ -113,7 +114,7 @@ regular variables: once created, they can be saved to disk using a
 Local variables are those variables that only exist for the duration of a
 session and are not saved to disk.
 
-TF-Slim further differentiates variables by defining *model variables*, which
+TF-Slim further differentiates variables by defining _model variables_, which
 are variables that represent parameters of a model. Model variables are
 trained or fine-tuned during learning and are loaded
 from a checkpoint during evaluation or inference. Examples include the variables
@@ -156,7 +157,6 @@ my_model_variable = CreateViaCustomCode()
 # Letting TF-Slim know about the additional variable.
 slim.add_model_variable(my_model_variable)
 ```
-
 
 ### Layers
 
@@ -202,21 +202,21 @@ net = slim.conv2d(input, 128, [3, 3], scope='conv1_1')
 TF-Slim provides standard implementations for numerous components for building
 neural networks. These include:
 
-Layer | TF-Slim
-------- | --------
-BiasAdd  | [slim.bias_add](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-BatchNorm  | [slim.batch_norm](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-Conv2d | [slim.conv2d](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-Conv2dInPlane | [slim.conv2d_in_plane](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-Conv2dTranspose (Deconv) | [slim.conv2d_transpose](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-FullyConnected | [slim.fully_connected](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-AvgPool2D | [slim.avg_pool2d](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-Dropout| [slim.dropout](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-Flatten | [slim.flatten](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-MaxPool2D | [slim.max_pool2d](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-OneHotEncoding | [slim.one_hot_encoding](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-SeparableConv2 | [slim.separable_conv2d](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
-UnitNorm | [slim.unit_norm](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)
+| Layer                    | TF-Slim                                                                                                    |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| BiasAdd                  | [slim.bias_add](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)         |
+| BatchNorm                | [slim.batch_norm](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)       |
+| Conv2d                   | [slim.conv2d](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)           |
+| Conv2dInPlane            | [slim.conv2d_in_plane](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)  |
+| Conv2dTranspose (Deconv) | [slim.conv2d_transpose](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py) |
+| FullyConnected           | [slim.fully_connected](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)  |
+| AvgPool2D                | [slim.avg_pool2d](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)       |
+| Dropout                  | [slim.dropout](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)          |
+| Flatten                  | [slim.flatten](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)          |
+| MaxPool2D                | [slim.max_pool2d](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)       |
+| OneHotEncoding           | [slim.one_hot_encoding](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py) |
+| SeparableConv2           | [slim.separable_conv2d](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py) |
+| UnitNorm                 | [slim.unit_norm](https://www.tensorflow.org/code/tensorflow/contrib/layers/python/layers/layers.py)        |
 
 TF-Slim also provides two meta-operations called `repeat` and `stack` that
 allow users to repeatedly perform the same operation. For example, consider the
@@ -255,7 +255,7 @@ number. More concretely, the scopes in the example above would be named
 'conv3/conv3_1', 'conv3/conv3_2' and 'conv3/conv3_3'.
 
 Furthermore, TF-Slim's `slim.stack` operator allows a caller to repeatedly apply
-the same operation with different arguments to create a *stack* or tower of
+the same operation with different arguments to create a _stack_ or tower of
 layers. `slim.stack` also creates a new `tf.variable_scope` for each
 operation created. For example, a simple way to create a Multi-Layer Perceptron
 (MLP):
@@ -297,7 +297,6 @@ This new scope allows a user to specify one or more operations and a set of
 arguments which will be passed to each of the operations defined in the
 `arg_scope`. This functionality is best illustrated by example. Consider the
 following code snippet:
-
 
 ```python
 net = slim.conv2d(inputs, 64, [11, 11], 4, padding='SAME',
@@ -438,10 +437,9 @@ loss functions via the
 [losses](https://www.tensorflow.org/code/tensorflow/contrib/losses/python/losses/loss_ops.py)
 module. Consider the simple case where we want to train the VGG network:
 
-
 ```python
 import tensorflow as tf
-import tensorflow.contrib.slim.nets as nets
+import astronet.contrib.slim.nets as nets
 vgg = nets.vgg
 
 # Load the images and labels.
@@ -457,7 +455,6 @@ loss = slim.losses.softmax_cross_entropy(predictions, labels)
 In this example, we start by creating the model (using TF-Slim's VGG
 implementation), and add the standard classification loss. Now, lets turn
 to the case where we have a multi-task model that produces multiple outputs:
-
 
 ```python
 # Load the images and labels.
@@ -508,6 +505,7 @@ total_loss1 = classification_loss + sum_of_squares_loss + pose_loss + regulariza
 # (Regularization Loss is included in the total loss by default).
 total_loss2 = slim.losses.get_total_loss()
 ```
+
 In this example, we can again either produce the total loss function manually
 or let TF-Slim know about the additional loss and let TF-Slim handle the losses.
 
@@ -560,7 +558,7 @@ examine the following sample of training the VGG network:
 
 ```python
 import tensorflow as tf
-import tensorflow.contrib.slim.nets as nets
+import astronet.contrib.slim.nets as nets
 
 slim = tf.contrib.slim
 vgg = nets.vgg
@@ -759,13 +757,13 @@ parts:
 1. Initialization: initialize the variables used to compute the metrics.
 2. Aggregation: perform operations (sums, etc) used to compute the metrics.
 3. Finalization: (optionally) perform any final operation to compute metric
-values. For example, computing means, mins, maxes, etc.
+   values. For example, computing means, mins, maxes, etc.
 
 For example, to compute `mean_absolute_error`, two variables, a `count` and
-`total` variable are *initialized* to zero. During *aggregation*, we observed
+`total` variable are _initialized_ to zero. During _aggregation_, we observed
 some set of predictions and labels, compute their absolute differences and add
 the total to `total`. Each time we observe another value,
-`count` is incremented. Finally, during *finalization*, `total` is divided
+`count` is incremented. Finally, during _finalization_, `total` is divided
 by `count` to obtain the mean.
 
 The following example demonstrates the API for declaring metrics. Because
@@ -782,9 +780,9 @@ pl_value_op, pl_update_op = slim.metrics.percentage_less(mean_relative_errors, 0
 ```
 
 As the example illustrates, the creation of a metric returns two values:
-a *value_op* and an *update_op*. The value_op is an idempotent operation that
+a _value_op_ and an _update_op_. The value_op is an idempotent operation that
 returns the current value of the metric. The update_op is an operation that
-performs the *aggregation* step mentioned above as well as returning the value
+performs the _aggregation_ step mentioned above as well as returning the value
 of the metric.
 
 Keeping track of each `value_op` and `update_op` can be laborious. To deal with
@@ -811,7 +809,7 @@ Putting it all together:
 
 ```python
 import tensorflow as tf
-import tensorflow.contrib.slim.nets as nets
+import astronet.contrib.slim.nets as nets
 
 slim = tf.contrib.slim
 vgg = nets.vgg
@@ -908,4 +906,5 @@ slim.evaluation.evaluation_loop(
 ```
 
 ## Authors
+
 Sergio Guadarrama and Nathan Silberman

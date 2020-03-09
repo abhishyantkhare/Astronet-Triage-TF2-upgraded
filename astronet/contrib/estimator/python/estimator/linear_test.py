@@ -24,8 +24,8 @@ import tempfile
 import numpy as np
 import six
 
-from tensorflow.contrib.estimator.python.estimator import head as head_lib
-from tensorflow.contrib.estimator.python.estimator import linear
+from astronet.contrib.estimator.python.estimator import head as head_lib
+from astronet.contrib.estimator.python.estimator import linear
 from tensorflow.python.estimator.canned import linear_testing_utils
 from tensorflow.python.estimator.canned import prediction_keys
 from tensorflow.python.estimator.export import export

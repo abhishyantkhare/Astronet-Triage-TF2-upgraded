@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option cc_enable_arenas = true;
 
-package tensorflow.contrib.eager;
+package astronet.contrib.eager;
 
 // Prototype format which saves extra information about the objects which own
 // variables, allowing for more robust checkpoint loading into modified

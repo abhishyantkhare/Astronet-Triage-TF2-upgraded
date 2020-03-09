@@ -26,7 +26,7 @@ import sys
 
 import tensorflow as tf
 
-from tensorflow.contrib.kfac.examples import mlp
+from astronet.contrib.kfac.examples import mlp
 
 FLAGS = None
 

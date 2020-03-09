@@ -24,15 +24,15 @@ from __future__ import print_function
 
 # Collapse features into a single namespace.
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.gan.python.features.python import clip_weights
-from tensorflow.contrib.gan.python.features.python import conditioning_utils
-from tensorflow.contrib.gan.python.features.python import random_tensor_pool
-from tensorflow.contrib.gan.python.features.python import virtual_batchnorm
+from astronet.contrib.gan.python.features.python import clip_weights
+from astronet.contrib.gan.python.features.python import conditioning_utils
+from astronet.contrib.gan.python.features.python import random_tensor_pool
+from astronet.contrib.gan.python.features.python import virtual_batchnorm
 
-from tensorflow.contrib.gan.python.features.python.clip_weights import *
-from tensorflow.contrib.gan.python.features.python.conditioning_utils import *
-from tensorflow.contrib.gan.python.features.python.random_tensor_pool import *
-from tensorflow.contrib.gan.python.features.python.virtual_batchnorm import *
+from astronet.contrib.gan.python.features.python.clip_weights import *
+from astronet.contrib.gan.python.features.python.conditioning_utils import *
+from astronet.contrib.gan.python.features.python.random_tensor_pool import *
+from astronet.contrib.gan.python.features.python.virtual_batchnorm import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

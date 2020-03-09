@@ -25,7 +25,7 @@ from absl.testing import parameterized
 import numpy as np
 import six
 
-from tensorflow.contrib.estimator.python.estimator import replicate_model_fn
+from astronet.contrib.estimator.python.estimator import replicate_model_fn
 from tensorflow.python.estimator import estimator as estimator_lib
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.estimator.canned import dnn

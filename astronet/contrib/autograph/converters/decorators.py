@@ -24,8 +24,8 @@ from __future__ import print_function
 
 import gast
 
-from tensorflow.contrib.autograph.pyct import anno
-from tensorflow.contrib.autograph.pyct import pretty_printer
+from astronet.contrib.autograph.pyct import anno
+from astronet.contrib.autograph.pyct import pretty_printer
 
 
 class DecoratorsTransformer(gast.NodeTransformer):

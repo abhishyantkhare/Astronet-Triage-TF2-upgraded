@@ -31,7 +31,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.cudnn_rnn.python.layers import *
+from astronet.contrib.cudnn_rnn.python.layers import *
 # pylint: enable=unused-import,wildcard-import
 
 

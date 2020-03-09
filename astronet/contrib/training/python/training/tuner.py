@@ -21,7 +21,7 @@ from __future__ import print_function
 
 import abc
 
-from tensorflow.contrib.framework.python.framework import experimental
+from astronet.contrib.framework.python.framework import experimental
 
 
 class Tuner(object):

@@ -24,8 +24,8 @@ import os
 
 import six
 
-from tensorflow.contrib.eager.python import checkpointable_utils
-from tensorflow.contrib.optimizer_v2 import adam
+from astronet.contrib.eager.python import checkpointable_utils
+from astronet.contrib.optimizer_v2 import adam
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.eager import backprop
 from tensorflow.python.eager import context

@@ -26,9 +26,9 @@ import weakref
 
 import six
 
-from tensorflow.contrib.data.python.ops import batching
-from tensorflow.contrib.distribute.python import prefetching_ops_v2
-from tensorflow.contrib.eager.python import datasets
+from astronet.contrib.data.python.ops import batching
+from astronet.contrib.distribute.python import prefetching_ops_v2
+from astronet.contrib.eager.python import datasets
 from tensorflow.python.eager import context
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

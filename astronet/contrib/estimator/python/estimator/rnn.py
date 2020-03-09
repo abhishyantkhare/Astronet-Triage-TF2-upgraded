@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib.estimator.python.estimator import extenders
-from tensorflow.contrib.feature_column.python.feature_column import sequence_feature_column as seq_fc
+from astronet.contrib.estimator.python.estimator import extenders
+from astronet.contrib.feature_column.python.feature_column import sequence_feature_column as seq_fc
 from tensorflow.python.estimator import estimator
 from tensorflow.python.estimator.canned import head as head_lib
 from tensorflow.python.estimator.canned import optimizers

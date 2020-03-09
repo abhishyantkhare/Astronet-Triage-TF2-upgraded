@@ -20,12 +20,12 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.kernel_methods.python.mappers import dense_kernel_mapper as dkm
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import linear
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib import layers
+from astronet.contrib.kernel_methods.python.mappers import dense_kernel_mapper as dkm
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import linear
+from astronet.contrib.learn.python.learn.estimators import prediction_key
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import tf_logging as logging
 

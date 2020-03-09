@@ -17,17 +17,17 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.tensor_forest.python.ops import gen_model_ops
+from astronet.contrib.tensor_forest.python.ops import gen_model_ops
 
 # pylint: disable=unused-import
-from tensorflow.contrib.tensor_forest.python.ops.gen_model_ops import feature_usage_counts
-from tensorflow.contrib.tensor_forest.python.ops.gen_model_ops import traverse_tree_v4
-from tensorflow.contrib.tensor_forest.python.ops.gen_model_ops import tree_predictions_v4
-from tensorflow.contrib.tensor_forest.python.ops.gen_model_ops import tree_size
-from tensorflow.contrib.tensor_forest.python.ops.gen_model_ops import update_model_v4
+from astronet.contrib.tensor_forest.python.ops.gen_model_ops import feature_usage_counts
+from astronet.contrib.tensor_forest.python.ops.gen_model_ops import traverse_tree_v4
+from astronet.contrib.tensor_forest.python.ops.gen_model_ops import tree_predictions_v4
+from astronet.contrib.tensor_forest.python.ops.gen_model_ops import tree_size
+from astronet.contrib.tensor_forest.python.ops.gen_model_ops import update_model_v4
 # pylint: enable=unused-import
 
-from tensorflow.contrib.util import loader
+from astronet.contrib.util import loader
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import resources
 from tensorflow.python.platform import resource_loader

@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.framework.python.ops import variables as contrib_variables
-from tensorflow.contrib.layers.python.layers import normalization
+from astronet.contrib.framework.python.ops import variables as contrib_variables
+from astronet.contrib.layers.python.layers import normalization
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import random_ops

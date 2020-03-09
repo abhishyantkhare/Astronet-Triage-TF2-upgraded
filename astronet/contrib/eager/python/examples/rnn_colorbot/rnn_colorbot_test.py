@@ -19,8 +19,8 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python import tfe
-from tensorflow.contrib.eager.python.examples.rnn_colorbot import rnn_colorbot
+from astronet.contrib.eager.python import tfe
+from astronet.contrib.eager.python.examples.rnn_colorbot import rnn_colorbot
 
 
 LABEL_DIMENSION = 5

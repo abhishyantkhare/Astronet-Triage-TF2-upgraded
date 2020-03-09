@@ -21,7 +21,7 @@ import os
 
 import numpy as np
 
-from tensorflow.contrib.training.python.training import sequence_queueing_state_saver as sqss
+from astronet.contrib.training.python.training import sequence_queueing_state_saver as sqss
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors_impl

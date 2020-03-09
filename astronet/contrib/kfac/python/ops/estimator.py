@@ -22,8 +22,8 @@ import abc
 import numpy as np
 import six
 
-from tensorflow.contrib.kfac.python.ops import placement
-from tensorflow.contrib.kfac.python.ops import utils
+from astronet.contrib.kfac.python.ops import placement
+from astronet.contrib.kfac.python.ops import utils
 from tensorflow.python.framework import ops as tf_ops
 from tensorflow.python.ops import control_flow_ops
 from tensorflow.python.ops import gradients_impl

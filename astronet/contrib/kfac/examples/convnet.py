@@ -35,9 +35,9 @@ import os
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.kfac.examples import mlp
-from tensorflow.contrib.kfac.examples import mnist
-from tensorflow.contrib.kfac.python.ops import optimizer as opt
+from astronet.contrib.kfac.examples import mlp
+from astronet.contrib.kfac.examples import mnist
+from astronet.contrib.kfac.python.ops import optimizer as opt
 
 
 lc = tf.contrib.kfac.layer_collection

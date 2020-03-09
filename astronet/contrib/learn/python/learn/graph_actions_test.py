@@ -21,11 +21,11 @@ from __future__ import print_function
 import shutil
 import tempfile
 
-from tensorflow.contrib import testing
-from tensorflow.contrib.framework.python.framework import checkpoint_utils
-from tensorflow.contrib.framework.python.ops import variables as variables_lib
-from tensorflow.contrib.learn.python import learn
-from tensorflow.contrib.learn.python.learn.monitors import BaseMonitor
+from astronet.contrib import testing
+from astronet.contrib.framework.python.framework import checkpoint_utils
+from astronet.contrib.framework.python.ops import variables as variables_lib
+from astronet.contrib.learn.python import learn
+from astronet.contrib.learn.python.learn.monitors import BaseMonitor
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import test_ops

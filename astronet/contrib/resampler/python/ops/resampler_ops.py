@@ -20,8 +20,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.resampler.ops import gen_resampler_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.resampler.ops import gen_resampler_ops
+from astronet.contrib.util import loader
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import resource_loader
 

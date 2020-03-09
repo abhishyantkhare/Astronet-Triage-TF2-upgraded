@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.layers.python.layers import initializers
-from tensorflow.contrib.layers.python.layers import regularizers
+from astronet.contrib import layers
+from astronet.contrib.layers.python.layers import initializers
+from astronet.contrib.layers.python.layers import regularizers
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

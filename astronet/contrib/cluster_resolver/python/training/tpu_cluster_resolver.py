@@ -23,7 +23,7 @@ import os
 from six.moves.urllib.request import Request
 from six.moves.urllib.request import urlopen
 
-from tensorflow.contrib.cluster_resolver.python.training.cluster_resolver import ClusterResolver
+from astronet.contrib.cluster_resolver.python.training.cluster_resolver import ClusterResolver
 from tensorflow.python.training import server_lib
 from tensorflow.python.util import compat
 

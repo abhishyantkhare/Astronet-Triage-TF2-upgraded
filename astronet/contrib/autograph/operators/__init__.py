@@ -25,5 +25,5 @@ from __future__ import print_function
 
 # TODO(mdan): Add a container for implementation-specific toggles (throughout).
 
-from tensorflow.contrib.autograph.operators.control_flow import for_loop
-from tensorflow.contrib.autograph.operators.control_flow import while_loop
+from astronet.contrib.autograph.operators.control_flow import for_loop
+from astronet.contrib.autograph.operators.control_flow import while_loop

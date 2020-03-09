@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import json
 
-from tensorflow.contrib.tpu.python.tpu import tpu_config as tpu_config_lib
+from astronet.contrib.tpu.python.tpu import tpu_config as tpu_config_lib
 from tensorflow.python.estimator import run_config as run_config_lib
 from tensorflow.python.platform import test
 

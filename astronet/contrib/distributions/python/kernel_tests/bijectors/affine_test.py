@@ -22,7 +22,7 @@ import itertools
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops.bijectors.affine import Affine
+from astronet.contrib.distributions.python.ops.bijectors.affine import Affine
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import test

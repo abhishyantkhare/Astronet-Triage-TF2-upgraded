@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import linalg
-from tensorflow.contrib.distributions.python.ops import distribution_util
-from tensorflow.contrib.distributions.python.ops import mvn_linear_operator as mvn_linop
+from astronet.contrib import linalg
+from astronet.contrib.distributions.python.ops import distribution_util
+from astronet.contrib.distributions.python.ops import mvn_linear_operator as mvn_linop
 from tensorflow.python.framework import ops
 
 

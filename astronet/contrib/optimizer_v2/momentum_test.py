@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.optimizer_v2 import momentum as momentum_lib
+from astronet.contrib.optimizer_v2 import momentum as momentum_lib
 from tensorflow.python.eager import context
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

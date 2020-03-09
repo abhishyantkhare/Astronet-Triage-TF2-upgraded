@@ -21,7 +21,7 @@ from __future__ import print_function
 import threading
 import time
 
-from tensorflow.contrib.batching.python.ops import batch_ops
+from astronet.contrib.batching.python.ops import batch_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import gradients_impl

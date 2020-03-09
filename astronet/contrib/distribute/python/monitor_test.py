@@ -21,10 +21,10 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy
 
-from tensorflow.contrib.distribute.python import combinations
-from tensorflow.contrib.distribute.python import monitor as monitor_lib
-from tensorflow.contrib.distribute.python import one_device_strategy
-from tensorflow.contrib.distribute.python.single_loss_example import single_loss_example
+from astronet.contrib.distribute.python import combinations
+from astronet.contrib.distribute.python import monitor as monitor_lib
+from astronet.contrib.distribute.python import one_device_strategy
+from astronet.contrib.distribute.python.single_loss_example import single_loss_example
 from tensorflow.python.eager import context
 from tensorflow.python.eager import test
 from tensorflow.python.framework import ops

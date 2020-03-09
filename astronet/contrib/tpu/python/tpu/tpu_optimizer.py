@@ -19,8 +19,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.tpu.python.ops import tpu_ops
-from tensorflow.contrib.tpu.python.tpu import tpu_function
+from astronet.contrib.tpu.python.ops import tpu_ops
+from astronet.contrib.tpu.python.tpu import tpu_function
 from tensorflow.python.ops.losses import losses
 from tensorflow.python.platform import tf_logging as logging
 from tensorflow.python.training import optimizer

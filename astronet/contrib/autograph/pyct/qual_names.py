@@ -29,7 +29,7 @@ import collections
 
 import gast
 
-from tensorflow.contrib.autograph.pyct import anno
+from astronet.contrib.autograph.pyct import anno
 
 
 class Symbol(collections.namedtuple('Symbol', ['name'])):

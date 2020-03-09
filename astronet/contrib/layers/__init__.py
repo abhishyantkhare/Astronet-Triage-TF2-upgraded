@@ -113,7 +113,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.layers.python.layers import *
+from astronet.contrib.layers.python.layers import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

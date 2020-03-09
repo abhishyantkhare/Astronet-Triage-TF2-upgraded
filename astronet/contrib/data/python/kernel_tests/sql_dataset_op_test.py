@@ -22,7 +22,7 @@ import os
 
 import sqlite3
 
-from tensorflow.contrib.data.python.ops import readers
+from astronet.contrib.data.python.ops import readers
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors
 from tensorflow.python.ops import array_ops

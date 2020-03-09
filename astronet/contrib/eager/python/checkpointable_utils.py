@@ -22,7 +22,7 @@ import collections
 import functools
 import weakref
 
-from tensorflow.contrib.eager.proto import checkpointable_object_graph_pb2
+from astronet.contrib.eager.proto import checkpointable_object_graph_pb2
 from tensorflow.python import pywrap_tensorflow
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.eager import context
@@ -780,7 +780,7 @@ class Checkpoint(core_checkpointable.Checkpointable):
 
   ```python
   import tensorflow as tf
-  import tensorflow.contrib.eager as tfe
+  import astronet.contrib.eager as tfe
   import os
 
   checkpoint_directory = "/tmp/training_checkpoints"

@@ -28,10 +28,10 @@ import os
 
 import numpy as np
 
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.boosted_trees.proto import tree_config_pb2
-from tensorflow.contrib.boosted_trees.python.ops import model_ops
-from tensorflow.contrib.boosted_trees.python.ops import prediction_ops
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.boosted_trees.proto import tree_config_pb2
+from astronet.contrib.boosted_trees.python.ops import model_ops
+from astronet.contrib.boosted_trees.python.ops import prediction_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import test_util
 from tensorflow.python.ops import resources

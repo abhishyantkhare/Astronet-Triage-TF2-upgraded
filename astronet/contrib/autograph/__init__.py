@@ -21,14 +21,14 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.autograph import utils
-from tensorflow.contrib.autograph.impl.api import convert
-from tensorflow.contrib.autograph.impl.api import converted_call
-from tensorflow.contrib.autograph.impl.api import do_not_convert
-from tensorflow.contrib.autograph.impl.api import RunMode
-from tensorflow.contrib.autograph.impl.api import to_code
-from tensorflow.contrib.autograph.impl.api import to_graph
-from tensorflow.contrib.autograph.pyct.transformer import AutographParseError
+from astronet.contrib.autograph import utils
+from astronet.contrib.autograph.impl.api import convert
+from astronet.contrib.autograph.impl.api import converted_call
+from astronet.contrib.autograph.impl.api import do_not_convert
+from astronet.contrib.autograph.impl.api import RunMode
+from astronet.contrib.autograph.impl.api import to_code
+from astronet.contrib.autograph.impl.api import to_graph
+from astronet.contrib.autograph.pyct.transformer import AutographParseError
 from tensorflow.python.util.all_util import remove_undocumented
 
 _allowed_symbols = [

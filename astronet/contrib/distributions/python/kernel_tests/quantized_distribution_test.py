@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 from scipy import stats
-from tensorflow.contrib import distributions as distributions_lib
+from astronet.contrib import distributions as distributions_lib
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

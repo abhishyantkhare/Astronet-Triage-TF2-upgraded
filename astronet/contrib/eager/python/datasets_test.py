@@ -23,12 +23,12 @@ import time
 
 import numpy as np
 
-from tensorflow.contrib import lookup
-from tensorflow.contrib.data.python.ops import prefetching_ops
-from tensorflow.contrib.data.python.ops import threadpool
-from tensorflow.contrib.data.python.ops import unique
-from tensorflow.contrib.eager.python import checkpointable_utils
-from tensorflow.contrib.eager.python import datasets
+from astronet.contrib import lookup
+from astronet.contrib.data.python.ops import prefetching_ops
+from astronet.contrib.data.python.ops import threadpool
+from astronet.contrib.data.python.ops import unique
+from astronet.contrib.eager.python import checkpointable_utils
+from astronet.contrib.eager.python import datasets
 from tensorflow.python.data import Dataset
 from tensorflow.python.eager import test
 from tensorflow.python.framework import constant_op

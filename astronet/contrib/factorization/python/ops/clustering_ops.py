@@ -18,12 +18,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.factorization.python.ops import gen_clustering_ops
+from astronet.contrib.factorization.python.ops import gen_clustering_ops
 # go/tf-wildcard-import
 # pylint: disable=wildcard-import
-from tensorflow.contrib.factorization.python.ops.gen_clustering_ops import *
+from astronet.contrib.factorization.python.ops.gen_clustering_ops import *
 # pylint: enable=wildcard-import
-from tensorflow.contrib.util import loader
+from astronet.contrib.util import loader
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

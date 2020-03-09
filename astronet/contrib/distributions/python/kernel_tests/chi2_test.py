@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 from scipy import stats
-from tensorflow.contrib.distributions.python.ops import chi2 as chi2_lib
+from astronet.contrib.distributions.python.ops import chi2 as chi2_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import math_ops
 from tensorflow.python.platform import test

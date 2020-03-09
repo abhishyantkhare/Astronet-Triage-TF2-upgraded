@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.linalg.python.ops import linear_operator_addition
+from astronet.contrib.linalg.python.ops import linear_operator_addition
 from tensorflow.python.framework import random_seed
 from tensorflow.python.ops import linalg_ops
 from tensorflow.python.ops.linalg import linalg as linalg_lib

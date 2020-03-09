@@ -22,15 +22,15 @@ import tempfile
 
 import numpy as np
 
-from tensorflow.contrib import lookup
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.layers.python.layers import target_column as target_column_lib
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.learn.python.learn.estimators import rnn_common
-from tensorflow.contrib.learn.python.learn.estimators import run_config
-from tensorflow.contrib.learn.python.learn.estimators import state_saving_rnn_estimator as ssre
+from astronet.contrib import lookup
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.layers.python.layers import target_column as target_column_lib
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.learn.python.learn.estimators import rnn_common
+from astronet.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.learn.python.learn.estimators import state_saving_rnn_estimator as ssre
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor

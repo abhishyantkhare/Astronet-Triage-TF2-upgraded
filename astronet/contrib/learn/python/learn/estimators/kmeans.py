@@ -27,10 +27,10 @@ from __future__ import print_function
 import time
 import numpy as np
 
-from tensorflow.contrib.factorization.python.ops import clustering_ops
+from astronet.contrib.factorization.python.ops import clustering_ops
 from tensorflow.python.training import training_util
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators.model_fn import ModelFnOps
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators.model_fn import ModelFnOps
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

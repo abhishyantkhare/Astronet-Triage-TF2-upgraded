@@ -21,8 +21,8 @@ from __future__ import print_function
 import numpy as np
 import numpy.random as npr
 
-from tensorflow.contrib.kfac.python.ops import fisher_blocks as fb
-from tensorflow.contrib.kfac.python.ops import fisher_factors as ff
+from astronet.contrib.kfac.python.ops import fisher_blocks as fb
+from astronet.contrib.kfac.python.ops import fisher_factors as ff
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops as tf_ops

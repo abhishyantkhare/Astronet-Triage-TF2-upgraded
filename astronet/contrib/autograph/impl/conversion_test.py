@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import gast
 
-from tensorflow.contrib.autograph import utils
-from tensorflow.contrib.autograph.impl import conversion
+from astronet.contrib.autograph import utils
+from astronet.contrib.autograph.impl import conversion
 from tensorflow.python.framework import constant_op
 from tensorflow.python.platform import test
 

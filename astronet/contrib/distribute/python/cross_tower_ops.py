@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib.distribute.python import cross_tower_utils
-from tensorflow.contrib.distribute.python import values as value_lib
+from astronet.contrib.distribute.python import cross_tower_utils
+from astronet.contrib.distribute.python import values as value_lib
 from tensorflow.python.client import device_lib
 from tensorflow.python.eager import context
 from tensorflow.python.framework import ops

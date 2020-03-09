@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.distributions.python.ops.bijectors import power_transform
+from astronet.contrib.distributions.python.ops.bijectors import power_transform
 
 
 __all__ = [

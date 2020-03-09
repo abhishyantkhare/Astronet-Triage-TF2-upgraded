@@ -38,7 +38,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.framework.python.ops import variables as contrib_variables_lib
+from astronet.contrib.framework.python.ops import variables as contrib_variables_lib
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_util
 from tensorflow.python.ops import array_ops

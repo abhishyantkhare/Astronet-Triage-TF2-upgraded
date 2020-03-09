@@ -18,14 +18,14 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.autograph import utils
-from tensorflow.contrib.autograph.pyct import anno
-from tensorflow.contrib.autograph.pyct import context
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.pyct import qual_names
-from tensorflow.contrib.autograph.pyct.static_analysis import activity
-from tensorflow.contrib.autograph.pyct.static_analysis import live_values
-from tensorflow.contrib.autograph.pyct.static_analysis import type_info
+from astronet.contrib.autograph import utils
+from astronet.contrib.autograph.pyct import anno
+from astronet.contrib.autograph.pyct import context
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import qual_names
+from astronet.contrib.autograph.pyct.static_analysis import activity
+from astronet.contrib.autograph.pyct.static_analysis import live_values
+from astronet.contrib.autograph.pyct.static_analysis import type_info
 from tensorflow.python.client import session
 from tensorflow.python.platform import test
 from tensorflow.python.training import training

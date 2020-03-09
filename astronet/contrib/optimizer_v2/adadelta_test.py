@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.optimizer_v2 import adadelta
+from astronet.contrib.optimizer_v2 import adadelta
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import embedding_ops

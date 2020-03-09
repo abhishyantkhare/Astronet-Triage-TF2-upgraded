@@ -38,12 +38,12 @@ import argparse
 import sys
 import tensorflow as tf
 
-from tensorflow.contrib.boosted_trees.estimator_batch.dnn_tree_combined_estimator import DNNBoostedTreeCombinedRegressor
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn import learn_runner
-from tensorflow.contrib.learn.python.learn.utils import input_fn_utils
-from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
+from astronet.contrib.boosted_trees.estimator_batch.dnn_tree_combined_estimator import DNNBoostedTreeCombinedRegressor
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn import learn_runner
+from astronet.contrib.learn.python.learn.utils import input_fn_utils
+from astronet.contrib.learn.python.learn.utils import saved_model_export_utils
 
 _BOSTON_NUM_FEATURES = 13
 

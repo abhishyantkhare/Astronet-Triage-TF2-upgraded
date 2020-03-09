@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.data.python.ops import resampling
+from astronet.contrib.data.python.ops import resampling
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

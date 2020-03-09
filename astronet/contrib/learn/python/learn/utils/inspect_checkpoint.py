@@ -21,7 +21,7 @@ from __future__ import print_function
 import argparse
 import sys
 
-from tensorflow.contrib.framework.python.framework import checkpoint_utils
+from astronet.contrib.framework.python.framework import checkpoint_utils
 from tensorflow.python.platform import app
 
 FLAGS = None

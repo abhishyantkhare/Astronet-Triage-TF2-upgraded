@@ -19,10 +19,10 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import,unused-import
-from tensorflow.contrib.coder.python.ops import gen_coder_ops
-from tensorflow.contrib.coder.python.ops.gen_coder_ops import *
+from astronet.contrib.coder.python.ops import gen_coder_ops
+from astronet.contrib.coder.python.ops.gen_coder_ops import *
 # pylint: enable=wildcard-import,unused-import
-from tensorflow.contrib.util import loader
+from astronet.contrib.util import loader
 from tensorflow.python.platform import resource_loader
 
 

@@ -21,8 +21,8 @@ from __future__ import print_function
 import numpy as np
 import numpy.random as npr
 
-from tensorflow.contrib.kfac.python.ops import utils
-from tensorflow.contrib.tpu.python.tpu import tpu_function
+from astronet.contrib.kfac.python.ops import utils
+from astronet.contrib.tpu.python.tpu import tpu_function
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import random_seed

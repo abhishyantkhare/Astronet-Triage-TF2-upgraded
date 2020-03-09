@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-package org.tensorflow.contrib.android;
+package org.astronet.contrib.android;
 
 /** Accumulate and analyze stats from metadata obtained from Session.Runner.run. */
 public class RunStats implements AutoCloseable {

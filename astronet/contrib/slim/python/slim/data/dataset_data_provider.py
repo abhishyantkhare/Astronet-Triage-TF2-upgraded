@@ -44,8 +44,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.slim.python.slim.data import data_provider
-from tensorflow.contrib.slim.python.slim.data import parallel_reader
+from astronet.contrib.slim.python.slim.data import data_provider
+from astronet.contrib.slim.python.slim.data import parallel_reader
 
 
 class DatasetDataProvider(data_provider.DataProvider):

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Tests for tensorflow.contrib.tensorboard.plugins.trace package."""
+"""Tests for astronet.contrib.tensorboard.plugins.trace package."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -22,7 +22,7 @@ import tempfile
 
 from google.protobuf import json_format
 
-from tensorflow.contrib.tensorboard.plugins import trace
+from astronet.contrib.tensorboard.plugins import trace
 from tensorflow.python.framework import constant_op
 from tensorflow.python.platform import gfile
 from tensorflow.python.platform import test

@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import distributions
+from astronet.contrib import distributions
 
-from tensorflow.contrib.timeseries.python.timeseries import math_utils
+from astronet.contrib.timeseries.python.timeseries import math_utils
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

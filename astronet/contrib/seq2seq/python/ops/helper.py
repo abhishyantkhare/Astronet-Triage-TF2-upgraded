@@ -23,7 +23,7 @@ import abc
 
 import six
 
-from tensorflow.contrib.seq2seq.python.ops import decoder
+from astronet.contrib.seq2seq.python.ops import decoder
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

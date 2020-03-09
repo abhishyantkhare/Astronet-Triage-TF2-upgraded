@@ -24,5 +24,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.saved_model.python.saved_model import *
+from astronet.contrib.saved_model.python.saved_model import *
 # pylint: enable=wildcard-import

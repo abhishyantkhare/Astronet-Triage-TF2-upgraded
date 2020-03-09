@@ -27,7 +27,7 @@ import threading
 from six.moves import SimpleHTTPServer
 from six.moves import socketserver
 
-from tensorflow.contrib.cloud.python.ops import bigquery_reader_ops as cloud
+from astronet.contrib.cloud.python.ops import bigquery_reader_ops as cloud
 from tensorflow.core.example import example_pb2
 from tensorflow.core.framework import types_pb2
 from tensorflow.python.framework import dtypes

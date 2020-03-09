@@ -23,9 +23,9 @@ import sys
 import gast
 import six
 
-from tensorflow.contrib.autograph.pyct import anno
-from tensorflow.contrib.autograph.pyct import compiler
-from tensorflow.contrib.autograph.pyct import pretty_printer
+from astronet.contrib.autograph.pyct import anno
+from astronet.contrib.autograph.pyct import compiler
+from astronet.contrib.autograph.pyct import pretty_printer
 
 
 class AutographParseError(SyntaxError):

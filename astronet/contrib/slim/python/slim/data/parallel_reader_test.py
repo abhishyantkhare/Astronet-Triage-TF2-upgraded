@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.slim.python.slim import queues
-from tensorflow.contrib.slim.python.slim.data import parallel_reader
-from tensorflow.contrib.slim.python.slim.data import test_utils
+from astronet.contrib.slim.python.slim import queues
+from astronet.contrib.slim.python.slim.data import parallel_reader
+from astronet.contrib.slim.python.slim.data import test_utils
 from tensorflow.python.framework import dtypes as dtypes_lib
 from tensorflow.python.framework import errors_impl
 from tensorflow.python.framework import ops

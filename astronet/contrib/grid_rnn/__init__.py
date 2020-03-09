@@ -24,5 +24,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import, line-too-long
-from tensorflow.contrib.grid_rnn.python.ops.grid_rnn_cell import *
+from astronet.contrib.grid_rnn.python.ops.grid_rnn_cell import *
 # pylint: enable=unused-import,wildcard-import,line-too-long

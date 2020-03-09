@@ -1,4 +1,4 @@
-# TPU support for TensorFlow #
+# TPU support for TensorFlow
 
 This directory contains code required to re-target a TensorFlow model to run
 on TPUs.
@@ -11,9 +11,9 @@ network.
 ```python
 import tensorflow as tf
 
-from tensorflow.contrib.tpu.python.tpu import tpu_config
-from tensorflow.contrib.tpu.python.tpu import tpu_estimator
-from tensorflow.contrib.tpu.python.tpu import tpu_optimizer
+from astronet.contrib.tpu.python.tpu import tpu_config
+from astronet.contrib.tpu.python.tpu import tpu_estimator
+from astronet.contrib.tpu.python.tpu import tpu_optimizer
 
 def model_fn(features, labels, mode, params):
   # Define the model to construct the logits

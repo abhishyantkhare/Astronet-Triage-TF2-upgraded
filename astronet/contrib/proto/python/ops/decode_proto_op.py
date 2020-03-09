@@ -20,6 +20,6 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.proto.python.ops.gen_decode_proto_op import decode_proto_v2 as decode_proto
+from astronet.contrib.proto.python.ops.gen_decode_proto_op import decode_proto_v2 as decode_proto
 from tensorflow.python.framework import ops
 ops.NotDifferentiable("DecodeProtoV2")

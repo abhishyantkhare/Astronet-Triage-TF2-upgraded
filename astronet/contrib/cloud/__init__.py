@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=line-too-long,wildcard-import
-from tensorflow.contrib.cloud.python.ops.bigquery_reader_ops import *
+from astronet.contrib.cloud.python.ops.bigquery_reader_ops import *
 # pylint: enable=line-too-long,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # =============================================================================
-"""Tests for third_party.tensorflow.contrib.ffmpeg.decode_audio_op."""
+"""Tests for third_party.astronet.contrib.ffmpeg.decode_audio_op."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -22,7 +22,7 @@ import os.path
 
 import six
 
-from tensorflow.contrib import ffmpeg
+from astronet.contrib import ffmpeg
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import resource_loader

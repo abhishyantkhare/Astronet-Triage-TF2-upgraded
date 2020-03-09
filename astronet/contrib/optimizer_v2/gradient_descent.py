@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.optimizer_v2 import optimizer_v2
+from astronet.contrib.optimizer_v2 import optimizer_v2
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import resource_variable_ops
 from tensorflow.python.training import training_ops

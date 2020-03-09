@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import warnings
 # pylint disable=long-line
-from tensorflow.contrib.kfac.python.ops import curvature_matrix_vector_products as cmvp
-from tensorflow.contrib.kfac.python.ops import estimator as est
+from astronet.contrib.kfac.python.ops import curvature_matrix_vector_products as cmvp
+from astronet.contrib.kfac.python.ops import estimator as est
 # pylint enable=long-line
 
 from tensorflow.python.framework import dtypes

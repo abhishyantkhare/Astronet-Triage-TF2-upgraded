@@ -25,7 +25,7 @@ import token
 
 from google.protobuf import json_format
 
-from tensorflow.contrib.tensorboard.plugins.trace.trace_info_pb2 import TraceInfo
+from astronet.contrib.tensorboard.plugins.trace.trace_info_pb2 import TraceInfo
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import gfile
 

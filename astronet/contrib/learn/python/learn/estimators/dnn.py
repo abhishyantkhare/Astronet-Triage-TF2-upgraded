@@ -25,19 +25,19 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.framework import deprecated_arg_values
+from astronet.contrib import layers
+from astronet.contrib.framework import deprecated
+from astronet.contrib.framework import deprecated_arg_values
 from tensorflow.python.training import training_util
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.layers.python.layers import optimizers
-from tensorflow.contrib.learn.python.learn import metric_spec
-from tensorflow.contrib.learn.python.learn.estimators import dnn_linear_combined
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.learn.python.learn.utils import export
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.layers.python.layers import optimizers
+from astronet.contrib.learn.python.learn import metric_spec
+from astronet.contrib.learn.python.learn.estimators import dnn_linear_combined
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.learn.python.learn.utils import export
 from tensorflow.python.feature_column import feature_column as fc_core
 from tensorflow.python.ops import nn
 from tensorflow.python.ops import partitioned_variables

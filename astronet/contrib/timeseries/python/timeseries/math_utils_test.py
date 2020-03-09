@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import numpy
 
-from tensorflow.contrib.timeseries.python.timeseries import input_pipeline
-from tensorflow.contrib.timeseries.python.timeseries import math_utils
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from astronet.contrib.timeseries.python.timeseries import input_pipeline
+from astronet.contrib.timeseries.python.timeseries import math_utils
+from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
 
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

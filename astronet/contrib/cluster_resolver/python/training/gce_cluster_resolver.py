@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 
-from tensorflow.contrib.cluster_resolver.python.training.cluster_resolver import ClusterResolver
+from astronet.contrib.cluster_resolver.python.training.cluster_resolver import ClusterResolver
 from tensorflow.python.training.server_lib import ClusterSpec
 
 _GOOGLE_API_CLIENT_INSTALLED = True

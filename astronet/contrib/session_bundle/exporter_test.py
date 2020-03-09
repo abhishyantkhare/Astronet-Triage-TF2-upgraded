@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import os.path
 
-from tensorflow.contrib.session_bundle import constants
-from tensorflow.contrib.session_bundle import exporter
-from tensorflow.contrib.session_bundle import gc
-from tensorflow.contrib.session_bundle import manifest_pb2
+from astronet.contrib.session_bundle import constants
+from astronet.contrib.session_bundle import exporter
+from astronet.contrib.session_bundle import gc
+from astronet.contrib.session_bundle import manifest_pb2
 from tensorflow.core.framework import graph_pb2
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.core.protobuf import saver_pb2

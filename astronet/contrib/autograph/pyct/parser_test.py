@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import textwrap
 
-from tensorflow.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import parser
 from tensorflow.python.platform import test
 
 

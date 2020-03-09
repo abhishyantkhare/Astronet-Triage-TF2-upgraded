@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.grid_rnn.python.ops import grid_rnn_cell
+from astronet.contrib.grid_rnn.python.ops import grid_rnn_cell
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import init_ops

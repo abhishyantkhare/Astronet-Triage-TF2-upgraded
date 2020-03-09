@@ -17,8 +17,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.eager.python import checkpointable_utils
-from tensorflow.contrib.rnn.python.ops import lstm_ops
+from astronet.contrib.eager.python import checkpointable_utils
+from astronet.contrib.rnn.python.ops import lstm_ops
 from tensorflow.python.framework import common_shapes
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

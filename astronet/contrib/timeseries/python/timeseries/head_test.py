@@ -21,13 +21,13 @@ from __future__ import print_function
 import numpy
 import six
 
-from tensorflow.contrib.timeseries.examples import lstm as lstm_example
-from tensorflow.contrib.timeseries.python.timeseries import estimators as ts_estimators
-from tensorflow.contrib.timeseries.python.timeseries import feature_keys
-from tensorflow.contrib.timeseries.python.timeseries import head as ts_head_lib
-from tensorflow.contrib.timeseries.python.timeseries import input_pipeline
-from tensorflow.contrib.timeseries.python.timeseries import model
-from tensorflow.contrib.timeseries.python.timeseries import state_management
+from astronet.contrib.timeseries.examples import lstm as lstm_example
+from astronet.contrib.timeseries.python.timeseries import estimators as ts_estimators
+from astronet.contrib.timeseries.python.timeseries import feature_keys
+from astronet.contrib.timeseries.python.timeseries import head as ts_head_lib
+from astronet.contrib.timeseries.python.timeseries import input_pipeline
+from astronet.contrib.timeseries.python.timeseries import model
+from astronet.contrib.timeseries.python.timeseries import state_management
 
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.estimator import estimator_lib

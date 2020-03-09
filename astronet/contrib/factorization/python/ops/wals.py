@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.factorization.python.ops import factorization_ops
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.factorization.python.ops import factorization_ops
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import model_fn
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

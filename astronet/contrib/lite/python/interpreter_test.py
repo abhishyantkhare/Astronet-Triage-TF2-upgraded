@@ -20,7 +20,7 @@ from __future__ import print_function
 import io
 import numpy as np
 
-from tensorflow.contrib.lite.python import interpreter as interpreter_wrapper
+from astronet.contrib.lite.python import interpreter as interpreter_wrapper
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import resource_loader
 from tensorflow.python.platform import test

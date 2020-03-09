@@ -25,10 +25,10 @@ import time
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib import testing
-from tensorflow.contrib.framework.python.framework import checkpoint_utils
-from tensorflow.contrib.learn.python import learn
-from tensorflow.contrib.learn.python.learn import estimators
+from astronet.contrib import testing
+from astronet.contrib.framework.python.framework import checkpoint_utils
+from astronet.contrib.learn.python import learn
+from astronet.contrib.learn.python.learn import estimators
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.estimator import estimator as core_estimator
 from tensorflow.python.framework import constant_op

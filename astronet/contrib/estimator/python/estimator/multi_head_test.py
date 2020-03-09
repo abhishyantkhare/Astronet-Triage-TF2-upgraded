@@ -21,8 +21,8 @@ from __future__ import print_function
 import numpy as np
 import six
 
-from tensorflow.contrib.estimator.python.estimator import head as head_lib
-from tensorflow.contrib.estimator.python.estimator import multi_head as multi_head_lib
+from astronet.contrib.estimator.python.estimator import head as head_lib
+from astronet.contrib.estimator.python.estimator import multi_head as multi_head_lib
 from tensorflow.core.framework import summary_pb2
 from tensorflow.python.estimator import model_fn
 from tensorflow.python.estimator.canned import metric_keys

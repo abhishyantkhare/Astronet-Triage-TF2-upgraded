@@ -20,11 +20,11 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.autograph import utils
-from tensorflow.contrib.autograph.impl import api
-from tensorflow.contrib.autograph.impl import config
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.utils import py_func
+from astronet.contrib.autograph import utils
+from astronet.contrib.autograph.impl import api
+from astronet.contrib.autograph.impl import config
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.utils import py_func
 from tensorflow.python.framework import constant_op
 from tensorflow.python.platform import test
 
@@ -37,9 +37,9 @@ class ApiTest(test.TestCase):
   def setUp(self):
     config.COMPILED_IMPORT_STATEMENTS = (
         'from __future__ import print_function',
-        'from tensorflow.contrib.autograph import utils'
+        'from astronet.contrib.autograph import utils'
         ' as autograph_utils',
-        'from tensorflow.contrib.autograph import operators'
+        'from astronet.contrib.autograph import operators'
         ' as __ops',
         'tf = autograph_utils.fake_tf()',
     )

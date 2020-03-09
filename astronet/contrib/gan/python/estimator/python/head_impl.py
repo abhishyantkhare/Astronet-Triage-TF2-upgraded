@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import functools
 
-from tensorflow.contrib.gan.python import namedtuples as tfgan_tuples
-from tensorflow.contrib.gan.python import train as tfgan_train
+from astronet.contrib.gan.python import namedtuples as tfgan_tuples
+from astronet.contrib.gan.python import train as tfgan_train
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.estimator.canned import head
 from tensorflow.python.framework import ops

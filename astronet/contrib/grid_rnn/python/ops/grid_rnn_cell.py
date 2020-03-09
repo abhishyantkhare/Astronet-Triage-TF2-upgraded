@@ -27,8 +27,8 @@ from tensorflow.python.ops import nn
 from tensorflow.python.ops import variable_scope as vs
 
 from tensorflow.python.platform import tf_logging as logging
-from tensorflow.contrib import layers
-from tensorflow.contrib import rnn
+from astronet.contrib import layers
+from astronet.contrib import rnn
 
 
 class GridRNNCell(rnn.RNNCell):

@@ -25,8 +25,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.sparsemax.python.ops.sparsemax import sparsemax
-from tensorflow.contrib.sparsemax.python.ops.sparsemax_loss \
+from astronet.contrib.sparsemax.python.ops.sparsemax import sparsemax
+from astronet.contrib.sparsemax.python.ops.sparsemax_loss \
     import sparsemax_loss
 from tensorflow.python.util.all_util import remove_undocumented
 

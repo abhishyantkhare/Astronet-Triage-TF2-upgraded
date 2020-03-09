@@ -19,7 +19,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.tpu.python.tpu import tpu_sharding
+from astronet.contrib.tpu.python.tpu import tpu_sharding
 
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.platform import test

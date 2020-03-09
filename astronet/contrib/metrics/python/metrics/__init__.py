@@ -19,5 +19,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.metrics.python.metrics.classification import *
+from astronet.contrib.metrics.python.metrics.classification import *
 # pylint: enable=wildcard-import

@@ -22,7 +22,7 @@ import abc
 
 import six
 
-from tensorflow.contrib.distributions.python.ops import onehot_categorical
+from astronet.contrib.distributions.python.ops import onehot_categorical
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

@@ -22,7 +22,7 @@ import sys
 
 import six
 
-from tensorflow.contrib.autograph.utils import builtins
+from astronet.contrib.autograph.utils import builtins
 from tensorflow.python.framework import constant_op
 from tensorflow.python.platform import test
 

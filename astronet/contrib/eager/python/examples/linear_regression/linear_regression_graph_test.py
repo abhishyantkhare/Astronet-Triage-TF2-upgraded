@@ -20,7 +20,7 @@ from __future__ import print_function
 import time
 
 import tensorflow as tf
-from tensorflow.contrib.eager.python.examples.linear_regression import linear_regression
+from astronet.contrib.eager.python.examples.linear_regression import linear_regression
 
 
 class GraphLinearRegressionBenchmark(tf.test.Benchmark):

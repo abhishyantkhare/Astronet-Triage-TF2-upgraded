@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from tensorflow.contrib.framework.python.ops import prettyprint_ops
+from astronet.contrib.framework.python.ops import prettyprint_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor

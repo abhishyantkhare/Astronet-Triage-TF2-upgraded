@@ -25,10 +25,10 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.keras.api.keras import *
+from astronet.contrib.keras.api.keras import *
 
 try:
-  from tensorflow.contrib.keras import python  # pylint: disable=g-import-not-at-top
+  from astronet.contrib.keras import python  # pylint: disable=g-import-not-at-top
   del python
 except ImportError:
   pass

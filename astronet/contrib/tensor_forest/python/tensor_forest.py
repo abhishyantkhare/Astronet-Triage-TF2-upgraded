@@ -23,12 +23,12 @@ import random
 
 from google.protobuf import text_format
 
-from tensorflow.contrib.decision_trees.proto import generic_tree_model_pb2 as _tree_proto
-from tensorflow.contrib.framework.python.ops import variables as framework_variables
-from tensorflow.contrib.tensor_forest.proto import tensor_forest_params_pb2 as _params_proto
-from tensorflow.contrib.tensor_forest.python.ops import data_ops
-from tensorflow.contrib.tensor_forest.python.ops import model_ops
-from tensorflow.contrib.tensor_forest.python.ops import stats_ops
+from astronet.contrib.decision_trees.proto import generic_tree_model_pb2 as _tree_proto
+from astronet.contrib.framework.python.ops import variables as framework_variables
+from astronet.contrib.tensor_forest.proto import tensor_forest_params_pb2 as _params_proto
+from astronet.contrib.tensor_forest.python.ops import data_ops
+from astronet.contrib.tensor_forest.python.ops import model_ops
+from astronet.contrib.tensor_forest.python.ops import stats_ops
 
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

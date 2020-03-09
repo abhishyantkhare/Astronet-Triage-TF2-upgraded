@@ -20,7 +20,7 @@ from __future__ import print_function
 import os
 import numpy as np
 
-from tensorflow.contrib import framework as contrib_framework
+from astronet.contrib import framework as contrib_framework
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

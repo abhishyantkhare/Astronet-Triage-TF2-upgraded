@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 import time
 
-from tensorflow.contrib.fused_conv.python.ops import fused_conv2d_bias_activation_op
+from astronet.contrib.fused_conv.python.ops import fused_conv2d_bias_activation_op
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import control_flow_ops

@@ -20,9 +20,9 @@ from __future__ import print_function
 import collections
 import math
 
-from tensorflow.contrib.compiler import jit
-from tensorflow.contrib.layers.python.layers import layers
-from tensorflow.contrib.rnn.python.ops import core_rnn_cell
+from astronet.contrib.compiler import jit
+from astronet.contrib.layers.python.layers import layers
+from astronet.contrib.rnn.python.ops import core_rnn_cell
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import op_def_registry
 from tensorflow.python.framework import ops

@@ -26,11 +26,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import metrics as metrics_lib
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import metric_key
-from tensorflow.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
+from astronet.contrib import metrics as metrics_lib
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import metric_key
+from astronet.contrib.learn.python.learn.estimators import model_fn as model_fn_lib
 from tensorflow.python.ops import math_ops
 
 

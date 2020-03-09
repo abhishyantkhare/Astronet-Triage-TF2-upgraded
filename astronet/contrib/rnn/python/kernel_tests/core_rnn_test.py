@@ -23,7 +23,7 @@ import itertools
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib import rnn as rnn_lib
+from astronet.contrib import rnn as rnn_lib
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.eager import context
 from tensorflow.python.framework import constant_op

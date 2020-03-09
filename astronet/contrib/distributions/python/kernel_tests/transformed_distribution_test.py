@@ -21,9 +21,9 @@ from __future__ import print_function
 import numpy as np
 from scipy import stats
 
-from tensorflow.contrib import distributions
-from tensorflow.contrib import linalg
-from tensorflow.contrib.distributions.python.ops import bijectors
+from astronet.contrib import distributions
+from astronet.contrib import linalg
+from astronet.contrib.distributions.python.ops import bijectors
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

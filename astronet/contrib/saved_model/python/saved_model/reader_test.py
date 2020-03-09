@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.saved_model.python.saved_model import reader
+from astronet.contrib.saved_model.python.saved_model import reader
 from tensorflow.python.framework import ops
 from tensorflow.python.lib.io import file_io
 from tensorflow.python.ops import variables

@@ -35,8 +35,8 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.cudnn_rnn.python.layers import cudnn_rnn
-from tensorflow.contrib.eager.python import tfe
+from astronet.contrib.cudnn_rnn.python.layers import cudnn_rnn
+from astronet.contrib.eager.python import tfe
 
 layers = tf.keras.layers
 

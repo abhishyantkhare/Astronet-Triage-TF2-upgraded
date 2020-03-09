@@ -21,10 +21,10 @@ from __future__ import print_function
 import os
 import tempfile
 
-from tensorflow.contrib.eager.python import checkpointable_utils
-from tensorflow.contrib.eager.python import metrics
-from tensorflow.contrib.summary import summary_ops
-from tensorflow.contrib.summary import summary_test_util
+from astronet.contrib.eager.python import checkpointable_utils
+from astronet.contrib.eager.python import metrics
+from astronet.contrib.summary import summary_ops
+from astronet.contrib.summary import summary_test_util
 from tensorflow.python.eager import context
 from tensorflow.python.eager import test
 from tensorflow.python.framework import dtypes

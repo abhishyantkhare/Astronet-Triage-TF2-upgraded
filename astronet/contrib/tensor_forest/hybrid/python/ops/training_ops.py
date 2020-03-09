@@ -19,8 +19,8 @@ from __future__ import print_function
 
 import threading
 
-from tensorflow.contrib.tensor_forest.hybrid.ops import gen_training_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.tensor_forest.hybrid.ops import gen_training_ops
+from astronet.contrib.util import loader
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

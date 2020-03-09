@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.predictor import predictor_factories
-from tensorflow.contrib.predictor import testing_common
+from astronet.contrib.predictor import predictor_factories
+from astronet.contrib.predictor import testing_common
 from tensorflow.python.platform import test
 
 MODEL_DIR_NAME = 'contrib/predictor/test_export_dir'

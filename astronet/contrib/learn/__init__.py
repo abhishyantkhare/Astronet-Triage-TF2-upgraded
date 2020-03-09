@@ -92,10 +92,10 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.learn.python.learn import *
+from astronet.contrib.learn.python.learn import *
 # pylint: enable=wildcard-import
 
-from tensorflow.contrib.learn.python.learn import learn_runner_lib as learn_runner
+from astronet.contrib.learn.python.learn import learn_runner_lib as learn_runner
 
 from tensorflow.python.util.all_util import remove_undocumented
 

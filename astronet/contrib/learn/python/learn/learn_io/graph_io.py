@@ -23,7 +23,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.input_pipeline.python.ops import input_pipeline_ops
+from astronet.contrib.input_pipeline.python.ops import input_pipeline_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

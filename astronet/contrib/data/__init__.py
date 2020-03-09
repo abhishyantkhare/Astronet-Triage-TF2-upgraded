@@ -56,30 +56,30 @@ from __future__ import print_function
 
 # pylint: disable=unused-import
 
-from tensorflow.contrib.data.python.ops.batching import assert_element_shape
-from tensorflow.contrib.data.python.ops.batching import batch_and_drop_remainder
-from tensorflow.contrib.data.python.ops.batching import dense_to_sparse_batch
-from tensorflow.contrib.data.python.ops.batching import map_and_batch
-from tensorflow.contrib.data.python.ops.batching import padded_batch_and_drop_remainder
-from tensorflow.contrib.data.python.ops.batching import unbatch
-from tensorflow.contrib.data.python.ops.counter import Counter
-from tensorflow.contrib.data.python.ops.enumerate_ops import enumerate_dataset
-from tensorflow.contrib.data.python.ops.error_ops import ignore_errors
-from tensorflow.contrib.data.python.ops.get_single_element import get_single_element
-from tensorflow.contrib.data.python.ops.grouping import bucket_by_sequence_length
-from tensorflow.contrib.data.python.ops.grouping import group_by_window
-from tensorflow.contrib.data.python.ops.interleave_ops import parallel_interleave
-from tensorflow.contrib.data.python.ops.interleave_ops import sloppy_interleave
-from tensorflow.contrib.data.python.ops.iterator_ops import make_saveable_from_iterator
-from tensorflow.contrib.data.python.ops.prefetching_ops import prefetch_to_device
-from tensorflow.contrib.data.python.ops.readers import make_batched_features_dataset
-from tensorflow.contrib.data.python.ops.readers import make_csv_dataset
-from tensorflow.contrib.data.python.ops.readers import read_batch_features
-from tensorflow.contrib.data.python.ops.readers import SqlDataset
-from tensorflow.contrib.data.python.ops.resampling import rejection_resample
-from tensorflow.contrib.data.python.ops.scan_ops import scan
-from tensorflow.contrib.data.python.ops.shuffle_ops import shuffle_and_repeat
-from tensorflow.contrib.data.python.ops.sliding import sliding_window_batch
+from astronet.contrib.data.python.ops.batching import assert_element_shape
+from astronet.contrib.data.python.ops.batching import batch_and_drop_remainder
+from astronet.contrib.data.python.ops.batching import dense_to_sparse_batch
+from astronet.contrib.data.python.ops.batching import map_and_batch
+from astronet.contrib.data.python.ops.batching import padded_batch_and_drop_remainder
+from astronet.contrib.data.python.ops.batching import unbatch
+from astronet.contrib.data.python.ops.counter import Counter
+from astronet.contrib.data.python.ops.enumerate_ops import enumerate_dataset
+from astronet.contrib.data.python.ops.error_ops import ignore_errors
+from astronet.contrib.data.python.ops.get_single_element import get_single_element
+from astronet.contrib.data.python.ops.grouping import bucket_by_sequence_length
+from astronet.contrib.data.python.ops.grouping import group_by_window
+from astronet.contrib.data.python.ops.interleave_ops import parallel_interleave
+from astronet.contrib.data.python.ops.interleave_ops import sloppy_interleave
+from astronet.contrib.data.python.ops.iterator_ops import make_saveable_from_iterator
+from astronet.contrib.data.python.ops.prefetching_ops import prefetch_to_device
+from astronet.contrib.data.python.ops.readers import make_batched_features_dataset
+from astronet.contrib.data.python.ops.readers import make_csv_dataset
+from astronet.contrib.data.python.ops.readers import read_batch_features
+from astronet.contrib.data.python.ops.readers import SqlDataset
+from astronet.contrib.data.python.ops.resampling import rejection_resample
+from astronet.contrib.data.python.ops.scan_ops import scan
+from astronet.contrib.data.python.ops.shuffle_ops import shuffle_and_repeat
+from astronet.contrib.data.python.ops.sliding import sliding_window_batch
 from tensorflow.python.data.ops.iterator_ops import Iterator
 from tensorflow.python.ops.parsing_ops import parse_single_example_v2 as parse_single_example
 # pylint: enable=unused-import

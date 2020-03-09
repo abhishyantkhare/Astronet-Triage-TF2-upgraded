@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import json
 import tempfile
-from tensorflow.contrib.lite.schema import upgrade_schema as upgrade_schema_lib
+from astronet.contrib.lite.schema import upgrade_schema as upgrade_schema_lib
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import test as test_lib
 

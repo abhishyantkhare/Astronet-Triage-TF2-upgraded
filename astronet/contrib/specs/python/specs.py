@@ -20,9 +20,9 @@ from __future__ import division
 from __future__ import print_function
 
 from six import exec_
-from tensorflow.contrib.specs.python import params_ops
-from tensorflow.contrib.specs.python import specs_lib
-from tensorflow.contrib.specs.python import specs_ops
+from astronet.contrib.specs.python import params_ops
+from astronet.contrib.specs.python import specs_lib
+from astronet.contrib.specs.python import specs_ops
 from tensorflow.python.util import tf_inspect
 
 

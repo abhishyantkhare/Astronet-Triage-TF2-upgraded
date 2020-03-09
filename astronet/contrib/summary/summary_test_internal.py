@@ -23,7 +23,7 @@ import os
 
 import sqlite3
 
-from tensorflow.contrib.summary import summary_ops
+from astronet.contrib.summary import summary_ops
 from tensorflow.python.framework import test_util
 
 

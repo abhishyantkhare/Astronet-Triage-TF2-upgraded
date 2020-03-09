@@ -22,9 +22,9 @@ from math import ceil
 
 import numpy as np
 
-from tensorflow.contrib.data.python.ops import batching
-from tensorflow.contrib.data.python.ops import interleave_ops
-from tensorflow.contrib.data.python.ops import shuffle_ops
+from astronet.contrib.data.python.ops import batching
+from astronet.contrib.data.python.ops import interleave_ops
+from astronet.contrib.data.python.ops import shuffle_ops
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.data.ops import readers as core_readers
 from tensorflow.python.data.util import nest

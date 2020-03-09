@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.autograph.utils import multiple_dispatch
+from astronet.contrib.autograph.utils import multiple_dispatch
 from tensorflow.python.client.session import Session
 from tensorflow.python.framework.constant_op import constant
 from tensorflow.python.platform import test

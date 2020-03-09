@@ -24,15 +24,15 @@ from __future__ import division
 from __future__ import print_function
 
 # Collapse eval into a single namespace.
-from tensorflow.contrib.gan.python.eval.python import classifier_metrics
-from tensorflow.contrib.gan.python.eval.python import eval_utils
-from tensorflow.contrib.gan.python.eval.python import sliced_wasserstein
-from tensorflow.contrib.gan.python.eval.python import summaries
+from astronet.contrib.gan.python.eval.python import classifier_metrics
+from astronet.contrib.gan.python.eval.python import eval_utils
+from astronet.contrib.gan.python.eval.python import sliced_wasserstein
+from astronet.contrib.gan.python.eval.python import summaries
 
-from tensorflow.contrib.gan.python.eval.python.classifier_metrics import *
-from tensorflow.contrib.gan.python.eval.python.eval_utils import *
-from tensorflow.contrib.gan.python.eval.python.sliced_wasserstein import *
-from tensorflow.contrib.gan.python.eval.python.summaries import *
+from astronet.contrib.gan.python.eval.python.classifier_metrics import *
+from astronet.contrib.gan.python.eval.python.eval_utils import *
+from astronet.contrib.gan.python.eval.python.sliced_wasserstein import *
+from astronet.contrib.gan.python.eval.python.summaries import *
 # pylint: enable=wildcard-import,unused-import
 
 from tensorflow.python.util.all_util import remove_undocumented

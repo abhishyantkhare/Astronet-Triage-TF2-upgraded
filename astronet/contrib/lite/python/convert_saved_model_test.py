@@ -24,7 +24,7 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-from tensorflow.contrib.lite.python import convert_saved_model
+from astronet.contrib.lite.python import convert_saved_model
 from tensorflow.python import estimator
 from tensorflow.python import keras
 from tensorflow.python import layers

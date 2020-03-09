@@ -22,10 +22,10 @@ import copy
 
 import gast
 
-from tensorflow.contrib.autograph.pyct import anno
-from tensorflow.contrib.autograph.pyct import transformer
-from tensorflow.contrib.autograph.pyct.qual_names import QN
-from tensorflow.contrib.autograph.pyct.static_analysis.annos import NodeAnno
+from astronet.contrib.autograph.pyct import anno
+from astronet.contrib.autograph.pyct import transformer
+from astronet.contrib.autograph.pyct.qual_names import QN
+from astronet.contrib.autograph.pyct.static_analysis.annos import NodeAnno
 
 # TODO(mdan): Add support for PY3 (e.g. Param vs arg).
 

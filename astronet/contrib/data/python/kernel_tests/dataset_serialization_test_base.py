@@ -22,7 +22,7 @@ import os
 
 import numpy as np
 
-from tensorflow.contrib.data.python.ops import iterator_ops as contrib_iterator_ops
+from astronet.contrib.data.python.ops import iterator_ops as contrib_iterator_ops
 from tensorflow.python.data.ops import iterator_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

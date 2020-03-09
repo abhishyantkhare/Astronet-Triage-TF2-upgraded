@@ -22,9 +22,9 @@ import os
 
 import numpy as np
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.layers.python.layers import feature_column_ops
+from astronet.contrib import layers
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.layers.python.layers import feature_column_ops
 from tensorflow.core.example import example_pb2
 from tensorflow.core.example import feature_pb2
 from tensorflow.python.feature_column import feature_column as fc_core

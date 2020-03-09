@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.autograph.pyct import templates
-from tensorflow.contrib.autograph.pyct import transformer
+from astronet.contrib.autograph.pyct import templates
+from astronet.contrib.autograph.pyct import transformer
 
 
 class IfExp(transformer.Base):

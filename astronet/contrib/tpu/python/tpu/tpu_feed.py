@@ -22,9 +22,9 @@ from __future__ import print_function
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.tpu.python.ops import tpu_ops
-from tensorflow.contrib.tpu.python.tpu import tpu
-from tensorflow.contrib.tpu.python.tpu import tpu_sharding
+from astronet.contrib.tpu.python.ops import tpu_ops
+from astronet.contrib.tpu.python.tpu import tpu
+from astronet.contrib.tpu.python.tpu import tpu_sharding
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

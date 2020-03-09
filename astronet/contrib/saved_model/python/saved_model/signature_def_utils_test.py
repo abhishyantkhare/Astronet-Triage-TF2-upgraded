@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.saved_model.python.saved_model import signature_def_utils as signature_def_contrib_utils
+from astronet.contrib.saved_model.python.saved_model import signature_def_utils as signature_def_contrib_utils
 from tensorflow.core.protobuf import meta_graph_pb2
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

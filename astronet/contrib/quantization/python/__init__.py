@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.quantization.python.array_ops import *
-from tensorflow.contrib.quantization.python.math_ops import *
-from tensorflow.contrib.quantization.python.nn_ops import *
+from astronet.contrib.quantization.python.array_ops import *
+from astronet.contrib.quantization.python.math_ops import *
+from astronet.contrib.quantization.python.nn_ops import *
 # pylint: enable=unused-import,wildcard-import

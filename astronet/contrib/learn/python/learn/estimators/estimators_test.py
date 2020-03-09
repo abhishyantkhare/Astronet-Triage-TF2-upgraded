@@ -23,12 +23,12 @@ import random
 import numpy as np
 
 from tensorflow.python.training import training_util
-from tensorflow.contrib.learn.python import learn
-from tensorflow.contrib.learn.python.learn import datasets
-from tensorflow.contrib.learn.python.learn import metric_spec
-from tensorflow.contrib.learn.python.learn.estimators import estimator as estimator_lib
-from tensorflow.contrib.learn.python.learn.estimators._sklearn import accuracy_score
-from tensorflow.contrib.learn.python.learn.estimators._sklearn import train_test_split
+from astronet.contrib.learn.python import learn
+from astronet.contrib.learn.python.learn import datasets
+from astronet.contrib.learn.python.learn import metric_spec
+from astronet.contrib.learn.python.learn.estimators import estimator as estimator_lib
+from astronet.contrib.learn.python.learn.estimators._sklearn import accuracy_score
+from astronet.contrib.learn.python.learn.estimators._sklearn import train_test_split
 from tensorflow.python.framework import constant_op
 from tensorflow.python.ops import string_ops
 from tensorflow.python.ops import variables as variables_lib

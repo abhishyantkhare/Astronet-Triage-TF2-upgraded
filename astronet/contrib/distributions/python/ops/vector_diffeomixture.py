@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import distribution_util
-from tensorflow.contrib.distributions.python.ops.bijectors.affine_linear_operator import AffineLinearOperator
-from tensorflow.contrib.distributions.python.ops.bijectors.softmax_centered import SoftmaxCentered
-from tensorflow.contrib.linalg.python.ops import linear_operator_addition as linop_add_lib
+from astronet.contrib.distributions.python.ops import distribution_util
+from astronet.contrib.distributions.python.ops.bijectors.affine_linear_operator import AffineLinearOperator
+from astronet.contrib.distributions.python.ops.bijectors.softmax_centered import SoftmaxCentered
+from astronet.contrib.linalg.python.ops import linear_operator_addition as linop_add_lib
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

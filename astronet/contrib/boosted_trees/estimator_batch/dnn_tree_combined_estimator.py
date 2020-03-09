@@ -25,17 +25,17 @@ from __future__ import division
 from __future__ import print_function
 
 import six
-from tensorflow.contrib import layers
-from tensorflow.contrib.boosted_trees.estimator_batch import trainer_hooks
-from tensorflow.contrib.boosted_trees.python.ops import model_ops
-from tensorflow.contrib.boosted_trees.python.training.functions import gbdt_batch
-from tensorflow.contrib.layers.python.layers import optimizers
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.learn.python.learn.estimators import model_fn as contrib_model_fn_lib
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib import layers
+from astronet.contrib.boosted_trees.estimator_batch import trainer_hooks
+from astronet.contrib.boosted_trees.python.ops import model_ops
+from astronet.contrib.boosted_trees.python.training.functions import gbdt_batch
+from astronet.contrib.layers.python.layers import optimizers
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators import model_fn as contrib_model_fn_lib
+from astronet.contrib.learn.python.learn.estimators import prediction_key
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.estimator.export import export_output
 from tensorflow.python.feature_column import feature_column as feature_column_lib

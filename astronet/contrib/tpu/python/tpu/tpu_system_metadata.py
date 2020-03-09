@@ -21,7 +21,7 @@ from __future__ import print_function
 import collections
 import re
 
-from tensorflow.contrib.tpu.python.tpu import tpu
+from astronet.contrib.tpu.python.tpu import tpu
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.framework import errors

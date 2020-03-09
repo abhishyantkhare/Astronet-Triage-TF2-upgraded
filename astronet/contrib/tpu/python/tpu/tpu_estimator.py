@@ -30,15 +30,15 @@ import six
 from six.moves import queue as Queue  # pylint: disable=redefined-builtin
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.summary import summary_ops as contrib_summary
-from tensorflow.contrib.tpu.python.ops import tpu_ops
-from tensorflow.contrib.tpu.python.tpu import tpu
-from tensorflow.contrib.tpu.python.tpu import tpu_config
-from tensorflow.contrib.tpu.python.tpu import tpu_context
-from tensorflow.contrib.tpu.python.tpu import tpu_feed
-from tensorflow.contrib.tpu.python.tpu import training_loop
-from tensorflow.contrib.tpu.python.tpu import util as util_lib
-from tensorflow.contrib.training.python.training import hparam
+from astronet.contrib.summary import summary_ops as contrib_summary
+from astronet.contrib.tpu.python.ops import tpu_ops
+from astronet.contrib.tpu.python.tpu import tpu
+from astronet.contrib.tpu.python.tpu import tpu_config
+from astronet.contrib.tpu.python.tpu import tpu_context
+from astronet.contrib.tpu.python.tpu import tpu_feed
+from astronet.contrib.tpu.python.tpu import training_loop
+from astronet.contrib.tpu.python.tpu import util as util_lib
+from astronet.contrib.training.python.training import hparam
 from tensorflow.core.framework import variable_pb2
 from tensorflow.core.framework.summary_pb2 import Summary
 from tensorflow.core.protobuf import config_pb2

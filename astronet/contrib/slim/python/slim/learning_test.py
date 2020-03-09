@@ -25,10 +25,10 @@ import tempfile
 import numpy as np
 from numpy import testing as np_testing
 
-from tensorflow.contrib.framework.python.ops import variables as variables_lib2
-from tensorflow.contrib.layers.python.layers import layers
-from tensorflow.contrib.losses.python.losses import loss_ops
-from tensorflow.contrib.slim.python.slim import learning
+from astronet.contrib.framework.python.ops import variables as variables_lib2
+from astronet.contrib.layers.python.layers import layers
+from astronet.contrib.losses.python.losses import loss_ops
+from astronet.contrib.slim.python.slim import learning
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session
 from tensorflow.python.debug.lib import debug_data

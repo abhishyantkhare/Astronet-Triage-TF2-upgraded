@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.data.python.ops import iterator_ops as contrib_iterator_ops
+from astronet.contrib.data.python.ops import iterator_ops as contrib_iterator_ops
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import test

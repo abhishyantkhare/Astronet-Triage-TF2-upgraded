@@ -30,10 +30,10 @@ import numpy as np
 
 from google.protobuf import text_format
 
-from tensorflow.contrib.proto.python.kernel_tests import test_case
-from tensorflow.contrib.proto.python.kernel_tests import test_example_pb2
-from tensorflow.contrib.proto.python.ops import decode_proto_op
-from tensorflow.contrib.proto.python.ops import encode_proto_op
+from astronet.contrib.proto.python.kernel_tests import test_case
+from astronet.contrib.proto.python.kernel_tests import test_example_pb2
+from astronet.contrib.proto.python.ops import decode_proto_op
+from astronet.contrib.proto.python.ops import encode_proto_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import flags
@@ -54,7 +54,7 @@ class EncodeProtoOpTest(test_case.ProtoOpTestCase):
         encode_proto_op.encode_proto(
             sizes=[[1]],
             values=[np.array([[0.0]], dtype=np.int32)],
-            message_type='tensorflow.contrib.proto.RepeatedPrimitiveValue',
+            message_type='astronet.contrib.proto.RepeatedPrimitiveValue',
             field_names=['non_existent_field']).eval()
 
     # Incorrect types.
@@ -64,7 +64,7 @@ class EncodeProtoOpTest(test_case.ProtoOpTestCase):
         encode_proto_op.encode_proto(
             sizes=[[1]],
             values=[np.array([[0.0]], dtype=np.int32)],
-            message_type='tensorflow.contrib.proto.RepeatedPrimitiveValue',
+            message_type='astronet.contrib.proto.RepeatedPrimitiveValue',
             field_names=['double_value']).eval()
 
     # Incorrect shapes of sizes.
@@ -76,7 +76,7 @@ class EncodeProtoOpTest(test_case.ProtoOpTestCase):
         encode_proto_op.encode_proto(
             sizes=sizes,
             values=[values],
-            message_type='tensorflow.contrib.proto.RepeatedPrimitiveValue',
+            message_type='astronet.contrib.proto.RepeatedPrimitiveValue',
             field_names=['double_value']).eval(feed_dict={
                 sizes: [[[0, 0]]],
                 values: [[0.0]]
@@ -92,7 +92,7 @@ class EncodeProtoOpTest(test_case.ProtoOpTestCase):
         (encode_proto_op.encode_proto(
             sizes=[[1, 1]],
             values=[values1, values2],
-            message_type='tensorflow.contrib.proto.RepeatedPrimitiveValue',
+            message_type='astronet.contrib.proto.RepeatedPrimitiveValue',
             field_names=['double_value', 'int32_value']).eval(feed_dict={
                 values1: [[0.0]],
                 values2: [[0], [0]]
@@ -148,7 +148,7 @@ class EncodeProtoOpTest(test_case.ProtoOpTestCase):
     # np.array silently truncates strings if you don't specify dtype=object.
     in_bufs = np.reshape(np.array(in_bufs, dtype=object), list(case.shape))
     return self._testRoundtrip(
-        in_bufs, 'tensorflow.contrib.proto.RepeatedPrimitiveValue', case.field)
+        in_bufs, 'astronet.contrib.proto.RepeatedPrimitiveValue', case.field)
 
   def testRoundtripPacked(self):
     with open(FLAGS.message_text_file, 'r') as fp:
@@ -173,7 +173,7 @@ class EncodeProtoOpTest(test_case.ProtoOpTestCase):
     # np.array silently truncates strings if you don't specify dtype=object.
     in_bufs = np.reshape(np.array(in_bufs, dtype=object), list(case.shape))
     return self._testRoundtrip(
-        in_bufs, 'tensorflow.contrib.proto.PackedPrimitiveValue', case.field)
+        in_bufs, 'astronet.contrib.proto.PackedPrimitiveValue', case.field)
 
 
 if __name__ == '__main__':

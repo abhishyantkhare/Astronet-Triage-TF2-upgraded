@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import math
 
-from tensorflow.contrib import distributions as distributions_lib
+from astronet.contrib import distributions as distributions_lib
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

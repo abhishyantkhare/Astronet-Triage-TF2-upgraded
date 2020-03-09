@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.kfac.python.ops import layer_collection as lc
-from tensorflow.contrib.kfac.python.ops import optimizer
+from astronet.contrib.kfac.python.ops import layer_collection as lc
+from astronet.contrib.kfac.python.ops import optimizer
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import init_ops

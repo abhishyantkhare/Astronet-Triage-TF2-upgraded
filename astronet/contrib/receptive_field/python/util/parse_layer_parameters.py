@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 import math
-from tensorflow.contrib.util import make_ndarray
+from astronet.contrib.util import make_ndarray
 from tensorflow.python.platform import tf_logging as logging
 
 # White-listed layer operations, which do not affect the receptive field

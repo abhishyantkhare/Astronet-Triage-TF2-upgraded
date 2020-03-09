@@ -37,18 +37,18 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.signal.python.ops.mel_ops import linear_to_mel_weight_matrix
-from tensorflow.contrib.signal.python.ops.mfcc_ops import mfccs_from_log_mel_spectrograms
-from tensorflow.contrib.signal.python.ops.reconstruction_ops import overlap_and_add
-from tensorflow.contrib.signal.python.ops.shape_ops import frame
+from astronet.contrib.signal.python.ops.mel_ops import linear_to_mel_weight_matrix
+from astronet.contrib.signal.python.ops.mfcc_ops import mfccs_from_log_mel_spectrograms
+from astronet.contrib.signal.python.ops.reconstruction_ops import overlap_and_add
+from astronet.contrib.signal.python.ops.shape_ops import frame
 # `frame` used to be named `frames`, which is a noun and not a verb.
 # Keep an alias to `frames` for backwards compatibility.
-from tensorflow.contrib.signal.python.ops.shape_ops import frame as frames
-from tensorflow.contrib.signal.python.ops.spectral_ops import inverse_stft
-from tensorflow.contrib.signal.python.ops.spectral_ops import inverse_stft_window_fn
-from tensorflow.contrib.signal.python.ops.spectral_ops import stft
-from tensorflow.contrib.signal.python.ops.window_ops import hamming_window
-from tensorflow.contrib.signal.python.ops.window_ops import hann_window
+from astronet.contrib.signal.python.ops.shape_ops import frame as frames
+from astronet.contrib.signal.python.ops.spectral_ops import inverse_stft
+from astronet.contrib.signal.python.ops.spectral_ops import inverse_stft_window_fn
+from astronet.contrib.signal.python.ops.spectral_ops import stft
+from astronet.contrib.signal.python.ops.window_ops import hamming_window
+from astronet.contrib.signal.python.ops.window_ops import hann_window
 
 from tensorflow.python.util.all_util import remove_undocumented
 remove_undocumented(__name__)

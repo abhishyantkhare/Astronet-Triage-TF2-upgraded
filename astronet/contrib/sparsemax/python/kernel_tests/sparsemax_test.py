@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.sparsemax import sparsemax
+from astronet.contrib.sparsemax import sparsemax
 from tensorflow.python.ops import gradient_checker
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import gradients_impl

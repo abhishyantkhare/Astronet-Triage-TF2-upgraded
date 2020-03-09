@@ -22,7 +22,7 @@ import math
 
 import numpy as np
 
-from tensorflow.contrib.kernel_methods.python.mappers import dense_kernel_mapper as dkm
+from astronet.contrib.kernel_methods.python.mappers import dense_kernel_mapper as dkm
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import math_ops

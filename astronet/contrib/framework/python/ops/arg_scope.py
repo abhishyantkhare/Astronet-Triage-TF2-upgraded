@@ -20,7 +20,7 @@
   Example of how to use tf.contrib.framework.arg_scope:
 
   ```
-  from third_party.tensorflow.contrib.layers.python import layers
+  from third_party.astronet.contrib.layers.python import layers
 
   arg_scope = tf.contrib.framework.arg_scope
 

@@ -22,9 +22,9 @@ import itertools
 
 from absl.testing import parameterized
 
-from tensorflow.contrib.distribute.python import combinations
-from tensorflow.contrib.distribute.python import cross_tower_ops as cross_tower_ops_lib
-from tensorflow.contrib.distribute.python import values as value_lib
+from astronet.contrib.distribute.python import combinations
+from astronet.contrib.distribute.python import cross_tower_ops as cross_tower_ops_lib
+from astronet.contrib.distribute.python import values as value_lib
 from tensorflow.python.eager import context
 from tensorflow.python.eager import test
 from tensorflow.python.framework import constant_op

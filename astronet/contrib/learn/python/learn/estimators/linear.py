@@ -28,16 +28,16 @@ import math
 
 import six
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.framework import deprecated_arg_values
+from astronet.contrib import layers
+from astronet.contrib.framework import deprecated
+from astronet.contrib.framework import deprecated_arg_values
 from tensorflow.python.training import training_util
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.learn.python.learn.utils import export
-from tensorflow.contrib.linear_optimizer.python import sdca_optimizer
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.learn.python.learn.utils import export
+from astronet.contrib.linear_optimizer.python import sdca_optimizer
 from tensorflow.python.feature_column import feature_column as fc_core
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

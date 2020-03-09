@@ -21,11 +21,11 @@ from __future__ import print_function
 import functools
 import enum
 
-from tensorflow.contrib.framework.python.ops import variables as variable_lib
-from tensorflow.contrib.gan.python import namedtuples as tfgan_tuples
-from tensorflow.contrib.gan.python import train as tfgan_train
-from tensorflow.contrib.gan.python.estimator.python import head as head_lib
-from tensorflow.contrib.gan.python.eval.python import summaries as tfgan_summaries
+from astronet.contrib.framework.python.ops import variables as variable_lib
+from astronet.contrib.gan.python import namedtuples as tfgan_tuples
+from astronet.contrib.gan.python import train as tfgan_train
+from astronet.contrib.gan.python.estimator.python import head as head_lib
+from astronet.contrib.gan.python.eval.python import summaries as tfgan_summaries
 from tensorflow.python.estimator import estimator
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.framework import ops

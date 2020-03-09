@@ -17,8 +17,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.tensor_forest.hybrid.python import hybrid_layer
+from astronet.contrib import layers
+from astronet.contrib.tensor_forest.hybrid.python import hybrid_layer
 
 from tensorflow.python.framework import ops
 

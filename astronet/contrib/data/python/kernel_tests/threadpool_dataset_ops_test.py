@@ -21,8 +21,8 @@ import threading
 
 import numpy as np
 
-from tensorflow.contrib.data.python.ops import threadpool
-from tensorflow.contrib.data.python.ops import unique
+from astronet.contrib.data.python.ops import threadpool
+from astronet.contrib.data.python.ops import unique
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

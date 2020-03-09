@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.kfac.examples import mlp
+from astronet.contrib.kfac.examples import mlp
 
 
 class MlpTest(tf.test.TestCase):

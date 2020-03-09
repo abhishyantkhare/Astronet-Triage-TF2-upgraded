@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.image.python.ops.single_image_random_dot_stereograms \
+from astronet.contrib.image.python.ops.single_image_random_dot_stereograms \
     import single_image_random_dot_stereograms
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import test_util

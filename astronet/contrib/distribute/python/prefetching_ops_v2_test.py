@@ -17,7 +17,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.distribute.python import prefetching_ops_v2
+from astronet.contrib.distribute.python import prefetching_ops_v2
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import errors
 from tensorflow.python.framework import test_util

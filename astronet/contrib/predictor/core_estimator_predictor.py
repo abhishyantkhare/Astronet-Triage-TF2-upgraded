@@ -19,7 +19,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.predictor import predictor
+from astronet.contrib.predictor import predictor
 from tensorflow.python.estimator import model_fn
 from tensorflow.python.framework import ops
 from tensorflow.python.saved_model import signature_constants

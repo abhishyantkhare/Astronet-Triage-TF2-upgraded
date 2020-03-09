@@ -19,15 +19,15 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,line-too-long,wildcard-import
-from tensorflow.contrib.estimator.python.estimator.boosted_trees import *
-from tensorflow.contrib.estimator.python.estimator.dnn import *
-from tensorflow.contrib.estimator.python.estimator.dnn_linear_combined import *
-from tensorflow.contrib.estimator.python.estimator.extenders import *
-from tensorflow.contrib.estimator.python.estimator.head import *
-from tensorflow.contrib.estimator.python.estimator.linear import *
-from tensorflow.contrib.estimator.python.estimator.logit_fns import *
-from tensorflow.contrib.estimator.python.estimator.multi_head import *
-from tensorflow.contrib.estimator.python.estimator.replicate_model_fn import *
+from astronet.contrib.estimator.python.estimator.boosted_trees import *
+from astronet.contrib.estimator.python.estimator.dnn import *
+from astronet.contrib.estimator.python.estimator.dnn_linear_combined import *
+from astronet.contrib.estimator.python.estimator.extenders import *
+from astronet.contrib.estimator.python.estimator.head import *
+from astronet.contrib.estimator.python.estimator.linear import *
+from astronet.contrib.estimator.python.estimator.logit_fns import *
+from astronet.contrib.estimator.python.estimator.multi_head import *
+from astronet.contrib.estimator.python.estimator.replicate_model_fn import *
 
 from tensorflow.python.util.all_util import remove_undocumented
 # pylint: enable=unused-import,line-too-long,wildcard-import

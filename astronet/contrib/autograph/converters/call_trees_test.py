@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.autograph.converters import call_trees
-from tensorflow.contrib.autograph.converters import converter_test_base
+from astronet.contrib.autograph.converters import call_trees
+from astronet.contrib.autograph.converters import converter_test_base
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

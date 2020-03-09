@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import collections as pycoll
 
-from tensorflow.contrib import nccl
+from astronet.contrib import nccl
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

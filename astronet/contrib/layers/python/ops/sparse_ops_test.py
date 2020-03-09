@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Tests for tensorflow.contrib.layers.python.ops.sparse_ops."""
+"""Tests for astronet.contrib.layers.python.ops.sparse_ops."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.layers.python.ops import sparse_ops
+from astronet.contrib.layers.python.ops import sparse_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.ops import array_ops

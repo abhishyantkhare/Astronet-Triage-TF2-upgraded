@@ -25,9 +25,9 @@ import time
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
-import tensorflow.contrib.eager as tfe
-from tensorflow.contrib.eager.python.examples.resnet50 import resnet50
-from tensorflow.contrib.summary import summary_test_util
+import astronet.contrib.eager as tfe
+from astronet.contrib.eager.python.examples.resnet50 import resnet50
+from astronet.contrib.summary import summary_test_util
 from tensorflow.python.client import device_lib
 
 

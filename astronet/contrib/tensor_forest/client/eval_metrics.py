@@ -19,9 +19,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib import losses
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.metrics.python.ops import metric_ops
+from astronet.contrib import losses
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.metrics.python.ops import metric_ops
 
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

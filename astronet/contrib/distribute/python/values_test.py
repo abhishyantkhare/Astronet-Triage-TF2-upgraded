@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.distribute.python import mirrored_strategy
-from tensorflow.contrib.distribute.python import values
+from astronet.contrib.distribute.python import mirrored_strategy
+from astronet.contrib.distribute.python import values
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.eager import context

@@ -30,7 +30,7 @@ import sys
 
 import tensorflow as tf
 
-import tensorflow.contrib.eager as tfe
+import astronet.contrib.eager as tfe
 
 layers = tf.keras.layers
 

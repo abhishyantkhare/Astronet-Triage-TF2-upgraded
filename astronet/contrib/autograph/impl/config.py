@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.autograph import utils
+from astronet.contrib.autograph import utils
 
 
 PYTHON_LITERALS = {
@@ -46,10 +46,10 @@ NO_SIDE_EFFECT_CONSTRUCTORS = set(('tensorflow',))
 COMPILED_IMPORT_STATEMENTS = (
     'from __future__ import print_function',
     'import tensorflow as tf',
-    'from tensorflow.contrib.autograph.impl import api'
+    'from astronet.contrib.autograph.impl import api'
     ' as autograph_api',
-    'from tensorflow.contrib.autograph import utils'
+    'from astronet.contrib.autograph import utils'
     ' as autograph_utils',
-    'from tensorflow.contrib.autograph import operators'
+    'from astronet.contrib.autograph import operators'
     ' as __ops',
 )

@@ -24,7 +24,7 @@ import contextlib
 import numpy as np
 import six
 
-from tensorflow.contrib.kfac.python.ops import utils
+from astronet.contrib.kfac.python.ops import utils
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops as tf_ops
 from tensorflow.python.ops import array_ops

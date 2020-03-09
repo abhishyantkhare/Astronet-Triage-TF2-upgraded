@@ -19,8 +19,8 @@ from __future__ import print_function
 
 import abc
 
-from tensorflow.contrib.rnn.ops import gen_lstm_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.rnn.ops import gen_lstm_ops
+from astronet.contrib.util import loader
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.layers import base as base_layer

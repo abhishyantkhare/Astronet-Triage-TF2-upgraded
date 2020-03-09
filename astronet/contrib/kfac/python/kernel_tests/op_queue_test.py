@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.kfac.python.ops import op_queue
+from astronet.contrib.kfac.python.ops import op_queue
 from tensorflow.python.framework import ops as tf_ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.platform import test

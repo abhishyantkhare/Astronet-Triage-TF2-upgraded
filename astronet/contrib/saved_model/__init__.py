@@ -24,7 +24,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import,line-too-long
-from tensorflow.contrib.saved_model.python.saved_model.signature_def_utils import *
+from astronet.contrib.saved_model.python.saved_model.signature_def_utils import *
 # pylint: enable=unused-import,widcard-import,line-too-long
 
 from tensorflow.python.util.all_util import remove_undocumented

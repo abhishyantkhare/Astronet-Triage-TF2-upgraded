@@ -18,10 +18,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.boosted_trees.estimator_batch import model
-from tensorflow.contrib.boosted_trees.python.utils import losses
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.boosted_trees.estimator_batch import model
+from astronet.contrib.boosted_trees.python.utils import losses
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
 from tensorflow.python.ops import math_ops
 
 

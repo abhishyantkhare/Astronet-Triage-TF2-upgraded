@@ -20,30 +20,30 @@ from __future__ import print_function
 
 import gast
 
-from tensorflow.contrib.autograph import utils
-from tensorflow.contrib.autograph.converters import asserts
-from tensorflow.contrib.autograph.converters import break_statements
-from tensorflow.contrib.autograph.converters import builtin_functions
-from tensorflow.contrib.autograph.converters import call_trees
-from tensorflow.contrib.autograph.converters import continue_statements
-from tensorflow.contrib.autograph.converters import control_flow
-from tensorflow.contrib.autograph.converters import decorators
-from tensorflow.contrib.autograph.converters import ifexp
-from tensorflow.contrib.autograph.converters import lists
-from tensorflow.contrib.autograph.converters import logical_expressions
-from tensorflow.contrib.autograph.converters import name_scopes
-from tensorflow.contrib.autograph.converters import side_effect_guards
-from tensorflow.contrib.autograph.converters import single_return
-from tensorflow.contrib.autograph.impl import config
-from tensorflow.contrib.autograph.impl import naming
-from tensorflow.contrib.autograph.pyct import context
-from tensorflow.contrib.autograph.pyct import inspect_utils
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.pyct import qual_names
-from tensorflow.contrib.autograph.pyct.static_analysis import activity
-from tensorflow.contrib.autograph.pyct.static_analysis import live_values
-from tensorflow.contrib.autograph.pyct.static_analysis import type_info
-from tensorflow.contrib.autograph.utils import type_hints
+from astronet.contrib.autograph import utils
+from astronet.contrib.autograph.converters import asserts
+from astronet.contrib.autograph.converters import break_statements
+from astronet.contrib.autograph.converters import builtin_functions
+from astronet.contrib.autograph.converters import call_trees
+from astronet.contrib.autograph.converters import continue_statements
+from astronet.contrib.autograph.converters import control_flow
+from astronet.contrib.autograph.converters import decorators
+from astronet.contrib.autograph.converters import ifexp
+from astronet.contrib.autograph.converters import lists
+from astronet.contrib.autograph.converters import logical_expressions
+from astronet.contrib.autograph.converters import name_scopes
+from astronet.contrib.autograph.converters import side_effect_guards
+from astronet.contrib.autograph.converters import single_return
+from astronet.contrib.autograph.impl import config
+from astronet.contrib.autograph.impl import naming
+from astronet.contrib.autograph.pyct import context
+from astronet.contrib.autograph.pyct import inspect_utils
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import qual_names
+from astronet.contrib.autograph.pyct.static_analysis import activity
+from astronet.contrib.autograph.pyct.static_analysis import live_values
+from astronet.contrib.autograph.pyct.static_analysis import type_info
+from astronet.contrib.autograph.utils import type_hints
 from tensorflow.python.util import tf_inspect
 
 

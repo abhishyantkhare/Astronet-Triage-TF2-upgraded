@@ -19,8 +19,8 @@ from __future__ import print_function
 
 import threading
 
-from tensorflow.contrib.nccl.ops import gen_nccl_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.nccl.ops import gen_nccl_ops
+from astronet.contrib.util import loader
 from tensorflow.python.eager import context
 from tensorflow.python.framework import device
 from tensorflow.python.framework import ops

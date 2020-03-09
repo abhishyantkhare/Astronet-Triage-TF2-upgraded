@@ -18,14 +18,14 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import
-from tensorflow.contrib.boosted_trees.python.ops import boosted_trees_ops_loader
+from astronet.contrib.boosted_trees.python.ops import boosted_trees_ops_loader
 # pylint: enable=unused-import
-from tensorflow.contrib.boosted_trees.python.ops import gen_model_ops
-from tensorflow.contrib.boosted_trees.python.ops.gen_model_ops import tree_ensemble_deserialize
-from tensorflow.contrib.boosted_trees.python.ops.gen_model_ops import tree_ensemble_serialize
+from astronet.contrib.boosted_trees.python.ops import gen_model_ops
+from astronet.contrib.boosted_trees.python.ops.gen_model_ops import tree_ensemble_deserialize
+from astronet.contrib.boosted_trees.python.ops.gen_model_ops import tree_ensemble_serialize
 # pylint: disable=unused-import
-from tensorflow.contrib.boosted_trees.python.ops.gen_model_ops import tree_ensemble_stamp_token
-from tensorflow.contrib.boosted_trees.python.ops.gen_model_ops import tree_ensemble_used_handlers
+from astronet.contrib.boosted_trees.python.ops.gen_model_ops import tree_ensemble_stamp_token
+from astronet.contrib.boosted_trees.python.ops.gen_model_ops import tree_ensemble_used_handlers
 # pylint: enable=unused-import
 
 from tensorflow.python.framework import ops

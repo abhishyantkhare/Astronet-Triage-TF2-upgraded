@@ -24,7 +24,7 @@ import math
 
 import numpy as np
 
-from tensorflow.contrib.optimizer_v2 import rmsprop
+from astronet.contrib.optimizer_v2 import rmsprop
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

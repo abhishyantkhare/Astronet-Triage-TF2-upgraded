@@ -21,8 +21,8 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy
 
-from tensorflow.contrib.distribute.python import combinations
-from tensorflow.contrib.distribute.python.single_loss_example import minimize_loss_example
+from astronet.contrib.distribute.python import combinations
+from astronet.contrib.distribute.python.single_loss_example import minimize_loss_example
 from tensorflow.python.eager import context
 from tensorflow.python.eager import test
 from tensorflow.python.ops import control_flow_ops

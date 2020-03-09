@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import re
 
-from tensorflow.contrib.summary import summary_ops
+from astronet.contrib.summary import summary_ops
 from tensorflow.python.eager import context
 from tensorflow.python.eager import function
 from tensorflow.python.framework import dtypes

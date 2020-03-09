@@ -22,9 +22,9 @@ import os
 
 import numpy as np
 
-from tensorflow.contrib.framework.python.ops import variables as variables_lib
-from tensorflow.contrib.layers.python.layers import layers
-from tensorflow.contrib.training.python.training import training
+from astronet.contrib.framework.python.ops import variables as variables_lib
+from astronet.contrib.layers.python.layers import layers
+from astronet.contrib.training.python.training import training
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

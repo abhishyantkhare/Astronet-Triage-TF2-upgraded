@@ -23,7 +23,7 @@ import itertools
 
 import numpy as np
 
-from tensorflow.contrib.seq2seq.python.ops import beam_search_ops
+from astronet.contrib.seq2seq.python.ops import beam_search_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import test
 

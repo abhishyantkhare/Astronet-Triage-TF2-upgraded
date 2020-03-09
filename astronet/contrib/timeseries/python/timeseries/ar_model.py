@@ -18,12 +18,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import distributions
+from astronet.contrib import distributions
 
-from tensorflow.contrib.timeseries.python.timeseries import model
-from tensorflow.contrib.timeseries.python.timeseries import model_utils
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import PredictionFeatures
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from astronet.contrib.timeseries.python.timeseries import model
+from astronet.contrib.timeseries.python.timeseries import model_utils
+from astronet.contrib.timeseries.python.timeseries.feature_keys import PredictionFeatures
+from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
 
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.framework import constant_op

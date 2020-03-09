@@ -72,7 +72,7 @@ import collections as _collections
 import itertools as _itertools
 import uuid as _uuid
 
-from tensorflow.contrib import framework as _framework
+from astronet.contrib import framework as _framework
 from tensorflow.core.framework import attr_value_pb2 as _attr_value_pb2
 from tensorflow.python.framework import ops as _ops
 from tensorflow.python.ops import array_ops as _array_ops

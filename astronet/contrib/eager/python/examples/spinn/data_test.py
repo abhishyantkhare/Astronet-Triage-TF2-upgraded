@@ -25,7 +25,7 @@ import tempfile
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python.examples.spinn import data
+from astronet.contrib.eager.python.examples.spinn import data
 
 
 class DataTest(tf.test.TestCase):

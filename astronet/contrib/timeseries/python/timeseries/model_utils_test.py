@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.timeseries.python.timeseries import model_utils
+from astronet.contrib.timeseries.python.timeseries import model_utils
 
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import test

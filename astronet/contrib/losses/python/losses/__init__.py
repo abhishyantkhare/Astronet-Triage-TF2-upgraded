@@ -22,5 +22,5 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.losses.python.losses.loss_ops import *
+from astronet.contrib.losses.python.losses.loss_ops import *
 # pylint: enable=wildcard-import

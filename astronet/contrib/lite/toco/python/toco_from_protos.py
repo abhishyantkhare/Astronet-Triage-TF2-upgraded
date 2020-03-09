@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import argparse
 import sys
-from tensorflow.contrib.lite.toco.python import tensorflow_wrap_toco
+from astronet.contrib.lite.toco.python import tensorflow_wrap_toco
 from tensorflow.python.platform import app
 
 FLAGS = None

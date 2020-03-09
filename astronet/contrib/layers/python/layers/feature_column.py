@@ -130,15 +130,15 @@ import math
 
 import six
 
-from tensorflow.contrib import lookup
-from tensorflow.contrib.framework.python.framework import checkpoint_utils
-from tensorflow.contrib.framework.python.framework import experimental
-from tensorflow.contrib.framework.python.ops import variables as contrib_variables
-from tensorflow.contrib.layers.python.layers import embedding_ops
-from tensorflow.contrib.layers.python.layers import layers
-from tensorflow.contrib.layers.python.ops import bucketization_op
-from tensorflow.contrib.layers.python.ops import sparse_feature_cross_op
-from tensorflow.contrib.layers.python.ops import sparse_ops as contrib_sparse_ops
+from astronet.contrib import lookup
+from astronet.contrib.framework.python.framework import checkpoint_utils
+from astronet.contrib.framework.python.framework import experimental
+from astronet.contrib.framework.python.ops import variables as contrib_variables
+from astronet.contrib.layers.python.layers import embedding_ops
+from astronet.contrib.layers.python.layers import layers
+from astronet.contrib.layers.python.ops import bucketization_op
+from astronet.contrib.layers.python.ops import sparse_feature_cross_op
+from astronet.contrib.layers.python.ops import sparse_ops as contrib_sparse_ops
 from tensorflow.python.feature_column import feature_column as fc_core
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

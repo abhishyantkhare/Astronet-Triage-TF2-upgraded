@@ -23,7 +23,7 @@ import contextlib
 import numpy as np
 from scipy import stats
 
-from tensorflow.contrib import distributions
+from astronet.contrib import distributions
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes

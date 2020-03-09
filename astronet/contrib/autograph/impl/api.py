@@ -27,13 +27,13 @@ import gast
 import six
 # pylint:enable=g-bad-import-order
 
-from tensorflow.contrib.autograph.impl import config
-from tensorflow.contrib.autograph.impl import conversion
-from tensorflow.contrib.autograph.pyct import compiler
-from tensorflow.contrib.autograph.pyct import inspect_utils
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.utils import builtins
-from tensorflow.contrib.autograph.utils import py_func
+from astronet.contrib.autograph.impl import config
+from astronet.contrib.autograph.impl import conversion
+from astronet.contrib.autograph.pyct import compiler
+from astronet.contrib.autograph.pyct import inspect_utils
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.utils import builtins
+from astronet.contrib.autograph.utils import py_func
 from tensorflow.python.platform import tf_logging as logging
 from tensorflow.python.util import tf_inspect
 

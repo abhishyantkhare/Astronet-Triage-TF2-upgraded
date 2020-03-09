@@ -48,8 +48,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.timeseries.python.timeseries import math_utils
-from tensorflow.contrib.timeseries.python.timeseries.state_space_models import state_space_model
+from astronet.contrib.timeseries.python.timeseries import math_utils
+from astronet.contrib.timeseries.python.timeseries.state_space_models import state_space_model
 
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

@@ -30,12 +30,12 @@ import subprocess as _subprocess
 import tempfile as _tempfile
 
 # pylint: disable=unused-import
-from tensorflow.contrib.lite.python.op_hint import convert_op_hints_to_stubs
-from tensorflow.contrib.lite.python.op_hint import OpHint
+from astronet.contrib.lite.python.op_hint import convert_op_hints_to_stubs
+from astronet.contrib.lite.python.op_hint import OpHint
 # pylint: enable=unused-import
-from tensorflow.contrib.lite.toco import model_flags_pb2 as _model_flags_pb2
-from tensorflow.contrib.lite.toco import toco_flags_pb2 as _toco_flags_pb2
-from tensorflow.contrib.lite.toco import types_pb2 as _types_pb2
+from astronet.contrib.lite.toco import model_flags_pb2 as _model_flags_pb2
+from astronet.contrib.lite.toco import toco_flags_pb2 as _toco_flags_pb2
+from astronet.contrib.lite.toco import types_pb2 as _types_pb2
 from tensorflow.python.framework import dtypes as _dtypes
 from tensorflow.python.platform import resource_loader as _resource_loader
 from tensorflow.python.util.all_util import remove_undocumented
@@ -45,7 +45,7 @@ from tensorflow.python.util.lazy_loader import LazyLoader
 # break dependencies.
 _toco_python = LazyLoader(
     "tensorflow_wrap_toco", globals(),
-    "tensorflow.contrib.lite.toco.python."
+    "astronet.contrib.lite.toco.python."
     "tensorflow_wrap_toco")
 del LazyLoader
 

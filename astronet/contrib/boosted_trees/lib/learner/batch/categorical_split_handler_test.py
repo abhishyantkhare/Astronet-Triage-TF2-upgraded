@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.boosted_trees.lib.learner.batch import categorical_split_handler
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.boosted_trees.proto import split_info_pb2
+from astronet.contrib.boosted_trees.lib.learner.batch import categorical_split_handler
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.boosted_trees.proto import split_info_pb2
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

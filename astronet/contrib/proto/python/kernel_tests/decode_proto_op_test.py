@@ -27,9 +27,9 @@ import numpy as np
 
 from google.protobuf import text_format
 
-from tensorflow.contrib.proto.python.kernel_tests import test_case
-from tensorflow.contrib.proto.python.kernel_tests import test_example_pb2
-from tensorflow.contrib.proto.python.ops import decode_proto_op
+from astronet.contrib.proto.python.kernel_tests import test_case
+from astronet.contrib.proto.python.kernel_tests import test_example_pb2
+from astronet.contrib.proto.python.ops import decode_proto_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.platform import flags
 from tensorflow.python.platform import test
@@ -213,7 +213,7 @@ class DecodeProtoOpTest(test_case.ProtoOpTestCase):
         case.sizes,
         list(case.shape),
         batch,
-        'tensorflow.contrib.proto.RepeatedPrimitiveValue',
+        'astronet.contrib.proto.RepeatedPrimitiveValue',
         'binary',
         sanitize=False)
 
@@ -227,7 +227,7 @@ class DecodeProtoOpTest(test_case.ProtoOpTestCase):
         case.sizes,
         list(case.shape),
         batch,
-        'tensorflow.contrib.proto.RepeatedPrimitiveValue',
+        'astronet.contrib.proto.RepeatedPrimitiveValue',
         'binary',
         sanitize=False,
         force_disordered=True)
@@ -257,7 +257,7 @@ class DecodeProtoOpTest(test_case.ProtoOpTestCase):
         case.sizes,
         list(case.shape),
         packed_batch,
-        'tensorflow.contrib.proto.PackedPrimitiveValue',
+        'astronet.contrib.proto.PackedPrimitiveValue',
         'binary',
         sanitize=False)
 
@@ -277,7 +277,7 @@ class DecodeProtoOpTest(test_case.ProtoOpTestCase):
         case.sizes,
         list(case.shape),
         text_batch,
-        'tensorflow.contrib.proto.RepeatedPrimitiveValue',
+        'astronet.contrib.proto.RepeatedPrimitiveValue',
         'text',
         sanitize=False)
 
@@ -291,7 +291,7 @@ class DecodeProtoOpTest(test_case.ProtoOpTestCase):
         case.sizes,
         list(case.shape),
         batch,
-        'tensorflow.contrib.proto.RepeatedPrimitiveValue',
+        'astronet.contrib.proto.RepeatedPrimitiveValue',
         'binary',
         sanitize=True)
 

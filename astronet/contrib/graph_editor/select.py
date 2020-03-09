@@ -23,7 +23,7 @@ import re
 from six import iteritems
 from six import string_types
 
-from tensorflow.contrib.graph_editor import util
+from astronet.contrib.graph_editor import util
 from tensorflow.python.framework import ops as tf_ops
 
 __all__ = [

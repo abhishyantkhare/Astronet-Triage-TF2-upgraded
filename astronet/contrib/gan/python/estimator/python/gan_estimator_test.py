@@ -24,11 +24,11 @@ import tempfile
 import numpy as np
 import six
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.gan.python import namedtuples
-from tensorflow.contrib.gan.python.estimator.python import gan_estimator_impl as estimator
-from tensorflow.contrib.gan.python.losses.python import tuple_losses as losses
-from tensorflow.contrib.learn.python.learn.learn_io import graph_io
+from astronet.contrib import layers
+from astronet.contrib.gan.python import namedtuples
+from astronet.contrib.gan.python.estimator.python import gan_estimator_impl as estimator
+from astronet.contrib.gan.python.losses.python import tuple_losses as losses
+from astronet.contrib.learn.python.learn.learn_io import graph_io
 from tensorflow.core.example import example_pb2
 from tensorflow.core.example import feature_pb2
 from tensorflow.python.estimator import model_fn as model_fn_lib

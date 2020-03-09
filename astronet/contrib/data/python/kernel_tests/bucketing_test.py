@@ -21,8 +21,8 @@ import random
 
 import numpy as np
 
-from tensorflow.contrib.data.python.kernel_tests import dataset_serialization_test_base
-from tensorflow.contrib.data.python.ops import grouping
+from astronet.contrib.data.python.kernel_tests import dataset_serialization_test_base
+from astronet.contrib.data.python.ops import grouping
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

@@ -19,15 +19,15 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,line-too-long
-from tensorflow.contrib.kfac.python.ops import curvature_matrix_vector_products_lib as curvature_matrix_vector_products
-from tensorflow.contrib.kfac.python.ops import estimator_lib as estimator
-from tensorflow.contrib.kfac.python.ops import fisher_blocks_lib as fisher_blocks
-from tensorflow.contrib.kfac.python.ops import fisher_factors_lib as fisher_factors
-from tensorflow.contrib.kfac.python.ops import layer_collection_lib as layer_collection
-from tensorflow.contrib.kfac.python.ops import loss_functions_lib as loss_functions
-from tensorflow.contrib.kfac.python.ops import op_queue_lib as op_queue
-from tensorflow.contrib.kfac.python.ops import optimizer_lib as optimizer
-from tensorflow.contrib.kfac.python.ops import utils_lib as utils
+from astronet.contrib.kfac.python.ops import curvature_matrix_vector_products_lib as curvature_matrix_vector_products
+from astronet.contrib.kfac.python.ops import estimator_lib as estimator
+from astronet.contrib.kfac.python.ops import fisher_blocks_lib as fisher_blocks
+from astronet.contrib.kfac.python.ops import fisher_factors_lib as fisher_factors
+from astronet.contrib.kfac.python.ops import layer_collection_lib as layer_collection
+from astronet.contrib.kfac.python.ops import loss_functions_lib as loss_functions
+from astronet.contrib.kfac.python.ops import op_queue_lib as op_queue
+from astronet.contrib.kfac.python.ops import optimizer_lib as optimizer
+from astronet.contrib.kfac.python.ops import utils_lib as utils
 from tensorflow.python.util.all_util import remove_undocumented
 # pylint: enable=unused-import,line-too-long
 

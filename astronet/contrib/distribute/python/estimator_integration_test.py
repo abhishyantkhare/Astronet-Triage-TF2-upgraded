@@ -24,8 +24,8 @@ from absl.testing import parameterized
 import numpy as np
 import six
 
-from tensorflow.contrib.distribute.python import combinations
-from tensorflow.contrib.optimizer_v2 import adagrad
+from astronet.contrib.distribute.python import combinations
+from astronet.contrib.optimizer_v2 import adagrad
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.eager import test
 from tensorflow.python.estimator import run_config

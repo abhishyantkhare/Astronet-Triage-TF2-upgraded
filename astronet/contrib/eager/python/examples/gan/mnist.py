@@ -29,7 +29,7 @@ import time
 
 import tensorflow as tf
 
-import tensorflow.contrib.eager as tfe
+import astronet.contrib.eager as tfe
 from tensorflow.examples.tutorials.mnist import input_data
 
 layers = tf.keras.layers

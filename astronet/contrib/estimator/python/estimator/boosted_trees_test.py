@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.estimator.python.estimator import boosted_trees
+from astronet.contrib.estimator.python.estimator import boosted_trees
 from tensorflow.core.kernels.boosted_trees import boosted_trees_pb2
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.estimator.canned import boosted_trees as canned_boosted_trees

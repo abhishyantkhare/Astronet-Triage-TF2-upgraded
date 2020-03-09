@@ -21,20 +21,20 @@ from __future__ import print_function
 import collections
 import copy
 
-from tensorflow.contrib import learn
-from tensorflow.contrib import stateless
+from astronet.contrib import learn
+from astronet.contrib import stateless
 
-from tensorflow.contrib.boosted_trees.lib.learner.batch import categorical_split_handler
-from tensorflow.contrib.boosted_trees.lib.learner.batch import ordinal_split_handler
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.boosted_trees.python.ops import batch_ops_utils
-from tensorflow.contrib.boosted_trees.python.ops import gen_model_ops
-from tensorflow.contrib.boosted_trees.python.ops import model_ops
-from tensorflow.contrib.boosted_trees.python.ops import prediction_ops
-from tensorflow.contrib.boosted_trees.python.ops import stats_accumulator_ops
-from tensorflow.contrib.boosted_trees.python.ops import training_ops
-from tensorflow.contrib.layers.python.layers import feature_column as feature_column_lib
-from tensorflow.contrib.layers.python.layers import feature_column_ops
+from astronet.contrib.boosted_trees.lib.learner.batch import categorical_split_handler
+from astronet.contrib.boosted_trees.lib.learner.batch import ordinal_split_handler
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.boosted_trees.python.ops import batch_ops_utils
+from astronet.contrib.boosted_trees.python.ops import gen_model_ops
+from astronet.contrib.boosted_trees.python.ops import model_ops
+from astronet.contrib.boosted_trees.python.ops import prediction_ops
+from astronet.contrib.boosted_trees.python.ops import stats_accumulator_ops
+from astronet.contrib.boosted_trees.python.ops import training_ops
+from astronet.contrib.layers.python.layers import feature_column as feature_column_lib
+from astronet.contrib.layers.python.layers import feature_column_ops
 from tensorflow.python.feature_column import feature_column as fc_core
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import os
 
-from tensorflow.contrib.learn.python.learn import session_run_hook
-from tensorflow.contrib.learn.python.learn.session_run_hook import SessionRunArgs
+from astronet.contrib.learn.python.learn import session_run_hook
+from astronet.contrib.learn.python.learn.session_run_hook import SessionRunArgs
 from tensorflow.core.framework.summary_pb2 import Summary
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import control_flow_ops

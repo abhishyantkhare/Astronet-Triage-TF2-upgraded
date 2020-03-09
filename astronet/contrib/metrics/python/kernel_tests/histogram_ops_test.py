@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.metrics.python.ops import histogram_ops
+from astronet.contrib.metrics.python.ops import histogram_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

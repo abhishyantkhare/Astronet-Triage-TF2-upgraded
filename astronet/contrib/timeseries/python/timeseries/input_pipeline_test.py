@@ -23,9 +23,9 @@ import tempfile
 
 import numpy
 
-from tensorflow.contrib.timeseries.python.timeseries import input_pipeline
-from tensorflow.contrib.timeseries.python.timeseries import test_utils
-from tensorflow.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
+from astronet.contrib.timeseries.python.timeseries import input_pipeline
+from astronet.contrib.timeseries.python.timeseries import test_utils
+from astronet.contrib.timeseries.python.timeseries.feature_keys import TrainEvalFeatures
 
 from tensorflow.core.example import example_pb2
 from tensorflow.python.framework import dtypes

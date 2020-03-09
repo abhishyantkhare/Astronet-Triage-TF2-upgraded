@@ -22,7 +22,7 @@ import math
 import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.tpu.python.tpu.topology import Topology
+from astronet.contrib.tpu.python.tpu.topology import Topology
 
 
 def _tpu_device_name(job, task, device):

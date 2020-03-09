@@ -20,11 +20,11 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import,unused-import
-from tensorflow.contrib.cluster_resolver.python.training.cluster_resolver import ClusterResolver
-from tensorflow.contrib.cluster_resolver.python.training.cluster_resolver import SimpleClusterResolver
-from tensorflow.contrib.cluster_resolver.python.training.cluster_resolver import UnionClusterResolver
-from tensorflow.contrib.cluster_resolver.python.training.gce_cluster_resolver import GceClusterResolver
-from tensorflow.contrib.cluster_resolver.python.training.tpu_cluster_resolver import TPUClusterResolver
+from astronet.contrib.cluster_resolver.python.training.cluster_resolver import ClusterResolver
+from astronet.contrib.cluster_resolver.python.training.cluster_resolver import SimpleClusterResolver
+from astronet.contrib.cluster_resolver.python.training.cluster_resolver import UnionClusterResolver
+from astronet.contrib.cluster_resolver.python.training.gce_cluster_resolver import GceClusterResolver
+from astronet.contrib.cluster_resolver.python.training.tpu_cluster_resolver import TPUClusterResolver
 # pylint: enable=wildcard-import,unused-import
 
 from tensorflow.python.util.all_util import remove_undocumented

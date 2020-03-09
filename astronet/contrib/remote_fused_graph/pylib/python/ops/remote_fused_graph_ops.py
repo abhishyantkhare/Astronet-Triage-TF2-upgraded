@@ -20,7 +20,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import, line-too-long
-from tensorflow.contrib.remote_fused_graph.pylib.python.ops import gen_remote_fused_graph_ops
+from astronet.contrib.remote_fused_graph.pylib.python.ops import gen_remote_fused_graph_ops
 from tensorflow.core.framework import remote_fused_graph_execute_info_pb2 as info_pb2
 # pylint: enable=unused-import,wildcard-import,line-too-long
 

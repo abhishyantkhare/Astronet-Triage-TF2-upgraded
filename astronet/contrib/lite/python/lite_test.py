@@ -17,8 +17,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.lite.python import lite
-from tensorflow.contrib.lite.python.op_hint import _tensor_name_base as _tensor_name_base
+from astronet.contrib.lite.python import lite
+from astronet.contrib.lite.python.op_hint import _tensor_name_base as _tensor_name_base
 from tensorflow.python.client import session
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import test_util

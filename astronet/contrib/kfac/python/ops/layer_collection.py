@@ -32,9 +32,9 @@ from functools import partial
 import math
 import six
 
-from tensorflow.contrib.kfac.python.ops import fisher_blocks as fb
-from tensorflow.contrib.kfac.python.ops import loss_functions as lf
-from tensorflow.contrib.kfac.python.ops import utils
+from astronet.contrib.kfac.python.ops import fisher_blocks as fb
+from astronet.contrib.kfac.python.ops import loss_functions as lf
+from astronet.contrib.kfac.python.ops import utils
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import variable_scope

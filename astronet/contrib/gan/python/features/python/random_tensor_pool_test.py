@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.gan.python.features.python.random_tensor_pool_impl import tensor_pool
+from astronet.contrib.gan.python.features.python.random_tensor_pool_impl import tensor_pool
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.platform import test

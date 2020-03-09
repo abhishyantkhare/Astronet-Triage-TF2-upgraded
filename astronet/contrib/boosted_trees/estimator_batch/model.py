@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import copy
 
-from tensorflow.contrib.boosted_trees.estimator_batch import trainer_hooks
-from tensorflow.contrib.boosted_trees.python.ops import model_ops
-from tensorflow.contrib.boosted_trees.python.training.functions import gbdt_batch
+from astronet.contrib.boosted_trees.estimator_batch import trainer_hooks
+from astronet.contrib.boosted_trees.python.ops import model_ops
+from astronet.contrib.boosted_trees.python.training.functions import gbdt_batch
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import state_ops
 from tensorflow.python.training import training_util

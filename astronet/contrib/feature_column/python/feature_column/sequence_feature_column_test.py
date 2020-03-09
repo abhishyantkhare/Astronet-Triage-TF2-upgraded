@@ -21,7 +21,7 @@ from __future__ import print_function
 import os
 import numpy as np
 
-from tensorflow.contrib.feature_column.python.feature_column import sequence_feature_column as sfc
+from astronet.contrib.feature_column.python.feature_column import sequence_feature_column as sfc
 from tensorflow.python.feature_column import feature_column as fc
 from tensorflow.python.feature_column.feature_column import _LazyBuilder
 from tensorflow.python.framework import dtypes

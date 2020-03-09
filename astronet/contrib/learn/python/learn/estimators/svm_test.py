@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn.python.learn.estimators import svm
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn.python.learn.estimators import svm
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.platform import test

@@ -27,9 +27,9 @@ import six
 
 from google.protobuf.any_pb2 import Any
 
-from tensorflow.contrib.session_bundle import constants
-from tensorflow.contrib.session_bundle import gc
-from tensorflow.contrib.session_bundle import manifest_pb2
+from astronet.contrib.session_bundle import constants
+from astronet.contrib.session_bundle import gc
+from astronet.contrib.session_bundle import manifest_pb2
 from tensorflow.core.framework import graph_pb2
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

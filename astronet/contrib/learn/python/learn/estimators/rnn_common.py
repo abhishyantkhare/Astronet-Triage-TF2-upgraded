@@ -23,10 +23,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import metrics
-from tensorflow.contrib import rnn as contrib_rnn
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib import metrics
+from astronet.contrib import rnn as contrib_rnn
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import prediction_key
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

@@ -26,10 +26,10 @@ from tensorflow.python.framework import ops
 
 if platform.system() != "Windows":
   # pylint: disable=wildcard-import,unused-import,g-import-not-at-top
-  from tensorflow.contrib.tpu.ops import gen_tpu_ops
-  from tensorflow.contrib.tpu.ops.gen_tpu_ops import *
+  from astronet.contrib.tpu.ops import gen_tpu_ops
+  from astronet.contrib.tpu.ops.gen_tpu_ops import *
 
-  from tensorflow.contrib.util import loader
+  from astronet.contrib.util import loader
   from tensorflow.python.platform import resource_loader
   # pylint: enable=wildcard-import,unused-import,g-import-not-at-top
 

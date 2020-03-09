@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import threading
 
-from tensorflow.contrib.data.python.ops import prefetching_ops
+from astronet.contrib.data.python.ops import prefetching_ops
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.data.ops import iterator_ops

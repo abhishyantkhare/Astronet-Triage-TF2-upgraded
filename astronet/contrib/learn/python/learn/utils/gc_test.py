@@ -23,7 +23,7 @@ import re
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.learn.python.learn.utils import gc
+from astronet.contrib.learn.python.learn.utils import gc
 from tensorflow.python.framework import test_util
 from tensorflow.python.platform import gfile
 from tensorflow.python.platform import test

@@ -19,7 +19,7 @@ from __future__ import division
 from __future__ import print_function
 
 import collections
-from tensorflow.contrib.quantize.python import common
+from astronet.contrib.quantize.python import common
 
 
 class InputToOps(object):

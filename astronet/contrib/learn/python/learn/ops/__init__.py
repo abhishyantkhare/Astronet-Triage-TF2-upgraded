@@ -25,7 +25,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.learn.python.learn.ops.embeddings_ops import *
-from tensorflow.contrib.learn.python.learn.ops.losses_ops import *
-from tensorflow.contrib.learn.python.learn.ops.seq2seq_ops import *
+from astronet.contrib.learn.python.learn.ops.embeddings_ops import *
+from astronet.contrib.learn.python.learn.ops.losses_ops import *
+from astronet.contrib.learn.python.learn.ops.seq2seq_ops import *
 # pylint: enable=wildcard-import

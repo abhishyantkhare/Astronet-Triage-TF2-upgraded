@@ -22,8 +22,8 @@ import collections
 
 import numpy as np
 
-from tensorflow.contrib.gan.python import namedtuples
-from tensorflow.contrib.gan.python.losses.python import tuple_losses_impl as tfgan_losses
+from astronet.contrib.gan.python import namedtuples
+from astronet.contrib.gan.python.losses.python import tuple_losses_impl as tfgan_losses
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import variables

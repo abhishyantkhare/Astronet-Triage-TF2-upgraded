@@ -20,9 +20,9 @@ from __future__ import print_function
 
 from functools import wraps
 
-from tensorflow.contrib.autograph.converters import converter_test_base
-from tensorflow.contrib.autograph.converters import decorators
-from tensorflow.contrib.autograph.pyct import compiler
+from astronet.contrib.autograph.converters import converter_test_base
+from astronet.contrib.autograph.converters import decorators
+from astronet.contrib.autograph.pyct import compiler
 from tensorflow.python.platform import test
 
 

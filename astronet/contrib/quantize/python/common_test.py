@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.quantize.python import common
+from astronet.contrib.quantize.python import common
 from tensorflow.python.client import session
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import test_util

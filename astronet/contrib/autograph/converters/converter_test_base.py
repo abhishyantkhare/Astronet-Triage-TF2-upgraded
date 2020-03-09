@@ -21,16 +21,16 @@ from __future__ import print_function
 import contextlib
 import imp
 
-from tensorflow.contrib.autograph import operators
-from tensorflow.contrib.autograph import utils
-from tensorflow.contrib.autograph.pyct import compiler
-from tensorflow.contrib.autograph.pyct import context
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.pyct import pretty_printer
-from tensorflow.contrib.autograph.pyct import qual_names
-from tensorflow.contrib.autograph.pyct.static_analysis import activity
-from tensorflow.contrib.autograph.pyct.static_analysis import live_values
-from tensorflow.contrib.autograph.pyct.static_analysis import type_info
+from astronet.contrib.autograph import operators
+from astronet.contrib.autograph import utils
+from astronet.contrib.autograph.pyct import compiler
+from astronet.contrib.autograph.pyct import context
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import pretty_printer
+from astronet.contrib.autograph.pyct import qual_names
+from astronet.contrib.autograph.pyct.static_analysis import activity
+from astronet.contrib.autograph.pyct.static_analysis import live_values
+from astronet.contrib.autograph.pyct.static_analysis import type_info
 from tensorflow.python.platform import test
 
 

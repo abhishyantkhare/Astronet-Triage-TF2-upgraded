@@ -18,9 +18,9 @@ from __future__ import division
 from __future__ import print_function
 
 
-from tensorflow.contrib.framework.python.ops import add_arg_scope
-from tensorflow.contrib.framework.python.ops import variables
-from tensorflow.contrib.layers.python.layers import utils
+from astronet.contrib.framework.python.ops import add_arg_scope
+from astronet.contrib.framework.python.ops import variables
+from astronet.contrib.layers.python.layers import utils
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import init_ops

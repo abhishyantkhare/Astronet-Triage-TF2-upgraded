@@ -22,8 +22,8 @@ import os
 import tempfile
 import numpy as np
 
-from tensorflow.contrib.estimator.python.estimator import extenders
-from tensorflow.contrib.predictor import from_saved_model
+from astronet.contrib.estimator.python.estimator import extenders
+from astronet.contrib.predictor import from_saved_model
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.estimator import estimator_lib
 from tensorflow.python.estimator.canned import linear

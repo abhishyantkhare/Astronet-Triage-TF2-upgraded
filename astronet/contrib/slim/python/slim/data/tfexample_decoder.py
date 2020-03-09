@@ -25,7 +25,7 @@ from __future__ import print_function
 
 import abc
 
-from tensorflow.contrib.slim.python.slim.data import data_decoder
+from astronet.contrib.slim.python.slim.data import data_decoder
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.ops import array_ops

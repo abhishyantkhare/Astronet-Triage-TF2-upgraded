@@ -28,10 +28,10 @@ import collections
 
 import six
 
-from tensorflow.contrib.framework import get_graph_from_inputs
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import metric_key
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.framework import get_graph_from_inputs
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import metric_key
+from astronet.contrib.learn.python.learn.estimators import prediction_key
 from tensorflow.python.estimator import model_fn as core_model_fn_lib
 from tensorflow.python.estimator.export import export_output as core_export_lib
 from tensorflow.python.framework import dtypes

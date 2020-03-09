@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.learn.python.learn.estimators import rnn_common
+from astronet.contrib.learn.python.learn.estimators import rnn_common
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import math
 
-from tensorflow.contrib.opt.python.training import sign_decay
+from astronet.contrib.opt.python.training import sign_decay
 from tensorflow.python.platform import test
 
 

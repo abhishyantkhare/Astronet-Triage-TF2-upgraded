@@ -19,9 +19,9 @@ from __future__ import print_function
 
 import warnings
 
-from tensorflow.contrib.data.python.ops import contrib_op_loader  # pylint: disable=unused-import
-from tensorflow.contrib.data.python.ops import gen_dataset_ops
-from tensorflow.contrib.data.python.ops import prefetching_ops
+from astronet.contrib.data.python.ops import contrib_op_loader  # pylint: disable=unused-import
+from astronet.contrib.data.python.ops import gen_dataset_ops
+from astronet.contrib.data.python.ops import prefetching_ops
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.data.ops import iterator_ops
 from tensorflow.python.data.util import nest as data_nest

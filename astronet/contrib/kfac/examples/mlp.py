@@ -24,7 +24,7 @@ from __future__ import print_function
 
 import tensorflow as tf
 
-from tensorflow.contrib.kfac.examples import mnist
+from astronet.contrib.kfac.examples import mnist
 
 lc = tf.contrib.kfac.layer_collection
 opt = tf.contrib.kfac.optimizer

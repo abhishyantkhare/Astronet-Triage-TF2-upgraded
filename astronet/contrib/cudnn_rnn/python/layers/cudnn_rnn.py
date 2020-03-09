@@ -17,7 +17,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.cudnn_rnn.python.ops import cudnn_rnn_ops
+from astronet.contrib.cudnn_rnn.python.ops import cudnn_rnn_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

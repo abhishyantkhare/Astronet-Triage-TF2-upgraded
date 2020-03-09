@@ -22,7 +22,7 @@ import itertools
 
 import numpy as np
 
-from tensorflow.contrib.rnn.python.ops import rnn as contrib_rnn
+from astronet.contrib.rnn.python.ops import rnn as contrib_rnn
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

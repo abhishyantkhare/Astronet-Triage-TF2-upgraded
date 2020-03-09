@@ -28,7 +28,7 @@ import gzip
 import numpy
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.datasets import base
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import random_seed
 from tensorflow.python.platform import gfile

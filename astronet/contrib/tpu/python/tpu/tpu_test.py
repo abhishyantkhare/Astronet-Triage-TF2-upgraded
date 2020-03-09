@@ -19,9 +19,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.tpu.python.tpu import tpu
-from tensorflow.contrib.tpu.python.tpu import tpu_feed
-from tensorflow.contrib.tpu.python.tpu import training_loop
+from astronet.contrib.tpu.python.tpu import tpu
+from astronet.contrib.tpu.python.tpu import tpu_feed
+from astronet.contrib.tpu.python.tpu import training_loop
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.layers import convolutional

@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.opt.python.training import addsign
-from tensorflow.contrib.opt.python.training import sign_decay
+from astronet.contrib.opt.python.training import addsign
+from astronet.contrib.opt.python.training import sign_decay
 from tensorflow.python.eager import context
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

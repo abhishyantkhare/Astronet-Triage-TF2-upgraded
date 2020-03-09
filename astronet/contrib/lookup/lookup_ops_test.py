@@ -22,7 +22,7 @@ import tempfile
 import numpy as np
 import six
 
-from tensorflow.contrib import lookup
+from astronet.contrib import lookup
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.framework.python.ops import arg_scope
-from tensorflow.contrib.framework.python.ops import variables as variables_lib
-from tensorflow.contrib.slim.python.slim import model_analyzer
-from tensorflow.contrib.slim.python.slim.nets import inception_v2
+from astronet.contrib.framework.python.ops import arg_scope
+from astronet.contrib.framework.python.ops import variables as variables_lib
+from astronet.contrib.slim.python.slim import model_analyzer
+from astronet.contrib.slim.python.slim.nets import inception_v2
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

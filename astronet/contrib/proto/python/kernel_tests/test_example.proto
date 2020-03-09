@@ -6,7 +6,7 @@ syntax = "proto2";
 
 import "tensorflow/core/framework/types.proto";
 
-package tensorflow.contrib.proto;
+package astronet.contrib.proto;
 
 // A TestCase holds a proto and a bunch of assertions
 // about how it should decode.

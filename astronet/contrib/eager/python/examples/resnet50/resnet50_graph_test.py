@@ -24,8 +24,8 @@ import time
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.eager.python.examples.resnet50 import resnet50
-from tensorflow.contrib.summary import summary_test_util
+from astronet.contrib.eager.python.examples.resnet50 import resnet50
+from astronet.contrib.summary import summary_test_util
 
 
 def data_format():

@@ -20,12 +20,12 @@ from __future__ import print_function
 import sys
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.cudnn_rnn.python.layers.cudnn_rnn import *
+from astronet.contrib.cudnn_rnn.python.layers.cudnn_rnn import *
 # pylint: enable=unused-import,wildcard-import
 
-from tensorflow.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnCompatibleGRUCell
-from tensorflow.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnCompatibleLSTMCell
-from tensorflow.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnGRUSaveable
-from tensorflow.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnLSTMSaveable
-from tensorflow.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnRNNReluSaveable
-from tensorflow.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnRNNTanhSaveable
+from astronet.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnCompatibleGRUCell
+from astronet.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnCompatibleLSTMCell
+from astronet.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnGRUSaveable
+from astronet.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnLSTMSaveable
+from astronet.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnRNNReluSaveable
+from astronet.contrib.cudnn_rnn.python.ops.cudnn_rnn_ops import CudnnRNNTanhSaveable

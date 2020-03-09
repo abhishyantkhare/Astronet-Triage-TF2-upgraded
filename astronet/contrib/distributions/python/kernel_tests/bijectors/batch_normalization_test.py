@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib import distributions
-from tensorflow.contrib.distributions.python.ops import test_util
-from tensorflow.contrib.distributions.python.ops.bijectors.batch_normalization import BatchNormalization
-from tensorflow.contrib.distributions.python.ops.bijectors.invert import Invert
+from astronet.contrib import distributions
+from astronet.contrib.distributions.python.ops import test_util
+from astronet.contrib.distributions.python.ops.bijectors.batch_normalization import BatchNormalization
+from astronet.contrib.distributions.python.ops.bijectors.invert import Invert
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import ops
 from tensorflow.python.layers import normalization

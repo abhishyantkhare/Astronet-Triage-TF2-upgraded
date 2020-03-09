@@ -40,11 +40,11 @@ import argparse
 import os
 import sys
 import tensorflow as tf
-from tensorflow.contrib.boosted_trees.estimator_batch import custom_export_strategy
-from tensorflow.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeRegressor
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.layers.python.layers import feature_column
-from tensorflow.contrib.learn import learn_runner
+from astronet.contrib.boosted_trees.estimator_batch import custom_export_strategy
+from astronet.contrib.boosted_trees.estimator_batch.estimator import GradientBoostedDecisionTreeRegressor
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.layers.python.layers import feature_column
+from astronet.contrib.learn import learn_runner
 
 _BOSTON_NUM_FEATURES = 13
 

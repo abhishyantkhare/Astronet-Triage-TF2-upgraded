@@ -19,7 +19,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.meta_graph_transform import meta_graph_transform
+from astronet.contrib.meta_graph_transform import meta_graph_transform
 from tensorflow.python.util.all_util import remove_undocumented
 
 

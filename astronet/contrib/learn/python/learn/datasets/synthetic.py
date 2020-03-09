@@ -25,7 +25,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.learn.python.learn.datasets.base import Dataset
+from astronet.contrib.learn.python.learn.datasets.base import Dataset
 from tensorflow.python.util.deprecation import deprecated
 
 

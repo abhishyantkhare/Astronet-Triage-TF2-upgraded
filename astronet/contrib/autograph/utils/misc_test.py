@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.autograph.utils.misc import alias_tensors
+from astronet.contrib.autograph.utils.misc import alias_tensors
 from tensorflow.python.framework.constant_op import constant
 from tensorflow.python.ops.variables import Variable
 from tensorflow.python.platform import test

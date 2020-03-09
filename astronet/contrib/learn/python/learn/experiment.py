@@ -29,14 +29,14 @@ import math
 import os
 import time
 
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.framework.python.framework import experimental
-from tensorflow.contrib.learn.python.learn import evaluable
-from tensorflow.contrib.learn.python.learn import export_strategy
-from tensorflow.contrib.learn.python.learn import monitors
-from tensorflow.contrib.learn.python.learn import trainable
-from tensorflow.contrib.learn.python.learn.estimators import run_config
-from tensorflow.contrib.tpu.python.tpu import tpu_estimator
+from astronet.contrib.framework import deprecated
+from astronet.contrib.framework.python.framework import experimental
+from astronet.contrib.learn.python.learn import evaluable
+from astronet.contrib.learn.python.learn import export_strategy
+from astronet.contrib.learn.python.learn import monitors
+from astronet.contrib.learn.python.learn import trainable
+from astronet.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.tpu.python.tpu import tpu_estimator
 from tensorflow.python.estimator import estimator as core_estimator
 from tensorflow.python.estimator import util as estimator_util
 from tensorflow.python.framework import ops

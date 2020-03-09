@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.autograph.utils import tensor_list as tl
+from astronet.contrib.autograph.utils import tensor_list as tl
 from tensorflow.python.client.session import Session
 from tensorflow.python.eager import context
 from tensorflow.python.framework import dtypes

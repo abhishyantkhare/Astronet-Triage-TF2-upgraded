@@ -27,12 +27,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.nccl.python.ops.nccl_ops import all_max
-from tensorflow.contrib.nccl.python.ops.nccl_ops import all_min
-from tensorflow.contrib.nccl.python.ops.nccl_ops import all_prod
-from tensorflow.contrib.nccl.python.ops.nccl_ops import all_sum
-from tensorflow.contrib.nccl.python.ops.nccl_ops import broadcast
-from tensorflow.contrib.nccl.python.ops.nccl_ops import reduce_sum
+from astronet.contrib.nccl.python.ops.nccl_ops import all_max
+from astronet.contrib.nccl.python.ops.nccl_ops import all_min
+from astronet.contrib.nccl.python.ops.nccl_ops import all_prod
+from astronet.contrib.nccl.python.ops.nccl_ops import all_sum
+from astronet.contrib.nccl.python.ops.nccl_ops import broadcast
+from astronet.contrib.nccl.python.ops.nccl_ops import reduce_sum
 
 from tensorflow.python.util.all_util import remove_undocumented
 remove_undocumented(__name__)

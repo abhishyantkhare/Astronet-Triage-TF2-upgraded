@@ -25,8 +25,8 @@ import time
 import numpy as np
 from six.moves import zip_longest
 
-from tensorflow.contrib.data.python.kernel_tests import dataset_serialization_test_base
-from tensorflow.contrib.data.python.ops import interleave_ops
+from astronet.contrib.data.python.kernel_tests import dataset_serialization_test_base
+from astronet.contrib.data.python.ops import interleave_ops
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

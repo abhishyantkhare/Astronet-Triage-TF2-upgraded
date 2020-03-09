@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.autograph import utils
-from tensorflow.contrib.autograph.converters import converter_test_base
-from tensorflow.contrib.autograph.converters import lists
+from astronet.contrib.autograph import utils
+from astronet.contrib.autograph.converters import converter_test_base
+from astronet.contrib.autograph.converters import lists
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import tensor_array_ops
 from tensorflow.python.platform import test

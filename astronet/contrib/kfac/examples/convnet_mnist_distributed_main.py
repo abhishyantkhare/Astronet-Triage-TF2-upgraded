@@ -26,7 +26,7 @@ from __future__ import print_function
 from absl import flags
 import tensorflow as tf
 
-from tensorflow.contrib.kfac.examples import convnet
+from astronet.contrib.kfac.examples import convnet
 
 FLAGS = flags.FLAGS
 flags.DEFINE_integer("task", -1, "Task identifier")

@@ -20,7 +20,7 @@ from __future__ import print_function
 
 from six.moves import range
 
-from tensorflow.contrib import lookup
+from astronet.contrib import lookup
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape

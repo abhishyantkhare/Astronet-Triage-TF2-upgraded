@@ -25,7 +25,7 @@ import os
 
 import numpy as np
 
-from tensorflow.contrib.tpu.python.tpu import util as util_lib
+from astronet.contrib.tpu.python.tpu import util as util_lib
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.estimator import run_config as run_config_lib
 from tensorflow.python.platform import tf_logging as logging

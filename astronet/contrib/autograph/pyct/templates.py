@@ -26,9 +26,9 @@ import textwrap
 
 import gast
 
-from tensorflow.contrib.autograph.pyct import ast_util
-from tensorflow.contrib.autograph.pyct import parser
-from tensorflow.contrib.autograph.pyct import qual_names
+from astronet.contrib.autograph.pyct import ast_util
+from astronet.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import qual_names
 
 
 class ReplaceTransformer(gast.NodeTransformer):

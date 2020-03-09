@@ -21,10 +21,10 @@ from __future__ import print_function
 from absl.testing import parameterized
 import numpy
 
-from tensorflow.contrib.distribute.python import combinations
-from tensorflow.contrib.distribute.python import mirrored_strategy
-from tensorflow.contrib.distribute.python.single_loss_example import batchnorm_example
-from tensorflow.contrib.distribute.python.single_loss_example import minimize_loss_example
+from astronet.contrib.distribute.python import combinations
+from astronet.contrib.distribute.python import mirrored_strategy
+from astronet.contrib.distribute.python.single_loss_example import batchnorm_example
+from astronet.contrib.distribute.python.single_loss_example import minimize_loss_example
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.eager import context
 from tensorflow.python.eager import test

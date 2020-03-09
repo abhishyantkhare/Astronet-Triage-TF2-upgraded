@@ -22,7 +22,7 @@ from functools import wraps
 
 import six
 
-from tensorflow.contrib.autograph.pyct import inspect_utils
+from astronet.contrib.autograph.pyct import inspect_utils
 from tensorflow.python.platform import test
 
 

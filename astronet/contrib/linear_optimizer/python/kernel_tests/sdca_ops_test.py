@@ -21,8 +21,8 @@ from __future__ import print_function
 import random
 import threading
 
-from tensorflow.contrib.linear_optimizer.python.ops.sdca_ops import SdcaModel
-from tensorflow.contrib.linear_optimizer.python.ops.sparse_feature_column import SparseFeatureColumn
+from astronet.contrib.linear_optimizer.python.ops.sdca_ops import SdcaModel
+from astronet.contrib.linear_optimizer.python.ops.sparse_feature_column import SparseFeatureColumn
 from tensorflow.core.example import example_pb2
 from tensorflow.core.protobuf import config_pb2
 from tensorflow.python.framework import constant_op

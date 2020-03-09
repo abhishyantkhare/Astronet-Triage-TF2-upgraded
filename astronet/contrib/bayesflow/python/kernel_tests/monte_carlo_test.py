@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib import layers as layers_lib
-from tensorflow.contrib.bayesflow.python.ops import monte_carlo_impl as monte_carlo_lib
-from tensorflow.contrib.bayesflow.python.ops.monte_carlo_impl import _get_samples
-from tensorflow.contrib.distributions.python.ops import mvn_diag as mvn_diag_lib
+from astronet.contrib import layers as layers_lib
+from astronet.contrib.bayesflow.python.ops import monte_carlo_impl as monte_carlo_lib
+from astronet.contrib.bayesflow.python.ops.monte_carlo_impl import _get_samples
+from astronet.contrib.distributions.python.ops import mvn_diag as mvn_diag_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import gradients_impl

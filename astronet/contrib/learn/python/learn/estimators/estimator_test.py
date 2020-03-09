@@ -30,24 +30,24 @@ from six.moves import xrange  # pylint: disable=redefined-builtin
 
 from google.protobuf import text_format
 
-from tensorflow.contrib import learn
-from tensorflow.contrib import lookup
+from astronet.contrib import learn
+from astronet.contrib import lookup
 from tensorflow.python.training import training_util
-from tensorflow.contrib.layers.python.layers import feature_column as feature_column_lib
-from tensorflow.contrib.layers.python.layers import optimizers
-from tensorflow.contrib.learn.python.learn import experiment
-from tensorflow.contrib.learn.python.learn import models
-from tensorflow.contrib.learn.python.learn import monitors as monitors_lib
-from tensorflow.contrib.learn.python.learn.datasets import base
-from tensorflow.contrib.learn.python.learn.estimators import _sklearn
-from tensorflow.contrib.learn.python.learn.estimators import constants
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import linear
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
-from tensorflow.contrib.learn.python.learn.estimators import run_config
-from tensorflow.contrib.learn.python.learn.utils import input_fn_utils
-from tensorflow.contrib.metrics.python.ops import metric_ops
-from tensorflow.contrib.testing.python.framework import util_test
+from astronet.contrib.layers.python.layers import feature_column as feature_column_lib
+from astronet.contrib.layers.python.layers import optimizers
+from astronet.contrib.learn.python.learn import experiment
+from astronet.contrib.learn.python.learn import models
+from astronet.contrib.learn.python.learn import monitors as monitors_lib
+from astronet.contrib.learn.python.learn.datasets import base
+from astronet.contrib.learn.python.learn.estimators import _sklearn
+from astronet.contrib.learn.python.learn.estimators import constants
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import linear
+from astronet.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.learn.python.learn.utils import input_fn_utils
+from astronet.contrib.metrics.python.ops import metric_ops
+from astronet.contrib.testing.python.framework import util_test
 from tensorflow.python.client import session as session_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

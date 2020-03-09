@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.boosted_trees.python.ops import stats_accumulator_ops
+from astronet.contrib.boosted_trees.python.ops import stats_accumulator_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_shape
 from tensorflow.python.framework import test_util

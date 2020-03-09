@@ -31,11 +31,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework.python.ops import variables as variables_lib
-from tensorflow.contrib.gan.python import losses as tfgan_losses
-from tensorflow.contrib.gan.python import namedtuples
-from tensorflow.contrib.slim.python.slim import learning as slim_learning
-from tensorflow.contrib.training.python.training import training
+from astronet.contrib.framework.python.ops import variables as variables_lib
+from astronet.contrib.gan.python import losses as tfgan_losses
+from astronet.contrib.gan.python import namedtuples
+from astronet.contrib.slim.python.slim import learning as slim_learning
+from astronet.contrib.training.python.training import training
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import check_ops

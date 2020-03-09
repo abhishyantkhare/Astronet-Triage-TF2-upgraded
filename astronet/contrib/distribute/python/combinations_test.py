@@ -20,7 +20,7 @@ from __future__ import print_function
 
 from collections import OrderedDict
 
-from tensorflow.contrib.distribute.python import combinations
+from astronet.contrib.distribute.python import combinations
 from tensorflow.python.eager import test
 
 

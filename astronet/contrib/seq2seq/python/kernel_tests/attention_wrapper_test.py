@@ -24,10 +24,10 @@ import functools
 
 import numpy as np
 
-from tensorflow.contrib.seq2seq.python.ops import decoder
-from tensorflow.contrib.seq2seq.python.ops import attention_wrapper as wrapper
-from tensorflow.contrib.seq2seq.python.ops import helper as helper_py
-from tensorflow.contrib.seq2seq.python.ops import basic_decoder
+from astronet.contrib.seq2seq.python.ops import decoder
+from astronet.contrib.seq2seq.python.ops import attention_wrapper as wrapper
+from astronet.contrib.seq2seq.python.ops import helper as helper_py
+from astronet.contrib.seq2seq.python.ops import basic_decoder
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops

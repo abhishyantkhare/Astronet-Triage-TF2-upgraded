@@ -20,8 +20,8 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.signal.python.ops import spectral_ops
-from tensorflow.contrib.signal.python.ops import window_ops
+from astronet.contrib.signal.python.ops import spectral_ops
+from astronet.contrib.signal.python.ops import window_ops
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import gradients_impl

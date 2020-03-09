@@ -28,9 +28,9 @@ from __future__ import print_function
 import os
 
 from google.protobuf import text_format
-from tensorflow.contrib.tensorboard.plugins.projector import projector_config_pb2
+from astronet.contrib.tensorboard.plugins.projector import projector_config_pb2
 # pylint: disable=wildcard-import
-from tensorflow.contrib.tensorboard.plugins.projector.projector_config_pb2 import *
+from astronet.contrib.tensorboard.plugins.projector.projector_config_pb2 import *
 # pylint: enable=wildcard-import
 from tensorflow.python.lib.io import file_io
 

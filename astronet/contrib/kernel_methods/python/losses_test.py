@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-"""Tests for third_party.tensorflow.contrib.kernel_methods.python.losses."""
+"""Tests for third_party.astronet.contrib.kernel_methods.python.losses."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.kernel_methods.python import losses
+from astronet.contrib.kernel_methods.python import losses
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import errors

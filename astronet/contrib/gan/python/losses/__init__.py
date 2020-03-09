@@ -22,11 +22,11 @@ from __future__ import division
 from __future__ import print_function
 
 # Collapse losses into a single namespace.
-from tensorflow.contrib.gan.python.losses.python import losses_wargs as wargs
-from tensorflow.contrib.gan.python.losses.python import tuple_losses
+from astronet.contrib.gan.python.losses.python import losses_wargs as wargs
+from astronet.contrib.gan.python.losses.python import tuple_losses
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.gan.python.losses.python.tuple_losses import *
+from astronet.contrib.gan.python.losses.python.tuple_losses import *
 # pylint: enable=wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

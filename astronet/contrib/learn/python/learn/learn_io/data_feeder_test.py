@@ -23,7 +23,7 @@ import six
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.learn.python.learn.learn_io import *
+from astronet.contrib.learn.python.learn.learn_io import *
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.platform import test

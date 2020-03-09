@@ -19,11 +19,11 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import
-from tensorflow.contrib.periodic_resample.python.ops import gen_periodic_resample_op
+from astronet.contrib.periodic_resample.python.ops import gen_periodic_resample_op
 
-from tensorflow.contrib.periodic_resample.python.ops.gen_periodic_resample_op import periodic_resample
+from astronet.contrib.periodic_resample.python.ops.gen_periodic_resample_op import periodic_resample
 
-from tensorflow.contrib.util import loader
+from astronet.contrib.util import loader
 from tensorflow.python.platform import resource_loader
 # pylint: enable=unused-import
 

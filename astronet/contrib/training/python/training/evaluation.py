@@ -138,7 +138,7 @@ from __future__ import print_function
 
 import time
 
-from tensorflow.contrib.framework.python.ops import variables
+from astronet.contrib.framework.python.ops import variables
 from tensorflow.python.ops import state_ops
 from tensorflow.python.platform import tf_logging as logging
 from tensorflow.python.summary import summary

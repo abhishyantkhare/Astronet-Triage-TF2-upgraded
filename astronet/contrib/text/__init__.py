@@ -22,7 +22,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.text.python.ops import *
+from astronet.contrib.text.python.ops import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

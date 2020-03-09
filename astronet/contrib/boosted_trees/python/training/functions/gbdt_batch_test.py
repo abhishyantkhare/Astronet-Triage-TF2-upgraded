@@ -20,15 +20,15 @@ from __future__ import print_function
 
 from google.protobuf import text_format
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.boosted_trees.proto import learner_pb2
-from tensorflow.contrib.boosted_trees.proto import tree_config_pb2
-from tensorflow.contrib.boosted_trees.python.ops import model_ops
-from tensorflow.contrib.boosted_trees.python.training.functions import gbdt_batch
-from tensorflow.contrib.boosted_trees.python.utils import losses
+from astronet.contrib import layers
+from astronet.contrib.boosted_trees.proto import learner_pb2
+from astronet.contrib.boosted_trees.proto import tree_config_pb2
+from astronet.contrib.boosted_trees.python.ops import model_ops
+from astronet.contrib.boosted_trees.python.training.functions import gbdt_batch
+from astronet.contrib.boosted_trees.python.utils import losses
 
-from tensorflow.contrib.layers.python.layers import feature_column as feature_column_lib
-from tensorflow.contrib.learn.python.learn.estimators import model_fn
+from astronet.contrib.layers.python.layers import feature_column as feature_column_lib
+from astronet.contrib.learn.python.learn.estimators import model_fn
 
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor

@@ -23,9 +23,9 @@ import copy
 
 import numpy as np
 
-from tensorflow.contrib.tpu.python.tpu import device_assignment  as tpu_device_assignment
-from tensorflow.contrib.tpu.python.tpu import tpu_config
-from tensorflow.contrib.tpu.python.tpu import tpu_system_metadata as tpu_system_metadata_lib
+from astronet.contrib.tpu.python.tpu import device_assignment  as tpu_device_assignment
+from astronet.contrib.tpu.python.tpu import tpu_config
+from astronet.contrib.tpu.python.tpu import tpu_system_metadata as tpu_system_metadata_lib
 from tensorflow.python.estimator import model_fn as model_fn_lib
 from tensorflow.python.platform import tf_logging as logging
 

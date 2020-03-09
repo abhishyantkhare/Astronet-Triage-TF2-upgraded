@@ -20,9 +20,9 @@ import os
 import tempfile
 
 import tensorflow as tf
-from tensorflow.contrib.lite.toco import model_flags_pb2
-from tensorflow.contrib.lite.toco import toco_flags_pb2
-from tensorflow.contrib.lite.toco import types_pb2
+from astronet.contrib.lite.toco import model_flags_pb2
+from astronet.contrib.lite.toco import toco_flags_pb2
+from astronet.contrib.lite.toco import types_pb2
 from tensorflow.python.platform import googletest
 from tensorflow.python.platform import resource_loader
 

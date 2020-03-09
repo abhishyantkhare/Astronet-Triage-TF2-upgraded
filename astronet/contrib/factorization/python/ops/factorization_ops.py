@@ -23,8 +23,8 @@ import numbers
 
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-from tensorflow.contrib.factorization.python.ops import gen_factorization_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.factorization.python.ops import gen_factorization_ops
+from astronet.contrib.util import loader
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

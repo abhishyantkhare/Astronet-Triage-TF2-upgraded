@@ -18,12 +18,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import layers
+from astronet.contrib import layers
 from tensorflow.python.training import training_util
-from tensorflow.contrib.learn.python.learn.estimators import estimator
-from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
-from tensorflow.contrib.learn.python.learn.estimators import prediction_key
-from tensorflow.contrib.linear_optimizer.python import sdca_optimizer
+from astronet.contrib.learn.python.learn.estimators import estimator
+from astronet.contrib.learn.python.learn.estimators import head as head_lib
+from astronet.contrib.learn.python.learn.estimators import prediction_key
+from astronet.contrib.linear_optimizer.python import sdca_optimizer
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.framework import tensor_util

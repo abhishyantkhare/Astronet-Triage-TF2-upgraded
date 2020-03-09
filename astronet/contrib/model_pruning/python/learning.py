@@ -49,7 +49,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import slim as _slim
+from astronet.contrib import slim as _slim
 
 _USE_DEFAULT = 0
 train_step = _slim.learning.train_step

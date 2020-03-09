@@ -19,7 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.data.python.kernel_tests import dataset_serialization_test_base
+from astronet.contrib.data.python.kernel_tests import dataset_serialization_test_base
 from tensorflow.python.data.ops import dataset_ops
 from tensorflow.python.platform import test
 

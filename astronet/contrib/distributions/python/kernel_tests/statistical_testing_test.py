@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import statistical_testing as st
+from astronet.contrib.distributions.python.ops import statistical_testing as st
 from tensorflow.python.framework import errors
 from tensorflow.python.platform import test
 

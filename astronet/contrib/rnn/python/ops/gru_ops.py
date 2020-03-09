@@ -17,8 +17,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.rnn.ops import gen_gru_ops
-from tensorflow.contrib.util import loader
+from astronet.contrib.rnn.ops import gen_gru_ops
+from astronet.contrib.util import loader
 from tensorflow.python.framework import ops
 from tensorflow.python.layers import base as base_layer
 from tensorflow.python.ops import array_ops

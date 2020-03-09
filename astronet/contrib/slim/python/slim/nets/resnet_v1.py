@@ -34,7 +34,7 @@ units.
 
 Typical use:
 
-   from tensorflow.contrib.slim.python.slim.nets import
+   from astronet.contrib.slim.python.slim.nets import
    resnet_v1
 
 ResNet-101 for image classification into 1000 classes:
@@ -58,12 +58,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.framework.python.ops import add_arg_scope
-from tensorflow.contrib.framework.python.ops import arg_scope
-from tensorflow.contrib.layers.python.layers import layers as layers_lib
-from tensorflow.contrib.layers.python.layers import utils
-from tensorflow.contrib.slim.python.slim.nets import resnet_utils
+from astronet.contrib import layers
+from astronet.contrib.framework.python.ops import add_arg_scope
+from astronet.contrib.framework.python.ops import arg_scope
+from astronet.contrib.layers.python.layers import layers as layers_lib
+from astronet.contrib.layers.python.layers import utils
+from astronet.contrib.slim.python.slim.nets import resnet_utils
 from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import nn_ops
 from tensorflow.python.ops import variable_scope

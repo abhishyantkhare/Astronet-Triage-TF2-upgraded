@@ -22,8 +22,8 @@ import sys
 
 import six
 
-from tensorflow.contrib.autograph.utils import py_func
-from tensorflow.contrib.autograph.utils import type_check
+from astronet.contrib.autograph.utils import py_func
+from astronet.contrib.autograph.utils import type_check
 from tensorflow.python.framework import tensor_util
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import logging_ops

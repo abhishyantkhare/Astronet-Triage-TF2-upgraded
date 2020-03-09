@@ -19,6 +19,6 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.tensorboard.plugins.trace.trace import *
-from tensorflow.contrib.tensorboard.plugins.trace.trace_info_pb2 import *
+from astronet.contrib.tensorboard.plugins.trace.trace import *
+from astronet.contrib.tensorboard.plugins.trace.trace_info_pb2 import *
 # pylint: enable=wildcard-import

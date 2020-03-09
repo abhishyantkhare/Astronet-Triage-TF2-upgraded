@@ -25,9 +25,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.lite.python import lite
-from tensorflow.contrib.saved_model.python.saved_model import reader
-from tensorflow.contrib.saved_model.python.saved_model import signature_def_utils
+from astronet.contrib.lite.python import lite
+from astronet.contrib.saved_model.python.saved_model import reader
+from astronet.contrib.saved_model.python.saved_model import signature_def_utils
 from tensorflow.core.framework import types_pb2
 from tensorflow.python.client import session
 from tensorflow.python.framework import graph_util as tf_graph_util

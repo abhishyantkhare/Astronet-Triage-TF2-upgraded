@@ -22,9 +22,9 @@ import functools
 
 import numpy as np
 
-from tensorflow.contrib.signal.python.ops import reconstruction_ops
-from tensorflow.contrib.signal.python.ops import shape_ops
-from tensorflow.contrib.signal.python.ops import window_ops
+from astronet.contrib.signal.python.ops import reconstruction_ops
+from astronet.contrib.signal.python.ops import shape_ops
+from astronet.contrib.signal.python.ops import window_ops
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import tensor_util

@@ -22,8 +22,8 @@ import textwrap
 
 import gast
 
-from tensorflow.contrib.autograph.pyct import compiler
-from tensorflow.contrib.autograph.pyct import parser
+from astronet.contrib.autograph.pyct import compiler
+from astronet.contrib.autograph.pyct import parser
 from tensorflow.python.platform import test
 from tensorflow.python.util import tf_inspect
 

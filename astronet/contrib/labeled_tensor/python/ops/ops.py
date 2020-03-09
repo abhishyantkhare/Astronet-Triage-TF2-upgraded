@@ -23,8 +23,8 @@ import types
 import numpy as np
 from six import string_types
 
-from tensorflow.contrib.labeled_tensor.python.ops import _typecheck as tc
-from tensorflow.contrib.labeled_tensor.python.ops import core
+from astronet.contrib.labeled_tensor.python.ops import _typecheck as tc
+from astronet.contrib.labeled_tensor.python.ops import core
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops

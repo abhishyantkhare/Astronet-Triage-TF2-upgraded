@@ -22,8 +22,8 @@ import os
 import tempfile
 
 import numpy as np
-from tensorflow.contrib.framework.python.ops import arg_scope
-from tensorflow.contrib.framework.python.ops import variables as variables_lib2
+from astronet.contrib.framework.python.ops import arg_scope
+from astronet.contrib.framework.python.ops import variables as variables_lib2
 from tensorflow.python.client import session
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes

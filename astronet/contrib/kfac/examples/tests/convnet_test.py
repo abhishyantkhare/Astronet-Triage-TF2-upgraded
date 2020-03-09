@@ -21,8 +21,8 @@ from __future__ import print_function
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.contrib.kfac import layer_collection as lc
-from tensorflow.contrib.kfac.examples import convnet
+from astronet.contrib.kfac import layer_collection as lc
+from astronet.contrib.kfac.examples import convnet
 
 
 class ConvNetTest(tf.test.TestCase):

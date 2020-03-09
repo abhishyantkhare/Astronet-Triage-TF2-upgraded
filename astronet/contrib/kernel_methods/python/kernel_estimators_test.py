@@ -20,10 +20,10 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib import layers
-from tensorflow.contrib.kernel_methods.python import kernel_estimators
-from tensorflow.contrib.kernel_methods.python.mappers.random_fourier_features import RandomFourierFeatureMapper
-from tensorflow.contrib.learn.python.learn.estimators import test_data
+from astronet.contrib import layers
+from astronet.contrib.kernel_methods.python import kernel_estimators
+from astronet.contrib.kernel_methods.python.mappers.random_fourier_features import RandomFourierFeatureMapper
+from astronet.contrib.learn.python.learn.estimators import test_data
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.framework.test_util import TensorFlowTestCase

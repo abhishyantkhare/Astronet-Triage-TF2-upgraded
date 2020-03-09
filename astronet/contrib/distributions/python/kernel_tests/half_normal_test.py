@@ -21,7 +21,7 @@ from __future__ import print_function
 import importlib
 import numpy as np
 
-from tensorflow.contrib.distributions.python.ops import half_normal as hn_lib
+from astronet.contrib.distributions.python.ops import half_normal as hn_lib
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

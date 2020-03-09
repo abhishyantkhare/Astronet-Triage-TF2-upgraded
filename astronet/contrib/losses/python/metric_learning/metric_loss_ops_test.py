@@ -18,7 +18,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from tensorflow.contrib.losses.python import metric_learning as metric_loss_ops
+from astronet.contrib.losses.python import metric_learning as metric_loss_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.framework import sparse_tensor
 from tensorflow.python.ops import math_ops

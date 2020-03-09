@@ -17,9 +17,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.framework.python.ops import add_arg_scope
-from tensorflow.contrib.framework.python.ops import arg_scope
-from tensorflow.contrib.framework.python.ops import arg_scoped_arguments
+from astronet.contrib.framework.python.ops import add_arg_scope
+from astronet.contrib.framework.python.ops import arg_scope
+from astronet.contrib.framework.python.ops import arg_scoped_arguments
 from tensorflow.python.platform import test
 
 

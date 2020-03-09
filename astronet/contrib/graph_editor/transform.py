@@ -25,10 +25,10 @@ from six import iteritems
 from six import iterkeys
 from six import string_types
 from six import StringIO
-from tensorflow.contrib.graph_editor import reroute
-from tensorflow.contrib.graph_editor import select
-from tensorflow.contrib.graph_editor import subgraph
-from tensorflow.contrib.graph_editor import util
+from astronet.contrib.graph_editor import reroute
+from astronet.contrib.graph_editor import select
+from astronet.contrib.graph_editor import subgraph
+from astronet.contrib.graph_editor import util
 from tensorflow.python.framework import ops as tf_ops
 from tensorflow.python.platform import tf_logging as logging
 

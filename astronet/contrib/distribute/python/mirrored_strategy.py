@@ -21,9 +21,9 @@ from __future__ import print_function
 import threading
 import six
 
-from tensorflow.contrib.distribute.python import cross_tower_ops as cross_tower_ops_lib
-from tensorflow.contrib.distribute.python import shared_variable_creator
-from tensorflow.contrib.distribute.python import values
+from astronet.contrib.distribute.python import cross_tower_ops as cross_tower_ops_lib
+from astronet.contrib.distribute.python import shared_variable_creator
+from astronet.contrib.distribute.python import values
 from tensorflow.python import pywrap_tensorflow
 from tensorflow.python.eager import context
 from tensorflow.python.eager import tape

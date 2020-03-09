@@ -19,9 +19,9 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import
-from tensorflow.contrib.recurrent.python.ops import functional_bidirectional_rnn
-from tensorflow.contrib.recurrent.python.ops import functional_rnn
-from tensorflow.contrib.recurrent.python.ops import Recurrent
+from astronet.contrib.recurrent.python.ops import functional_bidirectional_rnn
+from astronet.contrib.recurrent.python.ops import functional_rnn
+from astronet.contrib.recurrent.python.ops import Recurrent
 # pylint: enable=unused-import
 
 del absolute_import

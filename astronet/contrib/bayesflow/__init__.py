@@ -21,7 +21,7 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,line-too-long
-from tensorflow.contrib.bayesflow.python.ops import monte_carlo
+from astronet.contrib.bayesflow.python.ops import monte_carlo
 # pylint: enable=unused-import,line-too-long
 
 from tensorflow.python.util.all_util import remove_undocumented

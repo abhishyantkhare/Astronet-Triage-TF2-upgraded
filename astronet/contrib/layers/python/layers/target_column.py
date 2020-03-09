@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import six
 
-from tensorflow.contrib.framework import deprecated
-from tensorflow.contrib.losses.python.losses import loss_ops
-from tensorflow.contrib.metrics.python.ops import metric_ops
+from astronet.contrib.framework import deprecated
+from astronet.contrib.losses.python.losses import loss_ops
+from astronet.contrib.metrics.python.ops import metric_ops
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import control_flow_ops

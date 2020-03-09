@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.tpu.python.tpu import tpu_estimator
+from astronet.contrib.tpu.python.tpu import tpu_estimator
 from tensorflow.python import data as dataset_lib
 from tensorflow.python.client import session
 from tensorflow.python.framework import errors

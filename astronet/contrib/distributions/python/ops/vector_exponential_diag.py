@@ -18,8 +18,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from tensorflow.contrib.distributions.python.ops import distribution_util
-from tensorflow.contrib.distributions.python.ops import vector_exponential_linear_operator as vector_exponential_linop
+from astronet.contrib.distributions.python.ops import distribution_util
+from astronet.contrib.distributions.python.ops import vector_exponential_linear_operator as vector_exponential_linop
 from tensorflow.python.framework import ops
 
 

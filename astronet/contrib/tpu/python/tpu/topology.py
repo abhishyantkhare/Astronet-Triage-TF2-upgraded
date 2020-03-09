@@ -20,7 +20,7 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.tpu.proto import topology_pb2
+from astronet.contrib.tpu.proto import topology_pb2
 
 
 class Topology(object):

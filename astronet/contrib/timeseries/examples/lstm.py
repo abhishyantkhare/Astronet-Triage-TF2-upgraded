@@ -25,9 +25,9 @@ import tempfile
 import numpy
 import tensorflow as tf
 
-from tensorflow.contrib.timeseries.python.timeseries import estimators as ts_estimators
-from tensorflow.contrib.timeseries.python.timeseries import model as ts_model
-from tensorflow.contrib.timeseries.python.timeseries import state_management
+from astronet.contrib.timeseries.python.timeseries import estimators as ts_estimators
+from astronet.contrib.timeseries.python.timeseries import model as ts_model
+from astronet.contrib.timeseries.python.timeseries import state_management
 
 try:
   import matplotlib  # pylint: disable=g-import-not-at-top

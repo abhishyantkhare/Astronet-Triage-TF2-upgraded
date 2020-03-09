@@ -43,8 +43,8 @@ import enum  # pylint: disable=g-bad-import-order
 import numpy as np
 import six
 
-from tensorflow.contrib.kfac.python.ops import fisher_factors
-from tensorflow.contrib.kfac.python.ops import utils
+from astronet.contrib.kfac.python.ops import fisher_factors
+from astronet.contrib.kfac.python.ops import utils
 from tensorflow.python.framework import ops
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

@@ -20,9 +20,9 @@ from __future__ import print_function
 
 import numpy as np
 
-from tensorflow.contrib.factorization.python.ops import gmm as gmm_lib
-from tensorflow.contrib.learn.python.learn.estimators import kmeans
-from tensorflow.contrib.learn.python.learn.estimators import run_config
+from astronet.contrib.factorization.python.ops import gmm as gmm_lib
+from astronet.contrib.learn.python.learn.estimators import kmeans
+from astronet.contrib.learn.python.learn.estimators import run_config
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import random_seed as random_seed_lib

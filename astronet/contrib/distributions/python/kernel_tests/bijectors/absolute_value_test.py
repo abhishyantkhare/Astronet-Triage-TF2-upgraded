@@ -21,7 +21,7 @@ from __future__ import print_function
 import numpy as np
 
 # pylint: disable=g-importing-member
-from tensorflow.contrib.distributions.python.ops.bijectors.absolute_value import AbsoluteValue
+from astronet.contrib.distributions.python.ops.bijectors.absolute_value import AbsoluteValue
 from tensorflow.python.framework import dtypes
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops

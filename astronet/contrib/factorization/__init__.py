@@ -19,12 +19,12 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=wildcard-import
-from tensorflow.contrib.factorization.python.ops.clustering_ops import *
-from tensorflow.contrib.factorization.python.ops.factorization_ops import *
-from tensorflow.contrib.factorization.python.ops.gmm import *
-from tensorflow.contrib.factorization.python.ops.gmm_ops import *
-from tensorflow.contrib.factorization.python.ops.kmeans import *
-from tensorflow.contrib.factorization.python.ops.wals import *
+from astronet.contrib.factorization.python.ops.clustering_ops import *
+from astronet.contrib.factorization.python.ops.factorization_ops import *
+from astronet.contrib.factorization.python.ops.gmm import *
+from astronet.contrib.factorization.python.ops.gmm_ops import *
+from astronet.contrib.factorization.python.ops.kmeans import *
+from astronet.contrib.factorization.python.ops.wals import *
 # pylint: enable=wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

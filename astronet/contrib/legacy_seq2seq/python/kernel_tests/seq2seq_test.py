@@ -24,8 +24,8 @@ import random
 
 import numpy as np
 
-from tensorflow.contrib.legacy_seq2seq.python.ops import seq2seq as seq2seq_lib
-from tensorflow.contrib.rnn.python.ops import core_rnn_cell
+from astronet.contrib.legacy_seq2seq.python.ops import seq2seq as seq2seq_lib
+from astronet.contrib.rnn.python.ops import core_rnn_cell
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
 from tensorflow.python.framework import ops

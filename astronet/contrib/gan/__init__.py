@@ -25,16 +25,16 @@ from __future__ import division
 from __future__ import print_function
 
 # Collapse TFGAN into a tiered namespace.
-from tensorflow.contrib.gan.python import estimator
-from tensorflow.contrib.gan.python import eval  # pylint:disable=redefined-builtin
-from tensorflow.contrib.gan.python import features
-from tensorflow.contrib.gan.python import losses
-from tensorflow.contrib.gan.python import namedtuples
-from tensorflow.contrib.gan.python import train
+from astronet.contrib.gan.python import estimator
+from astronet.contrib.gan.python import eval  # pylint:disable=redefined-builtin
+from astronet.contrib.gan.python import features
+from astronet.contrib.gan.python import losses
+from astronet.contrib.gan.python import namedtuples
+from astronet.contrib.gan.python import train
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.gan.python.namedtuples import *
-from tensorflow.contrib.gan.python.train import *
+from astronet.contrib.gan.python.namedtuples import *
+from astronet.contrib.gan.python.train import *
 # pylint: enable=unused-import,wildcard-import
 
 from tensorflow.python.util.all_util import remove_undocumented

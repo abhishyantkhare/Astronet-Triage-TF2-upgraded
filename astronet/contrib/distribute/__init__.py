@@ -19,11 +19,11 @@ from __future__ import division
 from __future__ import print_function
 
 # pylint: disable=unused-import,wildcard-import
-from tensorflow.contrib.distribute.python.cross_tower_ops import *
-from tensorflow.contrib.distribute.python.mirrored_strategy import MirroredStrategy
-from tensorflow.contrib.distribute.python.monitor import Monitor
-from tensorflow.contrib.distribute.python.one_device_strategy import OneDeviceStrategy
-from tensorflow.contrib.distribute.python.step_fn import *
+from astronet.contrib.distribute.python.cross_tower_ops import *
+from astronet.contrib.distribute.python.mirrored_strategy import MirroredStrategy
+from astronet.contrib.distribute.python.monitor import Monitor
+from astronet.contrib.distribute.python.one_device_strategy import OneDeviceStrategy
+from astronet.contrib.distribute.python.step_fn import *
 from tensorflow.python.training.distribute import *
 
 from tensorflow.python.util.all_util import remove_undocumented
