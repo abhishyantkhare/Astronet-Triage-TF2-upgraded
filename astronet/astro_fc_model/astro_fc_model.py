@@ -51,7 +51,7 @@ from __future__ import division
 from __future__ import print_function
 
 import tensorflow as tf
-import astronet.astro_fc_model.layers
+import astronet.contrib as contrib
 
 from astronet.astro_model import astro_model
 
@@ -133,17 +133,11 @@ class AstroFCModel(astro_model.AstroModel):
 
             # Remaining fully connected layers.
             for i in range(remaining_layers):
-                net = layers.fully_connected(
+                net = contrib.layers.fully_connected(
                     inputs=net,
                     num_outputs=hparams.local_layer_size,
                     activation_fn=tf.nn.relu,
                     scope="fully_connected_%d" % (i + 1))
-                # DEPRECATED CODE (tf1)
-                # net = tf.contrib.layers.fully_connected(
-                #     inputs=net,
-                #     num_outputs=hparams.local_layer_size,
-                #     activation_fn=tf.nn.relu,
-                #     scope="fully_connected_%d" % (i + 1))
 
                 if hparams.dropout_rate > 0:
                     net = tf.compat.v1.layers.dropout(
