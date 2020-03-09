@@ -24,10 +24,10 @@ from __future__ import print_function
 import functools
 import six
 
-from tensorflow.framework.python.ops import add_arg_scope
-from tensorflow.framework.python.ops import variables
-from tensorflow.layers.python.layers import initializers
-from tensorflow.layers.python.layers import utils
+from tensorflow.contrib.framework.python.ops import add_arg_scope
+from tensorflow.contrib.framework.python.ops import variables
+from tensorflow.contrib.layers.python.layers import initializers
+from tensorflow.contrib.layers.python.layers import utils
 from tensorflow.python.eager import context
 from tensorflow.python.framework import constant_op
 from tensorflow.python.framework import dtypes
