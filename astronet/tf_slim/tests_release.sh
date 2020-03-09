@@ -50,7 +50,7 @@ run_tests() {
 
   # Move away from repo directory so "import tf_agents" refers to the
   # installed wheel and not to the local fs.
-  (cd $(mktemp -d) && python -c 'import tf_slim')
+  (cd $(mktemp -d) && python -c 'import astronet.tf_slim.tf_slim')
 
   # Deactivate virtualenv
   deactivate

@@ -21,7 +21,7 @@ tensorflow summaries. These allow users to print summary values
 automatically as they are computed and add prefixes to collections of summaries.
 
 Example usage:
-  import tf_slim as slim
+  import astronet.tf_slim.tf_slim as slim
 
   slim.summaries.add_histogram_summaries(slim.variables.get_model_variables())
   slim.summaries.add_scalar_summary(total_loss, 'Total Loss')
@@ -54,181 +54,181 @@ __all__ = [
 
 
 def _get_summary_name(tensor, name=None, prefix=None, postfix=None):
-  """Produces the summary name given.
+    """Produces the summary name given.
 
-  Args:
-    tensor: A variable or op `Tensor`.
-    name: The optional name for the summary.
-    prefix: An optional prefix for the summary name.
-    postfix: An optional postfix for the summary name.
+    Args:
+      tensor: A variable or op `Tensor`.
+      name: The optional name for the summary.
+      prefix: An optional prefix for the summary name.
+      postfix: An optional postfix for the summary name.
 
-  Returns:
-    a summary name.
-  """
-  if not name:
-    name = tensor.op.name
-  if prefix:
-    name = prefix + '/' + name
-  if postfix:
-    name = name + '/' + postfix
-  return name
+    Returns:
+      a summary name.
+    """
+    if not name:
+        name = tensor.op.name
+    if prefix:
+        name = prefix + '/' + name
+    if postfix:
+        name = name + '/' + postfix
+    return name
 
 
 def add_histogram_summary(tensor, name=None, prefix=None):
-  """Adds a histogram summary for the given tensor.
+    """Adds a histogram summary for the given tensor.
 
-  Args:
-    tensor: A variable or op tensor.
-    name: The optional name for the summary.
-    prefix: An optional prefix for the summary names.
+    Args:
+      tensor: A variable or op tensor.
+      name: The optional name for the summary.
+      prefix: An optional prefix for the summary names.
 
-  Returns:
-    A scalar `Tensor` of type `string` whose contents are the serialized
-    `Summary` protocol buffer.
-  """
-  return summary.histogram(
-      _get_summary_name(tensor, name, prefix), tensor)
+    Returns:
+      A scalar `Tensor` of type `string` whose contents are the serialized
+      `Summary` protocol buffer.
+    """
+    return summary.histogram(
+        _get_summary_name(tensor, name, prefix), tensor)
 
 
 def add_image_summary(tensor, name=None, prefix=None, print_summary=False):
-  """Adds an image summary for the given tensor.
+    """Adds an image summary for the given tensor.
 
-  Args:
-    tensor: a variable or op tensor with shape [batch,height,width,channels]
-    name: the optional name for the summary.
-    prefix: An optional prefix for the summary names.
-    print_summary: If `True`, the summary is printed to stdout when the summary
-      is computed.
+    Args:
+      tensor: a variable or op tensor with shape [batch,height,width,channels]
+      name: the optional name for the summary.
+      prefix: An optional prefix for the summary names.
+      print_summary: If `True`, the summary is printed to stdout when the summary
+        is computed.
 
-  Returns:
-    An image `Tensor` of type `string` whose contents are the serialized
-    `Summary` protocol buffer.
-  """
-  summary_name = _get_summary_name(tensor, name, prefix)
-  # If print_summary, then we need to make sure that this call doesn't add the
-  # non-printing op to the collection. We'll add it to the collection later.
-  collections = [] if print_summary else None
-  op = summary.image(
-      name=summary_name, tensor=tensor, collections=collections)
-  if print_summary:
-    op = logging_ops.Print(op, [tensor], summary_name)
-    ops.add_to_collection(ops.GraphKeys.SUMMARIES, op)
-  return op
+    Returns:
+      An image `Tensor` of type `string` whose contents are the serialized
+      `Summary` protocol buffer.
+    """
+    summary_name = _get_summary_name(tensor, name, prefix)
+    # If print_summary, then we need to make sure that this call doesn't add the
+    # non-printing op to the collection. We'll add it to the collection later.
+    collections = [] if print_summary else None
+    op = summary.image(
+        name=summary_name, tensor=tensor, collections=collections)
+    if print_summary:
+        op = logging_ops.Print(op, [tensor], summary_name)
+        ops.add_to_collection(ops.GraphKeys.SUMMARIES, op)
+    return op
 
 
 def add_scalar_summary(tensor, name=None, prefix=None, print_summary=False):
-  """Adds a scalar summary for the given tensor.
+    """Adds a scalar summary for the given tensor.
 
-  Args:
-    tensor: a variable or op tensor.
-    name: the optional name for the summary.
-    prefix: An optional prefix for the summary names.
-    print_summary: If `True`, the summary is printed to stdout when the summary
-      is computed.
+    Args:
+      tensor: a variable or op tensor.
+      name: the optional name for the summary.
+      prefix: An optional prefix for the summary names.
+      print_summary: If `True`, the summary is printed to stdout when the summary
+        is computed.
 
-  Returns:
-    A scalar `Tensor` of type `string` whose contents are the serialized
-    `Summary` protocol buffer.
-  """
-  collections = [] if print_summary else None
-  summary_name = _get_summary_name(tensor, name, prefix)
+    Returns:
+      A scalar `Tensor` of type `string` whose contents are the serialized
+      `Summary` protocol buffer.
+    """
+    collections = [] if print_summary else None
+    summary_name = _get_summary_name(tensor, name, prefix)
 
-  # If print_summary, then we need to make sure that this call doesn't add the
-  # non-printing op to the collection. We'll add it to the collection later.
-  op = summary.scalar(
-      name=summary_name, tensor=tensor, collections=collections)
-  if print_summary:
-    op = logging_ops.Print(op, [tensor], summary_name)
-    ops.add_to_collection(ops.GraphKeys.SUMMARIES, op)
-  return op
+    # If print_summary, then we need to make sure that this call doesn't add the
+    # non-printing op to the collection. We'll add it to the collection later.
+    op = summary.scalar(
+        name=summary_name, tensor=tensor, collections=collections)
+    if print_summary:
+        op = logging_ops.Print(op, [tensor], summary_name)
+        ops.add_to_collection(ops.GraphKeys.SUMMARIES, op)
+    return op
 
 
 def add_zero_fraction_summary(tensor, name=None, prefix=None,
                               print_summary=False):
-  """Adds a summary for the percentage of zero values in the given tensor.
+    """Adds a summary for the percentage of zero values in the given tensor.
 
-  Args:
-    tensor: a variable or op tensor.
-    name: the optional name for the summary.
-    prefix: An optional prefix for the summary names.
-    print_summary: If `True`, the summary is printed to stdout when the summary
-      is computed.
+    Args:
+      tensor: a variable or op tensor.
+      name: the optional name for the summary.
+      prefix: An optional prefix for the summary names.
+      print_summary: If `True`, the summary is printed to stdout when the summary
+        is computed.
 
-  Returns:
-    A scalar `Tensor` of type `string` whose contents are the serialized
-    `Summary` protocol buffer.
-  """
-  name = _get_summary_name(tensor, name, prefix, 'Fraction_of_Zero_Values')
-  tensor = nn.zero_fraction(tensor)
-  return add_scalar_summary(tensor, name, print_summary=print_summary)
+    Returns:
+      A scalar `Tensor` of type `string` whose contents are the serialized
+      `Summary` protocol buffer.
+    """
+    name = _get_summary_name(tensor, name, prefix, 'Fraction_of_Zero_Values')
+    tensor = nn.zero_fraction(tensor)
+    return add_scalar_summary(tensor, name, print_summary=print_summary)
 
 
 def add_histogram_summaries(tensors, prefix=None):
-  """Adds a histogram summary for each of the given tensors.
+    """Adds a histogram summary for each of the given tensors.
 
-  Args:
-    tensors: A list of variable or op tensors.
-    prefix: An optional prefix for the summary names.
+    Args:
+      tensors: A list of variable or op tensors.
+      prefix: An optional prefix for the summary names.
 
-  Returns:
-    A list of scalar `Tensors` of type `string` whose contents are the
-    serialized `Summary` protocol buffer.
-  """
-  summary_ops = []
-  for tensor in tensors:
-    summary_ops.append(add_histogram_summary(tensor, prefix=prefix))
-  return summary_ops
+    Returns:
+      A list of scalar `Tensors` of type `string` whose contents are the
+      serialized `Summary` protocol buffer.
+    """
+    summary_ops = []
+    for tensor in tensors:
+        summary_ops.append(add_histogram_summary(tensor, prefix=prefix))
+    return summary_ops
 
 
 def add_image_summaries(tensors, prefix=None):
-  """Adds an image summary for each of the given tensors.
+    """Adds an image summary for each of the given tensors.
 
-  Args:
-    tensors: A list of variable or op tensors.
-    prefix: An optional prefix for the summary names.
+    Args:
+      tensors: A list of variable or op tensors.
+      prefix: An optional prefix for the summary names.
 
-  Returns:
-    A list of scalar `Tensors` of type `string` whose contents are the
-    serialized `Summary` protocol buffer.
-  """
-  summary_ops = []
-  for tensor in tensors:
-    summary_ops.append(add_image_summary(tensor, prefix=prefix))
-  return summary_ops
+    Returns:
+      A list of scalar `Tensors` of type `string` whose contents are the
+      serialized `Summary` protocol buffer.
+    """
+    summary_ops = []
+    for tensor in tensors:
+        summary_ops.append(add_image_summary(tensor, prefix=prefix))
+    return summary_ops
 
 
 def add_scalar_summaries(tensors, prefix=None, print_summary=False):
-  """Adds a scalar summary for each of the given tensors.
+    """Adds a scalar summary for each of the given tensors.
 
-  Args:
-    tensors: a list of variable or op tensors.
-    prefix: An optional prefix for the summary names.
-    print_summary: If `True`, the summary is printed to stdout when the summary
-      is computed.
+    Args:
+      tensors: a list of variable or op tensors.
+      prefix: An optional prefix for the summary names.
+      print_summary: If `True`, the summary is printed to stdout when the summary
+        is computed.
 
-  Returns:
-    A list of scalar `Tensors` of type `string` whose contents are the
-    serialized `Summary` protocol buffer.
-  """
-  summary_ops = []
-  for tensor in tensors:
-    summary_ops.append(add_scalar_summary(tensor, prefix=prefix,
-                                          print_summary=print_summary))
-  return summary_ops
+    Returns:
+      A list of scalar `Tensors` of type `string` whose contents are the
+      serialized `Summary` protocol buffer.
+    """
+    summary_ops = []
+    for tensor in tensors:
+        summary_ops.append(add_scalar_summary(tensor, prefix=prefix,
+                                              print_summary=print_summary))
+    return summary_ops
 
 
 def add_zero_fraction_summaries(tensors, prefix=None):
-  """Adds a scalar zero-fraction summary for each of the given tensors.
+    """Adds a scalar zero-fraction summary for each of the given tensors.
 
-  Args:
-    tensors: a list of variable or op tensors.
-    prefix: An optional prefix for the summary names.
+    Args:
+      tensors: a list of variable or op tensors.
+      prefix: An optional prefix for the summary names.
 
-  Returns:
-    A list of scalar `Tensors` of type `string` whose contents are the
-    serialized `Summary` protocol buffer.
-  """
-  summary_ops = []
-  for tensor in tensors:
-    summary_ops.append(add_zero_fraction_summary(tensor, prefix=prefix))
-  return summary_ops
+    Returns:
+      A list of scalar `Tensors` of type `string` whose contents are the
+      serialized `Summary` protocol buffer.
+    """
+    summary_ops = []
+    for tensor in tensors:
+        summary_ops.append(add_zero_fraction_summary(tensor, prefix=prefix))
+    return summary_ops

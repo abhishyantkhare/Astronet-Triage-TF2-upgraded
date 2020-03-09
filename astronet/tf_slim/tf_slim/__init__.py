@@ -40,14 +40,14 @@ from tf_slim.data import parallel_reader
 from tf_slim.data import prefetch_queue
 from tf_slim.data import tfexample_decoder
 
-import tf_slim.evaluation as evaluation
-import tf_slim.learning as learning
-import tf_slim.losses as losses
-import tf_slim.metrics as metrics
+import astronet.tf_slim.tf_slim.evaluation as evaluation
+import astronet.tf_slim.tf_slim.learning as learning
+import astronet.tf_slim.tf_slim.losses as losses
+import astronet.tf_slim.tf_slim.metrics as metrics
 
-import tf_slim.model_analyzer as model_analyzer
-import tf_slim.queues as queues
-import tf_slim.summaries as summaries
+import astronet.tf_slim.tf_slim.model_analyzer as model_analyzer
+import astronet.tf_slim.tf_slim.queues as queues
+import astronet.tf_slim.tf_slim.summaries as summaries
 
 from tf_slim.training import evaluation as train_eval
 from tf_slim.training import training as training

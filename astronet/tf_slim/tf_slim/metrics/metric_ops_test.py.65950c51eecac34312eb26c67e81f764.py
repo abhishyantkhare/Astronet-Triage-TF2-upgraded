@@ -25,7 +25,7 @@ import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
 import tensorflow.compat.v1 as tf
-import astronet.tf_slim.metrics as metrics_lib
+import astronet.tf_slim.tf_slim.metrics as metrics_lib
 from tf_slim.metrics.metric_ops import _next_array_size
 
 # pylint: disable=g-direct-tensorflow-import
